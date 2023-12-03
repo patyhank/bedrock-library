@@ -175,6 +175,18 @@ func (n *EntityManager) MoveEntity(pkData *packet.MoveActorAbsolute) {
 	ent.Yaw = pkData.Position[1]
 	ent.HeadYaw = pkData.Position[2]
 }
+func (n *EntityManager) MovePlayer(pkData *packet.MovePlayer) {
+	if entity := n.GetPlayer(pkData.EntityRuntimeID); entity != nil {
+		n.pMutex.Lock()
+		defer n.pMutex.Unlock()
+		ent := entity.Positioner
+
+		ent.Position = pkData.Position
+		ent.Pitch = pkData.Position[0]
+		ent.Yaw = pkData.Position[1]
+		ent.HeadYaw = pkData.Position[2]
+	}
+}
 func (n *EntityManager) RemoveEntity(rID int64) {
 	if entity := n.GetEntity(uint64(rID)); entity != nil {
 		n.eMutex.Lock()

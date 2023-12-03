@@ -29,7 +29,7 @@ type Client struct {
 	connected bool
 	Conn      *minecraft.Conn
 	events    *Events
-	world     *world.World
+	world     *World
 	Logger    *log.Logger
 	Screen    *ScreenManager
 	Entity    *EntityManager

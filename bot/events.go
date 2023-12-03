@@ -3,7 +3,9 @@ package bot
 import (
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/df-mc/dragonfly/server/world"
+	_ "github.com/df-mc/dragonfly/server/world"
 	"github.com/df-mc/dragonfly/server/world/chunk"
+	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
 	"github.com/sandertv/gophertunnel/minecraft/text"
 	_ "unsafe"
@@ -21,6 +23,17 @@ func (e EventsListener) Attach(c *Client) {
 
 	c.Screen = NewManager(c)
 	c.Entity = NewEntityManager()
+	c.Self = &Player{
+		Positioner: &Positioner{
+			Position: c.Conn.GameData().PlayerPosition,
+			Pitch:    c.Conn.GameData().Pitch,
+			Yaw:      c.Conn.GameData().Yaw,
+			HeadYaw:  c.Conn.GameData().Yaw,
+		},
+		Username:        c.Conn.IdentityData().DisplayName,
+		EntityRuntimeID: c.Conn.GameData().EntityRuntimeID,
+		PlatformChatID:  c.Conn.ClientData().PlatformOnlineID,
+	}
 
 	AddListener(c, PacketHandler[*packet.Text]{
 		Priority: 64,
@@ -43,7 +56,7 @@ func (e EventsListener) Attach(c *Client) {
 		Priority: 64,
 		F: func(client *Client, p *packet.ChangeDimension) error {
 			e.currentDimension = int(p.Dimension)
-			c.world = world.New()
+			c.world = NewWorld(e.dimensionData[e.currentDimension])
 			return nil
 		},
 	})
@@ -54,7 +67,12 @@ func (e EventsListener) Attach(c *Client) {
 			if err != nil {
 				return err
 			}
-			setChunk(c.world, world.ChunkPos(p.Position), ch, map[cube.Pos]world.Block{})
+
+			if c.world == nil {
+				c.world = NewWorld(e.dimensionData[e.currentDimension])
+			}
+
+			c.world.setChunk(world.ChunkPos(p.Position), ch)
 			return nil
 		},
 	})
@@ -100,9 +118,28 @@ func (e EventsListener) Attach(c *Client) {
 			return nil
 		},
 	})
+	AddListener(c, PacketHandler[*packet.MovePlayer]{
+		Priority: 64,
+		F: func(client *Client, p *packet.MovePlayer) error {
+			if p.EntityRuntimeID == c.Self.EntityRuntimeID {
+				if p.Mode == packet.MoveModeTeleport || p.Mode == packet.MoveModeReset {
+					c.Conn.WritePacket(&packet.PlayerAction{
+						EntityRuntimeID: c.Self.EntityRuntimeID,
+						ActionType:      protocol.PlayerActionHandledTeleport,
+					})
+				}
+				c.Self.Position = p.Position
+
+				c.Conn.WritePacket(p)
+				return nil
+			}
+			c.Entity.MovePlayer(p)
+			return nil
+		},
+	})
 }
 
-func (c *Client) World() *world.World {
+func (c *Client) World() *World {
 	return c.world
 }
 
