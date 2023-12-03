@@ -4,7 +4,6 @@ import (
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/df-mc/dragonfly/server/block/model"
 	"github.com/df-mc/dragonfly/server/world"
-	"github.com/fzipp/astar"
 )
 
 type Finder[Node cube.Pos] struct {
@@ -57,9 +56,9 @@ func (f Finder[Node]) Neighbours(no Node) (nodes []Node) {
 	return
 }
 
-func (c *Client) FindPath(pos cube.Pos) astar.Path[cube.Pos] {
-	f := Finder[cube.Pos]{c.World(), c, true}
-
-	path := astar.FindPath[cube.Pos](f, c, pos, maths.DistanceTo, maths.DistanceTo)
-	return path
-}
+//func (c *Client) FindPath(pos cube.Pos) astar.Path[cube.Pos] {
+//	f := Finder[cube.Pos]{c.World(), c, true}
+//
+//	//path := astar.FindPath[cube.Pos](f, c., pos, maths.DistanceTo, maths.DistanceTo)
+//	return path
+//}
