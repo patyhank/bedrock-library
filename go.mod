@@ -1,4 +1,4 @@
-module bedrocklib
+module git.patyhank.net/falloutBot/bedrocklib
 
 go 1.21
 
