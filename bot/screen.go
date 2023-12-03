@@ -1,7 +1,7 @@
 package bot
 
 import (
-	"bedrocklib/internal/nbtconv"
+	"git.patyhank.net/falloutBot/bedrocklib/internal/nbtconv"
 	"github.com/df-mc/atomic"
 	"github.com/df-mc/dragonfly/server/block"
 	"github.com/df-mc/dragonfly/server/block/cube"

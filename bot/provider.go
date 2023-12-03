@@ -1,9 +1,9 @@
 package bot
 
 import (
-	"bedrocklib/item"
 	"errors"
 	"fmt"
+	"git.patyhank.net/falloutBot/bedrocklib/item"
 	"github.com/df-mc/dragonfly/server/world"
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/google/uuid"
