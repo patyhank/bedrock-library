@@ -18,8 +18,10 @@ require (
 	github.com/brentp/intintmap v0.0.0-20190211203843-30dc0ade9af9 // indirect
 	github.com/df-mc/goleveldb v1.1.9 // indirect
 	github.com/df-mc/worldupgrader v1.0.10 // indirect
+	github.com/fzipp/astar v0.2.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
+	github.com/goxiaoy/go-eventbus v0.0.5 // indirect
 	github.com/klauspost/compress v1.15.15 // indirect
 	github.com/muhammadmuzzammil1998/jsonc v1.0.0 // indirect
 	github.com/sandertv/go-raknet v1.12.0 // indirect

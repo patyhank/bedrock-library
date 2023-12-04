@@ -25,6 +25,7 @@ type Positioner struct {
 	// BodyYaw than HeadYaw means that the entity will have its body turned, although it is unclear what the difference
 	// between BodyYaw and Yaw is.
 	//BodyYaw float32
+	OnGround bool
 }
 
 type Entity struct {
@@ -81,7 +82,7 @@ type Player struct {
 
 	// HeldItem is the item that the player is holding. The item is shown to the viewer as soon as the player
 	// itself shows up. Needless to say that this field is rather pointless, as additional packets still must
-	// be sent for armour to show up.
+	// be sent for Armour to show up.
 	HeldItem protocol.ItemInstance
 	// GameType is the game type of the player. If set to GameTypeSpectator, the player will not be shown to viewers.
 	GameType int32
@@ -206,12 +207,15 @@ func (n *EntityManager) RemoveEntity(rID int64) {
 }
 
 func (n *EntityManager) AddEntity(actor *packet.AddActor) {
+	n.eMutex.Lock()
+	defer n.eMutex.Unlock()
 	n.entities[actor.EntityRuntimeID] = &Entity{
 		Positioner: &Positioner{
 			Position: actor.Position,
 			Pitch:    actor.Pitch,
 			Yaw:      actor.Yaw,
 			HeadYaw:  actor.HeadYaw,
+			OnGround: true,
 		},
 		EntityUniqueID:   actor.EntityUniqueID,
 		EntityRuntimeID:  actor.EntityRuntimeID,
@@ -225,9 +229,12 @@ func (n *EntityManager) AddEntity(actor *packet.AddActor) {
 	}
 }
 func (n *EntityManager) AddItems(actor *packet.AddItemActor) {
+	n.iMutex.Lock()
+	defer n.iMutex.Unlock()
 	n.items[actor.EntityRuntimeID] = &ItemEntity{
 		Positioner: &Positioner{
 			Position: actor.Position,
+			OnGround: true,
 		},
 		EntityUniqueID:  actor.EntityUniqueID,
 		EntityRuntimeID: actor.EntityRuntimeID,
@@ -238,12 +245,15 @@ func (n *EntityManager) AddItems(actor *packet.AddItemActor) {
 	}
 }
 func (n *EntityManager) AddPlayer(actor *packet.AddPlayer) {
+	n.pMutex.Lock()
+	defer n.pMutex.Unlock()
 	n.players[actor.EntityRuntimeID] = &Player{
 		Positioner: &Positioner{
 			Position: actor.Position,
 			Pitch:    actor.Pitch,
 			Yaw:      actor.Yaw,
 			HeadYaw:  actor.HeadYaw,
+			OnGround: true,
 		},
 		UUID:             actor.UUID,
 		Username:         actor.Username,

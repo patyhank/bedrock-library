@@ -1,13 +1,17 @@
 package bot
 
 import (
+	"context"
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/df-mc/dragonfly/server/world"
 	_ "github.com/df-mc/dragonfly/server/world"
 	"github.com/df-mc/dragonfly/server/world/chunk"
+	"github.com/goxiaoy/go-eventbus"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
 	"github.com/sandertv/gophertunnel/minecraft/text"
+	log "github.com/sirupsen/logrus"
+	"time"
 	_ "unsafe"
 )
 
@@ -18,9 +22,17 @@ type EventsListener struct {
 }
 
 func (e EventsListener) Attach(c *Client) {
+	err := c.Conn.DoSpawnTimeout(time.Second * 10)
+	if err != nil {
+		panic(err)
+	}
+	c.Conn.WritePacket(&packet.Respawn{
+		State: 2,
+	})
+
 	e.dimensionData = append(e.dimensionData, cube.Range{-64, 319}, cube.Range{0, 127}, cube.Range{0, 255})
 	e.air, _ = chunk.StateToRuntimeID("minecraft:air", nil)
-
+	c.EventBus = eventbus.New()
 	c.Screen = NewManager(c)
 	c.Entity = NewEntityManager()
 	c.Self = &Player{
@@ -121,7 +133,8 @@ func (e EventsListener) Attach(c *Client) {
 	AddListener(c, PacketHandler[*packet.MovePlayer]{
 		Priority: 64,
 		F: func(client *Client, p *packet.MovePlayer) error {
-			if p.EntityRuntimeID == c.Self.EntityRuntimeID {
+			if p.EntityRuntimeID == c.Conn.GameData().EntityRuntimeID {
+				log.Info("Teleported", p.Position)
 				if p.Mode == packet.MoveModeTeleport || p.Mode == packet.MoveModeReset {
 					c.Conn.WritePacket(&packet.PlayerAction{
 						EntityRuntimeID: c.Self.EntityRuntimeID,
@@ -137,6 +150,30 @@ func (e EventsListener) Attach(c *Client) {
 			return nil
 		},
 	})
+	AddListener(c, PacketHandler[*packet.UpdateBlock]{
+		F: func(client *Client, p *packet.UpdateBlock) error {
+			client.world.setBlock(blockPosFromProtocol(p.Position), p.NewBlockRuntimeID)
+			if p.NewBlockRuntimeID == air {
+				go func() {
+					err := eventbus.Publish[*BrokeBlockEvent](c.EventBus)(context.Background(), &BrokeBlockEvent{
+						Position: p.Position,
+					})
+					if err != nil {
+						return
+					}
+				}()
+			}
+			return nil
+		},
+	})
+	//go func() {
+	//	ticker := time.NewTicker(time.Second * 1)
+	//	for {
+	//		<-ticker.C
+	//
+	//		c.SendCurrentPosition()
+	//	}
+	//}()
 }
 
 func (c *Client) World() *World {
@@ -145,3 +182,7 @@ func (c *Client) World() *World {
 
 //go:linkname setChunk github.com/df-mc/dragonfly/server/world.(*World).setChunk
 func setChunk(world *world.World, pos world.ChunkPos, c *chunk.Chunk, e map[cube.Pos]world.Block)
+
+type BrokeBlockEvent struct {
+	Position protocol.BlockPos
+}

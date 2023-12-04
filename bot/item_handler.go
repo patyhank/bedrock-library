@@ -295,6 +295,7 @@ func (h *itemStackRequestHandler) verifySlots(s *ScreenManager, slots ...protoco
 
 // verifySlot checks if the slot passed by the client is the same as that expected by the server.
 func (h *itemStackRequestHandler) verifySlot(slot protocol.StackRequestSlotInfo, s *ScreenManager) error {
+	return nil
 	if err := h.tryAcknowledgeChanges(s, slot); err != nil {
 		return err
 	}
@@ -376,7 +377,7 @@ func (h *itemStackRequestHandler) itemInSlot(slot protocol.StackRequestSlotInfo,
 	}
 
 	sl := int(slot.Slot)
-	if inv == s.offHand {
+	if inv == s.OffHand {
 		sl = 0
 	}
 
@@ -392,7 +393,7 @@ func (h *itemStackRequestHandler) setItemInSlot(slot protocol.StackRequestSlotIn
 	inv, _ := s.invByID(int32(slot.ContainerID))
 
 	sl := int(slot.Slot)
-	if inv == s.offHand {
+	if inv == s.OffHand {
 		sl = 0
 	}
 
