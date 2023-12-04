@@ -50,6 +50,11 @@ func (e EventsListener) Attach(c *Client) {
 	AddListener(c, PacketHandler[*packet.Text]{
 		Priority: 64,
 		F: func(client *Client, p *packet.Text) error {
+			err := eventbus.Publish[*ChatEvent](c.EventBus)(context.Background(), &ChatEvent{Message: text.Clean(p.Message), FormattedMessage: p.Message})
+			if err != nil {
+				return nil
+			}
+
 			c.Logger.Info(text.ANSI(p.Message))
 			return nil
 		},
@@ -166,14 +171,6 @@ func (e EventsListener) Attach(c *Client) {
 			return nil
 		},
 	})
-	//go func() {
-	//	ticker := time.NewTicker(time.Second * 1)
-	//	for {
-	//		<-ticker.C
-	//
-	//		c.SendCurrentPosition()
-	//	}
-	//}()
 }
 
 func (c *Client) World() *World {
@@ -183,6 +180,13 @@ func (c *Client) World() *World {
 //go:linkname setChunk github.com/df-mc/dragonfly/server/world.(*World).setChunk
 func setChunk(world *world.World, pos world.ChunkPos, c *chunk.Chunk, e map[cube.Pos]world.Block)
 
+// Events Sections
+
 type BrokeBlockEvent struct {
 	Position protocol.BlockPos
+}
+
+type ChatEvent struct {
+	Message          string
+	FormattedMessage string
 }
