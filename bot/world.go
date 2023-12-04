@@ -118,7 +118,9 @@ func (w *World) setBlock(pos cube.Pos, rid uint32) uint32 {
 	if c == nil {
 		return air
 	}
+	//log.Info("locking")
 	c.Lock()
+	//log.Info("locked")
 	defer c.Unlock()
 
 	c.SetBlock(uint8(pos.X()), int16(pos.Y()), uint8(pos.Z()), 0, rid)

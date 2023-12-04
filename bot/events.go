@@ -203,8 +203,12 @@ func (e EventsListener) Attach(c *Client) {
 			if p.Layer != 0 {
 				return nil
 			}
+			//if p.Flags&packet.BlockUpdateNetwork != p.Flags {
+			//	return nil
+			//}
 			client.world.setBlock(blockPosFromProtocol(p.Position), p.NewBlockRuntimeID)
 			if p.NewBlockRuntimeID == air {
+				log.Info(p.Position)
 				go func() {
 					err := eventbus.Publish[*BrokeBlockEvent](c.EventBus)(context.Background(), &BrokeBlockEvent{
 						Position: p.Position,
@@ -213,8 +217,8 @@ func (e EventsListener) Attach(c *Client) {
 						return
 					}
 				}()
-
 			}
+
 			return nil
 		},
 	})

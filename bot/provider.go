@@ -263,10 +263,11 @@ func (c *Client) BreakBlock(pos cube.Pos) {
 	disposable, _ := eventbus.Subscribe[*BrokeBlockEvent](c.EventBus)(func(ctx context.Context, event *BrokeBlockEvent) error {
 		if event.Position == bPos {
 			if c.World().Block(pos) != airB {
+				log.Info(c.World().Block(pos))
 				return nil
 			}
 			go func() {
-				broke <- 0
+				close(broke)
 			}()
 		}
 		return nil
@@ -288,10 +289,11 @@ func (c *Client) BreakBlock(pos cube.Pos) {
 	if !c.Self.OnGround {
 		breakTime *= 5
 	}
-	duration := breakTime / 10
+	duration := breakTime / 20
 
 	t := time.NewTicker(duration)
-	for i := 0; i < 5; i++ {
+F:
+	for i := 0; i < 25; i++ {
 		c.Conn.WritePacket(&packet.PlayerAction{
 			EntityRuntimeID: c.Self.EntityRuntimeID,
 			ActionType:      protocol.PlayerActionContinueDestroyBlock,
@@ -301,7 +303,7 @@ func (c *Client) BreakBlock(pos cube.Pos) {
 		})
 		select {
 		case <-broke:
-			break
+			break F
 		case <-t.C:
 			continue
 		}
