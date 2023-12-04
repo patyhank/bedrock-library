@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"git.patyhank.net/falloutBot/bedrocklib/item"
+	"git.patyhank.net/falloutBot/bedrocklib/extra"
 	"github.com/df-mc/dragonfly/server/block"
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/df-mc/dragonfly/server/world"
@@ -30,24 +30,33 @@ type ClientConfig struct {
 	Token   *oauth2.Token
 }
 
-type Client struct {
+type PlayerStatus struct {
 	connected    bool
-	config       ClientConfig
-	Conn         *minecraft.Conn
-	events       *Events
-	world        *World
-	Logger       *log.Logger
-	Screen       *ScreenManager
-	Entity       *EntityManager
-	Self         *Player
 	flyLock      sync.Mutex
 	breakLock    sync.Mutex
 	teleportChan chan any
-	EventBus     *eventbus.EventBus
+	PlayerName   string
+	CurrentForm  *Form
+}
+
+type Client struct {
+	config   ClientConfig
+	Conn     *minecraft.Conn
+	events   *Events
+	world    *World
+	Logger   *log.Logger
+	Screen   *ScreenManager
+	Entity   *EntityManager
+	Self     *Player
+	EventBus *eventbus.EventBus
+
+	*PlayerStatus
 }
 
 func init() {
-	world.RegisterItem(item.EmptyMap{})
+	world.RegisterItem(extra.EmptyMap{})
+	world.RegisterBlock(extra.ShulkerBox{})
+	world.RegisterItem(extra.ShulkerBox{})
 }
 
 func NewClient() *Client {
@@ -66,10 +75,12 @@ func NewClient() *Client {
 			handlers: map[uint32][]any{},
 			tickers:  []TickHandler{},
 		},
-		Logger:       logger,
-		flyLock:      sync.Mutex{},
-		breakLock:    sync.Mutex{},
-		teleportChan: make(chan any, 255),
+		Logger: logger,
+		PlayerStatus: &PlayerStatus{
+			flyLock:      sync.Mutex{},
+			breakLock:    sync.Mutex{},
+			teleportChan: make(chan any, 255),
+		},
 	}
 
 	return client
@@ -128,7 +139,7 @@ func (c *Client) Reconnect() error {
 		panic(err)
 	}
 
-	fmt.Println("Connected")
+	c.Logger.Infof("Connected as %s\n", c.Conn.IdentityData().Identity)
 	return c.HandleGame()
 }
 
@@ -210,6 +221,21 @@ func (c *Client) PlaceBlock(pos cube.Pos) {
 		},
 	})
 }
+
+func (c *Client) SendFormResponse(data string) {
+	c.Conn.WritePacket(&packet.ModalFormResponse{
+		FormID:       uint32(c.CurrentForm.ID),
+		ResponseData: protocol.Option([]byte(data)),
+	})
+}
+
+func (c *Client) SendFormClose() {
+	c.Conn.WritePacket(&packet.ModalFormResponse{
+		FormID:       uint32(c.CurrentForm.ID),
+		CancelReason: protocol.Option(uint8(packet.ModalFormCancelReasonUserClosed)),
+	})
+}
+
 func (c *Client) BreakBlock(pos cube.Pos) {
 	c.breakLock.Lock()
 	defer c.breakLock.Unlock()

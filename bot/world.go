@@ -43,10 +43,10 @@ func (w *World) chunk(pos world.ChunkPos) *Column {
 	}
 	return nil
 }
-func (w *World) setChunk(pos world.ChunkPos, c *chunk.Chunk) {
+func (w *World) setChunk(pos world.ChunkPos, c *chunk.Chunk, b map[cube.Pos]map[string]any) {
 	w.chunkMutex.Lock()
 	defer w.chunkMutex.Unlock()
-	w.chunks[pos] = newColumn(c)
+	w.chunks[pos] = newColumn(c, b)
 }
 func (w *World) Block(pos cube.Pos) world.Block {
 	if w == nil || pos.OutOfBounds(w.r) {
@@ -60,7 +60,22 @@ func (w *World) Block(pos cube.Pos) world.Block {
 
 	rid := c.Block(uint8(pos[0]), int16(pos[1]), uint8(pos[2]), 0)
 	b, _ := world.BlockByRuntimeID(rid)
+
 	return b
+}
+func (w *World) BlockEntity(pos cube.Pos) map[string]any {
+	if w == nil || pos.OutOfBounds(w.r) {
+		// Fast way out.
+		return nil
+	}
+
+	c := w.chunk(chunkPosFromBlockPos(pos))
+	c.Lock()
+	defer c.Unlock()
+
+	m := c.BlockEntities[pos]
+
+	return m
 }
 func (w *World) SetBlock(pos cube.Pos, b world.Block) world.Block {
 	rid := world.BlockRuntimeID(b)
@@ -115,11 +130,13 @@ type Column struct {
 	sync.Mutex
 
 	*chunk.Chunk
+
+	BlockEntities map[cube.Pos]map[string]any
 }
 
 // newColumn returns a new Column wrapper around the chunk.Chunk passed.
-func newColumn(c *chunk.Chunk) *Column {
-	return &Column{Chunk: c}
+func newColumn(c *chunk.Chunk, b map[cube.Pos]map[string]any) *Column {
+	return &Column{Chunk: c, BlockEntities: b}
 }
 
 // chunkPosFromVec3 returns a chunk position from the Vec3 passed. The coordinates of the chunk position are

@@ -1,12 +1,15 @@
 package bot
 
 import (
+	"bytes"
 	"context"
+	"encoding/json"
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/df-mc/dragonfly/server/world"
 	_ "github.com/df-mc/dragonfly/server/world"
 	"github.com/df-mc/dragonfly/server/world/chunk"
 	"github.com/goxiaoy/go-eventbus"
+	"github.com/sandertv/gophertunnel/minecraft/nbt"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
 	"github.com/sandertv/gophertunnel/minecraft/text"
@@ -89,7 +92,34 @@ func (e EventsListener) Attach(c *Client) {
 				c.world = NewWorld(e.dimensionData[e.currentDimension])
 			}
 
-			c.world.setChunk(world.ChunkPos(p.Position), ch)
+			b := bytes.NewBuffer(p.RawPayload)
+
+			for i := 0; i < int(p.SubChunkCount); i++ {
+				index := uint8(i)
+				decodeSubChunk(b, chunk.New(air, e.dimensionData[e.currentDimension]), &index, chunk.NetworkEncoding)
+			}
+			n := (e.dimensionData[e.currentDimension].Height() >> 4) + 1
+			for i := 0; i < int(n); i++ {
+				decodePalettedStorage(b, chunk.NetworkEncoding, chunk.BiomePaletteEncoding)
+			}
+
+			_, err = b.ReadByte()
+			if err != nil {
+				log.Warn(err)
+			}
+			var bNBT map[string]any
+			dec := nbt.NewDecoderWithEncoding(b, nbt.NetworkLittleEndian)
+			bEnts := map[cube.Pos]map[string]any{}
+			for {
+				err := dec.Decode(&bNBT)
+				if err != nil {
+					break
+				}
+				pos := cube.Pos{int(bNBT["x"].(int32)), int(bNBT["y"].(int32)), int(bNBT["z"].(int32))}
+				bEnts[pos] = bNBT
+			}
+
+			c.world.setChunk(world.ChunkPos(p.Position), ch, bEnts)
 			return nil
 		},
 	})
@@ -135,6 +165,17 @@ func (e EventsListener) Attach(c *Client) {
 			return nil
 		},
 	})
+	AddListener(c, PacketHandler[*packet.ModalFormRequest]{
+		Priority: 64,
+		F: func(client *Client, p *packet.ModalFormRequest) error {
+			var data Form
+			json.Unmarshal(p.FormData, &data)
+			data.ID = p.FormID
+			c.CurrentForm = &data
+			go eventbus.Publish[*Form](c.EventBus)(context.Background(), c.CurrentForm)
+			return nil
+		},
+	})
 	AddListener(c, PacketHandler[*packet.MovePlayer]{
 		Priority: 64,
 		F: func(client *Client, p *packet.MovePlayer) error {
@@ -171,14 +212,40 @@ func (e EventsListener) Attach(c *Client) {
 			return nil
 		},
 	})
+	AddListener(c, PacketHandler[*packet.PlayerList]{
+		F: func(client *Client, p *packet.PlayerList) error {
+			if p.ActionType == packet.PlayerListActionAdd {
+				for _, entry := range p.Entries {
+					if c.Conn.IdentityData().XUID == entry.XUID {
+						c.PlayerName = entry.Username
+					}
+				}
+			}
+
+			return nil
+		},
+	})
+	AddListener(c, PacketHandler[*packet.BlockActorData]{
+		F: func(client *Client, p *packet.BlockActorData) error {
+
+			log.Debugf("%v %+v", p.Position, p.NBTData)
+			return nil
+		},
+	})
 }
 
 func (c *Client) World() *World {
 	return c.world
 }
 
-//go:linkname setChunk github.com/df-mc/dragonfly/server/world.(*World).setChunk
-func setChunk(world *world.World, pos world.ChunkPos, c *chunk.Chunk, e map[cube.Pos]world.Block)
+//go:linkname decodePalettedStorage github.com/df-mc/dragonfly/server/world/chunk.decodePalettedStorage
+func decodePalettedStorage(buf *bytes.Buffer, e chunk.Encoding, pe any) (*chunk.PalettedStorage, error)
+
+//go:linkname decodeBiomes github.com/df-mc/dragonfly/server/world/chunk.decodeBiomes
+func decodeBiomes(buf *bytes.Buffer, c *chunk.Chunk, e chunk.Encoding)
+
+//go:linkname decodeSubChunk github.com/df-mc/dragonfly/server/world/chunk.decodeSubChunk
+func decodeSubChunk(buf *bytes.Buffer, c *chunk.Chunk, index *byte, e chunk.Encoding) (*chunk.SubChunk, error)
 
 // Events Sections
 
@@ -189,4 +256,20 @@ type BrokeBlockEvent struct {
 type ChatEvent struct {
 	Message          string
 	FormattedMessage string
+}
+
+// Form  FormSections
+type Form struct {
+	ID        uint32   `json:"_"`
+	Buttons   []Button `json:"buttons,omitempty"`
+	ButtonYes string   `json:"button1"`
+	ButtonNo  string   `json:"button2"`
+	Content   string   `json:"content,omitempty"`
+	Title     string   `json:"title,omitempty"`
+	Type      string   `json:"type,omitempty"`
+}
+
+type Button struct {
+	Image map[string]string `json:"image,omitempty"`
+	Text  string            `json:"text,omitempty"`
 }
