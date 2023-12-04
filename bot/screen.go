@@ -11,8 +11,11 @@ import (
 	"github.com/df-mc/dragonfly/server/world"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
+	log "github.com/sirupsen/logrus"
+	"slices"
 )
 
+// TODO: containerID getter
 type ScreenManager struct {
 	c *Client
 
@@ -21,7 +24,7 @@ type ScreenManager struct {
 
 	inTransaction, ContainerOpened atomic.Bool
 	OpenedWindowID                 atomic.Uint32
-	OpenedContainerID              atomic.Uint32
+	OpenedContainerID              atomic.Int32
 	OpenedWindow                   atomic.Value[*inventory.Inventory]
 	handler                        *itemStackRequestHandler
 	OpenedPos                      atomic.Value[cube.Pos]
@@ -41,7 +44,7 @@ func NewManager(client *Client) *ScreenManager {
 		inTransaction:     atomic.Bool{},
 		ContainerOpened:   atomic.Bool{},
 		OpenedWindowID:    atomic.Uint32{},
-		OpenedContainerID: atomic.Uint32{},
+		OpenedContainerID: atomic.Int32{},
 		HeldSlot:          atomic.Uint32{},
 		RequestID:         atomic.Uint32{},
 		OpenedWindow:      atomic.Value[*inventory.Inventory]{},
@@ -56,19 +59,21 @@ func NewManager(client *Client) *ScreenManager {
 			}
 			m.ContainerOpened.Store(true)
 			m.OpenedWindowID.Store(uint32(p.WindowID))
-			m.OpenedContainerID.Store(uint32(p.ContainerType))
 			if p.ContainerPosition != (protocol.BlockPos{}) {
-				m.OpenedWindow.Store(m.openInvBlock(m.OpenedPos.Load()))
+				//log.Info(m.openInvBlock(cube.Pos{int((p.ContainerPosition)[0]), int((p.ContainerPosition)[1]), int((p.ContainerPosition)[2])}))
+				invBlock, cID := m.openInvBlock(cube.Pos{int((p.ContainerPosition)[0]), int((p.ContainerPosition)[1]), int((p.ContainerPosition)[2])})
+
+				m.OpenedContainerID.Store(int32(cID))
+				m.OpenedWindow.Store(invBlock)
 			}
-			if p.ContainerEntityUniqueID != 0 {
-				switch m.c.Entity.GetEntity(uint64(p.ContainerEntityUniqueID)).EntityType {
-				case "minecraft:villager_v2":
-					m.OpenedWindow.Store(inventory.New(3, func(slot int, before, after item.Stack) {}))
+			if p.ContainerEntityUniqueID != -1 {
+				entity := m.c.Entity.GetEntity(uint64(p.ContainerEntityUniqueID))
+				if entity != nil {
+					switch m.c.Entity.GetEntity(uint64(p.ContainerEntityUniqueID)).EntityType {
+					case "minecraft:villager_v2":
+						m.OpenedWindow.Store(inventory.New(3, func(slot int, before, after item.Stack) {}))
+					}
 				}
-			}
-			inv, b := m.invByID(int32(p.ContainerType))
-			if b {
-				m.OpenedWindow.Store(inv)
 			}
 			return nil
 		},
@@ -102,6 +107,9 @@ func NewManager(client *Client) *ScreenManager {
 				return nil
 			}
 			win := m.OpenedWindow.Load()
+			if win == nil {
+				return nil
+			}
 			for i, instance := range p.Content {
 				win.SetItem(i, StackToItem(instance.Stack))
 			}
@@ -137,6 +145,9 @@ func NewManager(client *Client) *ScreenManager {
 				return nil
 			}
 			win := m.OpenedWindow.Load()
+			if win == nil {
+				return nil
+			}
 			win.SetItem(int(p.Slot), StackToItem(p.NewItem.Stack))
 			return nil
 		},
@@ -195,19 +206,37 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool) []protocol.StackReq
 		stack, _ := m.Inv.Item(origin)
 		count := stack.Count()
 		maxCount := stack.MaxCount()
-
-		for {
-			w := m.OpenedWindow.Load()
-			first, b := w.First(stack)
-			if !b {
-				first, b = w.FirstEmpty()
-				if !b {
+		w := m.OpenedWindow.Load()
+		var markedSlots []int
+		for count > 0 {
+			var first int = -1
+			for slot, st := range w.Slots() {
+				if slices.Contains(markedSlots, slot) {
+					continue
+				}
+				if st.Item() == stack.Item() && st.Count() < st.MaxCount() {
+					first = slot
 					break
 				}
 			}
+			if first == -1 {
+				for slot, st := range w.Slots() {
+					if slices.Contains(markedSlots, slot) {
+						continue
+					}
+					if st.Empty() {
+						first = slot
+						break
+					}
+				}
+			}
+			if first == -1 {
+				break
+			}
+			markedSlots = append(markedSlots, first)
 			i, _ := w.Item(first)
 			storeCount := min(maxCount-i.Count(), count)
-			actions = append(actions, m.TakeItemAction(origin, first, byte(storeCount)))
+			actions = append(actions, m.TakeItemAction(origin, m.Inv.Size()+first, byte(storeCount)))
 			count -= storeCount
 		}
 	} else {
@@ -216,17 +245,37 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool) []protocol.StackReq
 		count := stack.Count()
 		maxCount := stack.MaxCount()
 
-		for {
-			first, b := m.Inv.First(stack)
-			if !b {
-				first, b = m.Inv.FirstEmpty()
-				if !b {
+		var markedSlots []int
+
+		for count > 0 {
+			var first int = -1
+			for slot, st := range m.Inv.Slots() {
+				if slices.Contains(markedSlots, slot) {
+					continue
+				}
+				if st.Item() == stack.Item() && st.Count() != st.MaxCount() {
+					first = slot
 					break
 				}
 			}
+			if first == -1 {
+				for slot, st := range m.Inv.Slots() {
+					if slices.Contains(markedSlots, slot) {
+						continue
+					}
+					if st.Empty() {
+						first = slot
+						break
+					}
+				}
+			}
+			if first == -1 {
+				break
+			}
+			markedSlots = append(markedSlots, first)
 			i, _ := m.Inv.Item(first)
 			storeCount := min(maxCount-i.Count(), count)
-			actions = append(actions, m.TakeItemAction(origin, first, byte(storeCount)))
+			actions = append(actions, m.TakeItemAction(origin+m.Inv.Size(), first, byte(storeCount)))
 			count -= storeCount
 		}
 	}
@@ -238,10 +287,11 @@ func (m *ScreenManager) TakeItemAction(origin, destination int, count byte) prot
 	p := &protocol.TakeStackRequestAction{}
 
 	p.Count = count
+
 	if origin >= m.Inv.Size() {
 		p.Source = protocol.StackRequestSlotInfo{
 			ContainerID:    byte(m.OpenedContainerID.Load()),
-			Slot:           byte(origin),
+			Slot:           byte(origin - m.Inv.Size()),
 			StackNetworkID: -1,
 		}
 	} else {
@@ -260,10 +310,10 @@ func (m *ScreenManager) TakeItemAction(origin, destination int, count byte) prot
 			}
 		}
 	}
-	if destination < m.Inv.Size() {
+	if destination >= m.Inv.Size() {
 		p.Destination = protocol.StackRequestSlotInfo{
 			ContainerID:    byte(m.OpenedContainerID.Load()),
-			Slot:           byte(destination),
+			Slot:           byte(destination - m.Inv.Size()),
 			StackNetworkID: -1,
 		}
 	} else {
@@ -292,7 +342,7 @@ func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte) pro
 	if origin >= m.Inv.Size() {
 		p.Source = protocol.StackRequestSlotInfo{
 			ContainerID:    byte(m.OpenedContainerID.Load()),
-			Slot:           byte(origin),
+			Slot:           byte(origin - m.Inv.Size()),
 			StackNetworkID: -1,
 		}
 	} else {
@@ -311,10 +361,10 @@ func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte) pro
 			}
 		}
 	}
-	if destination < m.Inv.Size() {
+	if destination >= m.Inv.Size() {
 		p.Destination = protocol.StackRequestSlotInfo{
 			ContainerID:    byte(m.OpenedContainerID.Load()),
-			Slot:           byte(destination),
+			Slot:           byte(destination - m.Inv.Size()),
 			StackNetworkID: -1,
 		}
 	} else {
@@ -391,48 +441,50 @@ func (m *ScreenManager) SetCarriedItem(s int) {
 
 // openInv attempts to return an inventory by the ID passed. If found, the inventory is returned and the bool
 // returned is true.
-func (m *ScreenManager) openInvBlock(pos cube.Pos) *inventory.Inventory {
+func (m *ScreenManager) openInvBlock(pos cube.Pos) (*inventory.Inventory, int) {
 	b := m.c.World().Block(pos)
 	be := m.c.World().BlockEntity(pos)
-	bID, meta := b.EncodeBlock()
-	_, _ = bID, meta
+
+	log.Printf("%T, %+v", b, be)
 
 	if _, chest := b.(block.Chest); chest {
+		log.Infof("%v %t", be["pairx"], chest)
 		if _, pairing := be["pairx"]; pairing {
-			return inventory.New(54, func(slot int, before, after item.Stack) {})
+			return inventory.New(54, func(slot int, before, after item.Stack) {}), protocol.ContainerLevelEntity
 		} else {
-			return inventory.New(27, func(slot int, before, after item.Stack) {})
+
+			return inventory.New(27, func(slot int, before, after item.Stack) {}), protocol.ContainerLevelEntity
 		}
 	}
 	if _, barrel := b.(block.Barrel); barrel {
-		return inventory.New(27, func(slot int, before, after item.Stack) {})
+		return inventory.New(27, func(slot int, before, after item.Stack) {}), protocol.ContainerBarrel
 	}
 	if _, shulker := b.(extra.ShulkerBox); shulker {
-		return inventory.New(27, func(slot int, before, after item.Stack) {})
+		return inventory.New(27, func(slot int, before, after item.Stack) {}), protocol.ContainerShulkerBox
 	}
 	if _, anvil := b.(block.Anvil); anvil {
-		return inventory.New(27, func(slot int, before, after item.Stack) {})
+		return inventory.New(27, func(slot int, before, after item.Stack) {}), -1
 	}
 	if _, furnace := b.(block.Furnace); furnace {
-		return inventory.New(3, func(slot int, before, after item.Stack) {})
+		return inventory.New(3, func(slot int, before, after item.Stack) {}), -1
 	}
 	if _, furnace := b.(block.Smoker); furnace {
-		return inventory.New(3, func(slot int, before, after item.Stack) {})
+		return inventory.New(3, func(slot int, before, after item.Stack) {}), -1
 	}
 	if _, furnace := b.(block.BlastFurnace); furnace {
-		return inventory.New(3, func(slot int, before, after item.Stack) {})
+		return inventory.New(3, func(slot int, before, after item.Stack) {}), -1
 	}
 	if _, smith := b.(block.SmithingTable); smith {
-		return inventory.New(4, func(slot int, before, after item.Stack) {})
+		return inventory.New(4, func(slot int, before, after item.Stack) {}), -1
 	}
 	if _, smith := b.(block.CraftingTable); smith {
-		return inventory.New(10, func(slot int, before, after item.Stack) {})
+		return inventory.New(10, func(slot int, before, after item.Stack) {}), -1
 	}
 	if _, smith := b.(block.Grindstone); smith {
-		return inventory.New(3, func(slot int, before, after item.Stack) {})
+		return inventory.New(3, func(slot int, before, after item.Stack) {}), -1
 	}
 
-	return nil
+	return nil, -1
 }
 
 // invByID attempts to return an inventory by the ID passed. If found, the inventory is returned and the bool
@@ -453,66 +505,57 @@ func (m *ScreenManager) invByID(id int32) (*inventory.Inventory, bool) {
 		return m.Armour.Inventory(), true
 	case protocol.ContainerLevelEntity:
 		if m.ContainerOpened.Load() {
-			b := m.c.World().Block(m.OpenedPos.Load())
-			if _, chest := b.(block.Chest); chest {
-				return m.OpenedWindow.Load(), true
-			} else if _, enderChest := b.(block.EnderChest); enderChest {
-				return m.OpenedWindow.Load(), true
-			}
+			return m.OpenedWindow.Load(), true
 		}
 	case protocol.ContainerBarrel:
 		if m.ContainerOpened.Load() {
-			if _, barrel := m.c.World().Block(m.OpenedPos.Load()).(block.Barrel); barrel {
-				return m.OpenedWindow.Load(), true
-			}
+			return m.OpenedWindow.Load(), true
 		}
 	case protocol.ContainerBeaconPayment:
 		if m.ContainerOpened.Load() {
-			if _, beacon := m.c.World().Block(m.OpenedPos.Load()).(block.Beacon); beacon {
-				return m.UI, true
-			}
+			return m.UI, true
 		}
 	case protocol.ContainerAnvilInput, protocol.ContainerAnvilMaterial:
 		if m.ContainerOpened.Load() {
+			return m.UI, true
 			if _, anvil := m.c.World().Block(m.OpenedPos.Load()).(block.Anvil); anvil {
-				return m.UI, true
 			}
 		}
 	case protocol.ContainerSmithingTableInput, protocol.ContainerSmithingTableMaterial:
 		if m.ContainerOpened.Load() {
+			return m.UI, true
 			if _, smithing := m.c.World().Block(m.OpenedPos.Load()).(block.SmithingTable); smithing {
-				return m.UI, true
 			}
 		}
 	case protocol.ContainerLoomInput, protocol.ContainerLoomDye, protocol.ContainerLoomMaterial:
 		if m.ContainerOpened.Load() {
+			return m.UI, true
 			if _, loom := m.c.World().Block(m.OpenedPos.Load()).(block.Loom); loom {
-				return m.UI, true
 			}
 		}
 	case protocol.ContainerStonecutterInput:
 		if m.ContainerOpened.Load() {
+			return m.UI, true
 			if _, ok := m.c.World().Block(m.OpenedPos.Load()).(block.Stonecutter); ok {
-				return m.UI, true
 			}
 		}
 	case protocol.ContainerGrindstoneInput, protocol.ContainerGrindstoneAdditional:
 		if m.ContainerOpened.Load() {
+			return m.UI, true
 			if _, ok := m.c.World().Block(m.OpenedPos.Load()).(block.Grindstone); ok {
-				return m.UI, true
 			}
 		}
 	case protocol.ContainerEnchantingInput, protocol.ContainerEnchantingMaterial:
 		if m.ContainerOpened.Load() {
+			return m.UI, true
 			if _, enchanting := m.c.World().Block(m.OpenedPos.Load()).(block.EnchantingTable); enchanting {
-				return m.UI, true
 			}
 		}
 	case protocol.ContainerFurnaceIngredient, protocol.ContainerFurnaceFuel, protocol.ContainerFurnaceResult,
 		protocol.ContainerBlastFurnaceIngredient, protocol.ContainerSmokerIngredient:
 		if m.ContainerOpened.Load() {
+			return m.OpenedWindow.Load(), true
 			if _, ok := m.c.World().Block(m.OpenedPos.Load()).(smelter); ok {
-				return m.OpenedWindow.Load(), true
 			}
 		}
 	}

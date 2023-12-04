@@ -157,15 +157,15 @@ func (h *itemStackRequestHandler) handleTransfer(from, to protocol.StackRequestS
 		dest = i.Grow(-math.MaxInt32)
 	}
 
-	invA, _ := s.invByID(int32(from.ContainerID))
-	invB, _ := s.invByID(int32(to.ContainerID))
-
-	ctx := event.C()
-	_ = call(ctx, int(from.Slot), i.Grow(int(count)-i.Count()), invA.Handler().HandleTake)
-	err := call(ctx, int(to.Slot), i.Grow(int(count)-i.Count()), invB.Handler().HandlePlace)
-	if err != nil {
-		return err
-	}
+	//invA, _ := s.invByID(int32(from.ContainerID))
+	//invB, _ := s.invByID(int32(to.ContainerID))
+	//
+	//ctx := event.C()
+	//_ = call(ctx, int(from.Slot), i.Grow(int(count)-i.Count()), invA.Handler().HandleTake)
+	//err := call(ctx, int(to.Slot), i.Grow(int(count)-i.Count()), invB.Handler().HandlePlace)
+	//if err != nil {
+	//	return err
+	//}
 
 	h.setItemInSlot(from, i.Grow(-int(count)), s)
 	h.setItemInSlot(to, dest.Grow(int(count)), s)

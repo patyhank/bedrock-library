@@ -53,12 +53,14 @@ func (e EventsListener) Attach(c *Client) {
 	AddListener(c, PacketHandler[*packet.Text]{
 		Priority: 64,
 		F: func(client *Client, p *packet.Text) error {
-			err := eventbus.Publish[*ChatEvent](c.EventBus)(context.Background(), &ChatEvent{Message: text.Clean(p.Message), FormattedMessage: p.Message})
-			if err != nil {
-				return nil
-			}
 
 			c.Logger.Info(text.ANSI(p.Message))
+			go func() {
+				err := eventbus.Publish[*ChatEvent](c.EventBus)(context.Background(), &ChatEvent{Message: text.Clean(p.Message), FormattedMessage: p.Message})
+				if err != nil {
+					return
+				}
+			}()
 			return nil
 		},
 	})
@@ -198,6 +200,9 @@ func (e EventsListener) Attach(c *Client) {
 	})
 	AddListener(c, PacketHandler[*packet.UpdateBlock]{
 		F: func(client *Client, p *packet.UpdateBlock) error {
+			if p.Layer != 0 {
+				return nil
+			}
 			client.world.setBlock(blockPosFromProtocol(p.Position), p.NewBlockRuntimeID)
 			if p.NewBlockRuntimeID == air {
 				go func() {
@@ -208,7 +213,13 @@ func (e EventsListener) Attach(c *Client) {
 						return
 					}
 				}()
+
 			}
+			return nil
+		},
+	})
+	AddListener(c, PacketHandler[*packet.UpdateSubChunkBlocks]{
+		F: func(client *Client, p *packet.UpdateSubChunkBlocks) error {
 			return nil
 		},
 	})
@@ -227,8 +238,7 @@ func (e EventsListener) Attach(c *Client) {
 	})
 	AddListener(c, PacketHandler[*packet.BlockActorData]{
 		F: func(client *Client, p *packet.BlockActorData) error {
-
-			log.Debugf("%v %+v", p.Position, p.NBTData)
+			client.World().SetBlockEntity(cube.Pos{int(p.Position[0]), int(p.Position[1]), int(p.Position[2])}, p.NBTData)
 			return nil
 		},
 	})

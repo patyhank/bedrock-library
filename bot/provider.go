@@ -120,15 +120,13 @@ func (c *Client) HandleGame() error {
 		id := pk.ID()
 		handlers := c.events.handlers[id]
 		if len(handlers) > 0 {
-			go func() {
-				for _, handler := range handlers {
-					res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
-					err := res[0].Interface()
-					if err != nil {
-						break
-					}
+			for _, handler := range handlers {
+				res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
+				err := res[0].Interface()
+				if err != nil {
+					break
 				}
-			}()
+			}
 		}
 	}
 }
@@ -145,6 +143,9 @@ func (c *Client) Reconnect() error {
 
 func (c *Client) OpenContainer(pos protocol.BlockPos) error {
 	wID := c.Screen.OpenedWindowID.Load()
+	if wID != 0 {
+		c.Screen.CloseCurrentWindow()
+	}
 	stack, _ := c.Screen.Inv.Item(0)
 
 	c.Conn.WritePacket(&packet.InventoryTransaction{
@@ -163,6 +164,16 @@ func (c *Client) OpenContainer(pos protocol.BlockPos) error {
 		if c.Screen.OpenedWindowID.Load() != wID {
 			return nil
 		}
+		c.Conn.WritePacket(&packet.InventoryTransaction{
+			TransactionData: &protocol.UseItemTransactionData{
+				ActionType:      protocol.UseItemActionClickBlock,
+				BlockPosition:   protocol.BlockPos{int32(pos.X()), int32(pos.Y()), int32(pos.Z())},
+				BlockFace:       int32(0),
+				ClickedPosition: mgl32.Vec3{0.5, 0.5, 0.5},
+				HeldItem:        InstanceFromItem(stack),
+				HotBarSlot:      0,
+			},
+		})
 	}
 	return fmt.Errorf("container opened timeout %v", pos)
 }

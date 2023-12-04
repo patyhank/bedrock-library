@@ -9,6 +9,7 @@ import (
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/go-gl/mathgl/mgl64"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
+	"golang.org/x/exp/maps"
 	"math"
 	"sync"
 	_ "unsafe"
@@ -76,6 +77,30 @@ func (w *World) BlockEntity(pos cube.Pos) map[string]any {
 	m := c.BlockEntities[pos]
 
 	return m
+}
+func (w *World) SetBlockEntity(pos cube.Pos, data map[string]any) {
+	if w == nil || pos.OutOfBounds(w.r) {
+		// Fast way out.
+		return
+	}
+
+	c := w.chunk(chunkPosFromBlockPos(pos))
+	if c == nil {
+		return
+	}
+	c.Lock()
+	defer c.Unlock()
+
+	m, ok := c.BlockEntities[pos]
+	if !ok {
+		c.BlockEntities[pos] = data
+		return
+	}
+	maps.Copy(m, data)
+
+	c.BlockEntities[pos] = m
+
+	return
 }
 func (w *World) SetBlock(pos cube.Pos, b world.Block) world.Block {
 	rid := world.BlockRuntimeID(b)
