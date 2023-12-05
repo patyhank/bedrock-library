@@ -602,6 +602,9 @@ func StackToItem(it protocol.ItemStack) item.Stack {
 			t = block.Air{}
 		}
 	}
+	if damage, ok := it.NBTData["Damage"].(int32); ok {
+		it.NBTData["Damage"] = damage - 1
+	}
 	//noinspection SpellCheckingInspection
 	if nbter, ok := t.(world.NBTer); ok && len(it.NBTData) != 0 {
 		t = nbter.DecodeNBT(it.NBTData).(world.Item)
