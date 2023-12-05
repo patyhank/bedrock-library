@@ -11,7 +11,6 @@ import (
 	"github.com/df-mc/dragonfly/server/world"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
-	log "github.com/sirupsen/logrus"
 	"slices"
 )
 
@@ -60,7 +59,6 @@ func NewManager(client *Client) *ScreenManager {
 			m.ContainerOpened.Store(true)
 			m.OpenedWindowID.Store(uint32(p.WindowID))
 			if p.ContainerPosition != (protocol.BlockPos{}) {
-				//log.Info(m.openInvBlock(cube.Pos{int((p.ContainerPosition)[0]), int((p.ContainerPosition)[1]), int((p.ContainerPosition)[2])}))
 				invBlock, cID := m.openInvBlock(cube.Pos{int((p.ContainerPosition)[0]), int((p.ContainerPosition)[1]), int((p.ContainerPosition)[2])})
 
 				m.OpenedContainerID.Store(int32(cID))
@@ -445,14 +443,10 @@ func (m *ScreenManager) openInvBlock(pos cube.Pos) (*inventory.Inventory, int) {
 	b := m.c.World().Block(pos)
 	be := m.c.World().BlockEntity(pos)
 
-	log.Printf("%T, %+v", b, be)
-
 	if _, chest := b.(block.Chest); chest {
-		log.Infof("%v %t", be["pairx"], chest)
 		if _, pairing := be["pairx"]; pairing {
 			return inventory.New(54, func(slot int, before, after item.Stack) {}), protocol.ContainerLevelEntity
 		} else {
-
 			return inventory.New(27, func(slot int, before, after item.Stack) {}), protocol.ContainerLevelEntity
 		}
 	}

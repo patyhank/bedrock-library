@@ -340,6 +340,36 @@ func (n *EntityManager) GetEntity(rID uint64) *Entity {
 	defer n.eMutex.Unlock()
 	return n.entities[rID]
 }
+
+func AttackEntity(client *Client, e *Entity) {
+	if DistanceToVec3(e.Position, client.Self.Position) <= 6 {
+		client.Conn.WritePacket(&packet.Interact{
+			TargetEntityRuntimeID: e.EntityRuntimeID,
+			ActionType:            2,
+		})
+	}
+}
+func InteractEntity(client *Client, e *Entity) {
+	if DistanceToVec3(e.Position, client.Self.Position) <= 4 {
+		client.Conn.WritePacket(&packet.InventoryTransaction{
+			TransactionData: &protocol.UseItemOnEntityTransactionData{
+				TargetEntityRuntimeID: e.EntityRuntimeID,
+				ActionType:            protocol.UseItemOnEntityActionInteract,
+				HotBarSlot:            0,
+				HeldItem:              InstanceFromItem(client.Screen.HeldItem.Load()),
+			},
+		})
+	}
+}
+func AttackPlayer(client *Client, e *Player) {
+	if DistanceToVec3(e.Position, client.Self.Position) <= 6 {
+		client.Conn.WritePacket(&packet.Interact{
+			TargetEntityRuntimeID: e.EntityRuntimeID,
+			ActionType:            2,
+		})
+	}
+}
+
 func (n *EntityManager) GetItem(rID uint64) *ItemEntity {
 	n.iMutex.Lock()
 	defer n.iMutex.Unlock()
