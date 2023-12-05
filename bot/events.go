@@ -208,7 +208,6 @@ func (e EventsListener) Attach(c *Client) {
 			//}
 			client.world.setBlock(blockPosFromProtocol(p.Position), p.NewBlockRuntimeID)
 			if p.NewBlockRuntimeID == air {
-				log.Info(p.Position)
 				go func() {
 					err := eventbus.Publish[*BrokeBlockEvent](c.EventBus)(context.Background(), &BrokeBlockEvent{
 						Position: p.Position,
