@@ -56,6 +56,9 @@ func (w *World) Block(pos cube.Pos) world.Block {
 	}
 
 	c := w.chunk(chunkPosFromBlockPos(pos))
+	if c == nil {
+		return airB
+	}
 	c.Lock()
 	defer c.Unlock()
 
@@ -71,6 +74,9 @@ func (w *World) BlockEntity(pos cube.Pos) map[string]any {
 	}
 
 	c := w.chunk(chunkPosFromBlockPos(pos))
+	if c == nil {
+		return nil
+	}
 	c.Lock()
 	defer c.Unlock()
 
@@ -134,6 +140,10 @@ func (w *World) Biome(pos cube.Pos) world.Biome {
 	}
 
 	c := w.chunk(chunkPosFromBlockPos(pos))
+	if c == nil {
+		b, _ := world.BiomeByID(0)
+		return b
+	}
 	c.Lock()
 	defer c.Unlock()
 

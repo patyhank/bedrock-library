@@ -112,6 +112,7 @@ func (c *Client) ConnectTo(config ClientConfig) error {
 
 func (c *Client) HandleGame() error {
 	for {
+		c.Conn.SetReadDeadline(time.Now().Add(15 * time.Second))
 		pk, err := c.Conn.ReadPacket()
 		if err != nil {
 			c.connected = false
