@@ -12,7 +12,6 @@ import (
 	"github.com/df-mc/dragonfly/server/world"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
-	log "github.com/sirupsen/logrus"
 	"gopkg.in/square/go-jose.v2/json"
 	"slices"
 )
@@ -367,30 +366,6 @@ R:
 						}
 					}
 				}
-
-				//perSlot := count / len(slots)
-				//if inv != nil {
-				//	for firstSlot, stackCount := range inv {
-				//		as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
-				//	}
-				//}
-
-				//for tag, count := range mnTag {
-				//	inv := m.SearchSlotInInvTag(tag, count, nil)
-				//	if inv != nil {
-				//		for firstSlot, stackCount := range inv {
-				//			as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
-				//		}
-				//	}
-				//}
-				//for it, count := range mnItem {
-				//	inv := m.SearchSlotInInv(it, count, nil)
-				//	if inv != nil {
-				//		for firstSlot, stackCount := range inv {
-				//			as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
-				//		}
-				//	}
-				//}
 				break R
 			}
 		case *protocol.ShapedRecipe:
@@ -457,22 +432,6 @@ R:
 						}
 					}
 				}
-				//for tag, count := range mnTag {
-				//	inv := m.SearchSlotInInvTag(tag, count, nil)
-				//	if inv != nil {
-				//		for firstSlot, stackCount := range inv {
-				//			as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
-				//		}
-				//	}
-				//}
-				//for it, count := range mnItem {
-				//	inv := m.SearchSlotInInv(it, count, nil)
-				//	if inv != nil {
-				//		for firstSlot, stackCount := range inv {
-				//			as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
-				//		}
-				//	}
-				//}
 				break R
 			}
 		}
@@ -522,15 +481,7 @@ R:
 			StackNetworkID: -1,
 		}
 		as = append(as, p)
-		//as = append(as, m.PlaceItemAction(m.Inv.Size()+craftingResult, first, byte(storeCount), ActionConfig{
-		//	RemoteContainerID: protocol.ContainerCreatedOutput,
-		//}))
 		count -= storeCount
-	}
-
-	//as = append(as, m.StoreItemAction(craftingResult, false, ActionConfig{RemoteContainerID: protocol.ContainerCreatedOutput, GuessRemoteItemStack: outputItem})...)
-	for _, a := range as {
-		log.Infof("%+v\n", a)
 	}
 
 	return as
