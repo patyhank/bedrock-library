@@ -292,6 +292,99 @@ func (m *ScreenManager) SearchSlotInInvTag(stackTag string, totalCount int, perS
 
 	return y
 }
+
+func (m *ScreenManager) GetAutomaticCraftID(itt world.Item, craftCount int) uint32 {
+	name, meta := itt.EncodeItem()
+A:
+	for _, recipe := range m.Recipes {
+		switch r := recipe.(type) {
+		case *protocol.ShapelessRecipe:
+			it := StackToItem(r.Output[0])
+			oname, ometa := it.Item().EncodeItem()
+			if oname != name || meta != ometa {
+				continue
+			}
+			mnTag := map[string]int{}
+			mnTagSlot := map[string][]int{}
+			mnItem := map[world.Item]int{}
+			mnItemSlot := map[world.Item][]int{}
+
+			for i, input := range r.Input {
+				switch d := input.Descriptor.(type) {
+				case *protocol.ItemTagItemDescriptor:
+					mnTag[d.Tag] += (int(input.Count) * craftCount)
+					mnTagSlot[d.Tag] = append(mnTagSlot[d.Tag], i)
+				case *protocol.DefaultItemDescriptor:
+					it, _ := world.ItemByRuntimeID(int32(d.NetworkID), d.MetadataValue)
+					mnItem[it] += (int(input.Count) * craftCount)
+					mnItemSlot[it] = append(mnItemSlot[it], i)
+				}
+			}
+
+			for tag, count := range mnTag {
+				slots := mnTagSlot[tag]
+				perSlot := count / len(slots)
+				inv := m.SearchSlotInInvTag(tag, count, perSlot)
+				if inv == nil {
+					continue A
+				}
+			}
+
+			for it, count := range mnItem {
+				slots := mnItemSlot[it]
+				perSlot := count / len(slots)
+				inv := m.SearchSlotInInv(it, count, perSlot)
+				if inv == nil {
+					continue A
+				}
+			}
+			return r.RecipeNetworkID
+		case *protocol.ShapedRecipe:
+			it := StackToItem(r.Output[0])
+			oname, ometa := it.Item().EncodeItem()
+			if oname != name || meta != ometa {
+				continue
+			}
+			mnTag := map[string]int{}
+			mnTagSlot := map[string][]int{}
+			mnItem := map[world.Item]int{}
+			mnItemSlot := map[world.Item][]int{}
+
+			for i, input := range r.Input {
+				switch d := input.Descriptor.(type) {
+				case *protocol.ItemTagItemDescriptor:
+					mnTag[d.Tag] += (int(input.Count) * craftCount)
+					mnTagSlot[d.Tag] = append(mnTagSlot[d.Tag], i)
+				case *protocol.DefaultItemDescriptor:
+					it, _ := world.ItemByRuntimeID(int32(d.NetworkID), d.MetadataValue)
+					mnItem[it] += (int(input.Count) * craftCount)
+					mnItemSlot[it] = append(mnItemSlot[it], i)
+				}
+			}
+
+			for tag, count := range mnTag {
+				slots := mnTagSlot[tag]
+				perSlot := count / len(slots)
+				inv := m.SearchSlotInInvTag(tag, count, perSlot)
+				if inv == nil {
+					continue A
+				}
+			}
+
+			for it, count := range mnItem {
+				slots := mnItemSlot[it]
+				perSlot := count / len(slots)
+				inv := m.SearchSlotInInv(it, count, perSlot)
+				if inv == nil {
+					continue A
+				}
+			}
+			return r.RecipeNetworkID
+		}
+	}
+
+	return 0
+}
 func (m *ScreenManager) AutomaticCraftingActions(recipeID uint32, craftCount int) []protocol.StackRequestAction {
 	var as []protocol.StackRequestAction
 	var outputItem item.Stack
