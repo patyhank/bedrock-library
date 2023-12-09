@@ -273,6 +273,7 @@ func (m *ScreenManager) SearchSlotInInvTag(stackTag string, totalCount int, perS
 		if slot.Empty() {
 			continue
 		}
+
 		name, _ := slot.Item().EncodeItem()
 		if slot.Count() < perSlot {
 			continue
@@ -446,7 +447,12 @@ R:
 			if slices.Contains(markedSlots, slot) {
 				continue
 			}
-			if st.Item() == outputItem.Item() && st.Count() != st.MaxCount() {
+			if st.Empty() || outputItem.Empty() {
+				continue
+			}
+			name, meta := st.Item().EncodeItem()
+			oname, ometa := outputItem.Item().EncodeItem()
+			if (oname == name && meta == ometa) && st.Count() != st.MaxCount() {
 				first = slot
 				break
 			}
@@ -525,7 +531,12 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionCon
 				if slices.Contains(markedSlots, slot) {
 					continue
 				}
-				if st.Item() == stack.Item() && st.Count() < st.MaxCount() {
+				if st.Empty() || stack.Empty() {
+					continue
+				}
+				name, meta := st.Item().EncodeItem()
+				oname, ometa := st.Item().EncodeItem()
+				if (oname == name && meta == ometa) && st.Count() != st.MaxCount() {
 					first = slot
 					break
 				}
@@ -569,7 +580,12 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionCon
 				if slices.Contains(markedSlots, slot) {
 					continue
 				}
-				if st.Item() == stack.Item() && st.Count() != st.MaxCount() {
+				if st.Empty() || stack.Empty() {
+					continue
+				}
+				name, meta := stack.Item().EncodeItem()
+				oname, ometa := st.Item().EncodeItem()
+				if (oname == name && meta == ometa) && st.Count() != st.MaxCount() {
 					first = slot
 					break
 				}
