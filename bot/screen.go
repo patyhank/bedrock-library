@@ -1,6 +1,7 @@
 package bot
 
 import (
+	_ "embed"
 	"git.patyhank.net/falloutBot/bedrocklib/extra"
 	"git.patyhank.net/falloutBot/bedrocklib/internal/nbtconv"
 	"github.com/df-mc/atomic"
@@ -11,8 +12,26 @@ import (
 	"github.com/df-mc/dragonfly/server/world"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
+	log "github.com/sirupsen/logrus"
+	"gopkg.in/square/go-jose.v2/json"
 	"slices"
 )
+
+const (
+	craftingGridSizeSmall   = 4
+	craftingGridSizeLarge   = 9
+	craftingGridSmallOffset = 28
+	craftingGridLargeOffset = 32
+	craftingResult          = 50
+)
+
+//go:embed data/item_tags.json
+var itemTagsFile []byte
+var itemTags map[string][]string
+
+func init() {
+	json.Unmarshal(itemTagsFile, &itemTags)
+}
 
 // TODO: containerID getter
 type ScreenManager struct {
@@ -30,6 +49,7 @@ type ScreenManager struct {
 	HeldSlot                       atomic.Uint32
 	RequestID                      atomic.Uint32
 	HeldItem                       atomic.Value[item.Stack]
+	Recipes                        []protocol.Recipe
 }
 
 func NewManager(client *Client) *ScreenManager {
@@ -50,6 +70,7 @@ func NewManager(client *Client) *ScreenManager {
 		OpenedPos:         atomic.Value[cube.Pos]{},
 		handler:           &itemStackRequestHandler{changes: map[byte]map[byte]changeInfo{}, responseChanges: map[int32]map[*inventory.Inventory]map[byte]responseChange{}},
 	}
+	m.OpenedContainerID.Store(-1)
 
 	AddListener(client, PacketHandler[*packet.ContainerOpen]{
 		F: func(client *Client, p *packet.ContainerOpen) error {
@@ -158,11 +179,29 @@ func NewManager(client *Client) *ScreenManager {
 			return nil
 		},
 	})
+	AddListener(client, PacketHandler[*packet.CraftingData]{
+		F: func(client *Client, p *packet.CraftingData) error {
+			if p.ClearRecipes {
+				m.Recipes = []protocol.Recipe{}
+				m.Recipes = p.Recipes
+			}
+			return nil
+		},
+	})
 
 	return m
 }
 
-func (m *ScreenManager) SwapItemAction(origin, destination int) protocol.StackRequestAction {
+type ActionConfig struct {
+	SourceContainerID    int
+	RemoteContainerID    int
+	GuessRemoteItemStack item.Stack
+}
+
+func (m *ScreenManager) SwapItemAction(origin, destination int, config ...ActionConfig) protocol.StackRequestAction {
+	if len(config) == 0 && (m.OpenedContainerID.Load() == -1) {
+		return nil
+	}
 	p := &protocol.SwapStackRequestAction{}
 	if origin >= m.Inv.Size() {
 		p.Source = protocol.StackRequestSlotInfo{
@@ -198,7 +237,330 @@ func (m *ScreenManager) AutoCraftAction(recipeID uint32) protocol.StackRequestAc
 	}
 	return p
 }
-func (m *ScreenManager) StoreItemAction(origin int, up bool) []protocol.StackRequestAction {
+func (m *ScreenManager) SearchSlotInInv(stack world.Item, totalCount int, perSlot int) map[int]int {
+	y := map[int]int{}
+	for i, slot := range m.Inv.Slots() {
+		//if slices.Contains(excludeSlots, i) {
+		//	continue
+		//}
+		if slot.Empty() {
+			continue
+		}
+		if slot.Count() < perSlot {
+			continue
+		}
+		if stack == slot.Item() {
+			y[i] = min(slot.Count(), totalCount)
+			totalCount -= min(slot.Count(), totalCount)
+		}
+
+		if totalCount <= 0 {
+			break
+		}
+	}
+	if totalCount > 0 {
+		return nil
+	}
+
+	return y
+}
+func (m *ScreenManager) SearchSlotInInvTag(stackTag string, totalCount int, perSlot int) map[int]int {
+	tagItems, ok := itemTags[stackTag]
+	if !ok {
+		return nil
+	}
+	y := map[int]int{}
+	for i, slot := range m.Inv.Slots() {
+		if slot.Empty() {
+			continue
+		}
+		name, _ := slot.Item().EncodeItem()
+		if slot.Count() < perSlot {
+			continue
+		}
+		if slices.Contains(tagItems, name) {
+			y[i] = min(slot.Count(), totalCount)
+			totalCount -= min(slot.Count(), totalCount)
+		}
+		if totalCount <= 0 {
+			break
+		}
+	}
+	if totalCount > 0 {
+		return nil
+	}
+
+	return y
+}
+func (m *ScreenManager) AutomaticCraftingActions(recipeID uint32, craftCount int) []protocol.StackRequestAction {
+	var as []protocol.StackRequestAction
+	var outputItem item.Stack
+	mnTag := map[string]int{}
+	mnTagSlot := map[string][]int{}
+	mnItem := map[world.Item]int{}
+	mnItemSlot := map[world.Item][]int{}
+
+R:
+	for _, recipe := range m.Recipes {
+		switch r := recipe.(type) {
+		case *protocol.ShapelessRecipe:
+			if r.RecipeNetworkID == recipeID {
+				{
+					p := &protocol.AutoCraftRecipeStackRequestAction{
+						RecipeNetworkID: recipeID,
+						TimesCrafted:    byte(craftCount),
+						Ingredients:     r.Input,
+					}
+					as = append(as, p)
+				}
+				{
+					p := &protocol.CraftResultsDeprecatedStackRequestAction{
+						TimesCrafted: byte(craftCount),
+						ResultItems:  r.Output,
+					}
+					as = append(as, p)
+				}
+				output := StackToItem(r.Output[0])
+				output = output.Grow(output.Count() * (craftCount - 1))
+				outputItem = output
+
+				for i, input := range r.Input {
+					switch d := input.Descriptor.(type) {
+					case *protocol.ItemTagItemDescriptor:
+						mnTag[d.Tag] += (int(input.Count) * craftCount)
+						mnTagSlot[d.Tag] = append(mnTagSlot[d.Tag], i)
+					case *protocol.DefaultItemDescriptor:
+						it, _ := world.ItemByRuntimeID(int32(d.NetworkID), d.MetadataValue)
+						mnItem[it] += (int(input.Count) * craftCount)
+						mnItemSlot[it] = append(mnItemSlot[it], i)
+					}
+				}
+				for tag, count := range mnTag {
+					slots := mnTagSlot[tag]
+					perSlot := count / len(slots)
+					inv := m.SearchSlotInInvTag(tag, count, perSlot)
+					if inv != nil {
+						for s := 0; s < len(slots); s++ {
+							for slot, count := range inv {
+								if count < perSlot {
+									continue
+								}
+								as = append(as, m.ConsumeAction(slot, perSlot, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+								inv[slot] -= perSlot
+							}
+						}
+					}
+				}
+				for it, count := range mnItem {
+					slots := mnItemSlot[it]
+					perSlot := count / len(slots)
+					inv := m.SearchSlotInInv(it, count, perSlot)
+					if inv != nil {
+						for s := 0; s < len(slots); s++ {
+							for slot, count := range inv {
+								if count < perSlot {
+									continue
+								}
+								as = append(as, m.ConsumeAction(slot, perSlot, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+								inv[slot] -= perSlot
+							}
+						}
+					}
+				}
+
+				//perSlot := count / len(slots)
+				//if inv != nil {
+				//	for firstSlot, stackCount := range inv {
+				//		as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+				//	}
+				//}
+
+				//for tag, count := range mnTag {
+				//	inv := m.SearchSlotInInvTag(tag, count, nil)
+				//	if inv != nil {
+				//		for firstSlot, stackCount := range inv {
+				//			as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+				//		}
+				//	}
+				//}
+				//for it, count := range mnItem {
+				//	inv := m.SearchSlotInInv(it, count, nil)
+				//	if inv != nil {
+				//		for firstSlot, stackCount := range inv {
+				//			as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+				//		}
+				//	}
+				//}
+				break R
+			}
+		case *protocol.ShapedRecipe:
+			if r.RecipeNetworkID == recipeID {
+				{
+					p := &protocol.AutoCraftRecipeStackRequestAction{
+						RecipeNetworkID: recipeID,
+						TimesCrafted:    byte(craftCount),
+						Ingredients:     r.Input,
+					}
+					as = append(as, p)
+				}
+				{
+					p := &protocol.CraftResultsDeprecatedStackRequestAction{
+						TimesCrafted: byte(craftCount),
+						ResultItems:  r.Output,
+					}
+					as = append(as, p)
+				}
+				output := StackToItem(r.Output[0])
+				output = output.Grow(output.Count() * (craftCount - 1))
+				outputItem = output
+
+				for i, input := range r.Input {
+					switch d := input.Descriptor.(type) {
+					case *protocol.ItemTagItemDescriptor:
+						mnTag[d.Tag] += (int(input.Count) * craftCount)
+						mnTagSlot[d.Tag] = append(mnTagSlot[d.Tag], i)
+					case *protocol.DefaultItemDescriptor:
+						it, _ := world.ItemByRuntimeID(int32(d.NetworkID), d.MetadataValue)
+						mnItem[it] += (int(input.Count) * craftCount)
+						mnItemSlot[it] = append(mnItemSlot[it], i)
+					}
+				}
+				for tag, count := range mnTag {
+					slots := mnTagSlot[tag]
+					perSlot := count / len(slots)
+					inv := m.SearchSlotInInvTag(tag, count, perSlot)
+					if inv != nil {
+						for s := 0; s < len(slots); s++ {
+							for slot, count := range inv {
+								if count < perSlot {
+									continue
+								}
+								as = append(as, m.ConsumeAction(slot, perSlot, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+								inv[slot] -= perSlot
+							}
+						}
+					}
+				}
+				for it, count := range mnItem {
+					slots := mnItemSlot[it]
+					perSlot := count / len(slots)
+					inv := m.SearchSlotInInv(it, count, perSlot)
+					if inv != nil {
+						for s := 0; s < len(slots); s++ {
+							for slot, count := range inv {
+								if count < perSlot {
+									continue
+								}
+								as = append(as, m.ConsumeAction(slot, perSlot, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+								inv[slot] -= perSlot
+							}
+						}
+					}
+				}
+				//for tag, count := range mnTag {
+				//	inv := m.SearchSlotInInvTag(tag, count, nil)
+				//	if inv != nil {
+				//		for firstSlot, stackCount := range inv {
+				//			as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+				//		}
+				//	}
+				//}
+				//for it, count := range mnItem {
+				//	inv := m.SearchSlotInInv(it, count, nil)
+				//	if inv != nil {
+				//		for firstSlot, stackCount := range inv {
+				//			as = append(as, m.ConsumeAction(firstSlot, stackCount, ActionConfig{SourceContainerID: protocol.ContainerCombinedHotBarAndInventory}))
+				//		}
+				//	}
+				//}
+				break R
+			}
+		}
+	}
+	count := outputItem.Count()
+	maxCount := outputItem.MaxCount()
+
+	var markedSlots []int
+	for count > 0 {
+		var first int = -1
+		for slot, st := range m.Inv.Slots() {
+			if slices.Contains(markedSlots, slot) {
+				continue
+			}
+			if st.Item() == outputItem.Item() && st.Count() != st.MaxCount() {
+				first = slot
+				break
+			}
+		}
+		if first == -1 {
+			for slot, st := range m.Inv.Slots() {
+				if slices.Contains(markedSlots, slot) {
+					continue
+				}
+				if st.Empty() {
+					first = slot
+					break
+				}
+			}
+		}
+		if first == -1 {
+			break
+		}
+		markedSlots = append(markedSlots, first)
+		i, _ := m.Inv.Item(first)
+		storeCount := min(maxCount-i.Count(), count)
+		p := &protocol.PlaceStackRequestAction{}
+		p.Count = byte(storeCount)
+		p.Source = protocol.StackRequestSlotInfo{
+			ContainerID:    protocol.ContainerCreatedOutput,
+			Slot:           craftingResult,
+			StackNetworkID: -1,
+		}
+		p.Destination = protocol.StackRequestSlotInfo{
+			ContainerID:    protocol.ContainerCombinedHotBarAndInventory,
+			Slot:           byte(first),
+			StackNetworkID: -1,
+		}
+		as = append(as, p)
+		//as = append(as, m.PlaceItemAction(m.Inv.Size()+craftingResult, first, byte(storeCount), ActionConfig{
+		//	RemoteContainerID: protocol.ContainerCreatedOutput,
+		//}))
+		count -= storeCount
+	}
+
+	//as = append(as, m.StoreItemAction(craftingResult, false, ActionConfig{RemoteContainerID: protocol.ContainerCreatedOutput, GuessRemoteItemStack: outputItem})...)
+	for _, a := range as {
+		log.Infof("%+v\n", a)
+	}
+
+	return as
+}
+func (m *ScreenManager) ConsumeAction(slot int, count int, config ...ActionConfig) protocol.StackRequestAction {
+	cID := m.OpenedContainerID.Load()
+	if len(config) > 0 {
+		cID = int32(config[0].SourceContainerID)
+	}
+
+	p := &protocol.ConsumeStackRequestAction{}
+	p.DestroyStackRequestAction = protocol.DestroyStackRequestAction{
+		Count: byte(count),
+		Source: protocol.StackRequestSlotInfo{
+			ContainerID:    byte(cID),
+			Slot:           byte(slot),
+			StackNetworkID: -1,
+		},
+	}
+	return p
+}
+func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionConfig) []protocol.StackRequestAction {
+	if len(config) == 0 && (m.OpenedContainerID.Load() == -1) {
+		return nil
+	}
+	var aconfig ActionConfig
+	if len(config) > 0 {
+		aconfig = config[0]
+	}
+
 	var actions []protocol.StackRequestAction
 	if up {
 		stack, _ := m.Inv.Item(origin)
@@ -234,12 +596,17 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool) []protocol.StackReq
 			markedSlots = append(markedSlots, first)
 			i, _ := w.Item(first)
 			storeCount := min(maxCount-i.Count(), count)
-			actions = append(actions, m.TakeItemAction(origin, m.Inv.Size()+first, byte(storeCount)))
+			actions = append(actions, m.PlaceItemAction(origin, m.Inv.Size()+first, byte(storeCount), aconfig))
 			count -= storeCount
 		}
 	} else {
-		w := m.OpenedWindow.Load()
-		stack, _ := w.Item(origin)
+		var stack item.Stack
+		if aconfig.GuessRemoteItemStack.Empty() {
+			w := m.OpenedWindow.Load()
+			stack, _ = w.Item(origin)
+		} else {
+			stack = aconfig.GuessRemoteItemStack
+		}
 		count := stack.Count()
 		maxCount := stack.MaxCount()
 
@@ -273,73 +640,83 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool) []protocol.StackReq
 			markedSlots = append(markedSlots, first)
 			i, _ := m.Inv.Item(first)
 			storeCount := min(maxCount-i.Count(), count)
-			actions = append(actions, m.TakeItemAction(origin+m.Inv.Size(), first, byte(storeCount)))
+			actions = append(actions, m.PlaceItemAction(origin+m.Inv.Size(), first, byte(storeCount), aconfig))
 			count -= storeCount
 		}
 	}
 	return actions
 }
 
-// TakeItemAction Taking Item (slot -1 to cursor)
-func (m *ScreenManager) TakeItemAction(origin, destination int, count byte) protocol.StackRequestAction {
-	p := &protocol.TakeStackRequestAction{}
+//// TakeItemAction Taking Item (slot -1 to cursor)
+//func (m *ScreenManager) TakeItemAction(origin, destination int, count byte, config ...ActionConfig) protocol.StackRequestAction {
+//	if len(config) == 0 && (m.OpenedContainerID.Load() == -1) {
+//		return nil
+//	}
+//	p := &protocol.TakeStackRequestAction{}
+//
+//	p.Count = count
+//
+//	if origin >= m.Inv.Size() {
+//		p.Source = protocol.StackRequestSlotInfo{
+//			ContainerID:    byte(m.OpenedContainerID.Load()),
+//			Slot:           byte(origin - m.Inv.Size()),
+//			StackNetworkID: -1,
+//		}
+//	} else {
+//		switch origin {
+//		case -1:
+//			p.Source = protocol.StackRequestSlotInfo{
+//				ContainerID:    byte(protocol.ContainerCursor),
+//				Slot:           byte(0),
+//				StackNetworkID: -1,
+//			}
+//		default:
+//			p.Source = protocol.StackRequestSlotInfo{
+//				ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
+//				Slot:           byte(origin),
+//				StackNetworkID: -1,
+//			}
+//		}
+//	}
+//	if destination >= m.Inv.Size() {
+//		p.Destination = protocol.StackRequestSlotInfo{
+//			ContainerID:    byte(m.OpenedContainerID.Load()),
+//			Slot:           byte(destination - m.Inv.Size()),
+//			StackNetworkID: -1,
+//		}
+//	} else {
+//		switch origin {
+//		case -1:
+//			p.Destination = protocol.StackRequestSlotInfo{
+//				ContainerID:    byte(protocol.ContainerCursor),
+//				Slot:           byte(0),
+//				StackNetworkID: -1,
+//			}
+//		default:
+//			p.Destination = protocol.StackRequestSlotInfo{
+//				ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
+//				Slot:           byte(destination),
+//				StackNetworkID: -1,
+//			}
+//		}
+//	}
+//	return p
+//}
 
-	p.Count = count
-
-	if origin >= m.Inv.Size() {
-		p.Source = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(m.OpenedContainerID.Load()),
-			Slot:           byte(origin - m.Inv.Size()),
-			StackNetworkID: -1,
-		}
-	} else {
-		switch origin {
-		case -1:
-			p.Source = protocol.StackRequestSlotInfo{
-				ContainerID:    byte(protocol.ContainerCursor),
-				Slot:           byte(0),
-				StackNetworkID: -1,
-			}
-		default:
-			p.Source = protocol.StackRequestSlotInfo{
-				ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
-				Slot:           byte(origin),
-				StackNetworkID: -1,
-			}
-		}
+func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte, config ...ActionConfig) protocol.StackRequestAction {
+	if len(config) == 0 && (m.OpenedContainerID.Load() == -1) {
+		return nil
 	}
-	if destination >= m.Inv.Size() {
-		p.Destination = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(m.OpenedContainerID.Load()),
-			Slot:           byte(destination - m.Inv.Size()),
-			StackNetworkID: -1,
-		}
-	} else {
-		switch origin {
-		case -1:
-			p.Destination = protocol.StackRequestSlotInfo{
-				ContainerID:    byte(protocol.ContainerCursor),
-				Slot:           byte(0),
-				StackNetworkID: -1,
-			}
-		default:
-			p.Destination = protocol.StackRequestSlotInfo{
-				ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
-				Slot:           byte(destination),
-				StackNetworkID: -1,
-			}
-		}
+	remoteContainerID := m.OpenedContainerID.Load()
+	if len(config) > 0 {
+		remoteContainerID = int32(config[0].RemoteContainerID)
 	}
-	return p
-}
-
-func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte) protocol.StackRequestAction {
 	p := &protocol.PlaceStackRequestAction{}
 
 	p.Count = count
 	if origin >= m.Inv.Size() {
 		p.Source = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(m.OpenedContainerID.Load()),
+			ContainerID:    byte(remoteContainerID),
 			Slot:           byte(origin - m.Inv.Size()),
 			StackNetworkID: -1,
 		}
@@ -361,7 +738,7 @@ func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte) pro
 	}
 	if destination >= m.Inv.Size() {
 		p.Destination = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(m.OpenedContainerID.Load()),
+			ContainerID:    byte(remoteContainerID),
 			Slot:           byte(destination - m.Inv.Size()),
 			StackNetworkID: -1,
 		}

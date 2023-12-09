@@ -32,6 +32,7 @@ func (e EventsListener) Attach(c *Client) {
 	c.Conn.WritePacket(&packet.Respawn{
 		State: 2,
 	})
+	e.currentDimension = int(c.Conn.GameData().Dimension)
 
 	e.dimensionData = append(e.dimensionData, cube.Range{-64, 319}, cube.Range{0, 127}, cube.Range{0, 255})
 	e.air, _ = chunk.StateToRuntimeID("minecraft:air", nil)
