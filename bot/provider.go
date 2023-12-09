@@ -71,6 +71,7 @@ func NewClient() *Client {
 	logger.SetFormatter(customFormatter)
 	client := &Client{
 		events: &Events{
+			hLock:    sync.Mutex{},
 			generic:  []GenericHandler{},
 			handlers: map[uint32][]any{},
 			tickers:  []TickHandler{},
@@ -118,17 +119,21 @@ func (c *Client) HandleGame() error {
 			c.connected = false
 			return err
 		}
-		id := pk.ID()
-		handlers := c.events.handlers[id]
-		if len(handlers) > 0 {
-			for _, handler := range handlers {
-				res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
-				err := res[0].Interface()
-				if err != nil {
-					break
+		go func() {
+			id := pk.ID()
+			c.events.hLock.Lock()
+			handlers := c.events.handlers[id]
+			c.events.hLock.Unlock()
+			if len(handlers) > 0 {
+				for _, handler := range handlers {
+					res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
+					err := res[0].Interface()
+					if err != nil {
+						break
+					}
 				}
 			}
-		}
+		}()
 	}
 }
 

@@ -49,6 +49,11 @@ func (w *World) setChunk(pos world.ChunkPos, c *chunk.Chunk, b map[cube.Pos]map[
 	defer w.chunkMutex.Unlock()
 	w.chunks[pos] = newColumn(c, b)
 }
+func (w *World) UnSetChunk(pos world.ChunkPos) {
+	w.chunkMutex.Lock()
+	defer w.chunkMutex.Unlock()
+	delete(w.chunks, pos)
+}
 func (w *World) Block(pos cube.Pos) world.Block {
 	if w == nil || pos.OutOfBounds(w.r) {
 		// Fast way out.
