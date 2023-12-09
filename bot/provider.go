@@ -71,6 +71,7 @@ func NewClient() *Client {
 	logger.SetFormatter(customFormatter)
 	client := &Client{
 		events: &Events{
+			hLock:    sync.Mutex{},
 			generic:  []GenericHandler{},
 			handlers: map[uint32][]any{},
 			tickers:  []TickHandler{},
@@ -111,24 +112,39 @@ func (c *Client) ConnectTo(config ClientConfig) error {
 }
 
 func (c *Client) HandleGame() error {
+	lastTime := time.Now()
+	go func() {
+		ticker := time.NewTicker(15 * time.Second)
+		for {
+			<-ticker.C
+			if time.Now().After(lastTime.Add(time.Second * 15)) {
+				log.Warn("read", context.DeadlineExceeded)
+				c.Conn.Close()
+			}
+		}
+	}()
 	for {
-		c.Conn.SetReadDeadline(time.Now().Add(15 * time.Second))
 		pk, err := c.Conn.ReadPacket()
 		if err != nil {
 			c.connected = false
 			return err
 		}
-		id := pk.ID()
-		handlers := c.events.handlers[id]
-		if len(handlers) > 0 {
-			for _, handler := range handlers {
-				res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
-				err := res[0].Interface()
-				if err != nil {
-					break
+		lastTime = time.Now()
+		go func() {
+			id := pk.ID()
+			c.events.hLock.Lock()
+			handlers := c.events.handlers[id]
+			c.events.hLock.Unlock()
+			if len(handlers) > 0 {
+				for _, handler := range handlers {
+					res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
+					err := res[0].Interface()
+					if err != nil {
+						break
+					}
 				}
 			}
-		}
+		}()
 	}
 }
 

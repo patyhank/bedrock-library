@@ -3,10 +3,12 @@ package bot
 import (
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
 	"sort"
+	"sync"
 )
 
 type Events struct {
 	generic  []GenericHandler // for every packet
+	hLock    sync.Mutex
 	handlers map[uint32][]any // for specific packet id only
 	tickers  []TickHandler
 }
