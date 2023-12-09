@@ -1,13 +1,26 @@
 package auth
 
 import (
+	"bytes"
+	"encoding/gob"
+	"fmt"
 	"golang.org/x/oauth2"
 	"log"
 	"os"
 	"strings"
 )
 
-func ReadAccount(authName string) (*oauth2.Token, error) {
+type Account map[string]*oauth2.Token
+
+func ReadAccount(authName string, forceUpdate ...bool) (*oauth2.Token, error) {
+	cache, err := os.ReadFile("account.dat")
+	var account Account
+	gob.NewDecoder(bytes.NewBuffer(cache)).Decode(&account)
+	if accData, ok := account[authName]; ok && len(forceUpdate) == 0 {
+		if accData.Valid() {
+			return accData, nil
+		}
+	}
 	var username string
 	var password string
 	file, err := os.ReadFile("accounts.txt")
@@ -39,6 +52,20 @@ func ReadAccount(authName string) (*oauth2.Token, error) {
 	if password == "" {
 		panic("Error: Password Not Found")
 	}
+	accData, err := GetMCcredentialsByPassword(username, password)
+	if err != nil {
+		return nil, err
+	}
+	if account == nil {
+		account = make(Account)
+	}
+	account[authName] = accData
+	var b bytes.Buffer
+	gob.NewEncoder(&b).Encode(account)
+	err = os.WriteFile("account.dat", b.Bytes(), 0640)
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	return GetMCcredentialsByPassword(username, password)
+	return accData, nil
 }
