@@ -2,7 +2,6 @@ package bot
 
 import (
 	_ "embed"
-	"git.patyhank.net/falloutBot/bedrocklib/extra"
 	"git.patyhank.net/falloutBot/bedrocklib/internal/nbtconv"
 	"github.com/df-mc/atomic"
 	"github.com/df-mc/dragonfly/server/block"
@@ -14,6 +13,7 @@ import (
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
 	"gopkg.in/square/go-jose.v2/json"
 	"slices"
+	"strings"
 )
 
 const (
@@ -325,16 +325,17 @@ A:
 				slots := mnTagSlot[tag]
 				perSlot := count / len(slots)
 				inv := m.SearchSlotInInvTag(tag, count, perSlot)
-				if inv == nil {
+				if inv == nil || len(inv) == 0 {
 					continue A
 				}
+
 			}
 
 			for it, count := range mnItem {
 				slots := mnItemSlot[it]
 				perSlot := count / len(slots)
 				inv := m.SearchSlotInInv(it, count, perSlot)
-				if inv == nil {
+				if inv == nil || len(inv) == 0 {
 					continue A
 				}
 			}
@@ -366,7 +367,7 @@ A:
 				slots := mnTagSlot[tag]
 				perSlot := count / len(slots)
 				inv := m.SearchSlotInInvTag(tag, count, perSlot)
-				if inv == nil {
+				if inv == nil || len(inv) == 0 {
 					continue A
 				}
 			}
@@ -375,7 +376,7 @@ A:
 				slots := mnItemSlot[it]
 				perSlot := count / len(slots)
 				inv := m.SearchSlotInInv(it, count, perSlot)
-				if inv == nil {
+				if inv == nil || len(inv) == 0 {
 					continue A
 				}
 			}
@@ -879,7 +880,7 @@ func (m *ScreenManager) SetCarriedItem(s int) {
 func (m *ScreenManager) openInvBlock(pos cube.Pos) (*inventory.Inventory, int) {
 	b := m.c.World().Block(pos)
 	be := m.c.World().BlockEntity(pos)
-
+	bID, _ := b.EncodeBlock()
 	if _, chest := b.(block.Chest); chest {
 		if _, pairing := be["pairx"]; pairing {
 			return inventory.New(54, func(slot int, before, after item.Stack) {}), protocol.ContainerLevelEntity
@@ -890,7 +891,7 @@ func (m *ScreenManager) openInvBlock(pos cube.Pos) (*inventory.Inventory, int) {
 	if _, barrel := b.(block.Barrel); barrel {
 		return inventory.New(27, func(slot int, before, after item.Stack) {}), protocol.ContainerBarrel
 	}
-	if _, shulker := b.(extra.ShulkerBox); shulker {
+	if strings.Contains(bID, "_shulker_box") {
 		return inventory.New(27, func(slot int, before, after item.Stack) {}), protocol.ContainerShulkerBox
 	}
 	if _, anvil := b.(block.Anvil); anvil {
@@ -1029,15 +1030,6 @@ func StackToItem(it protocol.ItemStack) item.Stack {
 	t, ok := world.ItemByRuntimeID(it.NetworkID, int16(it.MetadataValue))
 	if !ok {
 		t = block.Air{}
-	}
-	if it.BlockRuntimeID > 0 {
-		// It shouldn't matter if it (for whatever reason) wasn't able to get the block runtime ID,
-		// since on the next line, we assert that the block is an item. If it didn't succeed, it'll
-		// return air anyway.
-		b, _ := world.BlockByRuntimeID(uint32(it.BlockRuntimeID))
-		if t, ok = b.(world.Item); !ok {
-			t = block.Air{}
-		}
 	}
 	if damage, ok := it.NBTData["Damage"].(int32); ok {
 		it.NBTData["Damage"] = damage - 1

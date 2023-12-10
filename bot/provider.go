@@ -7,7 +7,6 @@ import (
 	"git.patyhank.net/falloutBot/bedrocklib/extra"
 	"github.com/df-mc/dragonfly/server/block"
 	"github.com/df-mc/dragonfly/server/block/cube"
-	"github.com/df-mc/dragonfly/server/world"
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/google/uuid"
 	"github.com/goxiaoy/go-eventbus"
@@ -54,9 +53,7 @@ type Client struct {
 }
 
 func init() {
-	world.RegisterItem(extra.EmptyMap{})
-	world.RegisterBlock(extra.ShulkerBox{})
-	world.RegisterItem(extra.ShulkerBox{})
+	_ = extra.Init
 }
 
 func NewClient() *Client {
