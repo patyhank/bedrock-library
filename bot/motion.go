@@ -4,10 +4,13 @@ import (
 	"fmt"
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/df-mc/dragonfly/server/block/model"
+	"github.com/df-mc/dragonfly/server/world"
 	"github.com/fzipp/astar"
 	"github.com/go-gl/mathgl/mgl32"
+	"github.com/go-gl/mathgl/mgl64"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
 	"math"
+	"slices"
 	"time"
 )
 
@@ -15,6 +18,16 @@ type Finder[Node cube.Pos] struct {
 	w           *World
 	c           *Client
 	allowFlight bool
+}
+
+var blockList = []string{"minecraft:air", "minecraft:grass", "minecraft:seagrass", "minecraft:tallgrass"}
+
+func WalkableBlock(b world.Block) bool {
+	bb, _ := b.EncodeBlock()
+	if slices.Contains(blockList, bb) {
+		return true
+	}
+	return false
 }
 
 func (f Finder[_]) AllowStanding(n cube.Pos) bool {
@@ -33,6 +46,11 @@ func (f Finder[_]) AllowStanding(n cube.Pos) bool {
 			return true
 		}
 	}
+
+	if WalkableBlock(b) && WalkableBlock(b2) {
+		return true
+	}
+
 	return false
 }
 
@@ -47,12 +65,21 @@ func (f Finder[Node]) Neighbours(no Node) (nodes []Node) {
 	return
 }
 
+func BlockPosFromVec3(position mgl32.Vec3) cube.Pos {
+	position = vec3Floor(vec3Floor(position).Add(mgl32.Vec3{0.5, 0, 0.5}))
+
+	pos := cube.Pos{int(position[0]), int(position[1]), int(position[2])}
+	return pos
+}
+
 func (c *Client) FindPath(pos cube.Pos) astar.Path[cube.Pos] {
 	f := Finder[cube.Pos]{c.World(), c, true}
+
 	if !f.AllowStanding(pos) {
 		return nil
 	}
 	position := c.Self.Position
+	position = vec3Floor(vec3Floor(position).Add(mgl32.Vec3{0.5, 0, 0.5}))
 	path := astar.FindPath[cube.Pos](f, cube.Pos{int(position[0]), int(position[1]), int(position[2])}, pos, DistanceTo, DistanceTo)
 	return path
 }
@@ -153,4 +180,8 @@ func (c *Client) internalFlyTo(position mgl32.Vec3) {
 	c.Self.Position = position
 	//c.Player.SetPosition(position.X, position.Y, position.Z)
 	//c.Player.SendCustomPosition(c, position)
+}
+func vec3Floor(v mgl32.Vec3) mgl32.Vec3 {
+	vec3 := vec32To64(v)
+	return vec64To32(mgl64.Vec3{math.Floor(vec3[0]), math.Floor(vec3[1]), math.Floor(vec3[2])})
 }

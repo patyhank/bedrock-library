@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"git.patyhank.net/falloutBot/bedrocklib/extra"
+	"github.com/df-mc/atomic"
 	"github.com/df-mc/dragonfly/server/block"
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/go-gl/mathgl/mgl32"
@@ -110,41 +111,44 @@ func (c *Client) ConnectTo(config ClientConfig) error {
 
 func (c *Client) HandleGame() error {
 	lastTime := time.Now()
+	exited := atomic.NewBool(false)
 	go func() {
 		ticker := time.NewTicker(15 * time.Second)
 		for {
 			<-ticker.C
 			if time.Now().After(lastTime.Add(time.Second * 15)) {
-				log.Warn("read", context.DeadlineExceeded)
-				c.Conn.Close()
+				err := c.Conn.Close()
+				c.Conn.Flush()
+				log.Warn("read ", context.DeadlineExceeded, err)
+				exited.Store(true)
 			}
 		}
 	}()
 	for {
+		if exited.Load() {
+			return context.DeadlineExceeded
+		}
 		pk, err := c.Conn.ReadPacket()
 		if err != nil {
 			c.connected = false
 			return err
 		}
 		lastTime = time.Now()
-		go func() {
-			id := pk.ID()
-			c.events.hLock.Lock()
-			handlers := c.events.handlers[id]
-			c.events.hLock.Unlock()
-			if len(handlers) > 0 {
-				for _, handler := range handlers {
-					res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
-					err := res[0].Interface()
-					if err != nil {
-						break
-					}
+		id := pk.ID()
+		c.events.hLock.Lock()
+		handlers := c.events.handlers[id]
+		c.events.hLock.Unlock()
+		if len(handlers) > 0 {
+			for _, handler := range handlers {
+				res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
+				err := res[0].Interface()
+				if err != nil {
+					break
 				}
 			}
-		}()
+		}
 	}
 }
-
 func (c *Client) Reconnect() error {
 	err := c.ConnectTo(c.config)
 	if err != nil {
