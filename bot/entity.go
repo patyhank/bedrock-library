@@ -292,22 +292,22 @@ func (n *EntityManager) MoveEntityDel(pkData *packet.MoveActorDelta) {
 	if ent == nil {
 		return
 	}
-	if pkData.Flags&packet.MoveActorDeltaFlagHasX == pkData.Flags {
+	if pkData.Flags&packet.MoveActorDeltaFlagHasX != 0 {
 		ent.Position[0] = pkData.Position.X()
 	}
-	if pkData.Flags&packet.MoveActorDeltaFlagHasY == pkData.Flags {
+	if pkData.Flags&packet.MoveActorDeltaFlagHasY != 0 {
 		ent.Position[1] = pkData.Position.Y()
 	}
-	if pkData.Flags&packet.MoveActorDeltaFlagHasZ == pkData.Flags {
+	if pkData.Flags&packet.MoveActorDeltaFlagHasZ != 0 {
 		ent.Position[2] = pkData.Position.Z()
 	}
-	if pkData.Flags&packet.MoveActorDeltaFlagHasRotX == pkData.Flags {
+	if pkData.Flags&packet.MoveActorDeltaFlagHasRotX != 0 {
 		ent.Pitch = pkData.Rotation.X()
 	}
-	if pkData.Flags&packet.MoveActorDeltaFlagHasRotY == pkData.Flags {
+	if pkData.Flags&packet.MoveActorDeltaFlagHasRotY != 0 {
 		ent.Yaw = pkData.Rotation.Y()
 	}
-	if pkData.Flags&packet.MoveActorDeltaFlagHasZ == pkData.Flags {
+	if pkData.Flags&packet.MoveActorDeltaFlagHasZ != 0 {
 		ent.HeadYaw = pkData.Rotation.Z()
 	}
 }
