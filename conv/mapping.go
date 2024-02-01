@@ -37,7 +37,6 @@ func init() {
 			return
 		}
 	}
-
 }
 
 func LoadReplacement(f []byte) {
@@ -48,4 +47,5 @@ func LoadReplacement(f []byte) {
 			return
 		}
 	}
+
 }

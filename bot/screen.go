@@ -629,8 +629,8 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionCon
 					continue
 				}
 				name, meta := st.Item().EncodeItem()
-				oname, ometa := st.Item().EncodeItem()
-				if (oname == name && meta == ometa) && st.Count() != st.MaxCount() {
+				oname, ometa := stack.Item().EncodeItem()
+				if (oname == name && meta == ometa) && st.Count() != stack.MaxCount() {
 					first = slot
 					break
 				}
@@ -679,7 +679,7 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionCon
 				}
 				name, meta := stack.Item().EncodeItem()
 				oname, ometa := st.Item().EncodeItem()
-				if (oname == name && meta == ometa) && st.Count() != st.MaxCount() {
+				if (oname == name && meta == ometa) && st.Count() != stack.MaxCount() {
 					first = slot
 					break
 				}
@@ -936,6 +936,10 @@ func (m *ScreenManager) invByID(id int32) (*inventory.Inventory, bool) {
 		// Armour inventory.
 		return m.Armour.Inventory(), true
 	case protocol.ContainerLevelEntity:
+		if m.ContainerOpened.Load() {
+			return m.OpenedWindow.Load(), true
+		}
+	case protocol.ContainerShulkerBox:
 		if m.ContainerOpened.Load() {
 			return m.OpenedWindow.Load(), true
 		}
