@@ -4,11 +4,11 @@ go 1.21
 
 require (
 	github.com/df-mc/atomic v1.10.0
-	github.com/df-mc/dragonfly v0.9.13-0.20240111103712-f392edaffa84
+	github.com/df-mc/dragonfly v0.9.16-0.20240401144214-55fee47d6033
 	github.com/dlclark/regexp2 v1.10.0
 	github.com/go-gl/mathgl v1.1.0
 	github.com/google/uuid v1.4.0
-	github.com/sandertv/gophertunnel v1.34.2-0.20240105113529-36e514730788
+	github.com/sandertv/gophertunnel v1.36.0
 	github.com/sirupsen/logrus v1.9.3
 	golang.org/x/exp v0.0.0-20230206171751-46f607a40771
 	golang.org/x/oauth2 v0.4.0
@@ -18,7 +18,7 @@ require (
 	github.com/brentp/intintmap v0.0.0-20190211203843-30dc0ade9af9 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/df-mc/goleveldb v1.1.9 // indirect
-	github.com/df-mc/worldupgrader v1.0.11 // indirect
+	github.com/df-mc/worldupgrader v1.0.13 // indirect
 	github.com/fzipp/astar v0.2.0 // indirect
 	github.com/go-jose/go-jose/v3 v3.0.1 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect

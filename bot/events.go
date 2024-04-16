@@ -191,6 +191,10 @@ func (e EventsListener) Attach(c *Client) {
 					})
 				}
 				c.Self.Position = p.Position
+				c.Self.Yaw = p.Yaw
+				c.Self.Pitch = p.Pitch
+				c.Self.HeadYaw = p.HeadYaw
+				c.Self.OnGround = p.OnGround
 
 				c.Conn.WritePacket(p)
 				return nil

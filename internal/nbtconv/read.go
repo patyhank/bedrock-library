@@ -174,8 +174,8 @@ func Item(data map[string]any, s *item.Stack) item.Stack {
 	readAnvilCost(tag, s)
 	readDamage(tag, s, disk)
 	readDisplay(tag, s)
-	readDragonflyData(tag, s)
 	readEnchantments(tag, s)
+
 	return *s
 }
 

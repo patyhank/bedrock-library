@@ -40,7 +40,7 @@ type ScreenManager struct {
 	Armour                       *inventory.Armour
 
 	inTransaction, ContainerOpened atomic.Bool
-	OpenedWindowID                 atomic.Uint32
+	OpenedWindowID                 atomic.Int32
 	OpenedContainerID              atomic.Int32
 	OpenedWindow                   atomic.Value[*inventory.Inventory]
 	handler                        *itemStackRequestHandler
@@ -61,7 +61,7 @@ func NewManager(client *Client) *ScreenManager {
 		UI:                inventory.New(53, nil),
 		inTransaction:     atomic.Bool{},
 		ContainerOpened:   atomic.Bool{},
-		OpenedWindowID:    atomic.Uint32{},
+		OpenedWindowID:    atomic.Int32{},
 		OpenedContainerID: atomic.Int32{},
 		HeldSlot:          atomic.Uint32{},
 		RequestID:         atomic.Uint32{},
@@ -73,11 +73,14 @@ func NewManager(client *Client) *ScreenManager {
 
 	AddListener(client, PacketHandler[*packet.ContainerOpen]{
 		F: func(client *Client, p *packet.ContainerOpen) error {
+			m.OpenedWindowID.Store(int32(p.WindowID))
+			if p.WindowID == protocol.WindowIDInventory {
+				return nil
+			}
+			m.ContainerOpened.Store(true)
 			if p.ContainerPosition != (protocol.BlockPos{}) {
 				m.OpenedPos.Store(cube.Pos{int((p.ContainerPosition)[0]), int((p.ContainerPosition)[1]), int((p.ContainerPosition)[2])})
 			}
-			m.ContainerOpened.Store(true)
-			m.OpenedWindowID.Store(uint32(p.WindowID))
 			if p.ContainerPosition != (protocol.BlockPos{}) {
 				invBlock, cID := m.openInvBlock(cube.Pos{int((p.ContainerPosition)[0]), int((p.ContainerPosition)[1]), int((p.ContainerPosition)[2])})
 
@@ -838,6 +841,10 @@ func (m *ScreenManager) PackingRequestPacket(req ...protocol.ItemStackRequest) *
 	return r
 }
 
+func (m *ScreenManager) PackingRequests(req ...protocol.StackRequestAction) *packet.ItemStackRequest {
+	return m.PackingRequestPacket(m.PackingRequestAction(req...))
+}
+
 // SendContainerClick 驗證並傳送視窗點擊封包
 func (m *ScreenManager) SendContainerClick(request *packet.ItemStackRequest) error {
 	err := m.handler.Handle(request, m)
@@ -853,7 +860,8 @@ func (m *ScreenManager) CloseCurrentWindow() {
 		WindowID:   byte(m.OpenedWindowID.Load()),
 		ServerSide: false,
 	})
-	m.OpenedWindowID.Store(0)
+	m.OpenedWindowID.Store(-1)
+	m.ContainerOpened.Store(false)
 }
 
 // SetCarriedItem 設定手持物品(hotbar)格數
@@ -861,7 +869,7 @@ func (m *ScreenManager) SetCarriedItem(s int) {
 	if s > 8 {
 		return
 	}
-	stack, _ := m.Inv.Item(8)
+	stack, _ := m.Inv.Item(s)
 
 	m.c.Conn.WritePacket(&packet.MobEquipment{
 		EntityRuntimeID: m.c.Self.EntityRuntimeID,
@@ -1035,8 +1043,9 @@ func StackToItem(it protocol.ItemStack) item.Stack {
 	if !ok {
 		t = block.Air{}
 	}
+
 	if damage, ok := it.NBTData["Damage"].(int32); ok {
-		it.NBTData["Damage"] = damage - 1
+		it.NBTData["Damage"] = damage
 	}
 	//noinspection SpellCheckingInspection
 	if nbter, ok := t.(world.NBTer); ok && len(it.NBTData) != 0 {
