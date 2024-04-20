@@ -147,6 +147,12 @@ func (c *Client) HandleGame() error {
 				}
 			}
 		}
+		for _, handler := range c.Events.generic {
+			err := handler.F(c, pk)
+			if err != nil {
+				break
+			}
+		}
 	}
 }
 func (c *Client) Reconnect() error {
