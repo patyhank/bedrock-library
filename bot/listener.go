@@ -14,7 +14,7 @@ type Events struct {
 }
 
 func AddListener[T packet.Packet](c *Client, listeners PacketHandler[T]) {
-	e := c.events
+	e := c.Events
 	var t T
 	id := t.ID()
 

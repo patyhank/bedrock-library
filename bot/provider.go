@@ -42,7 +42,7 @@ type PlayerStatus struct {
 type Client struct {
 	config   ClientConfig
 	Conn     *minecraft.Conn
-	events   *Events
+	Events   *Events
 	world    *World
 	Logger   *log.Logger
 	Screen   *ScreenManager
@@ -68,7 +68,7 @@ func NewClient() *Client {
 	log.SetFormatter(customFormatter)
 	logger.SetFormatter(customFormatter)
 	client := &Client{
-		events: &Events{
+		Events: &Events{
 			hLock:    sync.Mutex{},
 			generic:  []GenericHandler{},
 			handlers: map[uint32][]any{},
@@ -135,9 +135,9 @@ func (c *Client) HandleGame() error {
 		}
 		lastTime = time.Now()
 		id := pk.ID()
-		c.events.hLock.Lock()
-		handlers := c.events.handlers[id]
-		c.events.hLock.Unlock()
+		c.Events.hLock.Lock()
+		handlers := c.Events.handlers[id]
+		c.Events.hLock.Unlock()
 		if len(handlers) > 0 {
 			for _, handler := range handlers {
 				res := reflect.ValueOf(handler).FieldByName("F").Call([]reflect.Value{reflect.ValueOf(c), reflect.ValueOf(pk)})
