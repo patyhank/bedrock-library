@@ -55,7 +55,13 @@ type Client struct {
 
 func init() {
 	_ = extra.Init
+	world_finaliseBlockRegistry()
 }
+
+// noinspection ALL
+//
+//go:linkname world_finaliseBlockRegistry github.com/df-mc/dragonfly/server/world.finaliseBlockRegistry
+func world_finaliseBlockRegistry()
 
 func NewClient() *Client {
 	logger := log.New()
