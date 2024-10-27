@@ -180,8 +180,8 @@ func (h *itemStackRequestHandler) handleSwap(a *protocol.SwapStackRequestAction,
 	i, _ := h.itemInSlot(a.Source, s)
 	dest, _ := h.itemInSlot(a.Destination, s)
 
-	invA, _ := s.invByID(int32(a.Source.ContainerID))
-	invB, _ := s.invByID(int32(a.Destination.ContainerID))
+	invA, _ := s.invByID(int32(a.Source.Container.ContainerID))
+	invB, _ := s.invByID(int32(a.Destination.Container.ContainerID))
 
 	ctx := event.C()
 	_ = call(ctx, int(a.Source.Slot), i, invA.Handler().HandleTake)
@@ -225,7 +225,7 @@ func (h *itemStackRequestHandler) handleDrop(a *protocol.DropStackRequestAction,
 		return fmt.Errorf("client attempted to drop %v items, but only %v present", a.Count, i.Count())
 	}
 
-	inv, _ := s.invByID(int32(a.Source.ContainerID))
+	inv, _ := s.invByID(int32(a.Source.Container.ContainerID))
 	if err := call(event.C(), int(a.Source.Slot), i.Grow(int(a.Count)-i.Count()), inv.Handler().HandleDrop); err != nil {
 		return err
 	}
@@ -238,7 +238,7 @@ func (h *itemStackRequestHandler) handleDrop(a *protocol.DropStackRequestAction,
 // by Mojang to deal with the durability changes client-side.
 func (h *itemStackRequestHandler) handleMineBlock(a *protocol.MineBlockStackRequestAction, s *ScreenManager) error {
 	slot := protocol.StackRequestSlotInfo{
-		ContainerID:    protocol.ContainerInventory,
+		Container:      protocol.FullContainerName{ContainerID: protocol.ContainerInventory},
 		Slot:           byte(a.HotbarSlot),
 		StackNetworkID: a.StackNetworkID,
 	}
@@ -302,7 +302,7 @@ func (h *itemStackRequestHandler) verifySlot(slot protocol.StackRequestSlotInfo,
 	if len(h.responseChanges) > 256 {
 		return fmt.Errorf("too many unacknowledged request slot changes")
 	}
-	inv, _ := s.invByID(int32(slot.ContainerID))
+	inv, _ := s.invByID(int32(slot.Container.ContainerID))
 
 	i, err := h.itemInSlot(slot, s)
 	if err != nil {
@@ -333,11 +333,11 @@ func (h *itemStackRequestHandler) resolveID(inv *inventory.Inventory, slot proto
 	}
 	changes, ok := containerChanges[inv]
 	if !ok {
-		return 0, fmt.Errorf("slot pointed to stack request %v with container %v, but that container was not changed in the request", slot.StackNetworkID, slot.ContainerID)
+		return 0, fmt.Errorf("slot pointed to stack request %v with container %v, but that container was not changed in the request", slot.StackNetworkID, slot.Container.ContainerID)
 	}
 	actual, ok := changes[slot.Slot]
 	if !ok {
-		return 0, fmt.Errorf("slot pointed to stack request %v with container %v and slot %v, but that slot was not changed in the request", slot.StackNetworkID, slot.ContainerID, slot.Slot)
+		return 0, fmt.Errorf("slot pointed to stack request %v with container %v and slot %v, but that slot was not changed in the request", slot.StackNetworkID, slot.Container.ContainerID, slot.Slot)
 	}
 	return actual.id, nil
 }
@@ -346,9 +346,9 @@ func (h *itemStackRequestHandler) resolveID(inv *inventory.Inventory, slot proto
 // info passed from the client has the right stack network ID in any of the stored slots. If this is the case,
 // that entry is removed, so that the maps are cleaned up eventually.
 func (h *itemStackRequestHandler) tryAcknowledgeChanges(s *ScreenManager, slot protocol.StackRequestSlotInfo) error {
-	inv, ok := s.invByID(int32(slot.ContainerID))
+	inv, ok := s.invByID(int32(slot.Container.ContainerID))
 	if !ok {
-		return fmt.Errorf("could not find container with id %v", slot.ContainerID)
+		return fmt.Errorf("could not find container with id %v", slot.Container.ContainerID)
 	}
 
 	for requestID, containerChanges := range h.responseChanges {
@@ -371,9 +371,9 @@ func (h *itemStackRequestHandler) tryAcknowledgeChanges(s *ScreenManager, slot p
 
 // itemInSlot looks for the item in the slot as indicated by the slot info passed.
 func (h *itemStackRequestHandler) itemInSlot(slot protocol.StackRequestSlotInfo, s *ScreenManager) (item.Stack, error) {
-	inv, ok := s.invByID(int32(slot.ContainerID))
+	inv, ok := s.invByID(int32(slot.Container.ContainerID))
 	if !ok {
-		return item.Stack{}, fmt.Errorf("unable to find container with ID %v", slot.ContainerID)
+		return item.Stack{}, fmt.Errorf("unable to find container with ID %v", slot.Container.ContainerID)
 	}
 
 	sl := int(slot.Slot)
@@ -390,7 +390,7 @@ func (h *itemStackRequestHandler) itemInSlot(slot protocol.StackRequestSlotInfo,
 
 // setItemInSlot sets an item stack in the slot of a container present in the slot info.
 func (h *itemStackRequestHandler) setItemInSlot(slot protocol.StackRequestSlotInfo, i item.Stack, s *ScreenManager) {
-	inv, _ := s.invByID(int32(slot.ContainerID))
+	inv, _ := s.invByID(int32(slot.Container.ContainerID))
 
 	sl := int(slot.Slot)
 	if inv == s.OffHand {
@@ -408,10 +408,10 @@ func (h *itemStackRequestHandler) setItemInSlot(slot protocol.StackRequestSlotIn
 		DurabilityCorrection: int32(i.MaxDurability() - i.Durability()),
 	}
 
-	if h.changes[slot.ContainerID] == nil {
-		h.changes[slot.ContainerID] = map[byte]changeInfo{}
+	if h.changes[slot.Container.ContainerID] == nil {
+		h.changes[slot.Container.ContainerID] = map[byte]changeInfo{}
 	}
-	h.changes[slot.ContainerID][slot.Slot] = changeInfo{
+	h.changes[slot.Container.ContainerID][slot.Slot] = changeInfo{
 		after:  respSlot,
 		before: before,
 	}

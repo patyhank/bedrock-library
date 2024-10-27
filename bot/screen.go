@@ -207,26 +207,26 @@ func (m *ScreenManager) SwapItemAction(origin, destination int, config ...Action
 	p := &protocol.SwapStackRequestAction{}
 	if origin >= m.Inv.Size() {
 		p.Source = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(m.OpenedContainerID.Load()),
+			Container:      protocol.FullContainerName{ContainerID: byte(m.OpenedContainerID.Load())},
 			Slot:           byte(origin),
 			StackNetworkID: -1,
 		}
 	} else {
 		p.Source = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
+			Container:      protocol.FullContainerName{ContainerID: byte(protocol.ContainerCombinedHotBarAndInventory)},
 			Slot:           byte(origin),
 			StackNetworkID: -1,
 		}
 	}
 	if destination < m.Inv.Size() {
 		p.Destination = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(m.OpenedContainerID.Load()),
+			Container:      protocol.FullContainerName{ContainerID: byte(m.OpenedContainerID.Load())},
 			Slot:           byte(destination),
 			StackNetworkID: -1,
 		}
 	} else {
 		p.Destination = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
+			Container:      protocol.FullContainerName{ContainerID: byte(protocol.ContainerCombinedHotBarAndInventory)},
 			Slot:           byte(destination),
 			StackNetworkID: -1,
 		}
@@ -574,12 +574,12 @@ R:
 		p := &protocol.PlaceStackRequestAction{}
 		p.Count = byte(storeCount)
 		p.Source = protocol.StackRequestSlotInfo{
-			ContainerID:    protocol.ContainerCreatedOutput,
+			Container:      protocol.FullContainerName{ContainerID: protocol.ContainerCreatedOutput},
 			Slot:           craftingResult,
 			StackNetworkID: -1,
 		}
 		p.Destination = protocol.StackRequestSlotInfo{
-			ContainerID:    protocol.ContainerCombinedHotBarAndInventory,
+			Container:      protocol.FullContainerName{ContainerID: protocol.ContainerCombinedHotBarAndInventory},
 			Slot:           byte(first),
 			StackNetworkID: -1,
 		}
@@ -599,7 +599,7 @@ func (m *ScreenManager) ConsumeAction(slot int, count int, config ...ActionConfi
 	p.DestroyStackRequestAction = protocol.DestroyStackRequestAction{
 		Count: byte(count),
 		Source: protocol.StackRequestSlotInfo{
-			ContainerID:    byte(cID),
+			Container:      protocol.FullContainerName{ContainerID: byte(cID)},
 			Slot:           byte(slot),
 			StackNetworkID: -1,
 		},
@@ -722,7 +722,7 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionCon
 //
 //	if origin >= m.Inv.Size() {
 //		p.Source = protocol.StackRequestSlotInfo{
-//			ContainerID:    byte(m.OpenedContainerID.Load()),
+//			Container: protocol.FullContainerName{ContainerID: byte(m.OpenedContainerID.Load())},
 //			Slot:           byte(origin - m.Inv.Size()),
 //			StackNetworkID: -1,
 //		}
@@ -730,13 +730,13 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionCon
 //		switch origin {
 //		case -1:
 //			p.Source = protocol.StackRequestSlotInfo{
-//				ContainerID:    byte(protocol.ContainerCursor),
+//				Container: protocol.FullContainerName{ContainerID: byte(protocol.ContainerCursor)},
 //				Slot:           byte(0),
 //				StackNetworkID: -1,
 //			}
 //		default:
 //			p.Source = protocol.StackRequestSlotInfo{
-//				ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
+//				Container: protocol.FullContainerName{ContainerID: byte(protocol.ContainerCombinedHotBarAndInventory)},
 //				Slot:           byte(origin),
 //				StackNetworkID: -1,
 //			}
@@ -744,7 +744,7 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionCon
 //	}
 //	if destination >= m.Inv.Size() {
 //		p.Destination = protocol.StackRequestSlotInfo{
-//			ContainerID:    byte(m.OpenedContainerID.Load()),
+//			Container: protocol.FullContainerName{ContainerID: byte(m.OpenedContainerID.Load())},
 //			Slot:           byte(destination - m.Inv.Size()),
 //			StackNetworkID: -1,
 //		}
@@ -752,13 +752,13 @@ func (m *ScreenManager) StoreItemAction(origin int, up bool, config ...ActionCon
 //		switch origin {
 //		case -1:
 //			p.Destination = protocol.StackRequestSlotInfo{
-//				ContainerID:    byte(protocol.ContainerCursor),
+//				Container: protocol.FullContainerName{ContainerID: byte(protocol.ContainerCursor)},
 //				Slot:           byte(0),
 //				StackNetworkID: -1,
 //			}
 //		default:
 //			p.Destination = protocol.StackRequestSlotInfo{
-//				ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
+//				Container: protocol.FullContainerName{ContainerID: byte(protocol.ContainerCombinedHotBarAndInventory)},
 //				Slot:           byte(destination),
 //				StackNetworkID: -1,
 //			}
@@ -780,7 +780,7 @@ func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte, con
 	p.Count = count
 	if origin >= m.Inv.Size() {
 		p.Source = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(remoteContainerID),
+			Container:      protocol.FullContainerName{ContainerID: byte(remoteContainerID)},
 			Slot:           byte(origin - m.Inv.Size()),
 			StackNetworkID: -1,
 		}
@@ -788,13 +788,13 @@ func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte, con
 		switch origin {
 		case -1:
 			p.Source = protocol.StackRequestSlotInfo{
-				ContainerID:    byte(protocol.ContainerCursor),
+				Container:      protocol.FullContainerName{ContainerID: byte(protocol.ContainerCursor)},
 				Slot:           byte(0),
 				StackNetworkID: -1,
 			}
 		default:
 			p.Source = protocol.StackRequestSlotInfo{
-				ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
+				Container:      protocol.FullContainerName{ContainerID: byte(protocol.ContainerCombinedHotBarAndInventory)},
 				Slot:           byte(origin),
 				StackNetworkID: -1,
 			}
@@ -802,7 +802,7 @@ func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte, con
 	}
 	if destination >= m.Inv.Size() {
 		p.Destination = protocol.StackRequestSlotInfo{
-			ContainerID:    byte(remoteContainerID),
+			Container:      protocol.FullContainerName{ContainerID: byte(remoteContainerID)},
 			Slot:           byte(destination - m.Inv.Size()),
 			StackNetworkID: -1,
 		}
@@ -810,13 +810,13 @@ func (m *ScreenManager) PlaceItemAction(origin, destination int, count byte, con
 		switch origin {
 		case -1:
 			p.Destination = protocol.StackRequestSlotInfo{
-				ContainerID:    byte(protocol.ContainerCursor),
+				Container:      protocol.FullContainerName{ContainerID: byte(protocol.ContainerCursor)},
 				Slot:           byte(0),
 				StackNetworkID: -1,
 			}
 		default:
 			p.Destination = protocol.StackRequestSlotInfo{
-				ContainerID:    byte(protocol.ContainerCombinedHotBarAndInventory),
+				Container:      protocol.FullContainerName{ContainerID: byte(protocol.ContainerCombinedHotBarAndInventory)},
 				Slot:           byte(destination),
 				StackNetworkID: -1,
 			}
