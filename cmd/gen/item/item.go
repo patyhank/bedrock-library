@@ -14,7 +14,7 @@ type T struct {
 var tt []T
 
 func main() {
-	file, _ := os.ReadFile("runtime_item_states.1_21_40.json")
+	file, _ := os.ReadFile("runtime_item_states.1_21_30.json") // 40 TBD
 	json.Unmarshal(file, &tt)
 	m := map[string]int32{}
 	for _, t := range tt {
