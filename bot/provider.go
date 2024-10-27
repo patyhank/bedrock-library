@@ -1,5 +1,7 @@
 package bot
 
+import _ "unsafe"
+
 import (
 	"context"
 	"errors"
