@@ -284,6 +284,11 @@ func (c *Client) BreakBlock(pos cube.Pos) {
 	defer c.breakLock.Unlock()
 	bPos := protocol.BlockPos{int32(pos[0]), int32(pos[1]), int32(pos[2])}
 
+	c.Conn.WritePacket(&packet.PlayerAuthInput{
+		InputData:    protocol.Bitset{},
+		BlockActions: nil,
+	})
+
 	c.Conn.WritePacket(&packet.PlayerAction{
 		EntityRuntimeID: c.Self.EntityRuntimeID,
 		ActionType:      protocol.PlayerActionStartBreak,

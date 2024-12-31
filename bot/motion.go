@@ -136,24 +136,21 @@ func FromBlockPos(v mgl32.Vec3) mgl32.Vec3 {
 var eyeY = mgl32.Vec3{0, 1.62, 0}
 
 func (c *Client) SendCurrentPosition() {
-	c.Conn.WritePacket(&packet.MovePlayer{
-		Position:        c.Self.Position,
-		Pitch:           c.Self.Pitch,
-		Yaw:             c.Self.Yaw,
-		HeadYaw:         c.Self.HeadYaw,
-		EntityRuntimeID: c.Self.EntityRuntimeID,
-		OnGround:        c.Self.OnGround,
+
+	c.Conn.WritePacket(&packet.PlayerAuthInput{
+		Position: c.Self.Position,
+		Pitch:    c.Self.Pitch,
+		Yaw:      c.Self.Yaw,
+		HeadYaw:  c.Self.HeadYaw,
 	})
 }
 
 func (c *Client) SendCustomPosition(position mgl32.Vec3) {
-	c.Conn.WritePacket(&packet.MovePlayer{
-		Position:        position,
-		Pitch:           c.Self.Pitch,
-		Yaw:             c.Self.Yaw,
-		HeadYaw:         c.Self.HeadYaw,
-		EntityRuntimeID: c.Self.EntityRuntimeID,
-		OnGround:        c.Self.OnGround,
+	c.Conn.WritePacket(&packet.PlayerAuthInput{
+		Position: position,
+		Pitch:    c.Self.Pitch,
+		Yaw:      c.Self.Yaw,
+		HeadYaw:  c.Self.HeadYaw,
 	})
 }
 
