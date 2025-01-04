@@ -10,7 +10,7 @@ require (
 	github.com/dlclark/regexp2 v1.10.0
 	github.com/go-gl/mathgl v1.2.0
 	github.com/google/uuid v1.6.0
-	github.com/sandertv/gophertunnel v1.43.0
+	github.com/sandertv/gophertunnel v1.43.1-0.20241229203958-5af8736ae319
 	github.com/sirupsen/logrus v1.9.3
 	golang.org/x/exp v0.0.0-20241217172543-b2144cdd0a67
 	golang.org/x/oauth2 v0.24.0
@@ -23,6 +23,7 @@ require (
 	github.com/df-mc/worldupgrader v1.0.18 // indirect
 	github.com/fzipp/astar v0.2.0 // indirect
 	github.com/go-jose/go-jose/v3 v3.0.3 // indirect
+	github.com/go-jose/go-jose/v4 v4.0.4 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/goxiaoy/go-eventbus v0.0.5 // indirect

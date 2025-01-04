@@ -36,7 +36,7 @@ var airB, _ = world.BlockByRuntimeID(air)
 // Block reads a block from the position passed. If a chunk is not yet loaded at that position, the chunk is
 // loaded, or generated if it could not be found in the world save, and the block returned. Chunks will be
 // loaded synchronously.
-func (w *World) chunk(pos world.ChunkPos) *Column {
+func (w *World) Chunk(pos world.ChunkPos) *Column {
 	w.chunkMutex.Lock()
 	defer w.chunkMutex.Unlock()
 	if c, ok := w.chunks[pos]; ok {
@@ -60,7 +60,7 @@ func (w *World) Block(pos cube.Pos) world.Block {
 		return airB
 	}
 
-	c := w.chunk(chunkPosFromBlockPos(pos))
+	c := w.Chunk(chunkPosFromBlockPos(pos))
 	if c == nil {
 		return airB
 	}
@@ -78,7 +78,7 @@ func (w *World) BlockEntity(pos cube.Pos) map[string]any {
 		return nil
 	}
 
-	c := w.chunk(chunkPosFromBlockPos(pos))
+	c := w.Chunk(chunkPosFromBlockPos(pos))
 	if c == nil {
 		return nil
 	}
@@ -95,7 +95,7 @@ func (w *World) SetBlockEntity(pos cube.Pos, data map[string]any) {
 		return
 	}
 
-	c := w.chunk(chunkPosFromBlockPos(pos))
+	c := w.Chunk(chunkPosFromBlockPos(pos))
 	if c == nil {
 		return
 	}
@@ -125,7 +125,7 @@ func (w *World) setBlock(pos cube.Pos, rid uint32) uint32 {
 		return air
 	}
 
-	c := w.chunk(chunkPosFromBlockPos(pos))
+	c := w.Chunk(chunkPosFromBlockPos(pos))
 	if c == nil {
 		return air
 	}
@@ -144,7 +144,7 @@ func (w *World) Biome(pos cube.Pos) world.Biome {
 		return b
 	}
 
-	c := w.chunk(chunkPosFromBlockPos(pos))
+	c := w.Chunk(chunkPosFromBlockPos(pos))
 	if c == nil {
 		b, _ := world.BiomeByID(0)
 		return b

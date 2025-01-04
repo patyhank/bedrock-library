@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/df-mc/dragonfly/server/world"
 	_ "github.com/df-mc/dragonfly/server/world"
@@ -105,6 +106,19 @@ func (e EventsListener) Attach(c *Client) {
 			for i := 0; i < int(n); i++ {
 				decodePalettedStorage(b, chunk.NetworkEncoding, chunk.BiomePaletteEncoding)
 			}
+			column := c.world.Chunk(world.ChunkPos(p.Position))
+			if column != nil {
+				originalSub := column.Sub()
+				for i, subChunk := range ch.Sub() {
+					if subChunk.Empty() {
+						if len(originalSub) > i {
+							if !originalSub[i].Empty() {
+								ch.Sub()[i] = originalSub[i]
+							}
+						}
+					}
+				}
+			}
 
 			_, err = b.ReadByte()
 			if err != nil {
@@ -183,20 +197,21 @@ func (e EventsListener) Attach(c *Client) {
 		Priority: 64,
 		F: func(client *Client, p *packet.MovePlayer) error {
 			if p.EntityRuntimeID == c.Conn.GameData().EntityRuntimeID {
-				log.Info("Teleported", p.Position)
-				if p.Mode == packet.MoveModeTeleport || p.Mode == packet.MoveModeReset {
-					c.Conn.WritePacket(&packet.PlayerAction{
-						EntityRuntimeID: c.Self.EntityRuntimeID,
-						ActionType:      protocol.PlayerActionHandledTeleport,
-					})
-				}
+				//log.Info("Moved", p.Position)
+
 				c.Self.Position = p.Position
 				c.Self.Yaw = p.Yaw
 				c.Self.Pitch = p.Pitch
 				c.Self.HeadYaw = p.HeadYaw
 				c.Self.OnGround = p.OnGround
+				if p.Mode == packet.MoveModeTeleport {
+					log.Info("Teleported", p.Position)
+				}
 
-				c.Conn.WritePacket(p)
+				c.SendCustomPosition(p.Position)
+				//c.Conn.WritePacket(packet.MovePlayer{})
+
+				//c.Conn.WritePacket(p)
 				return nil
 			}
 			c.Entity.MovePlayer(p)
@@ -207,6 +222,10 @@ func (e EventsListener) Attach(c *Client) {
 		F: func(client *Client, p *packet.UpdateBlock) error {
 			if p.Layer != 0 {
 				return nil
+			}
+			if p.Position.X() == -9729 && p.Position.Z() == 1102 && p.Position.Y() == 104 {
+				fmt.Println(p.Layer, p.NewBlockRuntimeID, "456456456456")
+
 			}
 			//if p.Flags&packet.BlockUpdateNetwork != p.Flags {
 			//	return nil
