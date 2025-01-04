@@ -8,6 +8,7 @@ import (
 	"github.com/fzipp/astar"
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/go-gl/mathgl/mgl64"
+	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
 	"math"
 	"slices"
@@ -136,45 +137,58 @@ func FromBlockPos(v mgl32.Vec3) mgl32.Vec3 {
 var eyeY = mgl32.Vec3{0, 1.62, 0}
 
 func (c *Client) SendCurrentPosition() {
+	c.Conn.WritePacket(&packet.PlayerAuthInput{
+		InputData: protocol.NewBitset(packet.PlayerAuthInputBitsetSize),
+		Position:  c.Self.Position,
+		Pitch:     c.Self.Pitch,
+		Yaw:       c.Self.Yaw,
+		HeadYaw:   c.Self.HeadYaw,
+	})
+}
+
+func (c *Client) SendInputData(flags ...int) {
+	inputData := protocol.NewBitset(packet.PlayerAuthInputBitsetSize)
+	for _, flag := range flags {
+		inputData.Set(flag)
+	}
 
 	c.Conn.WritePacket(&packet.PlayerAuthInput{
-		Position: c.Self.Position,
-		Pitch:    c.Self.Pitch,
-		Yaw:      c.Self.Yaw,
-		HeadYaw:  c.Self.HeadYaw,
+		InputData: inputData,
+		Position:  c.Self.Position,
+		Pitch:     c.Self.Pitch,
+		Yaw:       c.Self.Yaw,
+		HeadYaw:   c.Self.HeadYaw,
 	})
 }
 
 func (c *Client) SendCustomPosition(position mgl32.Vec3) {
 	c.Conn.WritePacket(&packet.PlayerAuthInput{
-		Position: position,
-		Pitch:    c.Self.Pitch,
-		Yaw:      c.Self.Yaw,
-		HeadYaw:  c.Self.HeadYaw,
+		InputData: protocol.NewBitset(packet.PlayerAuthInputBitsetSize),
+		Position:  position,
+		Pitch:     c.Self.Pitch,
+		Yaw:       c.Self.Yaw,
+		HeadYaw:   c.Self.HeadYaw,
 	})
 }
 
 func (c *Client) internalFlyTo(position mgl32.Vec3) {
-	nowPos := c.Self.Position
 	position = position.Add(eyeY)
-	vector := position.Sub(nowPos)
+	vector := position.Sub(c.Self.Position)
 	magnitude := vector.Len()
-	for magnitude > 1 {
-		mV := vector.Mul(1 / magnitude)
-		mV = mV.Mul(1)
-		nowPos = nowPos.Add(mV)
+	for magnitude > 9 {
+		mV := vector.Mul(9 / magnitude)
+		//mV = mV.Mul(10)
+		c.Self.Position = c.Self.Position.Add(mV)
 
-		time.Sleep(5 * time.Millisecond)
-		//c.Self.Position.SendCustomPosition(c, nowPos)
 		c.SendCurrentPosition()
-		c.Self.Position = nowPos
+		time.Sleep(50 * time.Millisecond)
 		//c.Player.SetPosition(c.Player.Position.X, c.Player.Position.Y, c.Player.Position.Z)
-		vector = position.Sub(nowPos)
+		vector = position.Sub(c.Self.Position)
 		magnitude = vector.Len()
 	}
-	time.Sleep(5 * time.Millisecond)
-	c.SendCurrentPosition()
+	time.Sleep(50 * time.Millisecond)
 	c.Self.Position = position
+	c.SendCurrentPosition()
 	//c.Player.SetPosition(position.X, position.Y, position.Z)
 	//c.Player.SendCustomPosition(c, position)
 }
