@@ -105,7 +105,7 @@ func (c *Client) ConnectTo(config ClientConfig) error {
 		ClientData: login.ClientData{
 			DeviceModel:   "WTF OS 1.0",
 			DeviceOS:      protocol.DeviceAndroid,
-			GameVersion:   "1.20.40",
+			GameVersion:   "1.20.51",
 			LanguageCode:  "zh_TW",
 			ServerAddress: config.Address,
 		},
@@ -175,33 +175,42 @@ func (c *Client) Reconnect() error {
 
 func (c *Client) OpenContainer(pos protocol.BlockPos) error {
 	wID := c.Screen.OpenedWindowID.Load()
-	if wID != 0 {
+	if wID != -1 {
 		c.Screen.CloseCurrentWindow()
+		wID = -1
+		time.Sleep(time.Second)
 	}
 	stack, _ := c.Screen.Inv.Item(0)
+
+	c.Self.Yaw = 0
+	c.Self.Pitch = 0
+	c.SendCurrentPosition()
 
 	c.Conn.WritePacket(&packet.InventoryTransaction{
 		TransactionData: &protocol.UseItemTransactionData{
 			ActionType:      protocol.UseItemActionClickBlock,
 			BlockPosition:   protocol.BlockPos{int32(pos.X()), int32(pos.Y()), int32(pos.Z())},
-			BlockFace:       int32(0),
-			ClickedPosition: mgl32.Vec3{0.5, 0.5, 0.5},
+			BlockFace:       int32(1),
+			ClickedPosition: mgl32.Vec3{0, 0, 0},
 			HeldItem:        InstanceFromItem(stack),
 			HotBarSlot:      0,
 		},
 	})
-	ticker := time.NewTicker(time.Millisecond * 500)
+	ticker := time.NewTicker(time.Millisecond * 1000)
 	for i := 0; i < 20; i++ {
 		<-ticker.C
 		if c.Screen.OpenedWindowID.Load() != wID {
 			return nil
 		}
+		c.Self.Yaw = 0
+		c.Self.Pitch = 0
+		c.SendCurrentPosition()
 		c.Conn.WritePacket(&packet.InventoryTransaction{
 			TransactionData: &protocol.UseItemTransactionData{
 				ActionType:      protocol.UseItemActionClickBlock,
 				BlockPosition:   protocol.BlockPos{int32(pos.X()), int32(pos.Y()), int32(pos.Z())},
-				BlockFace:       int32(0),
-				ClickedPosition: mgl32.Vec3{0.5, 0.5, 0.5},
+				BlockFace:       int32(1),
+				ClickedPosition: mgl32.Vec3{0, 0, 0},
 				HeldItem:        InstanceFromItem(stack),
 				HotBarSlot:      0,
 			},

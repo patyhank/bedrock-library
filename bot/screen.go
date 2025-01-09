@@ -2,6 +2,7 @@ package bot
 
 import (
 	_ "embed"
+	"fmt"
 	"git.patyhank.net/falloutBot/bedrocklib/internal/nbtconv"
 	"github.com/df-mc/atomic"
 	"github.com/df-mc/dragonfly/server/block"
@@ -73,6 +74,7 @@ func NewManager(client *Client) *ScreenManager {
 
 	AddListener(client, PacketHandler[*packet.ContainerOpen]{
 		F: func(client *Client, p *packet.ContainerOpen) error {
+			fmt.Println(p.WindowID)
 			m.OpenedWindowID.Store(int32(p.WindowID))
 			if p.WindowID == protocol.WindowIDInventory {
 				return nil
@@ -880,7 +882,7 @@ func (m *ScreenManager) SetCarriedItem(s int) {
 	})
 	m.HeldSlot.Store(uint32(s))
 	m.HeldItem.Store(stack)
-	m.OpenedWindowID.Store(0)
+	//m.OpenedWindowID.Store(0)
 }
 
 // openInv attempts to return an inventory by the ID passed. If found, the inventory is returned and the bool
