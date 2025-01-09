@@ -44,7 +44,6 @@ func ReadAccount(authName string, forceUpdate ...bool) (*oauth2.Token, error) {
 		A := strings.Index(pair, ":")
 		username = pair[:A]
 		password = pair[A+1:]
-		//fmt.Println(pair[A+1:])
 	}
 	if username == "" {
 		panic("Error: User Not Found")
