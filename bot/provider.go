@@ -175,10 +175,16 @@ func (c *Client) Reconnect() error {
 
 func (c *Client) OpenContainer(pos protocol.BlockPos) error {
 	wID := c.Screen.OpenedWindowID.Load()
-	if wID != 0 {
+	if wID != -1 {
 		c.Screen.CloseCurrentWindow()
+		wID = -1
+		time.Sleep(time.Second)
 	}
 	stack, _ := c.Screen.Inv.Item(0)
+
+	c.Self.Yaw = 0
+	c.Self.Pitch = 0
+	c.SendCurrentPosition()
 
 	c.Conn.WritePacket(&packet.InventoryTransaction{
 		TransactionData: &protocol.UseItemTransactionData{
@@ -196,6 +202,9 @@ func (c *Client) OpenContainer(pos protocol.BlockPos) error {
 		if c.Screen.OpenedWindowID.Load() != wID {
 			return nil
 		}
+		c.Self.Yaw = 0
+		c.Self.Pitch = 0
+		c.SendCurrentPosition()
 		c.Conn.WritePacket(&packet.InventoryTransaction{
 			TransactionData: &protocol.UseItemTransactionData{
 				ActionType:      protocol.UseItemActionClickBlock,

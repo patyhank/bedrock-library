@@ -39,6 +39,7 @@ func (e EventsListener) Attach(c *Client) {
 	e.air, _ = chunk.StateToRuntimeID("minecraft:air", nil)
 	c.EventBus = eventbus.New()
 	c.Screen = NewManager(c)
+	c.world = NewWorld(e.dimensionData[e.currentDimension])
 	c.Entity = NewEntityManager()
 	c.Self = &Player{
 		Positioner: &Positioner{
@@ -56,7 +57,7 @@ func (e EventsListener) Attach(c *Client) {
 		Priority: 64,
 		F: func(client *Client, p *packet.Text) error {
 
-			c.Logger.Info(text.ANSI(p.Message))
+			//c.Logger.Info(text.ANSI(p.Message))
 			go func() {
 				err := eventbus.Publish[*ChatEvent](c.EventBus)(context.Background(), &ChatEvent{Message: text.Clean(p.Message), FormattedMessage: p.Message})
 				if err != nil {
@@ -86,59 +87,7 @@ func (e EventsListener) Attach(c *Client) {
 	})
 	AddListener(c, PacketHandler[*packet.LevelChunk]{
 		Priority: 64,
-		F: func(client *Client, p *packet.LevelChunk) error {
-			ch, err := chunk.NetworkDecode(e.air, p.RawPayload, int(p.SubChunkCount), e.dimensionData[e.currentDimension])
-			if err != nil {
-				return err
-			}
-
-			if c.world == nil {
-				c.world = NewWorld(e.dimensionData[e.currentDimension])
-			}
-
-			b := bytes.NewBuffer(p.RawPayload)
-
-			for i := 0; i < int(p.SubChunkCount); i++ {
-				index := uint8(i)
-				decodeSubChunk(b, chunk.New(air, e.dimensionData[e.currentDimension]), &index, chunk.NetworkEncoding)
-			}
-			n := (e.dimensionData[e.currentDimension].Height() >> 4) + 1
-			for i := 0; i < int(n); i++ {
-				decodePalettedStorage(b, chunk.NetworkEncoding, chunk.BiomePaletteEncoding)
-			}
-			column := c.world.Chunk(world.ChunkPos(p.Position))
-			if column != nil {
-				originalSub := column.Sub()
-				for i, subChunk := range ch.Sub() {
-					if subChunk.Empty() {
-						if len(originalSub) > i {
-							if !originalSub[i].Empty() {
-								ch.Sub()[i] = originalSub[i]
-							}
-						}
-					}
-				}
-			}
-
-			_, err = b.ReadByte()
-			if err != nil {
-				log.Warn(err)
-			}
-			var bNBT map[string]any
-			dec := nbt.NewDecoderWithEncoding(b, nbt.NetworkLittleEndian)
-			bEnts := map[cube.Pos]map[string]any{}
-			for {
-				err := dec.Decode(&bNBT)
-				if err != nil {
-					break
-				}
-				pos := cube.Pos{int(bNBT["x"].(int32)), int(bNBT["y"].(int32)), int(bNBT["z"].(int32))}
-				bEnts[pos] = bNBT
-			}
-
-			c.world.setChunk(world.ChunkPos(p.Position), ch, bEnts)
-			return nil
-		},
+		F:        e.ReadChunk,
 	})
 	AddListener(c, PacketHandler[*packet.AddActor]{
 		Priority: 64,
@@ -271,6 +220,60 @@ func (e EventsListener) Attach(c *Client) {
 	})
 }
 
+func (e EventsListener) ReadChunk(c *Client, p *packet.LevelChunk) error {
+	ch, err := chunk.NetworkDecode(e.air, p.RawPayload, int(p.SubChunkCount), e.dimensionData[e.currentDimension])
+	if err != nil {
+		return nil
+	}
+
+	if c.world == nil {
+		c.world = NewWorld(e.dimensionData[e.currentDimension])
+	}
+
+	b := bytes.NewBuffer(p.RawPayload)
+
+	for i := 0; i < int(p.SubChunkCount); i++ {
+		index := uint8(i)
+		decodeSubChunk(b, chunk.New(air, e.dimensionData[e.currentDimension]), &index, chunk.NetworkEncoding)
+	}
+	n := (e.dimensionData[e.currentDimension].Height() >> 4) + 1
+	for i := 0; i < int(n); i++ {
+		decodePalettedStorage(b, chunk.NetworkEncoding, chunk.BiomePaletteEncoding)
+	}
+	column := c.world.Chunk(world.ChunkPos(p.Position))
+	if column != nil {
+		originalSub := column.Sub()
+		for i, subChunk := range ch.Sub() {
+			if subChunk.Empty() {
+				if len(originalSub) > i {
+					if !originalSub[i].Empty() {
+						ch.Sub()[i] = originalSub[i]
+					}
+				}
+			}
+		}
+	}
+
+	_, err = b.ReadByte()
+	if err != nil {
+		log.Warn(err)
+	}
+	var bNBT map[string]any
+	dec := nbt.NewDecoderWithEncoding(b, nbt.NetworkLittleEndian)
+	bEnts := map[cube.Pos]map[string]any{}
+	for {
+		err := dec.Decode(&bNBT)
+		if err != nil {
+			break
+		}
+		pos := cube.Pos{int(bNBT["x"].(int32)), int(bNBT["y"].(int32)), int(bNBT["z"].(int32))}
+		bEnts[pos] = bNBT
+	}
+
+	c.world.setChunk(world.ChunkPos(p.Position), ch, bEnts)
+
+	return nil
+}
 func (c *Client) World() *World {
 	return c.world
 }

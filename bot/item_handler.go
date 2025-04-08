@@ -180,17 +180,17 @@ func (h *itemStackRequestHandler) handleSwap(a *protocol.SwapStackRequestAction,
 	i, _ := h.itemInSlot(a.Source, s)
 	dest, _ := h.itemInSlot(a.Destination, s)
 
-	invA, _ := s.invByID(int32(a.Source.Container.ContainerID))
-	invB, _ := s.invByID(int32(a.Destination.Container.ContainerID))
+	//invA, _ := s.invByID(int32(a.Source.Container.ContainerID))
+	//invB, _ := s.invByID(int32(a.Destination.Container.ContainerID))
 
-	ctx := event.C(inventory.Holder(s))
-	_ = call(ctx, int(a.Source.Slot), i, invA.Handler().HandleTake)
-	_ = call(ctx, int(a.Source.Slot), dest, invA.Handler().HandlePlace)
-	_ = call(ctx, int(a.Destination.Slot), dest, invB.Handler().HandleTake)
-	err := call(ctx, int(a.Destination.Slot), i, invB.Handler().HandlePlace)
-	if err != nil {
-		return err
-	}
+	//ctx := event.C(inventory.Holder(s))
+	//_ = call(ctx, int(a.Source.Slot), i, invA.Handler().HandleTake)
+	//_ = call(ctx, int(a.Source.Slot), dest, invA.Handler().HandlePlace)
+	//_ = call(ctx, int(a.Destination.Slot), dest, invB.Handler().HandleTake)
+	//err := call(ctx, int(a.Destination.Slot), i, invB.Handler().HandlePlace)
+	//if err != nil {
+	//	return err
+	//}
 
 	h.setItemInSlot(a.Source, dest, s)
 	h.setItemInSlot(a.Destination, i, s)

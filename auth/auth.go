@@ -333,31 +333,5 @@ func GetMCcredentialsByPassword(username, password string) (*oauth2.Token, error
 		RefreshToken: m.RefreshToken,
 		Expiry:       time.UnixMilli(m.ExpiresAfter),
 	}, nil
-	//XBLa, err := AuthXBL(m.AccessToken)
-	//if err != nil {
-	//	return nil, err
-	//}
-	//log.Println("Authorized on XBL, trying to get XSTS token...")
-
-	//XSTSa, err := AuthXSTS(XBLa)
-	//if err != nil {
-	//	return nil, err
-	//}
-	//log.Println("Got XSTS token, trying to get MC token...")
-
-	//MCa, err := AuthMC(XSTSa)
-	//if err != nil {
-	//	return nil, err
-	//}
-	//log.Println("Got MC token, NOT checking that you own the game because it is too complicated and going straight for MC profile...")
-
-	//resauth, err = GetMCprofile(MCa.Token)
-	//if err != nil {
-	//	return resauth, err
-	//}
-	////log.Println("Got MC profile")
-	////log.Println("UUID: " + resauth.UUID)
-	////log.Println("Name: " + resauth.Name)
-	//resauth.AsTk = MCa.Token
 	return resauth, nil
 }

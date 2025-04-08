@@ -6,14 +6,14 @@ toolchain go1.23.4
 
 require (
 	github.com/df-mc/atomic v1.10.0
-	github.com/df-mc/dragonfly v0.9.20-0.20241229163702-cc7e4ee0e3ce
+	github.com/df-mc/dragonfly v0.10.2-0.20250109052229-389cab2f6e2e
 	github.com/dlclark/regexp2 v1.10.0
 	github.com/go-gl/mathgl v1.2.0
 	github.com/google/uuid v1.6.0
-	github.com/sandertv/gophertunnel v1.43.1-0.20241229203958-5af8736ae319
+	github.com/sandertv/gophertunnel v1.43.1
 	github.com/sirupsen/logrus v1.9.3
-	golang.org/x/exp v0.0.0-20241217172543-b2144cdd0a67
-	golang.org/x/oauth2 v0.24.0
+	golang.org/x/exp v0.0.0-20250103183323-7d7fa50e5329
+	golang.org/x/oauth2 v0.25.0
 )
 
 require (
