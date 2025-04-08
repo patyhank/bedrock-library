@@ -25,17 +25,9 @@ type EventsListener struct {
 	air              uint32
 }
 
-func (e EventsListener) Attach(c *Client) {
-	err := c.Conn.DoSpawnTimeout(time.Second * 10)
-	if err != nil {
-		panic(err)
-	}
-	c.Conn.WritePacket(&packet.Respawn{
-		State: 2,
-	})
+func (e *EventsListener) Attach(c *Client) {
+	e.dimensionData = []cube.Range{cube.Range{-64, 319}, cube.Range{0, 127}, cube.Range{0, 255}}
 	e.currentDimension = int(c.Conn.GameData().Dimension)
-
-	e.dimensionData = append(e.dimensionData, cube.Range{-64, 319}, cube.Range{0, 127}, cube.Range{0, 255})
 	e.air, _ = chunk.StateToRuntimeID("minecraft:air", nil)
 	c.EventBus = eventbus.New()
 	c.Screen = NewManager(c)
@@ -52,6 +44,14 @@ func (e EventsListener) Attach(c *Client) {
 		EntityRuntimeID: c.Conn.GameData().EntityRuntimeID,
 		PlatformChatID:  c.Conn.ClientData().PlatformOnlineID,
 	}
+
+	err := c.Conn.DoSpawnTimeout(time.Second * 10)
+	if err != nil {
+		panic(err)
+	}
+	c.Conn.WritePacket(&packet.Respawn{
+		State: 2,
+	})
 
 	AddListener(c, PacketHandler[*packet.Text]{
 		Priority: 64,
@@ -87,7 +87,59 @@ func (e EventsListener) Attach(c *Client) {
 	})
 	AddListener(c, PacketHandler[*packet.LevelChunk]{
 		Priority: 64,
-		F:        e.ReadChunk,
+		F: func(client *Client, p *packet.LevelChunk) error {
+			ch, err := chunk.NetworkDecode(e.air, p.RawPayload, int(p.SubChunkCount), e.dimensionData[e.currentDimension])
+			if err != nil {
+				return err
+			}
+
+			if c.world == nil {
+				c.world = NewWorld(e.dimensionData[e.currentDimension])
+			}
+
+			b := bytes.NewBuffer(p.RawPayload)
+
+			for i := 0; i < int(p.SubChunkCount); i++ {
+				index := uint8(i)
+				decodeSubChunk(b, chunk.New(air, e.dimensionData[e.currentDimension]), &index, chunk.NetworkEncoding)
+			}
+			n := (e.dimensionData[e.currentDimension].Height() >> 4) + 1
+			for i := 0; i < int(n); i++ {
+				decodePalettedStorage(b, chunk.NetworkEncoding, chunk.BiomePaletteEncoding)
+			}
+			column := c.world.Chunk(world.ChunkPos(p.Position))
+			if column != nil {
+				originalSub := column.Sub()
+				for i, subChunk := range ch.Sub() {
+					if subChunk.Empty() {
+						if len(originalSub) > i {
+							if !originalSub[i].Empty() {
+								ch.Sub()[i] = originalSub[i]
+							}
+						}
+					}
+				}
+			}
+
+			_, err = b.ReadByte()
+			if err != nil {
+				log.Warn(err)
+			}
+			var bNBT map[string]any
+			dec := nbt.NewDecoderWithEncoding(b, nbt.NetworkLittleEndian)
+			bEnts := map[cube.Pos]map[string]any{}
+			for {
+				err := dec.Decode(&bNBT)
+				if err != nil {
+					break
+				}
+				pos := cube.Pos{int(bNBT["x"].(int32)), int(bNBT["y"].(int32)), int(bNBT["z"].(int32))}
+				bEnts[pos] = bNBT
+			}
+
+			c.world.setChunk(world.ChunkPos(p.Position), ch, bEnts)
+			return nil
+		},
 	})
 	AddListener(c, PacketHandler[*packet.AddActor]{
 		Priority: 64,
@@ -220,7 +272,7 @@ func (e EventsListener) Attach(c *Client) {
 	})
 }
 
-func (e EventsListener) ReadChunk(c *Client, p *packet.LevelChunk) error {
+func (e *EventsListener) ReadChunk(c *Client, p *packet.LevelChunk) error {
 	ch, err := chunk.NetworkDecode(e.air, p.RawPayload, int(p.SubChunkCount), e.dimensionData[e.currentDimension])
 	if err != nil {
 		return nil
@@ -274,6 +326,7 @@ func (e EventsListener) ReadChunk(c *Client, p *packet.LevelChunk) error {
 
 	return nil
 }
+
 func (c *Client) World() *World {
 	return c.world
 }

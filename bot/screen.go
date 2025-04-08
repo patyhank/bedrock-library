@@ -74,6 +74,7 @@ func NewManager(client *Client) *ScreenManager {
 
 	AddListener(client, PacketHandler[*packet.ContainerOpen]{
 		F: func(client *Client, p *packet.ContainerOpen) error {
+			fmt.Println(p.WindowID)
 			m.OpenedWindowID.Store(int32(p.WindowID))
 			if p.WindowID == protocol.WindowIDInventory {
 				return nil
