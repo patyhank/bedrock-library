@@ -25,13 +25,21 @@ type EventsListener struct {
 	air              uint32
 }
 
-func (e *EventsListener) Attach(c *Client) {
-	e.dimensionData = []cube.Range{cube.Range{-64, 319}, cube.Range{0, 127}, cube.Range{0, 255}}
+func (e EventsListener) Attach(c *Client) {
+	err := c.Conn.DoSpawnTimeout(time.Second * 10)
+	if err != nil {
+		panic(err)
+	}
+	c.Conn.WritePacket(&packet.Respawn{
+		State: 2,
+	})
 	e.currentDimension = int(c.Conn.GameData().Dimension)
+
+	e.dimensionData = append(e.dimensionData, cube.Range{-64, 319}, cube.Range{0, 127}, cube.Range{0, 255})
 	e.air, _ = chunk.StateToRuntimeID("minecraft:air", nil)
 	c.EventBus = eventbus.New()
 	c.Screen = NewManager(c)
-	c.world = NewWorld(e.dimensionData[e.currentDimension])
+	//c.world = NewWorld(e.dimensionData[e.currentDimension])
 	c.Entity = NewEntityManager()
 	c.Self = &Player{
 		Positioner: &Positioner{
@@ -45,14 +53,6 @@ func (e *EventsListener) Attach(c *Client) {
 		PlatformChatID:  c.Conn.ClientData().PlatformOnlineID,
 	}
 
-	err := c.Conn.DoSpawnTimeout(time.Second * 10)
-	if err != nil {
-		panic(err)
-	}
-	c.Conn.WritePacket(&packet.Respawn{
-		State: 2,
-	})
-
 	AddListener(c, PacketHandler[*packet.Text]{
 		Priority: 64,
 		F: func(client *Client, p *packet.Text) error {
@@ -64,6 +64,14 @@ func (e *EventsListener) Attach(c *Client) {
 					return
 				}
 			}()
+			return nil
+		},
+	})
+
+	AddListener(c, PacketHandler[*packet.SetPlayerGameType]{
+		Priority: 64,
+		F: func(client *Client, p *packet.SetPlayerGameType) error {
+			client.Self.GameType = p.GameType
 			return nil
 		},
 	})
@@ -90,7 +98,8 @@ func (e *EventsListener) Attach(c *Client) {
 		F: func(client *Client, p *packet.LevelChunk) error {
 			ch, err := chunk.NetworkDecode(e.air, p.RawPayload, int(p.SubChunkCount), e.dimensionData[e.currentDimension])
 			if err != nil {
-				return err
+				log.Warnf("Failed to decode chunk: %v", err)
+				return nil
 			}
 
 			if c.world == nil {

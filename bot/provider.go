@@ -39,6 +39,7 @@ type PlayerStatus struct {
 	teleportChan chan any
 	PlayerName   string
 	CurrentForm  *Form
+	GameMode     int
 }
 
 type Client struct {
