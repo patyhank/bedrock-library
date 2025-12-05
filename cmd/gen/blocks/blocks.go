@@ -4,16 +4,17 @@ import (
 	"bytes"
 	_ "embed"
 	"fmt"
-	generateutils "git.patyhank.net/falloutBot/bedrocklib/cmd/generatorutils"
-	"github.com/df-mc/dragonfly/server/block"
-	"github.com/df-mc/dragonfly/server/item"
-	"github.com/df-mc/dragonfly/server/world"
-	"github.com/sandertv/gophertunnel/minecraft/nbt"
 	"os"
 	"sort"
 	"strings"
 	"text/template"
 	"unsafe"
+
+	generateutils "git.patyhank.net/falloutBot/bedrocklib/cmd/generatorutils"
+	"github.com/df-mc/dragonfly/server/block"
+	"github.com/df-mc/dragonfly/server/item"
+	"github.com/df-mc/dragonfly/server/world"
+	"github.com/sandertv/gophertunnel/minecraft/nbt"
 )
 
 //go:embed blocks.go.tmpl
@@ -48,12 +49,6 @@ type State struct {
 func main() {
 	genFile()
 }
-
-//var (
-//	itemRuntimeIDsToNames = map[int32]string{}
-//	// itemNamesToRuntimeIDs holds a map to translate item string IDs to runtime IDs.
-//	itemNamesToRuntimeIDs = map[string]int32{}
-//)
 
 func genFile() {
 	_ = item.Arrow{}

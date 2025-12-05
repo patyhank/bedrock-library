@@ -2,8 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/sandertv/gophertunnel/minecraft/nbt"
 	"os"
+
+	"github.com/sandertv/gophertunnel/minecraft/nbt"
 )
 
 type T struct {
@@ -14,7 +15,7 @@ type T struct {
 var tt []T
 
 func main() {
-	file, _ := os.ReadFile("runtime_item_states.1_21_50.json") // 40 TBD
+	file, _ := os.ReadFile("runtime_item_states.1_21_93.json") // 40 TBD
 	json.Unmarshal(file, &tt)
 	m := map[string]int32{}
 	for _, t := range tt {
