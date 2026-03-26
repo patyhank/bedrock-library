@@ -6,6 +6,10 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"reflect"
+	"sync"
+	"time"
+
 	"git.patyhank.net/falloutBot/bedrocklib/extra"
 	"github.com/df-mc/atomic"
 	"github.com/df-mc/dragonfly/server/block"
@@ -20,9 +24,6 @@ import (
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/oauth2"
-	"reflect"
-	"sync"
-	"time"
 )
 
 var ErrConnected = errors.New("already connected")
@@ -255,7 +256,6 @@ func (c *Client) OpenInventory() {
 	c.Conn.WritePacket(&packet.Interact{
 		ActionType:            packet.InteractActionOpenInventory,
 		TargetEntityRuntimeID: c.Conn.GameData().EntityRuntimeID,
-		Position:              mgl32.Vec3{0, 0, 0},
 	})
 }
 
