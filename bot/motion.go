@@ -2,6 +2,11 @@ package bot
 
 import (
 	"fmt"
+	"iter"
+	"math"
+	"slices"
+	"time"
+
 	"github.com/df-mc/dragonfly/server/block/cube"
 	"github.com/df-mc/dragonfly/server/block/model"
 	"github.com/df-mc/dragonfly/server/world"
@@ -10,9 +15,6 @@ import (
 	"github.com/go-gl/mathgl/mgl64"
 	"github.com/sandertv/gophertunnel/minecraft/protocol"
 	"github.com/sandertv/gophertunnel/minecraft/protocol/packet"
-	"math"
-	"slices"
-	"time"
 )
 
 type Finder[Node cube.Pos] struct {
@@ -55,15 +57,18 @@ func (f Finder[_]) AllowStanding(n cube.Pos) bool {
 	return false
 }
 
-func (f Finder[Node]) Neighbours(no Node) (nodes []Node) {
+func (f Finder[Node]) Neighbours(no Node) (nodes iter.Seq[Node]) {
 	n := cube.Pos(no)
 
-	n.Neighbours(func(neighbour cube.Pos) {
-		if f.AllowStanding(neighbour) {
-			nodes = append(nodes, Node(neighbour))
-		}
-	}, f.w.Range())
-	return
+	return func(yield func(Node) bool) {
+		n.Neighbours(func(neighbour cube.Pos) {
+			if f.AllowStanding(neighbour) {
+				if !yield(Node(neighbour)) {
+					return
+				}
+			}
+		}, f.w.Range())
+	}
 }
 
 func BlockPosFromVec3(position mgl32.Vec3) cube.Pos {

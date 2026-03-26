@@ -4,1077 +4,894 @@ package extra
 import "github.com/df-mc/dragonfly/server/world"
 
 func init() {
-	world.RegisterItem(TntMinecart{})
-	world.RegisterItem(HardPurpleStainedGlassPane{})
-	world.RegisterItem(Element47{})
-	world.RegisterItem(HardOrangeStainedGlassPane{})
-	world.RegisterItem(PolishedGraniteDoubleSlab{})
-	world.RegisterItem(CherryWallSign{})
-	world.RegisterItem(ChickenSpawnEgg{})
-	world.RegisterItem(DarkOakPressurePlate{})
-	world.RegisterItem(DonkeySpawnEgg{})
-	world.RegisterItem(WarpedButton{})
-	world.RegisterItem(BambooPressurePlate{})
-	world.RegisterItem(MangroveChestBoat{})
-	world.RegisterItem(WitchSpawnEgg{})
-	world.RegisterItem(ItemJungleDoor{})
-	world.RegisterItem(Element11{})
-	world.RegisterItem(WardenSpawnEgg{})
-	world.RegisterItem(CoralBlock{})
-	world.RegisterItem(DeadBubbleCoralWallFan{})
-	world.RegisterItem(SculkCatalyst{})
-	world.RegisterItem(Vault{})
-	world.RegisterItem(EndPortal{})
-	world.RegisterItem(DetectorRail{})
-	world.RegisterItem(BambooButton{})
-	world.RegisterItem(Fence{})
-	world.RegisterItem(CaveSpiderSpawnEgg{})
-	world.RegisterItem(TadpoleSpawnEgg{})
-	world.RegisterItem(AzaleaLeaves{})
-	world.RegisterItem(Element48{})
-	world.RegisterItem(PrismarineBrickDoubleSlab{})
-	world.RegisterItem(Element97{})
-	world.RegisterItem(MelonStem{})
-	world.RegisterItem(HardPinkStainedGlassPane{})
-	world.RegisterItem(Element7{})
-	world.RegisterItem(WhiteShulkerBox{})
-	world.RegisterItem(EvokerSpawnEgg{})
-	world.RegisterItem(HornCoralFan{})
-	world.RegisterItem(ItemSpruceDoor{})
 	world.RegisterItem(SilverfishSpawnEgg{})
-	world.RegisterItem(AxolotlBucket{})
-	world.RegisterItem(Tallgrass{})
-	world.RegisterItem(Compound{})
-	world.RegisterItem(CutRedSandstoneDoubleSlab{})
-	world.RegisterItem(CoralFan{})
-	world.RegisterItem(WarpedFungus{})
-	world.RegisterItem(Element37{})
-	world.RegisterItem(Element35{})
-	world.RegisterItem(Element25{})
-	world.RegisterItem(JungleWallSign{})
-	world.RegisterItem(Element17{})
-	world.RegisterItem(SpruceDoubleSlab{})
-	world.RegisterItem(CalibratedSculkSensor{})
-	world.RegisterItem(BrownCandleCake{})
-	world.RegisterItem(BrainCoralFan{})
-	world.RegisterItem(WeepingVines{})
-	world.RegisterItem(Jigsaw{})
-	world.RegisterItem(Element22{})
-	world.RegisterItem(BambooStairs{})
-	world.RegisterItem(BlueCandle{})
-	world.RegisterItem(ExposedCopperBulb{})
-	world.RegisterItem(ItemFrame{})
-	world.RegisterItem(LightBlueShulkerBox{})
-	world.RegisterItem(UnpoweredComparator{})
-	world.RegisterItem(BlueShulkerBox{})
-	world.RegisterItem(ItemReeds{})
-	world.RegisterItem(ColoredTorchBlue{})
-	world.RegisterItem(Element61{})
-	world.RegisterItem(NpcSpawnEgg{})
-	world.RegisterItem(LlamaSpawnEgg{})
-	world.RegisterItem(BambooMosaic{})
-	world.RegisterItem(PaleOakStandingSign{})
-	world.RegisterItem(CherryDoubleSlab{})
-	world.RegisterItem(StandingBanner{})
-	world.RegisterItem(PolishedDioriteDoubleSlab{})
-	world.RegisterItem(OakDoubleSlab{})
-	world.RegisterItem(CommandBlock{})
-	world.RegisterItem(HardGlass{})
-	world.RegisterItem(Element26{})
-	world.RegisterItem(HopperMinecart{})
-	world.RegisterItem(ZombieHorseSpawnEgg{})
-	world.RegisterItem(WoodenPressurePlate{})
-	world.RegisterItem(PigSpawnEgg{})
-	world.RegisterItem(HardRedStainedGlassPane{})
-	world.RegisterItem(PitcherPlant{})
-	world.RegisterItem(FireCoralWallFan{})
-	world.RegisterItem(DarkoakWallSign{})
-	world.RegisterItem(Element108{})
-	world.RegisterItem(JungleSapling{})
-	world.RegisterItem(ColoredTorchRg{})
-	world.RegisterItem(StraySpawnEgg{})
-	world.RegisterItem(Element93{})
-	world.RegisterItem(ItemCampfire{})
-	world.RegisterItem(CutSandstoneDoubleSlab{})
-	world.RegisterItem(Piston{})
-	world.RegisterItem(PaleOakBoat{})
-	world.RegisterItem(TadpoleBucket{})
-	world.RegisterItem(Repeater{})
-	world.RegisterItem(CrimsonHangingSign{})
-	world.RegisterItem(TripwireHook{})
-	world.RegisterItem(GlowSquidSpawnEgg{})
-	world.RegisterItem(Element106{})
-	world.RegisterItem(RedCandleCake{})
-	world.RegisterItem(Stonebrick{})
-	world.RegisterItem(Concrete{})
-	world.RegisterItem(LimeCandle{})
-	world.RegisterItem(Stonecutter{})
-	world.RegisterItem(Element100{})
-	world.RegisterItem(HardBlueStainedGlassPane{})
-	world.RegisterItem(DolphinSpawnEgg{})
-	world.RegisterItem(WaxedCopperBulb{})
-	world.RegisterItem(Unknown{})
-	world.RegisterItem(PinkBundle{})
-	world.RegisterItem(ItemDarkOakDoor{})
-	world.RegisterItem(SweetBerries{})
-	world.RegisterItem(BambooMosaicDoubleSlab{})
-	world.RegisterItem(ArmorStand{})
-	world.RegisterItem(StoneBlockSlab3{})
-	world.RegisterItem(PolishedBlackstoneBrickDoubleSlab{})
-	world.RegisterItem(Element95{})
-	world.RegisterItem(WhiteHarness{})
-	world.RegisterItem(OrangeBundle{})
-	world.RegisterItem(EnderEye{})
-	world.RegisterItem(CyanHarness{})
-	world.RegisterItem(LitSmoker{})
-	world.RegisterItem(Element70{})
-	world.RegisterItem(LeatherHorseArmor{})
-	world.RegisterItem(Torchflower{})
-	world.RegisterItem(HangingRoots{})
-	world.RegisterItem(GrayCandle{})
-	world.RegisterItem(GrayCandleCake{})
-	world.RegisterItem(Element71{})
-	world.RegisterItem(ChainCommandBlock{})
-	world.RegisterItem(DoublePlant{})
-	world.RegisterItem(WaxedExposedCopperBulb{})
-	world.RegisterItem(ItemCamera{})
-	world.RegisterItem(Bell{})
-	world.RegisterItem(ItemBrewingStand{})
-	world.RegisterItem(ColoredTorchBp{})
-	world.RegisterItem(Mace{})
-	world.RegisterItem(LightWeightedPressurePlate{})
-	world.RegisterItem(Web{})
-	world.RegisterItem(Redstone{})
-	world.RegisterItem(UnderwaterTorch{})
-	world.RegisterItem(RepeatingCommandBlock{})
-	world.RegisterItem(BlackBundle{})
-	world.RegisterItem(BambooChestRaft{})
-	world.RegisterItem(MediumAmethystBud{})
-	world.RegisterItem(ColoredTorchGreen{})
-	world.RegisterItem(EmptyMap{})
-	world.RegisterItem(Element49{})
-	world.RegisterItem(LightGrayCandle{})
-	world.RegisterItem(ItemCauldron{})
-	world.RegisterItem(AllaySpawnEgg{})
-	world.RegisterItem(MangroveStandingSign{})
-	world.RegisterItem(PufferfishSpawnEgg{})
-	world.RegisterItem(DeadBrainCoralFan{})
-	world.RegisterItem(Chalkboard{})
-	world.RegisterItem(PurpleBundle{})
-	world.RegisterItem(AzaleaLeavesFlowered{})
-	world.RegisterItem(BirchStandingSign{})
-	world.RegisterItem(Sparkler{})
-	world.RegisterItem(Element19{})
-	world.RegisterItem(Element20{})
-	world.RegisterItem(Element52{})
-	world.RegisterItem(SmoothSandstoneDoubleSlab{})
-	world.RegisterItem(WhiteCandleCake{})
-	world.RegisterItem(Dropper{})
-	world.RegisterItem(LitFurnace{})
-	world.RegisterItem(Element36{})
-	world.RegisterItem(BambooFence{})
-	world.RegisterItem(TallDryGrass{})
-	world.RegisterItem(Saddle{})
-	world.RegisterItem(AndesiteDoubleSlab{})
-	world.RegisterItem(GoldenRail{})
-	world.RegisterItem(DirtWithRoots{})
-	world.RegisterItem(Element105{})
-	world.RegisterItem(MangroveRoots{})
-	world.RegisterItem(PitcherCrop{})
-	world.RegisterItem(HoglinSpawnEgg{})
-	world.RegisterItem(Shield{})
-	world.RegisterItem(BambooHangingSign{})
-	world.RegisterItem(ItemCrimsonDoor{})
-	world.RegisterItem(Element39{})
-	world.RegisterItem(Element63{})
-	world.RegisterItem(OpenEyeblossom{})
-	world.RegisterItem(DeadTubeCoralFan{})
-	world.RegisterItem(OrangeCandle{})
-	world.RegisterItem(InfoUpdate{})
-	world.RegisterItem(FlowingWater{})
-	world.RegisterItem(OakChestBoat{})
-	world.RegisterItem(BirchChestBoat{})
-	world.RegisterItem(PiglinSpawnEgg{})
-	world.RegisterItem(TorchflowerSeeds{})
-	world.RegisterItem(TraderLlamaSpawnEgg{})
-	world.RegisterItem(PinkCandle{})
-	world.RegisterItem(Element44{})
-	world.RegisterItem(WolfSpawnEgg{})
-	world.RegisterItem(Target{})
-	world.RegisterItem(DaylightDetectorInverted{})
-	world.RegisterItem(OcelotSpawnEgg{})
 	world.RegisterItem(WarpedHangingSign{})
-	world.RegisterItem(WaxedOxidizedDoubleCutCopperSlab{})
-	world.RegisterItem(HeavyCore{})
-	world.RegisterItem(WallSign{})
-	world.RegisterItem(GreenCandle{})
-	world.RegisterItem(ItemWoodenDoor{})
-	world.RegisterItem(Skull{})
-	world.RegisterItem(ChemistryTable{})
-	world.RegisterItem(Element112{})
-	world.RegisterItem(PetrifiedOakSlab{})
-	world.RegisterItem(BirchHangingSign{})
-	world.RegisterItem(Element117{})
-	world.RegisterItem(Glowingobsidian{})
-	world.RegisterItem(JungleButton{})
-	world.RegisterItem(IronHorseArmor{})
-	world.RegisterItem(ExposedDoubleCutCopperSlab{})
-	world.RegisterItem(BambooTrapdoor{})
-	world.RegisterItem(HardStainedGlassPane{})
-	world.RegisterItem(LightBlock{})
-	world.RegisterItem(Element104{})
-	world.RegisterItem(WarpedPressurePlate{})
-	world.RegisterItem(CrimsonWallSign{})
-	world.RegisterItem(Leaves{})
-	world.RegisterItem(StonePressurePlate{})
-	world.RegisterItem(OakSapling{})
-	world.RegisterItem(CrimsonFungus{})
-	world.RegisterItem(Element75{})
-	world.RegisterItem(DeadTubeCoralWallFan{})
-	world.RegisterItem(JungleHangingSign{})
-	world.RegisterItem(StoneButton{})
-	world.RegisterItem(PurpleCandle{})
-	world.RegisterItem(Element114{})
-	world.RegisterItem(Element65{})
-	world.RegisterItem(LightGrayHarness{})
-	world.RegisterItem(VillagerSpawnEgg{})
-	world.RegisterItem(Log{})
-	world.RegisterItem(TwistingVines{})
-	world.RegisterItem(CherryBoat{})
-	world.RegisterItem(MangroveButton{})
-	world.RegisterItem(ZombiePigmanSpawnEgg{})
-	world.RegisterItem(CartographyTable{})
-	world.RegisterItem(PaleOakChestBoat{})
-	world.RegisterItem(LimeCandleCake{})
-	world.RegisterItem(String{})
-	world.RegisterItem(StainedHardenedClay{})
-	world.RegisterItem(TrialKey{})
-	world.RegisterItem(SalmonBucket{})
-	world.RegisterItem(LightBlueCandle{})
-	world.RegisterItem(BambooPlanks{})
-	world.RegisterItem(InfestedCobblestone{})
-	world.RegisterItem(GrayBundle{})
-	world.RegisterItem(BrownMushroom{})
-	world.RegisterItem(Planks{})
-	world.RegisterItem(CaveVinesBodyWithBerries{})
-	world.RegisterItem(MobSpawner{})
-	world.RegisterItem(Netherreactor{})
-	world.RegisterItem(HardLightBlueStainedGlass{})
-	world.RegisterItem(Element83{})
-	world.RegisterItem(EndermanSpawnEgg{})
-	world.RegisterItem(AcaciaSapling{})
-	world.RegisterItem(InfestedDeepslate{})
-	world.RegisterItem(Element6{})
-	world.RegisterItem(EnderDragonSpawnEgg{})
-	world.RegisterItem(DebugStick{})
-	world.RegisterItem(HardGreenStainedGlassPane{})
-	world.RegisterItem(OminousBottle{})
-	world.RegisterItem(HardCyanStainedGlass{})
-	world.RegisterItem(Element91{})
-	world.RegisterItem(AmethystCluster{})
-	world.RegisterItem(PiglinBruteSpawnEgg{})
-	world.RegisterItem(ZombieVillagerSpawnEgg{})
-	world.RegisterItem(HardStainedGlass{})
-	world.RegisterItem(AcaciaChestBoat{})
-	world.RegisterItem(ChestBoat{})
-	world.RegisterItem(FloweringAzalea{})
-	world.RegisterItem(OakBoat{})
-	world.RegisterItem(Dye{})
-	world.RegisterItem(LimeBundle{})
-	world.RegisterItem(Ice{})
-	world.RegisterItem(BambooDoor{})
-	world.RegisterItem(LitRedstoneLamp{})
-	world.RegisterItem(RabbitSpawnEgg{})
-	world.RegisterItem(CherryHangingSign{})
-	world.RegisterItem(RedCandle{})
-	world.RegisterItem(BeeNest{})
-	world.RegisterItem(UnpoweredRepeater{})
-	world.RegisterItem(ItemMangroveDoor{})
-	world.RegisterItem(PointedDripstone{})
-	world.RegisterItem(Element10{})
-	world.RegisterItem(SkeletonHorseSpawnEgg{})
-	world.RegisterItem(InfoUpdate2{})
-	world.RegisterItem(RedNetherBrickDoubleSlab{})
-	world.RegisterItem(PumpkinStem{})
-	world.RegisterItem(CodSpawnEgg{})
-	world.RegisterItem(ActivatorRail{})
-	world.RegisterItem(SheepSpawnEgg{})
-	world.RegisterItem(YellowShulkerBox{})
-	world.RegisterItem(DiamondHorseArmor{})
-	world.RegisterItem(MangrovePressurePlate{})
-	world.RegisterItem(CherrySapling{})
-	world.RegisterItem(Bush{})
-	world.RegisterItem(HardOrangeStainedGlass{})
-	world.RegisterItem(HardWhiteStainedGlassPane{})
-	world.RegisterItem(PinkShulkerBox{})
-	world.RegisterItem(Element109{})
-	world.RegisterItem(JungleChestBoat{})
-	world.RegisterItem(Rail{})
-	world.RegisterItem(Element31{})
-	world.RegisterItem(RedstoneOre{})
-	world.RegisterItem(WhiteCandle{})
-	world.RegisterItem(PowderSnowBucket{})
-	world.RegisterItem(ShulkerSpawnEgg{})
-	world.RegisterItem(BreezeRod{})
-	world.RegisterItem(Element59{})
-	world.RegisterItem(TubeCoralWallFan{})
-	world.RegisterItem(HardBlueStainedGlass{})
-	world.RegisterItem(LitBlastFurnace{})
-	world.RegisterItem(StoneBrickDoubleSlab{})
-	world.RegisterItem(LeafLitter{})
-	world.RegisterItem(FlowingLava{})
-	world.RegisterItem(RedShulkerBox{})
-	world.RegisterItem(Element85{})
-	world.RegisterItem(DioriteDoubleSlab{})
-	world.RegisterItem(Wool{})
-	world.RegisterItem(TintedGlass{})
-	world.RegisterItem(CrimsonPressurePlate{})
-	world.RegisterItem(IronTrapdoor{})
-	world.RegisterItem(CreakingSpawnEgg{})
-	world.RegisterItem(Element64{})
-	world.RegisterItem(TubeCoralFan{})
-	world.RegisterItem(RespawnAnchor{})
-	world.RegisterItem(Element67{})
-	world.RegisterItem(WaxedWeatheredCopperBulb{})
-	world.RegisterItem(BlueHarness{})
-	world.RegisterItem(BlackstoneDoubleSlab{})
-	world.RegisterItem(Mycelium{})
-	world.RegisterItem(DarkOakBoat{})
-	world.RegisterItem(OxidizedCopperBulb{})
-	world.RegisterItem(PurpleCandleCake{})
-	world.RegisterItem(BrownShulkerBox{})
-	world.RegisterItem(Element89{})
-	world.RegisterItem(WarpedWallSign{})
-	world.RegisterItem(Element72{})
-	world.RegisterItem(InfestedMossyStoneBricks{})
-	world.RegisterItem(HardBrownStainedGlass{})
-	world.RegisterItem(HardWhiteStainedGlass{})
-	world.RegisterItem(HardPinkStainedGlass{})
-	world.RegisterItem(Camera{})
-	world.RegisterItem(RedMushroom{})
-	world.RegisterItem(RedMushroomBlock{})
-	world.RegisterItem(Element45{})
-	world.RegisterItem(Element79{})
-	world.RegisterItem(AcaciaWallSign{})
-	world.RegisterItem(BigDripleaf{})
-	world.RegisterItem(LightBlueCandleCake{})
-	world.RegisterItem(WeatheredCopperBulb{})
-	world.RegisterItem(BambooRaft{})
-	world.RegisterItem(Portal{})
-	world.RegisterItem(ElementConstructor{})
-	world.RegisterItem(BrownEgg{})
-	world.RegisterItem(LightGrayCandleCake{})
-	world.RegisterItem(Candle{})
-	world.RegisterItem(DeprecatedPurpurBlock2{})
-	world.RegisterItem(CaveVines{})
-	world.RegisterItem(OrangeCandleCake{})
-	world.RegisterItem(PetrifiedOakDoubleSlab{})
-	world.RegisterItem(WarpedNylium{})
-	world.RegisterItem(MagentaBundle{})
-	world.RegisterItem(WaxedOxidizedCopperBulb{})
-	world.RegisterItem(Element54{})
-	world.RegisterItem(Log2{})
-	world.RegisterItem(PinkCandleCake{})
-	world.RegisterItem(BambooMosaicStairs{})
-	world.RegisterItem(HardYellowStainedGlassPane{})
-	world.RegisterItem(Element53{})
-	world.RegisterItem(DarkOakDoubleSlab{})
-	world.RegisterItem(IronDoor{})
-	world.RegisterItem(MudBrickDoubleSlab{})
-	world.RegisterItem(DeadBubbleCoralFan{})
-	world.RegisterItem(WolfArmor{})
-	world.RegisterItem(SalmonSpawnEgg{})
-	world.RegisterItem(Allow{})
-	world.RegisterItem(HuskSpawnEgg{})
-	world.RegisterItem(CodBucket{})
-	world.RegisterItem(Painting{})
-	world.RegisterItem(Element32{})
-	world.RegisterItem(EndermiteSpawnEgg{})
-	world.RegisterItem(FrostedIce{})
-	world.RegisterItem(Trident{})
-	world.RegisterItem(PurpleHarness{})
-	world.RegisterItem(Balloon{})
-	world.RegisterItem(CrimsonStandingSign{})
-	world.RegisterItem(CamelSpawnEgg{})
-	world.RegisterItem(ItemNetherSprouts{})
-	world.RegisterItem(Element81{})
-	world.RegisterItem(PolishedDeepslateDoubleSlab{})
-	world.RegisterItem(JungleBoat{})
-	world.RegisterItem(PolishedBlackstoneButton{})
-	world.RegisterItem(Chain{})
-	world.RegisterItem(DaylightDetector{})
-	world.RegisterItem(MangrovePropagule{})
-	world.RegisterItem(DoubleStoneBlockSlab2{})
-	world.RegisterItem(StainedGlassPane{})
-	world.RegisterItem(MonsterEgg{})
-	world.RegisterItem(Carpet{})
-	world.RegisterItem(MagmaCubeSpawnEgg{})
-	world.RegisterItem(AcaciaStandingSign{})
-	world.RegisterItem(PrismarineDoubleSlab{})
-	world.RegisterItem(FishingRod{})
-	world.RegisterItem(HardBlackStainedGlass{})
-	world.RegisterItem(Element110{})
-	world.RegisterItem(JungleDoubleSlab{})
-	world.RegisterItem(SpruceWallSign{})
-	world.RegisterItem(CreeperSpawnEgg{})
-	world.RegisterItem(BoggedSpawnEgg{})
-	world.RegisterItem(MangroveWallSign{})
-	world.RegisterItem(Bundle{})
-	world.RegisterItem(WhiteBundle{})
-	world.RegisterItem(LodestoneCompass{})
-	world.RegisterItem(SmoothQuartzDoubleSlab{})
-	world.RegisterItem(Element50{})
-	world.RegisterItem(SpiderSpawnEgg{})
-	world.RegisterItem(Element62{})
-	world.RegisterItem(StructureBlock{})
-	world.RegisterItem(Element88{})
-	world.RegisterItem(BlackCandleCake{})
-	world.RegisterItem(Element92{})
-	world.RegisterItem(StrippedBambooBlock{})
-	world.RegisterItem(Carrots{})
-	world.RegisterItem(CherryStandingSign{})
-	world.RegisterItem(Element96{})
-	world.RegisterItem(HardLimeStainedGlass{})
-	world.RegisterItem(MagentaHarness{})
-	world.RegisterItem(ItemCake{})
-	world.RegisterItem(Element80{})
-	world.RegisterItem(DrownedSpawnEgg{})
-	world.RegisterItem(Element1{})
-	world.RegisterItem(PurpleShulkerBox{})
-	world.RegisterItem(FireflyBush{})
-	world.RegisterItem(GreenBundle{})
-	world.RegisterItem(HappyGhastSpawnEgg{})
-	world.RegisterItem(ItemAcaciaDoor{})
-	world.RegisterItem(Board{})
-	world.RegisterItem(CyanShulkerBox{})
-	world.RegisterItem(Element84{})
-	world.RegisterItem(BlackCandle{})
-	world.RegisterItem(StainedGlass{})
-	world.RegisterItem(HardMagentaStainedGlass{})
-	world.RegisterItem(Boat{})
-	world.RegisterItem(Lava{})
-	world.RegisterItem(CactusFlower{})
-	world.RegisterItem(UndyedShulkerBox{})
-	world.RegisterItem(Bleach{})
-	world.RegisterItem(CherryChestBoat{})
-	world.RegisterItem(GhastSpawnEgg{})
-	world.RegisterItem(UnderwaterTnt{})
-	world.RegisterItem(Element73{})
-	world.RegisterItem(CherryButton{})
-	world.RegisterItem(YellowBundle{})
-	world.RegisterItem(LightGrayShulkerBox{})
-	world.RegisterItem(StoneBlockSlab2{})
-	world.RegisterItem(GreenCandleCake{})
-	world.RegisterItem(SweetBerryBush{})
-	world.RegisterItem(Seagrass{})
-	world.RegisterItem(SculkShrieker{})
-	world.RegisterItem(RedstoneTorch{})
-	world.RegisterItem(NameTag{})
-	world.RegisterItem(MooshroomSpawnEgg{})
-	world.RegisterItem(HardLightBlueStainedGlassPane{})
-	world.RegisterItem(MangroveDoubleSlab{})
-	world.RegisterItem(BrownHarness{})
-	world.RegisterItem(DeepslateTileDoubleSlab{})
-	world.RegisterItem(Element34{})
-	world.RegisterItem(LimeShulkerBox{})
-	world.RegisterItem(LabTable{})
-	world.RegisterItem(Element30{})
-	world.RegisterItem(Element103{})
-	world.RegisterItem(NetherBrickDoubleSlab{})
-	world.RegisterItem(BrownMushroomBlock{})
-	world.RegisterItem(PurpurDoubleSlab{})
-	world.RegisterItem(Element116{})
-	world.RegisterItem(ResinBrickDoubleSlab{})
-	world.RegisterItem(RedHarness{})
-	world.RegisterItem(Element94{})
-	world.RegisterItem(ZoglinSpawnEgg{})
-	world.RegisterItem(ChemicalHeat{})
-	world.RegisterItem(CommandBlockMinecart{})
-	world.RegisterItem(PolarBearSpawnEgg{})
-	world.RegisterItem(PaleOakWallSign{})
-	world.RegisterItem(ChorusFruit{})
-	world.RegisterItem(PinkHarness{})
-	world.RegisterItem(WaxedDoubleCutCopperSlab{})
-	world.RegisterItem(WallBanner{})
-	world.RegisterItem(Observer{})
-	world.RegisterItem(ChorusPlant{})
-	world.RegisterItem(HornCoralWallFan{})
-	world.RegisterItem(CatSpawnEgg{})
-	world.RegisterItem(CreakingHeart{})
-	world.RegisterItem(CoralFanDead{})
-	world.RegisterItem(BeeSpawnEgg{})
-	world.RegisterItem(CaveVinesHeadWithBerries{})
-	world.RegisterItem(StoneBlockSlab4{})
-	world.RegisterItem(Element76{})
-	world.RegisterItem(BlazeSpawnEgg{})
-	world.RegisterItem(Element46{})
-	world.RegisterItem(IceBomb{})
-	world.RegisterItem(SpruceChestBoat{})
-	world.RegisterItem(Element18{})
-	world.RegisterItem(StriderSpawnEgg{})
-	world.RegisterItem(DeprecatedAnvil{})
-	world.RegisterItem(WarpedDoubleSlab{})
-	world.RegisterItem(AcaciaButton{})
-	world.RegisterItem(SmoothRedSandstoneDoubleSlab{})
-	world.RegisterItem(Element40{})
-	world.RegisterItem(SandstoneDoubleSlab{})
-	world.RegisterItem(Lodestone{})
-	world.RegisterItem(OxidizedDoubleCutCopperSlab{})
-	world.RegisterItem(TropicalFishSpawnEgg{})
-	world.RegisterItem(LightBlueBundle{})
-	world.RegisterItem(TropicalFishBucket{})
-	world.RegisterItem(Element16{})
-	world.RegisterItem(LimeHarness{})
-	world.RegisterItem(Element5{})
-	world.RegisterItem(BirchSapling{})
-	world.RegisterItem(BambooStandingSign{})
-	world.RegisterItem(Bamboo{})
-	world.RegisterItem(JungleStandingSign{})
-	world.RegisterItem(Element111{})
-	world.RegisterItem(BambooFenceGate{})
-	world.RegisterItem(Element101{})
-	world.RegisterItem(Wood{})
-	world.RegisterItem(PufferfishBucket{})
-	world.RegisterItem(BambooSign{})
-	world.RegisterItem(GuardianSpawnEgg{})
-	world.RegisterItem(Element2{})
-	world.RegisterItem(PistonArmCollision{})
-	world.RegisterItem(Element3{})
-	world.RegisterItem(PaleMossCarpet{})
-	world.RegisterItem(Deny{})
-	world.RegisterItem(GlowBerries{})
-	world.RegisterItem(HardGreenStainedGlass{})
-	world.RegisterItem(Element12{})
-	world.RegisterItem(Element66{})
-	world.RegisterItem(BrownBundle{})
-	world.RegisterItem(BirchPressurePlate{})
-	world.RegisterItem(BrownCandle{})
-	world.RegisterItem(Element78{})
-	world.RegisterItem(InfestedCrackedStoneBricks{})
-	world.RegisterItem(GlowStick{})
-	world.RegisterItem(WeatheredDoubleCutCopperSlab{})
-	world.RegisterItem(ItemFlowerPot{})
-	world.RegisterItem(FoxSpawnEgg{})
-	world.RegisterItem(PaleOakPressurePlate{})
-	world.RegisterItem(StructureVoid{})
-	world.RegisterItem(SpruceStandingSign{})
-	world.RegisterItem(LitRedstoneOre{})
-	world.RegisterItem(Element0{})
-	world.RegisterItem(SoulFire{})
-	world.RegisterItem(VexSpawnEgg{})
-	world.RegisterItem(CrimsonRoots{})
-	world.RegisterItem(TorchflowerCrop{})
-	world.RegisterItem(CyanBundle{})
+	world.RegisterItem(BorderBlock{})
+	world.RegisterItem(Element58{})
+	world.RegisterItem(SnowLayer{})
 	world.RegisterItem(HardCyanStainedGlassPane{})
-	world.RegisterItem(Beehive{})
-	world.RegisterItem(AxolotlSpawnEgg{})
-	world.RegisterItem(Element41{})
-	world.RegisterItem(CopperBulb{})
-	world.RegisterItem(WanderingTraderSpawnEgg{})
-	world.RegisterItem(LightningRod{})
-	world.RegisterItem(Element99{})
-	world.RegisterItem(TrappedChest{})
-	world.RegisterItem(CowSpawnEgg{})
-	world.RegisterItem(Element23{})
-	world.RegisterItem(ColoredTorchPurple{})
-	world.RegisterItem(PolishedBlackstonePressurePlate{})
-	world.RegisterItem(ChiseledBookshelf{})
-	world.RegisterItem(ItemChain{})
-	world.RegisterItem(Coral{})
-	world.RegisterItem(MagentaShulkerBox{})
-	world.RegisterItem(HardLimeStainedGlassPane{})
-	world.RegisterItem(Potatoes{})
-	world.RegisterItem(GrayHarness{})
-	world.RegisterItem(MossyStoneBrickDoubleSlab{})
-	world.RegisterItem(Magma{})
-	world.RegisterItem(MangroveBoat{})
-	world.RegisterItem(Lever{})
-	world.RegisterItem(GlowLichen{})
-	world.RegisterItem(Element77{})
-	world.RegisterItem(DarkOakHangingSign{})
-	world.RegisterItem(MaterialReducer{})
-	world.RegisterItem(GreenShulkerBox{})
-	world.RegisterItem(YellowHarness{})
+	world.RegisterItem(WhiteBundle{})
+	world.RegisterItem(FrogSpawnEgg{})
 	world.RegisterItem(BreezeSpawnEgg{})
-	world.RegisterItem(GoldenHorseArmor{})
-	world.RegisterItem(Element107{})
-	world.RegisterItem(SnifferEgg{})
-	world.RegisterItem(WoodenButton{})
-	world.RegisterItem(Brush{})
-	world.RegisterItem(MovingBlock{})
-	world.RegisterItem(EndGateway{})
-	world.RegisterItem(PoweredComparator{})
-	world.RegisterItem(Azalea{})
-	world.RegisterItem(WitherSpawnEgg{})
-	world.RegisterItem(LightGrayBundle{})
-	world.RegisterItem(Reserved6{})
-	world.RegisterItem(MangroveHangingSign{})
-	world.RegisterItem(Element8{})
-	world.RegisterItem(FrogSpawn{})
-	world.RegisterItem(ItemBeetroot{})
-	world.RegisterItem(DarkOakButton{})
-	world.RegisterItem(HardGrayStainedGlassPane{})
-	world.RegisterItem(WitherSkeletonSpawnEgg{})
-	world.RegisterItem(ShortDryGrass{})
-	world.RegisterItem(RedBundle{})
-	world.RegisterItem(Slime{})
-	world.RegisterItem(IronGolemSpawnEgg{})
-	world.RegisterItem(GrayShulkerBox{})
-	world.RegisterItem(DarkOakChestBoat{})
-	world.RegisterItem(Element113{})
-	world.RegisterItem(RavagerSpawnEgg{})
-	world.RegisterItem(EndStoneBrickDoubleSlab{})
-	world.RegisterItem(PitcherPod{})
-	world.RegisterItem(Element55{})
-	world.RegisterItem(BlackHarness{})
-	world.RegisterItem(PolishedTuffDoubleSlab{})
-	world.RegisterItem(Element68{})
-	world.RegisterItem(BambooBlock{})
-	world.RegisterItem(PillagerSpawnEgg{})
-	world.RegisterItem(StandingSign{})
-	world.RegisterItem(BrainCoralWallFan{})
-	world.RegisterItem(DarkPrismarineDoubleSlab{})
-	world.RegisterItem(RapidFertilizer{})
-	world.RegisterItem(SmoothBasalt{})
-	world.RegisterItem(PaleOakHangingSign{})
-	world.RegisterItem(MushroomStem{})
-	world.RegisterItem(ItemWheat{})
-	world.RegisterItem(HardRedStainedGlass{})
+	world.RegisterItem(CrimsonRoots{})
+	world.RegisterItem(BubbleCoralWallFan{})
+	world.RegisterItem(Fire{})
+	world.RegisterItem(SpruceHangingSign{})
+	world.RegisterItem(FireCoralWallFan{})
+	world.RegisterItem(StoneBlockSlab4{})
+	world.RegisterItem(ParchedSpawnEgg{})
+	world.RegisterItem(BlueBundle{})
+	world.RegisterItem(TadpoleBucket{})
 	world.RegisterItem(InfestedStone{})
-	world.RegisterItem(ElderGuardianSpawnEgg{})
-	world.RegisterItem(FlowerPot{})
-	world.RegisterItem(SnowGolemSpawnEgg{})
-	world.RegisterItem(HardGlassPane{})
+	world.RegisterItem(CopperGolemSpawnEgg{})
+	world.RegisterItem(Ice{})
+	world.RegisterItem(PowderSnowBucket{})
+	world.RegisterItem(BambooSign{})
+	world.RegisterItem(CrimsonDoubleSlab{})
+	world.RegisterItem(LitDeepslateRedstoneOre{})
+	world.RegisterItem(CowSpawnEgg{})
+	world.RegisterItem(PetrifiedOakDoubleSlab{})
+	world.RegisterItem(WhiteShulkerBox{})
+	world.RegisterItem(LightBlueBundle{})
+	world.RegisterItem(Element108{})
+	world.RegisterItem(IronDoor{})
+	world.RegisterItem(PurpurDoubleSlab{})
+	world.RegisterItem(Coral{})
+	world.RegisterItem(BambooSlab{})
+	world.RegisterItem(OcelotSpawnEgg{})
+	world.RegisterItem(PoweredRepeater{})
+	world.RegisterItem(AndesiteDoubleSlab{})
+	world.RegisterItem(StriderSpawnEgg{})
+	world.RegisterItem(BambooBlock{})
+	world.RegisterItem(ArmadilloSpawnEgg{})
+	world.RegisterItem(WolfSpawnEgg{})
+	world.RegisterItem(WoodenSpear{})
+	world.RegisterItem(GrayHarness{})
+	world.RegisterItem(RedstoneLamp{})
+	world.RegisterItem(BeeNest{})
+	world.RegisterItem(PurpleBundle{})
+	world.RegisterItem(EndPortalFrame{})
+	world.RegisterItem(Element54{})
+	world.RegisterItem(ChestMinecart{})
+	world.RegisterItem(SweetBerries{})
+	world.RegisterItem(ItemWoodenDoor{})
+	world.RegisterItem(TubeCoralWallFan{})
+	world.RegisterItem(Element18{})
+	world.RegisterItem(ChainCommandBlock{})
+	world.RegisterItem(ItemCauldron{})
+	world.RegisterItem(MangrovePressurePlate{})
+	world.RegisterItem(SkeletonHorseSpawnEgg{})
+	world.RegisterItem(WaxedExposedCopperBulb{})
+	world.RegisterItem(Element100{})
+	world.RegisterItem(Concrete{})
+	world.RegisterItem(UnderwaterTnt{})
+	world.RegisterItem(AxolotlBucket{})
+	world.RegisterItem(HoneyBottle{})
+	world.RegisterItem(Candle{})
+	world.RegisterItem(SmallAmethystBud{})
+	world.RegisterItem(DeadHornCoralWallFan{})
+	world.RegisterItem(InfestedCrackedStoneBricks{})
+	world.RegisterItem(UndyedShulkerBox{})
+	world.RegisterItem(PointedDripstone{})
+	world.RegisterItem(BambooHangingSign{})
+	world.RegisterItem(SpiderSpawnEgg{})
+	world.RegisterItem(Medicine{})
+	world.RegisterItem(WoodenSlab{})
+	world.RegisterItem(IronTrapdoor{})
+	world.RegisterItem(OakSapling{})
+	world.RegisterItem(Element43{})
+	world.RegisterItem(Boat{})
+	world.RegisterItem(NpcSpawnEgg{})
+	world.RegisterItem(MangroveButton{})
+	world.RegisterItem(Chalkboard{})
+	world.RegisterItem(BambooMosaic{})
+	world.RegisterItem(OxidizedCopperBulb{})
+	world.RegisterItem(AcaciaPressurePlate{})
+	world.RegisterItem(HuskSpawnEgg{})
+	world.RegisterItem(PaleOakSapling{})
+	world.RegisterItem(HoneyBlock{})
+	world.RegisterItem(Element65{})
+	world.RegisterItem(StoneBlockSlab2{})
+	world.RegisterItem(Lava{})
+	world.RegisterItem(Element112{})
+	world.RegisterItem(MagentaBundle{})
+	world.RegisterItem(TraderLlamaSpawnEgg{})
+	world.RegisterItem(DioriteDoubleSlab{})
+	world.RegisterItem(IronNautilusArmor{})
+	world.RegisterItem(MuleSpawnEgg{})
+	world.RegisterItem(BambooStairs{})
+	world.RegisterItem(CalibratedSculkSensor{})
+	world.RegisterItem(PolishedBlackstoneButton{})
+	world.RegisterItem(DoublePlant{})
+	world.RegisterItem(JungleShelf{})
+	world.RegisterItem(ColoredTorchPurple{})
+	world.RegisterItem(WaxedWeatheredCopperBulb{})
+	world.RegisterItem(Log{})
+	world.RegisterItem(IronGolemSpawnEgg{})
+	world.RegisterItem(BambooStandingSign{})
+	world.RegisterItem(GhastSpawnEgg{})
+	world.RegisterItem(CaveVines{})
+	world.RegisterItem(SculkShrieker{})
+	world.RegisterItem(CobblestoneDoubleSlab{})
+	world.RegisterItem(BlackHarness{})
+	world.RegisterItem(CandleCake{})
+	world.RegisterItem(Element32{})
+	world.RegisterItem(CherryBoat{})
+	world.RegisterItem(BirchDoubleSlab{})
+	world.RegisterItem(PolishedTuffDoubleSlab{})
+	world.RegisterItem(WaxedOxidizedDoubleCutCopperSlab{})
+	world.RegisterItem(Trident{})
+	world.RegisterItem(Carpet{})
+	world.RegisterItem(DarkOakDoubleSlab{})
+	world.RegisterItem(PolishedGraniteDoubleSlab{})
+	world.RegisterItem(CaveSpiderSpawnEgg{})
+	world.RegisterItem(FrostedIce{})
+	world.RegisterItem(MobSpawner{})
+	world.RegisterItem(StructureVoid{})
+	world.RegisterItem(Element28{})
+	world.RegisterItem(MagentaHarness{})
 	world.RegisterItem(WindCharge{})
-	world.RegisterItem(DeadHornCoralFan{})
-	world.RegisterItem(TripWire{})
-	world.RegisterItem(Water{})
-	world.RegisterItem(VindicatorSpawnEgg{})
-	world.RegisterItem(FilledMap{})
+	world.RegisterItem(StrippedBambooBlock{})
+	world.RegisterItem(OxidizedCopperChest{})
+	world.RegisterItem(AcaciaStandingSign{})
+	world.RegisterItem(WaxedCopperBulb{})
+	world.RegisterItem(Repeater{})
+	world.RegisterItem(BlackShulkerBox{})
+	world.RegisterItem(DaylightDetectorInverted{})
+	world.RegisterItem(HardLightGrayStainedGlassPane{})
+	world.RegisterItem(Element63{})
+	world.RegisterItem(Element39{})
+	world.RegisterItem(DarkOakHangingSign{})
+	world.RegisterItem(ResinBrickDoubleSlab{})
+	world.RegisterItem(Element23{})
+	world.RegisterItem(Element94{})
+	world.RegisterItem(WaxedExposedLightningRod{})
+	world.RegisterItem(BambooDoor{})
+	world.RegisterItem(HardWhiteStainedGlassPane{})
+	world.RegisterItem(PigSpawnEgg{})
+	world.RegisterItem(LitRedstoneLamp{})
+	world.RegisterItem(HardYellowStainedGlassPane{})
+	world.RegisterItem(StoneBlockSlab{})
+	world.RegisterItem(SpruceShelf{})
+	world.RegisterItem(HardRedStainedGlass{})
+	world.RegisterItem(GoatSpawnEgg{})
+	world.RegisterItem(LimeHarness{})
+	world.RegisterItem(Element35{})
+	world.RegisterItem(TuffBrickDoubleSlab{})
+	world.RegisterItem(OakShelf{})
+	world.RegisterItem(Mycelium{})
+	world.RegisterItem(Stonebrick{})
+	world.RegisterItem(GreenBundle{})
+	world.RegisterItem(TallDryGrass{})
+	world.RegisterItem(FlowingLava{})
+	world.RegisterItem(BirchShelf{})
+	world.RegisterItem(BlackCandle{})
+	world.RegisterItem(AcaciaButton{})
+	world.RegisterItem(BirchChestBoat{})
+	world.RegisterItem(WaxedOxidizedCopperBulb{})
+	world.RegisterItem(HornCoralFan{})
+	world.RegisterItem(Element60{})
+	world.RegisterItem(HopperMinecart{})
+	world.RegisterItem(Element110{})
+	world.RegisterItem(ItemCrimsonDoor{})
+	world.RegisterItem(SculkSensor{})
+	world.RegisterItem(StoneBlockSlab3{})
+	world.RegisterItem(BubbleColumn{})
+	world.RegisterItem(Element73{})
+	world.RegisterItem(HappyGhastSpawnEgg{})
+	world.RegisterItem(Element66{})
+	world.RegisterItem(RapidFertilizer{})
+	world.RegisterItem(BreezeRod{})
+	world.RegisterItem(Element2{})
+	world.RegisterItem(Element4{})
+	world.RegisterItem(StainedHardenedClay{})
+	world.RegisterItem(ChorusFruit{})
+	world.RegisterItem(Element96{})
+	world.RegisterItem(GlowBerries{})
+	world.RegisterItem(Element117{})
+	world.RegisterItem(PolishedDioriteDoubleSlab{})
+	world.RegisterItem(CodSpawnEgg{})
+	world.RegisterItem(CommandBlockMinecart{})
+	world.RegisterItem(BeeSpawnEgg{})
+	world.RegisterItem(Element88{})
+	world.RegisterItem(Element15{})
+	world.RegisterItem(BrainCoralWallFan{})
+	world.RegisterItem(TuffDoubleSlab{})
+	world.RegisterItem(PurpleShulkerBox{})
+	world.RegisterItem(ChestBoat{})
+	world.RegisterItem(WitherSpawnEgg{})
+	world.RegisterItem(Element1{})
+	world.RegisterItem(LightBlueHarness{})
+	world.RegisterItem(PolarBearSpawnEgg{})
+	world.RegisterItem(Element42{})
+	world.RegisterItem(LabTable{})
+	world.RegisterItem(Dropper{})
+	world.RegisterItem(CoralBlock{})
+	world.RegisterItem(HardWhiteStainedGlass{})
+	world.RegisterItem(Leaves{})
+	world.RegisterItem(Sparkler{})
+	world.RegisterItem(PiglinBruteSpawnEgg{})
+	world.RegisterItem(TadpoleSpawnEgg{})
+	world.RegisterItem(BigDripleaf{})
+	world.RegisterItem(CodBucket{})
+	world.RegisterItem(RespawnAnchor{})
+	world.RegisterItem(DarkoakWallSign{})
+	world.RegisterItem(CyanBundle{})
+	world.RegisterItem(DoubleStoneBlockSlab2{})
+	world.RegisterItem(SnowGolemSpawnEgg{})
+	world.RegisterItem(ColoredTorchRed{})
+	world.RegisterItem(BambooMosaicDoubleSlab{})
+	world.RegisterItem(GoldenDandelion{})
+	world.RegisterItem(PaleHangingMoss{})
+	world.RegisterItem(PaleOakShelf{})
+	world.RegisterItem(ZoglinSpawnEgg{})
+	world.RegisterItem(RedBundle{})
+	world.RegisterItem(PolishedBlackstoneBrickDoubleSlab{})
+	world.RegisterItem(ChorusFlower{})
+	world.RegisterItem(Seagrass{})
+	world.RegisterItem(Planks{})
+	world.RegisterItem(LimeBundle{})
+	world.RegisterItem(BrickDoubleSlab{})
+	world.RegisterItem(TintedGlass{})
+	world.RegisterItem(OrangeCandleCake{})
+	world.RegisterItem(Bleach{})
+	world.RegisterItem(FireflyBush{})
+	world.RegisterItem(HardGlassPane{})
+	world.RegisterItem(TubeCoralFan{})
+	world.RegisterItem(Leaves2{})
+	world.RegisterItem(ShulkerBox{})
+	world.RegisterItem(Element11{})
+	world.RegisterItem(Allow{})
+	world.RegisterItem(WaxedOxidizedCopperChest{})
+	world.RegisterItem(HorseSpawnEgg{})
+	world.RegisterItem(LightGrayShulkerBox{})
+	world.RegisterItem(HardOrangeStainedGlassPane{})
+	world.RegisterItem(FloweringAzalea{})
+	world.RegisterItem(Unknown{})
+	world.RegisterItem(MelonStem{})
+	world.RegisterItem(WardenSpawnEgg{})
+	world.RegisterItem(OminousTrialKey{})
+	world.RegisterItem(BrownCandleCake{})
+	world.RegisterItem(Element37{})
+	world.RegisterItem(BlueCandleCake{})
+	world.RegisterItem(ItemGlowFrame{})
+	world.RegisterItem(BrownBundle{})
+	world.RegisterItem(WeatheredCopperBulb{})
+	world.RegisterItem(FlowerPot{})
+	world.RegisterItem(CherryChestBoat{})
+	world.RegisterItem(PaleMossBlock{})
+	world.RegisterItem(Lodestone{})
+	world.RegisterItem(Cocoa{})
+	world.RegisterItem(ExposedCopperChest{})
+	world.RegisterItem(WoodenButton{})
+	world.RegisterItem(LightBlueShulkerBox{})
+	world.RegisterItem(Element26{})
+	world.RegisterItem(Element81{})
+	world.RegisterItem(DeprecatedPurpurBlock2{})
+	world.RegisterItem(AcaciaChestBoat{})
+	world.RegisterItem(SnifferEgg{})
+	world.RegisterItem(MagentaShulkerBox{})
+	world.RegisterItem(Cauldron{})
+	world.RegisterItem(LeafLitter{})
+	world.RegisterItem(CatSpawnEgg{})
+	world.RegisterItem(WarpedFungus{})
+	world.RegisterItem(Element13{})
+	world.RegisterItem(PinkShulkerBox{})
+	world.RegisterItem(JungleSapling{})
+	world.RegisterItem(VexSpawnEgg{})
+	world.RegisterItem(LightWeightedPressurePlate{})
+	world.RegisterItem(BubbleCoralFan{})
+	world.RegisterItem(SweetBerryBush{})
+	world.RegisterItem(MooshroomSpawnEgg{})
+	world.RegisterItem(Element5{})
+	world.RegisterItem(Element9{})
+	world.RegisterItem(FireCoralFan{})
+	world.RegisterItem(Element41{})
+	world.RegisterItem(Element0{})
+	world.RegisterItem(CoralFanDead{})
+	world.RegisterItem(Element3{})
+	world.RegisterItem(AmethystCluster{})
+	world.RegisterItem(BuddingAmethyst{})
+	world.RegisterItem(Element93{})
+	world.RegisterItem(DolphinSpawnEgg{})
+	world.RegisterItem(FlowingWater{})
+	world.RegisterItem(CyanShulkerBox{})
+	world.RegisterItem(Element104{})
+	world.RegisterItem(HoglinSpawnEgg{})
+	world.RegisterItem(ItemSpruceDoor{})
+	world.RegisterItem(HardBlackStainedGlass{})
+	world.RegisterItem(GrayBundle{})
+	world.RegisterItem(Tallgrass{})
+	world.RegisterItem(BlackBundle{})
+	world.RegisterItem(SpruceDoubleSlab{})
+	world.RegisterItem(ZombieVillagerSpawnEgg{})
+	world.RegisterItem(Element8{})
+	world.RegisterItem(DeadTubeCoralFan{})
+	world.RegisterItem(HardRedStainedGlassPane{})
+	world.RegisterItem(CaveVinesHeadWithBerries{})
+	world.RegisterItem(HardYellowStainedGlass{})
+	world.RegisterItem(TurtleEgg{})
+	world.RegisterItem(ItemBirchDoor{})
+	world.RegisterItem(GraniteDoubleSlab{})
+	world.RegisterItem(BambooTrapdoor{})
+	world.RegisterItem(PolishedBlackstoneDoubleSlab{})
+	world.RegisterItem(PaleMossCarpet{})
+	world.RegisterItem(Element70{})
+	world.RegisterItem(Brush{})
+	world.RegisterItem(HardPinkStainedGlassPane{})
+	world.RegisterItem(Element59{})
+	world.RegisterItem(EnderDragonSpawnEgg{})
+	world.RegisterItem(OakChestBoat{})
+	world.RegisterItem(ColoredTorchGreen{})
+	world.RegisterItem(Element33{})
+	world.RegisterItem(Element12{})
+	world.RegisterItem(ExposedLightningRod{})
+	world.RegisterItem(CyanHarness{})
+	world.RegisterItem(EndermiteSpawnEgg{})
+	world.RegisterItem(Netherreactor{})
+	world.RegisterItem(ShulkerSpawnEgg{})
+	world.RegisterItem(HardCyanStainedGlass{})
+	world.RegisterItem(Element25{})
+	world.RegisterItem(InfestedMossyStoneBricks{})
+	world.RegisterItem(DeprecatedPurpurBlock1{})
+	world.RegisterItem(DetectorRail{})
+	world.RegisterItem(CobbledDeepslateDoubleSlab{})
+	world.RegisterItem(BlueCandle{})
+	world.RegisterItem(ArmorStand{})
+	world.RegisterItem(LimeCandleCake{})
+	world.RegisterItem(AcaciaBoat{})
+	world.RegisterItem(PaleOakButton{})
+	world.RegisterItem(TrappedChest{})
+	world.RegisterItem(WaxedLightningRod{})
+	world.RegisterItem(DiamondNautilusArmor{})
+	world.RegisterItem(InfestedCobblestone{})
+	world.RegisterItem(Element111{})
+	world.RegisterItem(NetherBrickDoubleSlab{})
+	world.RegisterItem(PinkCandle{})
+	world.RegisterItem(Element45{})
+	world.RegisterItem(PinkBundle{})
+	world.RegisterItem(Log2{})
+	world.RegisterItem(Web{})
+	world.RegisterItem(Element102{})
+	world.RegisterItem(NameTag{})
+	world.RegisterItem(WarpedShelf{})
+	world.RegisterItem(HardPinkStainedGlass{})
+	world.RegisterItem(MagmaCubeSpawnEgg{})
+	world.RegisterItem(Element83{})
+	world.RegisterItem(BrownShulkerBox{})
 	world.RegisterItem(PowderSnow{})
-	world.RegisterItem(ParrotSpawnEgg{})
+	world.RegisterItem(TrialSpawner{})
+	world.RegisterItem(Element50{})
+	world.RegisterItem(NetheriteNautilusArmor{})
+	world.RegisterItem(DeadBubbleCoralFan{})
+	world.RegisterItem(StoneButton{})
+	world.RegisterItem(Element109{})
+	world.RegisterItem(Element89{})
+	world.RegisterItem(StoneBrickDoubleSlab{})
+	world.RegisterItem(PandaSpawnEgg{})
+	world.RegisterItem(Portal{})
+	world.RegisterItem(LitRedstoneOre{})
+	world.RegisterItem(RedCandleCake{})
+	world.RegisterItem(MangroveShelf{})
+	world.RegisterItem(WeatheredLightningRod{})
+	world.RegisterItem(Element116{})
+	world.RegisterItem(WeepingVines{})
+	world.RegisterItem(EmptyMap{})
+	world.RegisterItem(Element97{})
+	world.RegisterItem(Element19{})
+	world.RegisterItem(BambooPressurePlate{})
+	world.RegisterItem(Element95{})
+	world.RegisterItem(Element106{})
+	world.RegisterItem(PistonArmCollision{})
+	world.RegisterItem(Compound{})
+	world.RegisterItem(Element57{})
+	world.RegisterItem(RedstoneTorch{})
+	world.RegisterItem(Deny{})
+	world.RegisterItem(PiglinSpawnEgg{})
+	world.RegisterItem(MangroveHangingSign{})
 	world.RegisterItem(Element14{})
 	world.RegisterItem(DeadBrainCoralWallFan{})
-	world.RegisterItem(ItemBed{})
-	world.RegisterItem(TurtleEgg{})
-	world.RegisterItem(DeepslateBrickDoubleSlab{})
-	world.RegisterItem(Conduit{})
-	world.RegisterItem(WarpedRoots{})
-	world.RegisterItem(RedstoneBlock{})
-	world.RegisterItem(SculkVein{})
-	world.RegisterItem(Element57{})
-	world.RegisterItem(CobbledDeepslateDoubleSlab{})
-	world.RegisterItem(BirchDoubleSlab{})
-	world.RegisterItem(Element51{})
-	world.RegisterItem(BlueBundle{})
-	world.RegisterItem(RedstoneLamp{})
-	world.RegisterItem(Element4{})
-	world.RegisterItem(BirchButton{})
-	world.RegisterItem(Element115{})
-	world.RegisterItem(ChestMinecart{})
-	world.RegisterItem(SpawnEgg{})
-	world.RegisterItem(LightBlueHarness{})
-	world.RegisterItem(Element27{})
-	world.RegisterItem(HardGrayStainedGlass{})
-	world.RegisterItem(InfestedStoneBricks{})
-	world.RegisterItem(StoneBlockSlab{})
-	world.RegisterItem(RedSandstoneDoubleSlab{})
-	world.RegisterItem(BorderBlock{})
-	world.RegisterItem(SmallDripleafBlock{})
-	world.RegisterItem(ItemSoulCampfire{})
-	world.RegisterItem(BubbleCoralWallFan{})
-	world.RegisterItem(CrimsonButton{})
-	world.RegisterItem(MuleSpawnEgg{})
-	world.RegisterItem(Element24{})
-	world.RegisterItem(BambooWallSign{})
-	world.RegisterItem(CyanCandle{})
-	world.RegisterItem(CherryPressurePlate{})
-	world.RegisterItem(RedstoneWire{})
-	world.RegisterItem(BambooSlab{})
-	world.RegisterItem(AgentSpawnEgg{})
-	world.RegisterItem(Crafter{})
-	world.RegisterItem(TuffDoubleSlab{})
-	world.RegisterItem(Element42{})
-	world.RegisterItem(AcaciaHangingSign{})
-	world.RegisterItem(DoubleStoneBlockSlab3{})
-	world.RegisterItem(LitDeepslateRedstoneOre{})
-	world.RegisterItem(ItemIronDoor{})
-	world.RegisterItem(CrimsonDoubleSlab{})
-	world.RegisterItem(DeprecatedPurpurBlock1{})
-	world.RegisterItem(BambooSapling{})
-	world.RegisterItem(BirchWallSign{})
-	world.RegisterItem(FireCoralFan{})
-	world.RegisterItem(HardBlackStainedGlassPane{})
-	world.RegisterItem(SculkSensor{})
-	world.RegisterItem(WaxedWeatheredDoubleCutCopperSlab{})
-	world.RegisterItem(DarkOakSapling{})
-	world.RegisterItem(Dispenser{})
-	world.RegisterItem(EndCrystal{})
-	world.RegisterItem(SprucePressurePlate{})
-	world.RegisterItem(SpruceButton{})
-	world.RegisterItem(SquidSpawnEgg{})
-	world.RegisterItem(DeadFireCoralWallFan{})
-	world.RegisterItem(DeadFireCoralFan{})
-	world.RegisterItem(Element98{})
-	world.RegisterItem(Element86{})
-	world.RegisterItem(LargeAmethystBud{})
-	world.RegisterItem(SuspiciousSand{})
-	world.RegisterItem(HoneyBlock{})
-	world.RegisterItem(Cocoa{})
-	world.RegisterItem(PhantomSpawnEgg{})
-	world.RegisterItem(EndPortalFrame{})
-	world.RegisterItem(Element13{})
-	world.RegisterItem(CandleCake{})
-	world.RegisterItem(Element33{})
-	world.RegisterItem(QuartzDoubleSlab{})
-	world.RegisterItem(SuspiciousGravel{})
-	world.RegisterItem(CyanCandleCake{})
-	world.RegisterItem(Element58{})
-	world.RegisterItem(Element9{})
-	world.RegisterItem(Bed{})
-	world.RegisterItem(TuffBrickDoubleSlab{})
-	world.RegisterItem(ResinClump{})
-	world.RegisterItem(GreenHarness{})
-	world.RegisterItem(Element43{})
-	world.RegisterItem(CobblestoneDoubleSlab{})
-	world.RegisterItem(YellowCandle{})
-	world.RegisterItem(WaxedExposedDoubleCutCopperSlab{})
-	world.RegisterItem(Element60{})
-	world.RegisterItem(OakHangingSign{})
-	world.RegisterItem(Element118{})
-	world.RegisterItem(Medicine{})
-	world.RegisterItem(Sculk{})
-	world.RegisterItem(WoodenSlab{})
-	world.RegisterItem(Lead{})
-	world.RegisterItem(InfestedChiseledStoneBricks{})
-	world.RegisterItem(MossyCobblestoneDoubleSlab{})
-	world.RegisterItem(BannerPattern{})
-	world.RegisterItem(PaleMossBlock{})
-	world.RegisterItem(SkeletonSpawnEgg{})
-	world.RegisterItem(DarkoakStandingSign{})
-	world.RegisterItem(GraniteDoubleSlab{})
-	world.RegisterItem(PolishedBlackstoneDoubleSlab{})
-	world.RegisterItem(StickyPistonArmCollision{})
-	world.RegisterItem(SmallAmethystBud{})
-	world.RegisterItem(PolishedAndesiteDoubleSlab{})
-	world.RegisterItem(ItemBirchDoor{})
-	world.RegisterItem(PoweredRepeater{})
 	world.RegisterItem(HardMagentaStainedGlassPane{})
-	world.RegisterItem(Element69{})
-	world.RegisterItem(ArmadilloSpawnEgg{})
-	world.RegisterItem(SnowLayer{})
-	world.RegisterItem(BubbleColumn{})
-	world.RegisterItem(Element56{})
-	world.RegisterItem(NormalStoneDoubleSlab{})
-	world.RegisterItem(OminousTrialKey{})
-	world.RegisterItem(ClosedEyeblossom{})
-	world.RegisterItem(CompoundCreator{})
-	world.RegisterItem(StickyPiston{})
-	world.RegisterItem(BubbleCoralFan{})
-	world.RegisterItem(JunglePressurePlate{})
-	world.RegisterItem(Wildflowers{})
-	world.RegisterItem(BlueEgg{})
-	world.RegisterItem(YellowCandleCake{})
-	world.RegisterItem(BrickDoubleSlab{})
-	world.RegisterItem(Element21{})
-	world.RegisterItem(SmoothStoneDoubleSlab{})
-	world.RegisterItem(Element74{})
-	world.RegisterItem(ItemWarpedDoor{})
-	world.RegisterItem(Fire{})
-	world.RegisterItem(Cauldron{})
-	world.RegisterItem(AcaciaPressurePlate{})
-	world.RegisterItem(Element90{})
-	world.RegisterItem(PandaSpawnEgg{})
-	world.RegisterItem(HeavyWeightedPressurePlate{})
-	world.RegisterItem(DoubleStoneBlockSlab{})
-	world.RegisterItem(Sapling{})
-	world.RegisterItem(BlueCandleCake{})
-	world.RegisterItem(Element82{})
-	world.RegisterItem(Scaffolding{})
-	world.RegisterItem(TrialSpawner{})
-	world.RegisterItem(OrangeShulkerBox{})
-	world.RegisterItem(Element29{})
-	world.RegisterItem(Element38{})
-	world.RegisterItem(SlimeSpawnEgg{})
-	world.RegisterItem(TurtleSpawnEgg{})
-	world.RegisterItem(DoubleStoneBlockSlab4{})
-	world.RegisterItem(Element28{})
-	world.RegisterItem(ZombieSpawnEgg{})
-	world.RegisterItem(BuddingAmethyst{})
-	world.RegisterItem(Minecart{})
-	world.RegisterItem(SpruceBoat{})
-	world.RegisterItem(ArmadilloScute{})
-	world.RegisterItem(OrangeHarness{})
-	world.RegisterItem(ChorusFlower{})
-	world.RegisterItem(BambooDoubleSlab{})
-	world.RegisterItem(SpruceHangingSign{})
-	world.RegisterItem(HorseSpawnEgg{})
-	world.RegisterItem(HardLightGrayStainedGlassPane{})
-	world.RegisterItem(Element15{})
-	world.RegisterItem(AcaciaDoubleSlab{})
-	world.RegisterItem(MagentaCandleCake{})
-	world.RegisterItem(Element102{})
-	world.RegisterItem(HardYellowStainedGlass{})
-	world.RegisterItem(SpruceSapling{})
-	world.RegisterItem(UnlitRedstoneTorch{})
-	world.RegisterItem(DoubleCutCopperSlab{})
-	world.RegisterItem(ItemHopper{})
-	world.RegisterItem(PaleOakDoubleSlab{})
-	world.RegisterItem(DriedGhast{})
-	world.RegisterItem(PaleOakSapling{})
-	world.RegisterItem(HardLightGrayStainedGlass{})
-	world.RegisterItem(PaleOakButton{})
-	world.RegisterItem(Leaves2{})
-	world.RegisterItem(RedFlower{})
-	world.RegisterItem(MossBlock{})
-	world.RegisterItem(BirchBoat{})
-	world.RegisterItem(PaleHangingMoss{})
-	world.RegisterItem(MagentaCandle{})
-	world.RegisterItem(ShulkerBox{})
-	world.RegisterItem(ColoredTorchRed{})
-	world.RegisterItem(AcaciaBoat{})
-	world.RegisterItem(Comparator{})
-	world.RegisterItem(DeepslateRedstoneOre{})
-	world.RegisterItem(BatSpawnEgg{})
-	world.RegisterItem(GoatSpawnEgg{})
-	world.RegisterItem(SnifferSpawnEgg{})
-	world.RegisterItem(FrogSpawnEgg{})
-	world.RegisterItem(BambooMosaicSlab{})
 	world.RegisterItem(ClientRequestPlaceholderBlock{})
-	world.RegisterItem(ItemKelp{})
-	world.RegisterItem(CrimsonNylium{})
-	world.RegisterItem(BlackShulkerBox{})
-	world.RegisterItem(DeadHornCoralWallFan{})
-	world.RegisterItem(ItemNetherWart{})
+	world.RegisterItem(WarpedNylium{})
+	world.RegisterItem(PoweredComparator{})
+	world.RegisterItem(PolishedBlackstonePressurePlate{})
+	world.RegisterItem(Rail{})
+	world.RegisterItem(Wood{})
+	world.RegisterItem(Element67{})
+	world.RegisterItem(WanderingTraderSpawnEgg{})
+	world.RegisterItem(DonkeySpawnEgg{})
+	world.RegisterItem(CreeperSpawnEgg{})
+	world.RegisterItem(SmallDripleafBlock{})
+	world.RegisterItem(BlueEgg{})
+	world.RegisterItem(GreenCandleCake{})
+	world.RegisterItem(Conduit{})
+	world.RegisterItem(BrownHarness{})
+	world.RegisterItem(GoldenHorseArmor{})
+	world.RegisterItem(PufferfishBucket{})
+	world.RegisterItem(Vault{})
+	world.RegisterItem(CrimsonWallSign{})
+	world.RegisterItem(Element80{})
+	world.RegisterItem(Stonecutter{})
+	world.RegisterItem(BirchStandingSign{})
+	world.RegisterItem(WarpedDoubleSlab{})
+	world.RegisterItem(WoodenPressurePlate{})
+	world.RegisterItem(MangroveBoat{})
+	world.RegisterItem(WaxedExposedCopperChest{})
+	world.RegisterItem(BambooChestRaft{})
+	world.RegisterItem(Element72{})
+	world.RegisterItem(ItemBeetroot{})
+	world.RegisterItem(PaleOakBoat{})
 	world.RegisterItem(HardPurpleStainedGlass{})
 	world.RegisterItem(HardBrownStainedGlassPane{})
-	world.RegisterItem(Element87{})
-	world.RegisterItem(ItemGlowFrame{})
-	world.RegisterItem(ConcretePowder{})
-	world.RegisterItem(HoneyBottle{})
+	world.RegisterItem(BambooShelf{})
+	world.RegisterItem(UnlitRedstoneTorch{})
+	world.RegisterItem(Observer{})
+	world.RegisterItem(ExposedCopperBulb{})
+	world.RegisterItem(Element17{})
+	world.RegisterItem(SpruceButton{})
+	world.RegisterItem(ItemBrewingStand{})
+	world.RegisterItem(ChemistryTable{})
+	world.RegisterItem(RabbitSpawnEgg{})
+	world.RegisterItem(RedShulkerBox{})
+	world.RegisterItem(BlueShulkerBox{})
+	world.RegisterItem(TropicalFishBucket{})
+	world.RegisterItem(DoubleCutCopperSlab{})
+	world.RegisterItem(Element103{})
+	world.RegisterItem(PurpleCandleCake{})
+	world.RegisterItem(Element75{})
+	world.RegisterItem(Element92{})
+	world.RegisterItem(Element118{})
+	world.RegisterItem(PaleOakPressurePlate{})
+	world.RegisterItem(CutSandstoneDoubleSlab{})
+	world.RegisterItem(CreakingSpawnEgg{})
+	world.RegisterItem(WarpedWallSign{})
+	world.RegisterItem(SandstoneDoubleSlab{})
+	world.RegisterItem(ExposedDoubleCutCopperSlab{})
+	world.RegisterItem(TrialKey{})
+	world.RegisterItem(CrimsonPressurePlate{})
+	world.RegisterItem(WarpedButton{})
+	world.RegisterItem(BambooMosaicSlab{})
+	world.RegisterItem(ItemNetherSprouts{})
+	world.RegisterItem(DeadBubbleCoralWallFan{})
+	world.RegisterItem(SmoothStoneDoubleSlab{})
+	world.RegisterItem(Element7{})
+	world.RegisterItem(MossBlock{})
+	world.RegisterItem(ChickenSpawnEgg{})
+	world.RegisterItem(Jigsaw{})
+	world.RegisterItem(PaleOakHangingSign{})
+	world.RegisterItem(HardStainedGlass{})
+	world.RegisterItem(Torchflower{})
+	world.RegisterItem(WhiteCandleCake{})
+	world.RegisterItem(CherryHangingSign{})
+	world.RegisterItem(WaxedDoubleCutCopperSlab{})
+	world.RegisterItem(OakDoubleSlab{})
+	world.RegisterItem(DarkOakPressurePlate{})
+	world.RegisterItem(NormalStoneDoubleSlab{})
+	world.RegisterItem(AcaciaShelf{})
+	world.RegisterItem(HardLightGrayStainedGlass{})
+	world.RegisterItem(LeatherHorseArmor{})
+	world.RegisterItem(StainedGlassPane{})
+	world.RegisterItem(JunglePressurePlate{})
+	world.RegisterItem(BambooFence{})
+	world.RegisterItem(CherryButton{})
+	world.RegisterItem(HardBlackStainedGlassPane{})
+	world.RegisterItem(PinkCandleCake{})
+	world.RegisterItem(ItemCampfire{})
+	world.RegisterItem(AxolotlSpawnEgg{})
+	world.RegisterItem(NautilusSpawnEgg{})
+	world.RegisterItem(CreakingHeart{})
+	world.RegisterItem(WaxedCopperChest{})
+	world.RegisterItem(DaylightDetector{})
+	world.RegisterItem(RedSandstoneDoubleSlab{})
+	world.RegisterItem(Element113{})
+	world.RegisterItem(PitcherPlant{})
+	world.RegisterItem(TripwireHook{})
+	world.RegisterItem(MushroomStem{})
+	world.RegisterItem(GoldenRail{})
+	world.RegisterItem(HardLightBlueStainedGlass{})
+	world.RegisterItem(DiamondSpear{})
+	world.RegisterItem(Bundle{})
+	world.RegisterItem(SalmonSpawnEgg{})
+	world.RegisterItem(Carrots{})
+	world.RegisterItem(DeprecatedAnvil{})
+	world.RegisterItem(IronSpear{})
+	world.RegisterItem(CyanCandle{})
+	world.RegisterItem(Element49{})
 	world.RegisterItem(WarpedStandingSign{})
-}
-
-type TntMinecart struct{}
-
-func (TntMinecart) EncodeItem() (name string, meta int16) {
-	return "minecraft:tnt_minecart", 0
-}
-
-type HardPurpleStainedGlassPane struct{}
-
-func (HardPurpleStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_purple_stained_glass_pane", 0
-}
-
-type Element47 struct{}
-
-func (Element47) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_47", 0
-}
-
-type HardOrangeStainedGlassPane struct{}
-
-func (HardOrangeStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_orange_stained_glass_pane", 0
-}
-
-type PolishedGraniteDoubleSlab struct{}
-
-func (PolishedGraniteDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_granite_double_slab", 0
-}
-
-type CherryWallSign struct{}
-
-func (CherryWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_wall_sign", 0
-}
-
-type ChickenSpawnEgg struct{}
-
-func (ChickenSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:chicken_spawn_egg", 0
-}
-
-type DarkOakPressurePlate struct{}
-
-func (DarkOakPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:dark_oak_pressure_plate", 0
-}
-
-type DonkeySpawnEgg struct{}
-
-func (DonkeySpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:donkey_spawn_egg", 0
-}
-
-type WarpedButton struct{}
-
-func (WarpedButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:warped_button", 0
-}
-
-type BambooPressurePlate struct{}
-
-func (BambooPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_pressure_plate", 0
-}
-
-type MangroveChestBoat struct{}
-
-func (MangroveChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_chest_boat", 0
-}
-
-type WitchSpawnEgg struct{}
-
-func (WitchSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:witch_spawn_egg", 0
-}
-
-type ItemJungleDoor struct{}
-
-func (ItemJungleDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.jungle_door", 0
-}
-
-type Element11 struct{}
-
-func (Element11) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_11", 0
-}
-
-type WardenSpawnEgg struct{}
-
-func (WardenSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:warden_spawn_egg", 0
-}
-
-type CoralBlock struct{}
-
-func (CoralBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:coral_block", 0
-}
-
-type DeadBubbleCoralWallFan struct{}
-
-func (DeadBubbleCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_bubble_coral_wall_fan", 0
-}
-
-type SculkCatalyst struct{}
-
-func (SculkCatalyst) EncodeItem() (name string, meta int16) {
-	return "minecraft:sculk_catalyst", 0
-}
-
-type Vault struct{}
-
-func (Vault) EncodeItem() (name string, meta int16) {
-	return "minecraft:vault", 0
-}
-
-type EndPortal struct{}
-
-func (EndPortal) EncodeItem() (name string, meta int16) {
-	return "minecraft:end_portal", 0
-}
-
-type DetectorRail struct{}
-
-func (DetectorRail) EncodeItem() (name string, meta int16) {
-	return "minecraft:detector_rail", 0
-}
-
-type BambooButton struct{}
-
-func (BambooButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_button", 0
-}
-
-type Fence struct{}
-
-func (Fence) EncodeItem() (name string, meta int16) {
-	return "minecraft:fence", 0
-}
-
-type CaveSpiderSpawnEgg struct{}
-
-func (CaveSpiderSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:cave_spider_spawn_egg", 0
-}
-
-type TadpoleSpawnEgg struct{}
-
-func (TadpoleSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:tadpole_spawn_egg", 0
-}
-
-type AzaleaLeaves struct{}
-
-func (AzaleaLeaves) EncodeItem() (name string, meta int16) {
-	return "minecraft:azalea_leaves", 0
-}
-
-type Element48 struct{}
-
-func (Element48) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_48", 0
-}
-
-type PrismarineBrickDoubleSlab struct{}
-
-func (PrismarineBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:prismarine_brick_double_slab", 0
-}
-
-type Element97 struct{}
-
-func (Element97) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_97", 0
-}
-
-type MelonStem struct{}
-
-func (MelonStem) EncodeItem() (name string, meta int16) {
-	return "minecraft:melon_stem", 0
-}
-
-type HardPinkStainedGlassPane struct{}
-
-func (HardPinkStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_pink_stained_glass_pane", 0
-}
-
-type Element7 struct{}
-
-func (Element7) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_7", 0
-}
-
-type WhiteShulkerBox struct{}
-
-func (WhiteShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:white_shulker_box", 0
-}
-
-type EvokerSpawnEgg struct{}
-
-func (EvokerSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:evoker_spawn_egg", 0
-}
-
-type HornCoralFan struct{}
-
-func (HornCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:horn_coral_fan", 0
-}
-
-type ItemSpruceDoor struct{}
-
-func (ItemSpruceDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.spruce_door", 0
+	world.RegisterItem(HardBlueStainedGlassPane{})
+	world.RegisterItem(CopperBulb{})
+	world.RegisterItem(LitSmoker{})
+	world.RegisterItem(Element51{})
+	world.RegisterItem(BannerPattern{})
+	world.RegisterItem(LimeCandle{})
+	world.RegisterItem(BambooRaft{})
+	world.RegisterItem(QuartzDoubleSlab{})
+	world.RegisterItem(BambooPlanks{})
+	world.RegisterItem(GrayCandleCake{})
+	world.RegisterItem(MangroveDoubleSlab{})
+	world.RegisterItem(LightBlock{})
+	world.RegisterItem(WarpedPressurePlate{})
+	world.RegisterItem(VindicatorSpawnEgg{})
+	world.RegisterItem(OakHangingSign{})
+	world.RegisterItem(UnderwaterTorch{})
+	world.RegisterItem(DoubleStoneBlockSlab3{})
+	world.RegisterItem(FoxSpawnEgg{})
+	world.RegisterItem(MangroveStandingSign{})
+	world.RegisterItem(PaleOakStandingSign{})
+	world.RegisterItem(DeadBrainCoralFan{})
+	world.RegisterItem(Beehive{})
+	world.RegisterItem(ItemIronDoor{})
+	world.RegisterItem(LightGrayCandle{})
+	world.RegisterItem(Balloon{})
+	world.RegisterItem(JungleButton{})
+	world.RegisterItem(AcaciaDoubleSlab{})
+	world.RegisterItem(NetheriteHorseArmor{})
+	world.RegisterItem(Comparator{})
+	world.RegisterItem(SprucePressurePlate{})
+	world.RegisterItem(GlowSquidSpawnEgg{})
+	world.RegisterItem(Element55{})
+	world.RegisterItem(Wildflowers{})
+	world.RegisterItem(ZombieNautilusSpawnEgg{})
+	world.RegisterItem(TorchflowerSeeds{})
+	world.RegisterItem(CherryDoubleSlab{})
+	world.RegisterItem(Element69{})
+	world.RegisterItem(Wool{})
+	world.RegisterItem(GoldenSpear{})
+	world.RegisterItem(MagentaCandleCake{})
+	world.RegisterItem(IronHorseArmor{})
+	world.RegisterItem(Element115{})
+	world.RegisterItem(Element77{})
+	world.RegisterItem(JungleWallSign{})
+	world.RegisterItem(JungleBoat{})
+	world.RegisterItem(HardMagentaStainedGlass{})
+	world.RegisterItem(Piston{})
+	world.RegisterItem(EndGateway{})
+	world.RegisterItem(PrismarineDoubleSlab{})
+	world.RegisterItem(GlowStick{})
+	world.RegisterItem(IceBomb{})
+	world.RegisterItem(Element16{})
+	world.RegisterItem(CompoundCreator{})
+	world.RegisterItem(SpruceChestBoat{})
+	world.RegisterItem(Element48{})
+	world.RegisterItem(Element44{})
+	world.RegisterItem(CactusFlower{})
+	world.RegisterItem(BambooFenceGate{})
+	world.RegisterItem(Element30{})
+	world.RegisterItem(CopperHorseArmor{})
+	world.RegisterItem(ElderGuardianSpawnEgg{})
+	world.RegisterItem(ClosedEyeblossom{})
+	world.RegisterItem(Element31{})
+	world.RegisterItem(LlamaSpawnEgg{})
+	world.RegisterItem(HardGreenStainedGlass{})
+	world.RegisterItem(ItemSoulCampfire{})
+	world.RegisterItem(WeatheredCopperChest{})
+	world.RegisterItem(SnifferSpawnEgg{})
+	world.RegisterItem(GuardianSpawnEgg{})
+	world.RegisterItem(String{})
+	world.RegisterItem(CrimsonShelf{})
+	world.RegisterItem(Element87{})
+	world.RegisterItem(DirtWithRoots{})
+	world.RegisterItem(CherrySapling{})
+	world.RegisterItem(YellowBundle{})
+	world.RegisterItem(BlazeSpawnEgg{})
+	world.RegisterItem(WolfArmor{})
+	world.RegisterItem(Target{})
+	world.RegisterItem(DeadFireCoralFan{})
+	world.RegisterItem(HangingRoots{})
+	world.RegisterItem(BrownMushroom{})
+	world.RegisterItem(CherryPressurePlate{})
+	world.RegisterItem(HardBlueStainedGlass{})
+	world.RegisterItem(SpruceBoat{})
+	world.RegisterItem(StraySpawnEgg{})
+	world.RegisterItem(BambooWallSign{})
+	world.RegisterItem(JungleHangingSign{})
+	world.RegisterItem(RedstoneOre{})
+	world.RegisterItem(TurtleSpawnEgg{})
+	world.RegisterItem(ItemHopper{})
+	world.RegisterItem(SmoothSandstoneDoubleSlab{})
+	world.RegisterItem(YellowHarness{})
+	world.RegisterItem(OrangeCandle{})
+	world.RegisterItem(Element29{})
+	world.RegisterItem(HardLimeStainedGlassPane{})
+	world.RegisterItem(HeavyWeightedPressurePlate{})
+	world.RegisterItem(Magma{})
+	world.RegisterItem(ItemCamera{})
+	world.RegisterItem(Element62{})
+	world.RegisterItem(SlimeSpawnEgg{})
+	world.RegisterItem(BirchPressurePlate{})
+	world.RegisterItem(WhiteHarness{})
+	world.RegisterItem(PolishedDeepslateDoubleSlab{})
+	world.RegisterItem(ItemFrame{})
+	world.RegisterItem(InfestedDeepslate{})
+	world.RegisterItem(MangrovePropagule{})
+	world.RegisterItem(DoubleStoneBlockSlab{})
+	world.RegisterItem(PurpleHarness{})
+	world.RegisterItem(Element91{})
+	world.RegisterItem(DeepslateTileDoubleSlab{})
+	world.RegisterItem(HardLightBlueStainedGlassPane{})
+	world.RegisterItem(DeadTubeCoralWallFan{})
+	world.RegisterItem(ZombieHorseSpawnEgg{})
+	world.RegisterItem(DoubleStoneBlockSlab4{})
+	world.RegisterItem(Element64{})
+	world.RegisterItem(Element68{})
+	world.RegisterItem(WallSign{})
+	world.RegisterItem(Element46{})
+	world.RegisterItem(DeadFireCoralWallFan{})
+	world.RegisterItem(Minecart{})
+	world.RegisterItem(ConcretePowder{})
+	world.RegisterItem(CrimsonHangingSign{})
+	world.RegisterItem(ItemMangroveDoor{})
+	world.RegisterItem(GreenCandle{})
+	world.RegisterItem(CopperNautilusArmor{})
+	world.RegisterItem(MediumAmethystBud{})
+	world.RegisterItem(DarkOakSapling{})
+	world.RegisterItem(CrimsonFungus{})
+	world.RegisterItem(DarkOakChestBoat{})
+	world.RegisterItem(BlackstoneDoubleSlab{})
+	world.RegisterItem(LightGrayBundle{})
+	world.RegisterItem(Element27{})
+	world.RegisterItem(Bamboo{})
+	world.RegisterItem(Element38{})
+	world.RegisterItem(PetrifiedOakSlab{})
+	world.RegisterItem(FilledMap{})
+	world.RegisterItem(PitcherPod{})
+	world.RegisterItem(ItemKelp{})
+	world.RegisterItem(TwistingVines{})
+	world.RegisterItem(Water{})
+	world.RegisterItem(DeepslateRedstoneOre{})
+	world.RegisterItem(BirchBoat{})
+	world.RegisterItem(HardGreenStainedGlassPane{})
+	world.RegisterItem(OminousBottle{})
+	world.RegisterItem(MangroveChestBoat{})
+	world.RegisterItem(CopperSpear{})
+	world.RegisterItem(PaleOakDoubleSlab{})
+	world.RegisterItem(LargeAmethystBud{})
+	world.RegisterItem(Element107{})
+	world.RegisterItem(YellowCandleCake{})
+	world.RegisterItem(JungleStandingSign{})
+	world.RegisterItem(Element74{})
+	world.RegisterItem(TntMinecart{})
+	world.RegisterItem(SoulFire{})
+	world.RegisterItem(ArmadilloScute{})
+	world.RegisterItem(Element34{})
+	world.RegisterItem(HeavyCore{})
+	world.RegisterItem(TropicalFishSpawnEgg{})
+	world.RegisterItem(RedNetherBrickDoubleSlab{})
+	world.RegisterItem(ZombiePigmanSpawnEgg{})
+	world.RegisterItem(Fence{})
+	world.RegisterItem(ChorusPlant{})
+	world.RegisterItem(RepeatingCommandBlock{})
+	world.RegisterItem(ItemJungleDoor{})
+	world.RegisterItem(ItemBed{})
+	world.RegisterItem(ColoredTorchBlue{})
+	world.RegisterItem(CutRedSandstoneDoubleSlab{})
+	world.RegisterItem(BirchButton{})
+	world.RegisterItem(Element105{})
+	world.RegisterItem(CrimsonNylium{})
+	world.RegisterItem(CaveVinesBodyWithBerries{})
+	world.RegisterItem(SuspiciousGravel{})
+	world.RegisterItem(ColoredTorchRg{})
+	world.RegisterItem(DarkOakBoat{})
+	world.RegisterItem(BrownCandle{})
+	world.RegisterItem(Sculk{})
+	world.RegisterItem(WallBanner{})
+	world.RegisterItem(Element90{})
+	world.RegisterItem(DriedGhast{})
+	world.RegisterItem(Azalea{})
+	world.RegisterItem(Element114{})
+	world.RegisterItem(DeadHornCoralFan{})
+	world.RegisterItem(EnderEye{})
+	world.RegisterItem(CartographyTable{})
+	world.RegisterItem(StickyPiston{})
+	world.RegisterItem(FishingRod{})
+	world.RegisterItem(ResinClump{})
+	world.RegisterItem(ShortDryGrass{})
+	world.RegisterItem(TorchflowerCrop{})
+	world.RegisterItem(OxidizedDoubleCutCopperSlab{})
+	world.RegisterItem(AcaciaSapling{})
+	world.RegisterItem(HardGlass{})
+	world.RegisterItem(ParrotSpawnEgg{})
+	world.RegisterItem(Element86{})
+	world.RegisterItem(Element6{})
+	world.RegisterItem(ItemFlowerPot{})
+	world.RegisterItem(ZombieSpawnEgg{})
+	world.RegisterItem(PinkHarness{})
+	world.RegisterItem(CherryStandingSign{})
+	world.RegisterItem(RedFlower{})
+	world.RegisterItem(BambooSapling{})
+	world.RegisterItem(MonsterEgg{})
+	world.RegisterItem(EndPortal{})
+	world.RegisterItem(CoralFan{})
+	world.RegisterItem(ItemNetherWart{})
+	world.RegisterItem(GreenHarness{})
+	world.RegisterItem(EvokerSpawnEgg{})
+	world.RegisterItem(SuspiciousSand{})
+	world.RegisterItem(ChemicalHeat{})
+	world.RegisterItem(InfoUpdate2{})
+	world.RegisterItem(Element21{})
+	world.RegisterItem(LitFurnace{})
+	world.RegisterItem(EndStoneBrickDoubleSlab{})
+	world.RegisterItem(Element40{})
+	world.RegisterItem(Lever{})
+	world.RegisterItem(BlueHarness{})
+	world.RegisterItem(BambooButton{})
+	world.RegisterItem(LightningRod{})
+	world.RegisterItem(Crafter{})
+	world.RegisterItem(WeatheredDoubleCutCopperSlab{})
+	world.RegisterItem(ItemCake{})
+	world.RegisterItem(MossyStoneBrickDoubleSlab{})
+	world.RegisterItem(GoldenNautilusArmor{})
+	world.RegisterItem(VillagerSpawnEgg{})
+	world.RegisterItem(HardGrayStainedGlassPane{})
+	world.RegisterItem(AcaciaHangingSign{})
+	world.RegisterItem(MagentaCandle{})
+	world.RegisterItem(DarkoakStandingSign{})
+	world.RegisterItem(FrogSpawn{})
+	world.RegisterItem(Element99{})
+	world.RegisterItem(BlackCandleCake{})
+	world.RegisterItem(BambooMosaicStairs{})
+	world.RegisterItem(WaxedWeatheredCopperChest{})
+	world.RegisterItem(Element36{})
+	world.RegisterItem(ItemWheat{})
+	world.RegisterItem(ChiseledBookshelf{})
+	world.RegisterItem(CherryShelf{})
+	world.RegisterItem(WaxedExposedDoubleCutCopperSlab{})
+	world.RegisterItem(Shield{})
+	world.RegisterItem(MaterialReducer{})
+	world.RegisterItem(RedMushroom{})
+	world.RegisterItem(LightGrayHarness{})
+	world.RegisterItem(SculkVein{})
+	world.RegisterItem(ActivatorRail{})
+	world.RegisterItem(CommandBlock{})
+	world.RegisterItem(RedMushroomBlock{})
+	world.RegisterItem(WaxedOxidizedLightningRod{})
+	world.RegisterItem(PurpleCandle{})
+	world.RegisterItem(Scaffolding{})
+	world.RegisterItem(Dye{})
+	world.RegisterItem(Element71{})
+	world.RegisterItem(OrangeHarness{})
+	world.RegisterItem(OakBoat{})
+	world.RegisterItem(BrownEgg{})
+	world.RegisterItem(PhantomSpawnEgg{})
+	world.RegisterItem(OxidizedLightningRod{})
+	world.RegisterItem(Element101{})
+	world.RegisterItem(SculkCatalyst{})
+	world.RegisterItem(ColoredTorchBp{})
+	world.RegisterItem(Element24{})
+	world.RegisterItem(Redstone{})
+	world.RegisterItem(GlowLichen{})
+	world.RegisterItem(RedstoneBlock{})
+	world.RegisterItem(SmoothQuartzDoubleSlab{})
+	world.RegisterItem(SquidSpawnEgg{})
+	world.RegisterItem(WitherSkeletonSpawnEgg{})
+	world.RegisterItem(Element85{})
+	world.RegisterItem(PolishedAndesiteDoubleSlab{})
+	world.RegisterItem(JungleDoubleSlab{})
+	world.RegisterItem(DrownedSpawnEgg{})
+	world.RegisterItem(YellowCandle{})
+	world.RegisterItem(PufferfishSpawnEgg{})
+	world.RegisterItem(Lead{})
+	world.RegisterItem(ItemReeds{})
+	world.RegisterItem(Painting{})
+	world.RegisterItem(Element56{})
+	world.RegisterItem(DeepslateBrickDoubleSlab{})
+	world.RegisterItem(WaxedWeatheredLightningRod{})
+	world.RegisterItem(Element53{})
+	world.RegisterItem(DarkOakShelf{})
+	world.RegisterItem(OrangeShulkerBox{})
+	world.RegisterItem(BatSpawnEgg{})
+	world.RegisterItem(InfestedChiseledStoneBricks{})
+	world.RegisterItem(BrainCoralFan{})
+	world.RegisterItem(CyanCandleCake{})
+	world.RegisterItem(Element84{})
+	world.RegisterItem(InfestedStoneBricks{})
+	world.RegisterItem(ElementConstructor{})
+	world.RegisterItem(AgentSpawnEgg{})
+	world.RegisterItem(Skull{})
+	world.RegisterItem(Element20{})
+	world.RegisterItem(LightBlueCandle{})
+	world.RegisterItem(AcaciaWallSign{})
+	world.RegisterItem(RedCandle{})
+	world.RegisterItem(BoggedSpawnEgg{})
+	world.RegisterItem(SheepSpawnEgg{})
+	world.RegisterItem(WhiteCandle{})
+	world.RegisterItem(WarpedRoots{})
+	world.RegisterItem(CamelHuskSpawnEgg{})
+	world.RegisterItem(SpruceWallSign{})
+	world.RegisterItem(LimeShulkerBox{})
+	world.RegisterItem(PrismarineBrickDoubleSlab{})
+	world.RegisterItem(BirchSapling{})
+	world.RegisterItem(SpruceStandingSign{})
+	world.RegisterItem(SkeletonSpawnEgg{})
+	world.RegisterItem(DarkPrismarineDoubleSlab{})
+	world.RegisterItem(Glowingobsidian{})
+	world.RegisterItem(UnpoweredComparator{})
+	world.RegisterItem(GreenShulkerBox{})
+	world.RegisterItem(EndCrystal{})
+	world.RegisterItem(BambooDoubleSlab{})
+	world.RegisterItem(Element76{})
+	world.RegisterItem(Sapling{})
+	world.RegisterItem(EndermanSpawnEgg{})
+	world.RegisterItem(PaleOakWallSign{})
+	world.RegisterItem(PumpkinStem{})
+	world.RegisterItem(OpenEyeblossom{})
+	world.RegisterItem(HornCoralWallFan{})
+	world.RegisterItem(NetheriteSpear{})
+	world.RegisterItem(BirchWallSign{})
+	world.RegisterItem(CherryWallSign{})
+	world.RegisterItem(AllaySpawnEgg{})
+	world.RegisterItem(Element47{})
+	world.RegisterItem(Saddle{})
+	world.RegisterItem(StonePressurePlate{})
+	world.RegisterItem(SpruceSapling{})
+	world.RegisterItem(HardStainedGlassPane{})
+	world.RegisterItem(ItemDarkOakDoor{})
+	world.RegisterItem(Mace{})
+	world.RegisterItem(PitcherCrop{})
+	world.RegisterItem(PillagerSpawnEgg{})
+	world.RegisterItem(CamelSpawnEgg{})
+	world.RegisterItem(LodestoneCompass{})
+	world.RegisterItem(LightGrayCandleCake{})
+	world.RegisterItem(StickyPistonArmCollision{})
+	world.RegisterItem(Bell{})
+	world.RegisterItem(HardPurpleStainedGlassPane{})
+	world.RegisterItem(LitBlastFurnace{})
+	world.RegisterItem(HardLimeStainedGlass{})
+	world.RegisterItem(Bush{})
+	world.RegisterItem(HardOrangeStainedGlass{})
+	world.RegisterItem(LightBlueCandleCake{})
+	world.RegisterItem(WitchSpawnEgg{})
+	world.RegisterItem(Reserved6{})
+	world.RegisterItem(JungleChestBoat{})
+	world.RegisterItem(CrimsonStandingSign{})
+	world.RegisterItem(HardBrownStainedGlass{})
+	world.RegisterItem(WaxedWeatheredDoubleCutCopperSlab{})
+	world.RegisterItem(HardGrayStainedGlass{})
+	world.RegisterItem(MudBrickDoubleSlab{})
+	world.RegisterItem(Element82{})
+	world.RegisterItem(RavagerSpawnEgg{})
+	world.RegisterItem(Element78{})
+	world.RegisterItem(TripWire{})
+	world.RegisterItem(MossyCobblestoneDoubleSlab{})
+	world.RegisterItem(StoneSpear{})
+	world.RegisterItem(RedHarness{})
+	world.RegisterItem(PaleOakChestBoat{})
+	world.RegisterItem(StainedGlass{})
+	world.RegisterItem(CopperChest{})
+	world.RegisterItem(BirchHangingSign{})
+	world.RegisterItem(StructureBlock{})
+	world.RegisterItem(Element10{})
+	world.RegisterItem(MangroveRoots{})
+	world.RegisterItem(GrayShulkerBox{})
+	world.RegisterItem(ItemWarpedDoor{})
+	world.RegisterItem(Potatoes{})
+	world.RegisterItem(BrownMushroomBlock{})
+	world.RegisterItem(YellowShulkerBox{})
+	world.RegisterItem(RedstoneWire{})
+	world.RegisterItem(OrangeBundle{})
+	world.RegisterItem(StandingBanner{})
+	world.RegisterItem(Dispenser{})
+	world.RegisterItem(StandingSign{})
+	world.RegisterItem(SalmonBucket{})
+	world.RegisterItem(CrimsonButton{})
+	world.RegisterItem(Element22{})
+	world.RegisterItem(SpawnEgg{})
+	world.RegisterItem(MovingBlock{})
+	world.RegisterItem(Camera{})
+	world.RegisterItem(InfoUpdate{})
+	world.RegisterItem(DarkOakButton{})
+	world.RegisterItem(Element52{})
+	world.RegisterItem(DiamondHorseArmor{})
+	world.RegisterItem(Element79{})
+	world.RegisterItem(SmoothRedSandstoneDoubleSlab{})
+	world.RegisterItem(ItemAcaciaDoor{})
+	world.RegisterItem(UnpoweredRepeater{})
+	world.RegisterItem(MangroveWallSign{})
+	world.RegisterItem(Board{})
+	world.RegisterItem(GrayCandle{})
+	world.RegisterItem(Element98{})
+	world.RegisterItem(Element61{})
 }
 
 type SilverfishSpawnEgg struct{}
@@ -1083,3142 +900,28 @@ func (SilverfishSpawnEgg) EncodeItem() (name string, meta int16) {
 	return "minecraft:silverfish_spawn_egg", 0
 }
 
-type AxolotlBucket struct{}
-
-func (AxolotlBucket) EncodeItem() (name string, meta int16) {
-	return "minecraft:axolotl_bucket", 0
-}
-
-type Tallgrass struct{}
-
-func (Tallgrass) EncodeItem() (name string, meta int16) {
-	return "minecraft:tallgrass", 0
-}
-
-type Compound struct{}
-
-func (Compound) EncodeItem() (name string, meta int16) {
-	return "minecraft:compound", 0
-}
-
-type CutRedSandstoneDoubleSlab struct{}
-
-func (CutRedSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:cut_red_sandstone_double_slab", 0
-}
-
-type CoralFan struct{}
-
-func (CoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:coral_fan", 0
-}
-
-type WarpedFungus struct{}
-
-func (WarpedFungus) EncodeItem() (name string, meta int16) {
-	return "minecraft:warped_fungus", 0
-}
-
-type Element37 struct{}
-
-func (Element37) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_37", 0
-}
-
-type Element35 struct{}
-
-func (Element35) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_35", 0
-}
-
-type Element25 struct{}
-
-func (Element25) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_25", 0
-}
-
-type JungleWallSign struct{}
-
-func (JungleWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_wall_sign", 0
-}
-
-type Element17 struct{}
-
-func (Element17) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_17", 0
-}
-
-type SpruceDoubleSlab struct{}
-
-func (SpruceDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_double_slab", 0
-}
-
-type CalibratedSculkSensor struct{}
-
-func (CalibratedSculkSensor) EncodeItem() (name string, meta int16) {
-	return "minecraft:calibrated_sculk_sensor", 0
-}
-
-type BrownCandleCake struct{}
-
-func (BrownCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:brown_candle_cake", 0
-}
-
-type BrainCoralFan struct{}
-
-func (BrainCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:brain_coral_fan", 0
-}
-
-type WeepingVines struct{}
-
-func (WeepingVines) EncodeItem() (name string, meta int16) {
-	return "minecraft:weeping_vines", 0
-}
-
-type Jigsaw struct{}
-
-func (Jigsaw) EncodeItem() (name string, meta int16) {
-	return "minecraft:jigsaw", 0
-}
-
-type Element22 struct{}
-
-func (Element22) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_22", 0
-}
-
-type BambooStairs struct{}
-
-func (BambooStairs) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_stairs", 0
-}
-
-type BlueCandle struct{}
-
-func (BlueCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:blue_candle", 0
-}
-
-type ExposedCopperBulb struct{}
-
-func (ExposedCopperBulb) EncodeItem() (name string, meta int16) {
-	return "minecraft:exposed_copper_bulb", 0
-}
-
-type ItemFrame struct{}
-
-func (ItemFrame) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.frame", 0
-}
-
-type LightBlueShulkerBox struct{}
-
-func (LightBlueShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_blue_shulker_box", 0
-}
-
-type UnpoweredComparator struct{}
-
-func (UnpoweredComparator) EncodeItem() (name string, meta int16) {
-	return "minecraft:unpowered_comparator", 0
-}
-
-type BlueShulkerBox struct{}
-
-func (BlueShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:blue_shulker_box", 0
-}
-
-type ItemReeds struct{}
-
-func (ItemReeds) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.reeds", 0
-}
-
-type ColoredTorchBlue struct{}
-
-func (ColoredTorchBlue) EncodeItem() (name string, meta int16) {
-	return "minecraft:colored_torch_blue", 0
-}
-
-type Element61 struct{}
-
-func (Element61) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_61", 0
-}
-
-type NpcSpawnEgg struct{}
-
-func (NpcSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:npc_spawn_egg", 0
-}
-
-type LlamaSpawnEgg struct{}
-
-func (LlamaSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:llama_spawn_egg", 0
-}
-
-type BambooMosaic struct{}
-
-func (BambooMosaic) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_mosaic", 0
-}
-
-type PaleOakStandingSign struct{}
-
-func (PaleOakStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_standing_sign", 0
-}
-
-type CherryDoubleSlab struct{}
-
-func (CherryDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_double_slab", 0
-}
-
-type StandingBanner struct{}
-
-func (StandingBanner) EncodeItem() (name string, meta int16) {
-	return "minecraft:standing_banner", 0
-}
-
-type PolishedDioriteDoubleSlab struct{}
-
-func (PolishedDioriteDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_diorite_double_slab", 0
-}
-
-type OakDoubleSlab struct{}
-
-func (OakDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:oak_double_slab", 0
-}
-
-type CommandBlock struct{}
-
-func (CommandBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:command_block", 0
-}
-
-type HardGlass struct{}
-
-func (HardGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_glass", 0
-}
-
-type Element26 struct{}
-
-func (Element26) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_26", 0
-}
-
-type HopperMinecart struct{}
-
-func (HopperMinecart) EncodeItem() (name string, meta int16) {
-	return "minecraft:hopper_minecart", 0
-}
-
-type ZombieHorseSpawnEgg struct{}
-
-func (ZombieHorseSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:zombie_horse_spawn_egg", 0
-}
-
-type WoodenPressurePlate struct{}
-
-func (WoodenPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:wooden_pressure_plate", 0
-}
-
-type PigSpawnEgg struct{}
-
-func (PigSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:pig_spawn_egg", 0
-}
-
-type HardRedStainedGlassPane struct{}
-
-func (HardRedStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_red_stained_glass_pane", 0
-}
-
-type PitcherPlant struct{}
-
-func (PitcherPlant) EncodeItem() (name string, meta int16) {
-	return "minecraft:pitcher_plant", 0
-}
-
-type FireCoralWallFan struct{}
-
-func (FireCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:fire_coral_wall_fan", 0
-}
-
-type DarkoakWallSign struct{}
-
-func (DarkoakWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:darkoak_wall_sign", 0
-}
-
-type Element108 struct{}
-
-func (Element108) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_108", 0
-}
-
-type JungleSapling struct{}
-
-func (JungleSapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_sapling", 0
-}
-
-type ColoredTorchRg struct{}
-
-func (ColoredTorchRg) EncodeItem() (name string, meta int16) {
-	return "minecraft:colored_torch_rg", 0
-}
-
-type StraySpawnEgg struct{}
-
-func (StraySpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:stray_spawn_egg", 0
-}
-
-type Element93 struct{}
-
-func (Element93) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_93", 0
-}
-
-type ItemCampfire struct{}
-
-func (ItemCampfire) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.campfire", 0
-}
-
-type CutSandstoneDoubleSlab struct{}
-
-func (CutSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:cut_sandstone_double_slab", 0
-}
-
-type Piston struct{}
-
-func (Piston) EncodeItem() (name string, meta int16) {
-	return "minecraft:piston", 0
-}
-
-type PaleOakBoat struct{}
-
-func (PaleOakBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_boat", 0
-}
-
-type TadpoleBucket struct{}
-
-func (TadpoleBucket) EncodeItem() (name string, meta int16) {
-	return "minecraft:tadpole_bucket", 0
-}
-
-type Repeater struct{}
-
-func (Repeater) EncodeItem() (name string, meta int16) {
-	return "minecraft:repeater", 0
-}
-
-type CrimsonHangingSign struct{}
-
-func (CrimsonHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_hanging_sign", 0
-}
-
-type TripwireHook struct{}
-
-func (TripwireHook) EncodeItem() (name string, meta int16) {
-	return "minecraft:tripwire_hook", 0
-}
-
-type GlowSquidSpawnEgg struct{}
-
-func (GlowSquidSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:glow_squid_spawn_egg", 0
-}
-
-type Element106 struct{}
-
-func (Element106) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_106", 0
-}
-
-type RedCandleCake struct{}
-
-func (RedCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_candle_cake", 0
-}
-
-type Stonebrick struct{}
-
-func (Stonebrick) EncodeItem() (name string, meta int16) {
-	return "minecraft:stonebrick", 0
-}
-
-type Concrete struct{}
-
-func (Concrete) EncodeItem() (name string, meta int16) {
-	return "minecraft:concrete", 0
-}
-
-type LimeCandle struct{}
-
-func (LimeCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:lime_candle", 0
-}
-
-type Stonecutter struct{}
-
-func (Stonecutter) EncodeItem() (name string, meta int16) {
-	return "minecraft:stonecutter", 0
-}
-
-type Element100 struct{}
-
-func (Element100) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_100", 0
-}
-
-type HardBlueStainedGlassPane struct{}
-
-func (HardBlueStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_blue_stained_glass_pane", 0
-}
-
-type DolphinSpawnEgg struct{}
-
-func (DolphinSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:dolphin_spawn_egg", 0
-}
-
-type WaxedCopperBulb struct{}
-
-func (WaxedCopperBulb) EncodeItem() (name string, meta int16) {
-	return "minecraft:waxed_copper_bulb", 0
-}
-
-type Unknown struct{}
-
-func (Unknown) EncodeItem() (name string, meta int16) {
-	return "minecraft:unknown", 0
-}
-
-type PinkBundle struct{}
-
-func (PinkBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:pink_bundle", 0
-}
-
-type ItemDarkOakDoor struct{}
-
-func (ItemDarkOakDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.dark_oak_door", 0
-}
-
-type SweetBerries struct{}
-
-func (SweetBerries) EncodeItem() (name string, meta int16) {
-	return "minecraft:sweet_berries", 0
-}
-
-type BambooMosaicDoubleSlab struct{}
-
-func (BambooMosaicDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_mosaic_double_slab", 0
-}
-
-type ArmorStand struct{}
-
-func (ArmorStand) EncodeItem() (name string, meta int16) {
-	return "minecraft:armor_stand", 0
-}
-
-type StoneBlockSlab3 struct{}
-
-func (StoneBlockSlab3) EncodeItem() (name string, meta int16) {
-	return "minecraft:stone_block_slab3", 0
-}
-
-type PolishedBlackstoneBrickDoubleSlab struct{}
-
-func (PolishedBlackstoneBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_blackstone_brick_double_slab", 0
-}
-
-type Element95 struct{}
-
-func (Element95) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_95", 0
-}
-
-type WhiteHarness struct{}
-
-func (WhiteHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:white_harness", 0
-}
-
-type OrangeBundle struct{}
-
-func (OrangeBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:orange_bundle", 0
-}
-
-type EnderEye struct{}
-
-func (EnderEye) EncodeItem() (name string, meta int16) {
-	return "minecraft:ender_eye", 0
-}
-
-type CyanHarness struct{}
-
-func (CyanHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:cyan_harness", 0
-}
-
-type LitSmoker struct{}
-
-func (LitSmoker) EncodeItem() (name string, meta int16) {
-	return "minecraft:lit_smoker", 0
-}
-
-type Element70 struct{}
-
-func (Element70) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_70", 0
-}
-
-type LeatherHorseArmor struct{}
-
-func (LeatherHorseArmor) EncodeItem() (name string, meta int16) {
-	return "minecraft:leather_horse_armor", 0
-}
-
-type Torchflower struct{}
-
-func (Torchflower) EncodeItem() (name string, meta int16) {
-	return "minecraft:torchflower", 0
-}
-
-type HangingRoots struct{}
-
-func (HangingRoots) EncodeItem() (name string, meta int16) {
-	return "minecraft:hanging_roots", 0
-}
-
-type GrayCandle struct{}
-
-func (GrayCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:gray_candle", 0
-}
-
-type GrayCandleCake struct{}
-
-func (GrayCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:gray_candle_cake", 0
-}
-
-type Element71 struct{}
-
-func (Element71) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_71", 0
-}
-
-type ChainCommandBlock struct{}
-
-func (ChainCommandBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:chain_command_block", 0
-}
-
-type DoublePlant struct{}
-
-func (DoublePlant) EncodeItem() (name string, meta int16) {
-	return "minecraft:double_plant", 0
-}
-
-type WaxedExposedCopperBulb struct{}
-
-func (WaxedExposedCopperBulb) EncodeItem() (name string, meta int16) {
-	return "minecraft:waxed_exposed_copper_bulb", 0
-}
-
-type ItemCamera struct{}
-
-func (ItemCamera) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.camera", 0
-}
-
-type Bell struct{}
-
-func (Bell) EncodeItem() (name string, meta int16) {
-	return "minecraft:bell", 0
-}
-
-type ItemBrewingStand struct{}
-
-func (ItemBrewingStand) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.brewing_stand", 0
-}
-
-type ColoredTorchBp struct{}
-
-func (ColoredTorchBp) EncodeItem() (name string, meta int16) {
-	return "minecraft:colored_torch_bp", 0
-}
-
-type Mace struct{}
-
-func (Mace) EncodeItem() (name string, meta int16) {
-	return "minecraft:mace", 0
-}
-
-type LightWeightedPressurePlate struct{}
-
-func (LightWeightedPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_weighted_pressure_plate", 0
-}
-
-type Web struct{}
-
-func (Web) EncodeItem() (name string, meta int16) {
-	return "minecraft:web", 0
-}
-
-type Redstone struct{}
-
-func (Redstone) EncodeItem() (name string, meta int16) {
-	return "minecraft:redstone", 0
-}
-
-type UnderwaterTorch struct{}
-
-func (UnderwaterTorch) EncodeItem() (name string, meta int16) {
-	return "minecraft:underwater_torch", 0
-}
-
-type RepeatingCommandBlock struct{}
-
-func (RepeatingCommandBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:repeating_command_block", 0
-}
-
-type BlackBundle struct{}
-
-func (BlackBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:black_bundle", 0
-}
-
-type BambooChestRaft struct{}
-
-func (BambooChestRaft) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_chest_raft", 0
-}
-
-type MediumAmethystBud struct{}
-
-func (MediumAmethystBud) EncodeItem() (name string, meta int16) {
-	return "minecraft:medium_amethyst_bud", 0
-}
-
-type ColoredTorchGreen struct{}
-
-func (ColoredTorchGreen) EncodeItem() (name string, meta int16) {
-	return "minecraft:colored_torch_green", 0
-}
-
-type EmptyMap struct{}
-
-func (EmptyMap) EncodeItem() (name string, meta int16) {
-	return "minecraft:empty_map", 0
-}
-
-type Element49 struct{}
-
-func (Element49) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_49", 0
-}
-
-type LightGrayCandle struct{}
-
-func (LightGrayCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_gray_candle", 0
-}
-
-type ItemCauldron struct{}
-
-func (ItemCauldron) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.cauldron", 0
-}
-
-type AllaySpawnEgg struct{}
-
-func (AllaySpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:allay_spawn_egg", 0
-}
-
-type MangroveStandingSign struct{}
-
-func (MangroveStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_standing_sign", 0
-}
-
-type PufferfishSpawnEgg struct{}
-
-func (PufferfishSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:pufferfish_spawn_egg", 0
-}
-
-type DeadBrainCoralFan struct{}
-
-func (DeadBrainCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_brain_coral_fan", 0
-}
-
-type Chalkboard struct{}
-
-func (Chalkboard) EncodeItem() (name string, meta int16) {
-	return "minecraft:chalkboard", 0
-}
-
-type PurpleBundle struct{}
-
-func (PurpleBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:purple_bundle", 0
-}
-
-type AzaleaLeavesFlowered struct{}
-
-func (AzaleaLeavesFlowered) EncodeItem() (name string, meta int16) {
-	return "minecraft:azalea_leaves_flowered", 0
-}
-
-type BirchStandingSign struct{}
-
-func (BirchStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_standing_sign", 0
-}
-
-type Sparkler struct{}
-
-func (Sparkler) EncodeItem() (name string, meta int16) {
-	return "minecraft:sparkler", 0
-}
-
-type Element19 struct{}
-
-func (Element19) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_19", 0
-}
-
-type Element20 struct{}
-
-func (Element20) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_20", 0
-}
-
-type Element52 struct{}
-
-func (Element52) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_52", 0
-}
-
-type SmoothSandstoneDoubleSlab struct{}
-
-func (SmoothSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:smooth_sandstone_double_slab", 0
-}
-
-type WhiteCandleCake struct{}
-
-func (WhiteCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:white_candle_cake", 0
-}
-
-type Dropper struct{}
-
-func (Dropper) EncodeItem() (name string, meta int16) {
-	return "minecraft:dropper", 0
-}
-
-type LitFurnace struct{}
-
-func (LitFurnace) EncodeItem() (name string, meta int16) {
-	return "minecraft:lit_furnace", 0
-}
-
-type Element36 struct{}
-
-func (Element36) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_36", 0
-}
-
-type BambooFence struct{}
-
-func (BambooFence) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_fence", 0
-}
-
-type TallDryGrass struct{}
-
-func (TallDryGrass) EncodeItem() (name string, meta int16) {
-	return "minecraft:tall_dry_grass", 0
-}
-
-type Saddle struct{}
-
-func (Saddle) EncodeItem() (name string, meta int16) {
-	return "minecraft:saddle", 0
-}
-
-type AndesiteDoubleSlab struct{}
-
-func (AndesiteDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:andesite_double_slab", 0
-}
-
-type GoldenRail struct{}
-
-func (GoldenRail) EncodeItem() (name string, meta int16) {
-	return "minecraft:golden_rail", 0
-}
-
-type DirtWithRoots struct{}
-
-func (DirtWithRoots) EncodeItem() (name string, meta int16) {
-	return "minecraft:dirt_with_roots", 0
-}
-
-type Element105 struct{}
-
-func (Element105) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_105", 0
-}
-
-type MangroveRoots struct{}
-
-func (MangroveRoots) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_roots", 0
-}
-
-type PitcherCrop struct{}
-
-func (PitcherCrop) EncodeItem() (name string, meta int16) {
-	return "minecraft:pitcher_crop", 0
-}
-
-type HoglinSpawnEgg struct{}
-
-func (HoglinSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:hoglin_spawn_egg", 0
-}
-
-type Shield struct{}
-
-func (Shield) EncodeItem() (name string, meta int16) {
-	return "minecraft:shield", 0
-}
-
-type BambooHangingSign struct{}
-
-func (BambooHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_hanging_sign", 0
-}
-
-type ItemCrimsonDoor struct{}
-
-func (ItemCrimsonDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.crimson_door", 0
-}
-
-type Element39 struct{}
-
-func (Element39) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_39", 0
-}
-
-type Element63 struct{}
-
-func (Element63) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_63", 0
-}
-
-type OpenEyeblossom struct{}
-
-func (OpenEyeblossom) EncodeItem() (name string, meta int16) {
-	return "minecraft:open_eyeblossom", 0
-}
-
-type DeadTubeCoralFan struct{}
-
-func (DeadTubeCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_tube_coral_fan", 0
-}
-
-type OrangeCandle struct{}
-
-func (OrangeCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:orange_candle", 0
-}
-
-type InfoUpdate struct{}
-
-func (InfoUpdate) EncodeItem() (name string, meta int16) {
-	return "minecraft:info_update", 0
-}
-
-type FlowingWater struct{}
-
-func (FlowingWater) EncodeItem() (name string, meta int16) {
-	return "minecraft:flowing_water", 0
-}
-
-type OakChestBoat struct{}
-
-func (OakChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:oak_chest_boat", 0
-}
-
-type BirchChestBoat struct{}
-
-func (BirchChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_chest_boat", 0
-}
-
-type PiglinSpawnEgg struct{}
-
-func (PiglinSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:piglin_spawn_egg", 0
-}
-
-type TorchflowerSeeds struct{}
-
-func (TorchflowerSeeds) EncodeItem() (name string, meta int16) {
-	return "minecraft:torchflower_seeds", 0
-}
-
-type TraderLlamaSpawnEgg struct{}
-
-func (TraderLlamaSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:trader_llama_spawn_egg", 0
-}
-
-type PinkCandle struct{}
-
-func (PinkCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:pink_candle", 0
-}
-
-type Element44 struct{}
-
-func (Element44) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_44", 0
-}
-
-type WolfSpawnEgg struct{}
-
-func (WolfSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:wolf_spawn_egg", 0
-}
-
-type Target struct{}
-
-func (Target) EncodeItem() (name string, meta int16) {
-	return "minecraft:target", 0
-}
-
-type DaylightDetectorInverted struct{}
-
-func (DaylightDetectorInverted) EncodeItem() (name string, meta int16) {
-	return "minecraft:daylight_detector_inverted", 0
-}
-
-type OcelotSpawnEgg struct{}
-
-func (OcelotSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:ocelot_spawn_egg", 0
-}
-
 type WarpedHangingSign struct{}
 
 func (WarpedHangingSign) EncodeItem() (name string, meta int16) {
 	return "minecraft:warped_hanging_sign", 0
 }
 
-type WaxedOxidizedDoubleCutCopperSlab struct{}
+type BorderBlock struct{}
 
-func (WaxedOxidizedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:waxed_oxidized_double_cut_copper_slab", 0
+func (BorderBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:border_block", 0
 }
 
-type HeavyCore struct{}
+type Element58 struct{}
 
-func (HeavyCore) EncodeItem() (name string, meta int16) {
-	return "minecraft:heavy_core", 0
+func (Element58) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_58", 0
 }
 
-type WallSign struct{}
+type SnowLayer struct{}
 
-func (WallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:wall_sign", 0
-}
-
-type GreenCandle struct{}
-
-func (GreenCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:green_candle", 0
-}
-
-type ItemWoodenDoor struct{}
-
-func (ItemWoodenDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.wooden_door", 0
-}
-
-type Skull struct{}
-
-func (Skull) EncodeItem() (name string, meta int16) {
-	return "minecraft:skull", 0
-}
-
-type ChemistryTable struct{}
-
-func (ChemistryTable) EncodeItem() (name string, meta int16) {
-	return "minecraft:chemistry_table", 0
-}
-
-type Element112 struct{}
-
-func (Element112) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_112", 0
-}
-
-type PetrifiedOakSlab struct{}
-
-func (PetrifiedOakSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:petrified_oak_slab", 0
-}
-
-type BirchHangingSign struct{}
-
-func (BirchHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_hanging_sign", 0
-}
-
-type Element117 struct{}
-
-func (Element117) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_117", 0
-}
-
-type Glowingobsidian struct{}
-
-func (Glowingobsidian) EncodeItem() (name string, meta int16) {
-	return "minecraft:glowingobsidian", 0
-}
-
-type JungleButton struct{}
-
-func (JungleButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_button", 0
-}
-
-type IronHorseArmor struct{}
-
-func (IronHorseArmor) EncodeItem() (name string, meta int16) {
-	return "minecraft:iron_horse_armor", 0
-}
-
-type ExposedDoubleCutCopperSlab struct{}
-
-func (ExposedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:exposed_double_cut_copper_slab", 0
-}
-
-type BambooTrapdoor struct{}
-
-func (BambooTrapdoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_trapdoor", 0
-}
-
-type HardStainedGlassPane struct{}
-
-func (HardStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_stained_glass_pane", 0
-}
-
-type LightBlock struct{}
-
-func (LightBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_block", 0
-}
-
-type Element104 struct{}
-
-func (Element104) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_104", 0
-}
-
-type WarpedPressurePlate struct{}
-
-func (WarpedPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:warped_pressure_plate", 0
-}
-
-type CrimsonWallSign struct{}
-
-func (CrimsonWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_wall_sign", 0
-}
-
-type Leaves struct{}
-
-func (Leaves) EncodeItem() (name string, meta int16) {
-	return "minecraft:leaves", 0
-}
-
-type StonePressurePlate struct{}
-
-func (StonePressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:stone_pressure_plate", 0
-}
-
-type OakSapling struct{}
-
-func (OakSapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:oak_sapling", 0
-}
-
-type CrimsonFungus struct{}
-
-func (CrimsonFungus) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_fungus", 0
-}
-
-type Element75 struct{}
-
-func (Element75) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_75", 0
-}
-
-type DeadTubeCoralWallFan struct{}
-
-func (DeadTubeCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_tube_coral_wall_fan", 0
-}
-
-type JungleHangingSign struct{}
-
-func (JungleHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_hanging_sign", 0
-}
-
-type StoneButton struct{}
-
-func (StoneButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:stone_button", 0
-}
-
-type PurpleCandle struct{}
-
-func (PurpleCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:purple_candle", 0
-}
-
-type Element114 struct{}
-
-func (Element114) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_114", 0
-}
-
-type Element65 struct{}
-
-func (Element65) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_65", 0
-}
-
-type LightGrayHarness struct{}
-
-func (LightGrayHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_gray_harness", 0
-}
-
-type VillagerSpawnEgg struct{}
-
-func (VillagerSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:villager_spawn_egg", 0
-}
-
-type Log struct{}
-
-func (Log) EncodeItem() (name string, meta int16) {
-	return "minecraft:log", 0
-}
-
-type TwistingVines struct{}
-
-func (TwistingVines) EncodeItem() (name string, meta int16) {
-	return "minecraft:twisting_vines", 0
-}
-
-type CherryBoat struct{}
-
-func (CherryBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_boat", 0
-}
-
-type MangroveButton struct{}
-
-func (MangroveButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_button", 0
-}
-
-type ZombiePigmanSpawnEgg struct{}
-
-func (ZombiePigmanSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:zombie_pigman_spawn_egg", 0
-}
-
-type CartographyTable struct{}
-
-func (CartographyTable) EncodeItem() (name string, meta int16) {
-	return "minecraft:cartography_table", 0
-}
-
-type PaleOakChestBoat struct{}
-
-func (PaleOakChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_chest_boat", 0
-}
-
-type LimeCandleCake struct{}
-
-func (LimeCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:lime_candle_cake", 0
-}
-
-type String struct{}
-
-func (String) EncodeItem() (name string, meta int16) {
-	return "minecraft:string", 0
-}
-
-type StainedHardenedClay struct{}
-
-func (StainedHardenedClay) EncodeItem() (name string, meta int16) {
-	return "minecraft:stained_hardened_clay", 0
-}
-
-type TrialKey struct{}
-
-func (TrialKey) EncodeItem() (name string, meta int16) {
-	return "minecraft:trial_key", 0
-}
-
-type SalmonBucket struct{}
-
-func (SalmonBucket) EncodeItem() (name string, meta int16) {
-	return "minecraft:salmon_bucket", 0
-}
-
-type LightBlueCandle struct{}
-
-func (LightBlueCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_blue_candle", 0
-}
-
-type BambooPlanks struct{}
-
-func (BambooPlanks) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_planks", 0
-}
-
-type InfestedCobblestone struct{}
-
-func (InfestedCobblestone) EncodeItem() (name string, meta int16) {
-	return "minecraft:infested_cobblestone", 0
-}
-
-type GrayBundle struct{}
-
-func (GrayBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:gray_bundle", 0
-}
-
-type BrownMushroom struct{}
-
-func (BrownMushroom) EncodeItem() (name string, meta int16) {
-	return "minecraft:brown_mushroom", 0
-}
-
-type Planks struct{}
-
-func (Planks) EncodeItem() (name string, meta int16) {
-	return "minecraft:planks", 0
-}
-
-type CaveVinesBodyWithBerries struct{}
-
-func (CaveVinesBodyWithBerries) EncodeItem() (name string, meta int16) {
-	return "minecraft:cave_vines_body_with_berries", 0
-}
-
-type MobSpawner struct{}
-
-func (MobSpawner) EncodeItem() (name string, meta int16) {
-	return "minecraft:mob_spawner", 0
-}
-
-type Netherreactor struct{}
-
-func (Netherreactor) EncodeItem() (name string, meta int16) {
-	return "minecraft:netherreactor", 0
-}
-
-type HardLightBlueStainedGlass struct{}
-
-func (HardLightBlueStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_light_blue_stained_glass", 0
-}
-
-type Element83 struct{}
-
-func (Element83) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_83", 0
-}
-
-type EndermanSpawnEgg struct{}
-
-func (EndermanSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:enderman_spawn_egg", 0
-}
-
-type AcaciaSapling struct{}
-
-func (AcaciaSapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_sapling", 0
-}
-
-type InfestedDeepslate struct{}
-
-func (InfestedDeepslate) EncodeItem() (name string, meta int16) {
-	return "minecraft:infested_deepslate", 0
-}
-
-type Element6 struct{}
-
-func (Element6) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_6", 0
-}
-
-type EnderDragonSpawnEgg struct{}
-
-func (EnderDragonSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:ender_dragon_spawn_egg", 0
-}
-
-type DebugStick struct{}
-
-func (DebugStick) EncodeItem() (name string, meta int16) {
-	return "minecraft:debug_stick", 0
-}
-
-type HardGreenStainedGlassPane struct{}
-
-func (HardGreenStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_green_stained_glass_pane", 0
-}
-
-type OminousBottle struct{}
-
-func (OminousBottle) EncodeItem() (name string, meta int16) {
-	return "minecraft:ominous_bottle", 0
-}
-
-type HardCyanStainedGlass struct{}
-
-func (HardCyanStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_cyan_stained_glass", 0
-}
-
-type Element91 struct{}
-
-func (Element91) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_91", 0
-}
-
-type AmethystCluster struct{}
-
-func (AmethystCluster) EncodeItem() (name string, meta int16) {
-	return "minecraft:amethyst_cluster", 0
-}
-
-type PiglinBruteSpawnEgg struct{}
-
-func (PiglinBruteSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:piglin_brute_spawn_egg", 0
-}
-
-type ZombieVillagerSpawnEgg struct{}
-
-func (ZombieVillagerSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:zombie_villager_spawn_egg", 0
-}
-
-type HardStainedGlass struct{}
-
-func (HardStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_stained_glass", 0
-}
-
-type AcaciaChestBoat struct{}
-
-func (AcaciaChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_chest_boat", 0
-}
-
-type ChestBoat struct{}
-
-func (ChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:chest_boat", 0
-}
-
-type FloweringAzalea struct{}
-
-func (FloweringAzalea) EncodeItem() (name string, meta int16) {
-	return "minecraft:flowering_azalea", 0
-}
-
-type OakBoat struct{}
-
-func (OakBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:oak_boat", 0
-}
-
-type Dye struct{}
-
-func (Dye) EncodeItem() (name string, meta int16) {
-	return "minecraft:dye", 0
-}
-
-type LimeBundle struct{}
-
-func (LimeBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:lime_bundle", 0
-}
-
-type Ice struct{}
-
-func (Ice) EncodeItem() (name string, meta int16) {
-	return "minecraft:ice", 0
-}
-
-type BambooDoor struct{}
-
-func (BambooDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_door", 0
-}
-
-type LitRedstoneLamp struct{}
-
-func (LitRedstoneLamp) EncodeItem() (name string, meta int16) {
-	return "minecraft:lit_redstone_lamp", 0
-}
-
-type RabbitSpawnEgg struct{}
-
-func (RabbitSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:rabbit_spawn_egg", 0
-}
-
-type CherryHangingSign struct{}
-
-func (CherryHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_hanging_sign", 0
-}
-
-type RedCandle struct{}
-
-func (RedCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_candle", 0
-}
-
-type BeeNest struct{}
-
-func (BeeNest) EncodeItem() (name string, meta int16) {
-	return "minecraft:bee_nest", 0
-}
-
-type UnpoweredRepeater struct{}
-
-func (UnpoweredRepeater) EncodeItem() (name string, meta int16) {
-	return "minecraft:unpowered_repeater", 0
-}
-
-type ItemMangroveDoor struct{}
-
-func (ItemMangroveDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.mangrove_door", 0
-}
-
-type PointedDripstone struct{}
-
-func (PointedDripstone) EncodeItem() (name string, meta int16) {
-	return "minecraft:pointed_dripstone", 0
-}
-
-type Element10 struct{}
-
-func (Element10) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_10", 0
-}
-
-type SkeletonHorseSpawnEgg struct{}
-
-func (SkeletonHorseSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:skeleton_horse_spawn_egg", 0
-}
-
-type InfoUpdate2 struct{}
-
-func (InfoUpdate2) EncodeItem() (name string, meta int16) {
-	return "minecraft:info_update2", 0
-}
-
-type RedNetherBrickDoubleSlab struct{}
-
-func (RedNetherBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_nether_brick_double_slab", 0
-}
-
-type PumpkinStem struct{}
-
-func (PumpkinStem) EncodeItem() (name string, meta int16) {
-	return "minecraft:pumpkin_stem", 0
-}
-
-type CodSpawnEgg struct{}
-
-func (CodSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:cod_spawn_egg", 0
-}
-
-type ActivatorRail struct{}
-
-func (ActivatorRail) EncodeItem() (name string, meta int16) {
-	return "minecraft:activator_rail", 0
-}
-
-type SheepSpawnEgg struct{}
-
-func (SheepSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:sheep_spawn_egg", 0
-}
-
-type YellowShulkerBox struct{}
-
-func (YellowShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:yellow_shulker_box", 0
-}
-
-type DiamondHorseArmor struct{}
-
-func (DiamondHorseArmor) EncodeItem() (name string, meta int16) {
-	return "minecraft:diamond_horse_armor", 0
-}
-
-type MangrovePressurePlate struct{}
-
-func (MangrovePressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_pressure_plate", 0
-}
-
-type CherrySapling struct{}
-
-func (CherrySapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_sapling", 0
-}
-
-type Bush struct{}
-
-func (Bush) EncodeItem() (name string, meta int16) {
-	return "minecraft:bush", 0
-}
-
-type HardOrangeStainedGlass struct{}
-
-func (HardOrangeStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_orange_stained_glass", 0
-}
-
-type HardWhiteStainedGlassPane struct{}
-
-func (HardWhiteStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_white_stained_glass_pane", 0
-}
-
-type PinkShulkerBox struct{}
-
-func (PinkShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:pink_shulker_box", 0
-}
-
-type Element109 struct{}
-
-func (Element109) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_109", 0
-}
-
-type JungleChestBoat struct{}
-
-func (JungleChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_chest_boat", 0
-}
-
-type Rail struct{}
-
-func (Rail) EncodeItem() (name string, meta int16) {
-	return "minecraft:rail", 0
-}
-
-type Element31 struct{}
-
-func (Element31) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_31", 0
-}
-
-type RedstoneOre struct{}
-
-func (RedstoneOre) EncodeItem() (name string, meta int16) {
-	return "minecraft:redstone_ore", 0
-}
-
-type WhiteCandle struct{}
-
-func (WhiteCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:white_candle", 0
-}
-
-type PowderSnowBucket struct{}
-
-func (PowderSnowBucket) EncodeItem() (name string, meta int16) {
-	return "minecraft:powder_snow_bucket", 0
-}
-
-type ShulkerSpawnEgg struct{}
-
-func (ShulkerSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:shulker_spawn_egg", 0
-}
-
-type BreezeRod struct{}
-
-func (BreezeRod) EncodeItem() (name string, meta int16) {
-	return "minecraft:breeze_rod", 0
-}
-
-type Element59 struct{}
-
-func (Element59) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_59", 0
-}
-
-type TubeCoralWallFan struct{}
-
-func (TubeCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:tube_coral_wall_fan", 0
-}
-
-type HardBlueStainedGlass struct{}
-
-func (HardBlueStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_blue_stained_glass", 0
-}
-
-type LitBlastFurnace struct{}
-
-func (LitBlastFurnace) EncodeItem() (name string, meta int16) {
-	return "minecraft:lit_blast_furnace", 0
-}
-
-type StoneBrickDoubleSlab struct{}
-
-func (StoneBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:stone_brick_double_slab", 0
-}
-
-type LeafLitter struct{}
-
-func (LeafLitter) EncodeItem() (name string, meta int16) {
-	return "minecraft:leaf_litter", 0
-}
-
-type FlowingLava struct{}
-
-func (FlowingLava) EncodeItem() (name string, meta int16) {
-	return "minecraft:flowing_lava", 0
-}
-
-type RedShulkerBox struct{}
-
-func (RedShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_shulker_box", 0
-}
-
-type Element85 struct{}
-
-func (Element85) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_85", 0
-}
-
-type DioriteDoubleSlab struct{}
-
-func (DioriteDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:diorite_double_slab", 0
-}
-
-type Wool struct{}
-
-func (Wool) EncodeItem() (name string, meta int16) {
-	return "minecraft:wool", 0
-}
-
-type TintedGlass struct{}
-
-func (TintedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:tinted_glass", 0
-}
-
-type CrimsonPressurePlate struct{}
-
-func (CrimsonPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_pressure_plate", 0
-}
-
-type IronTrapdoor struct{}
-
-func (IronTrapdoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:iron_trapdoor", 0
-}
-
-type CreakingSpawnEgg struct{}
-
-func (CreakingSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:creaking_spawn_egg", 0
-}
-
-type Element64 struct{}
-
-func (Element64) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_64", 0
-}
-
-type TubeCoralFan struct{}
-
-func (TubeCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:tube_coral_fan", 0
-}
-
-type RespawnAnchor struct{}
-
-func (RespawnAnchor) EncodeItem() (name string, meta int16) {
-	return "minecraft:respawn_anchor", 0
-}
-
-type Element67 struct{}
-
-func (Element67) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_67", 0
-}
-
-type WaxedWeatheredCopperBulb struct{}
-
-func (WaxedWeatheredCopperBulb) EncodeItem() (name string, meta int16) {
-	return "minecraft:waxed_weathered_copper_bulb", 0
-}
-
-type BlueHarness struct{}
-
-func (BlueHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:blue_harness", 0
-}
-
-type BlackstoneDoubleSlab struct{}
-
-func (BlackstoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:blackstone_double_slab", 0
-}
-
-type Mycelium struct{}
-
-func (Mycelium) EncodeItem() (name string, meta int16) {
-	return "minecraft:mycelium", 0
-}
-
-type DarkOakBoat struct{}
-
-func (DarkOakBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:dark_oak_boat", 0
-}
-
-type OxidizedCopperBulb struct{}
-
-func (OxidizedCopperBulb) EncodeItem() (name string, meta int16) {
-	return "minecraft:oxidized_copper_bulb", 0
-}
-
-type PurpleCandleCake struct{}
-
-func (PurpleCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:purple_candle_cake", 0
-}
-
-type BrownShulkerBox struct{}
-
-func (BrownShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:brown_shulker_box", 0
-}
-
-type Element89 struct{}
-
-func (Element89) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_89", 0
-}
-
-type WarpedWallSign struct{}
-
-func (WarpedWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:warped_wall_sign", 0
-}
-
-type Element72 struct{}
-
-func (Element72) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_72", 0
-}
-
-type InfestedMossyStoneBricks struct{}
-
-func (InfestedMossyStoneBricks) EncodeItem() (name string, meta int16) {
-	return "minecraft:infested_mossy_stone_bricks", 0
-}
-
-type HardBrownStainedGlass struct{}
-
-func (HardBrownStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_brown_stained_glass", 0
-}
-
-type HardWhiteStainedGlass struct{}
-
-func (HardWhiteStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_white_stained_glass", 0
-}
-
-type HardPinkStainedGlass struct{}
-
-func (HardPinkStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_pink_stained_glass", 0
-}
-
-type Camera struct{}
-
-func (Camera) EncodeItem() (name string, meta int16) {
-	return "minecraft:camera", 0
-}
-
-type RedMushroom struct{}
-
-func (RedMushroom) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_mushroom", 0
-}
-
-type RedMushroomBlock struct{}
-
-func (RedMushroomBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_mushroom_block", 0
-}
-
-type Element45 struct{}
-
-func (Element45) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_45", 0
-}
-
-type Element79 struct{}
-
-func (Element79) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_79", 0
-}
-
-type AcaciaWallSign struct{}
-
-func (AcaciaWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_wall_sign", 0
-}
-
-type BigDripleaf struct{}
-
-func (BigDripleaf) EncodeItem() (name string, meta int16) {
-	return "minecraft:big_dripleaf", 0
-}
-
-type LightBlueCandleCake struct{}
-
-func (LightBlueCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_blue_candle_cake", 0
-}
-
-type WeatheredCopperBulb struct{}
-
-func (WeatheredCopperBulb) EncodeItem() (name string, meta int16) {
-	return "minecraft:weathered_copper_bulb", 0
-}
-
-type BambooRaft struct{}
-
-func (BambooRaft) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_raft", 0
-}
-
-type Portal struct{}
-
-func (Portal) EncodeItem() (name string, meta int16) {
-	return "minecraft:portal", 0
-}
-
-type ElementConstructor struct{}
-
-func (ElementConstructor) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_constructor", 0
-}
-
-type BrownEgg struct{}
-
-func (BrownEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:brown_egg", 0
-}
-
-type LightGrayCandleCake struct{}
-
-func (LightGrayCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_gray_candle_cake", 0
-}
-
-type Candle struct{}
-
-func (Candle) EncodeItem() (name string, meta int16) {
-	return "minecraft:candle", 0
-}
-
-type DeprecatedPurpurBlock2 struct{}
-
-func (DeprecatedPurpurBlock2) EncodeItem() (name string, meta int16) {
-	return "minecraft:deprecated_purpur_block_2", 0
-}
-
-type CaveVines struct{}
-
-func (CaveVines) EncodeItem() (name string, meta int16) {
-	return "minecraft:cave_vines", 0
-}
-
-type OrangeCandleCake struct{}
-
-func (OrangeCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:orange_candle_cake", 0
-}
-
-type PetrifiedOakDoubleSlab struct{}
-
-func (PetrifiedOakDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:petrified_oak_double_slab", 0
-}
-
-type WarpedNylium struct{}
-
-func (WarpedNylium) EncodeItem() (name string, meta int16) {
-	return "minecraft:warped_nylium", 0
-}
-
-type MagentaBundle struct{}
-
-func (MagentaBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:magenta_bundle", 0
-}
-
-type WaxedOxidizedCopperBulb struct{}
-
-func (WaxedOxidizedCopperBulb) EncodeItem() (name string, meta int16) {
-	return "minecraft:waxed_oxidized_copper_bulb", 0
-}
-
-type Element54 struct{}
-
-func (Element54) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_54", 0
-}
-
-type Log2 struct{}
-
-func (Log2) EncodeItem() (name string, meta int16) {
-	return "minecraft:log2", 0
-}
-
-type PinkCandleCake struct{}
-
-func (PinkCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:pink_candle_cake", 0
-}
-
-type BambooMosaicStairs struct{}
-
-func (BambooMosaicStairs) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_mosaic_stairs", 0
-}
-
-type HardYellowStainedGlassPane struct{}
-
-func (HardYellowStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_yellow_stained_glass_pane", 0
-}
-
-type Element53 struct{}
-
-func (Element53) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_53", 0
-}
-
-type DarkOakDoubleSlab struct{}
-
-func (DarkOakDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:dark_oak_double_slab", 0
-}
-
-type IronDoor struct{}
-
-func (IronDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:iron_door", 0
-}
-
-type MudBrickDoubleSlab struct{}
-
-func (MudBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:mud_brick_double_slab", 0
-}
-
-type DeadBubbleCoralFan struct{}
-
-func (DeadBubbleCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_bubble_coral_fan", 0
-}
-
-type WolfArmor struct{}
-
-func (WolfArmor) EncodeItem() (name string, meta int16) {
-	return "minecraft:wolf_armor", 0
-}
-
-type SalmonSpawnEgg struct{}
-
-func (SalmonSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:salmon_spawn_egg", 0
-}
-
-type Allow struct{}
-
-func (Allow) EncodeItem() (name string, meta int16) {
-	return "minecraft:allow", 0
-}
-
-type HuskSpawnEgg struct{}
-
-func (HuskSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:husk_spawn_egg", 0
-}
-
-type CodBucket struct{}
-
-func (CodBucket) EncodeItem() (name string, meta int16) {
-	return "minecraft:cod_bucket", 0
-}
-
-type Painting struct{}
-
-func (Painting) EncodeItem() (name string, meta int16) {
-	return "minecraft:painting", 0
-}
-
-type Element32 struct{}
-
-func (Element32) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_32", 0
-}
-
-type EndermiteSpawnEgg struct{}
-
-func (EndermiteSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:endermite_spawn_egg", 0
-}
-
-type FrostedIce struct{}
-
-func (FrostedIce) EncodeItem() (name string, meta int16) {
-	return "minecraft:frosted_ice", 0
-}
-
-type Trident struct{}
-
-func (Trident) EncodeItem() (name string, meta int16) {
-	return "minecraft:trident", 0
-}
-
-type PurpleHarness struct{}
-
-func (PurpleHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:purple_harness", 0
-}
-
-type Balloon struct{}
-
-func (Balloon) EncodeItem() (name string, meta int16) {
-	return "minecraft:balloon", 0
-}
-
-type CrimsonStandingSign struct{}
-
-func (CrimsonStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_standing_sign", 0
-}
-
-type CamelSpawnEgg struct{}
-
-func (CamelSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:camel_spawn_egg", 0
-}
-
-type ItemNetherSprouts struct{}
-
-func (ItemNetherSprouts) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.nether_sprouts", 0
-}
-
-type Element81 struct{}
-
-func (Element81) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_81", 0
-}
-
-type PolishedDeepslateDoubleSlab struct{}
-
-func (PolishedDeepslateDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_deepslate_double_slab", 0
-}
-
-type JungleBoat struct{}
-
-func (JungleBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_boat", 0
-}
-
-type PolishedBlackstoneButton struct{}
-
-func (PolishedBlackstoneButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_blackstone_button", 0
-}
-
-type Chain struct{}
-
-func (Chain) EncodeItem() (name string, meta int16) {
-	return "minecraft:chain", 0
-}
-
-type DaylightDetector struct{}
-
-func (DaylightDetector) EncodeItem() (name string, meta int16) {
-	return "minecraft:daylight_detector", 0
-}
-
-type MangrovePropagule struct{}
-
-func (MangrovePropagule) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_propagule", 0
-}
-
-type DoubleStoneBlockSlab2 struct{}
-
-func (DoubleStoneBlockSlab2) EncodeItem() (name string, meta int16) {
-	return "minecraft:double_stone_block_slab2", 0
-}
-
-type StainedGlassPane struct{}
-
-func (StainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:stained_glass_pane", 0
-}
-
-type MonsterEgg struct{}
-
-func (MonsterEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:monster_egg", 0
-}
-
-type Carpet struct{}
-
-func (Carpet) EncodeItem() (name string, meta int16) {
-	return "minecraft:carpet", 0
-}
-
-type MagmaCubeSpawnEgg struct{}
-
-func (MagmaCubeSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:magma_cube_spawn_egg", 0
-}
-
-type AcaciaStandingSign struct{}
-
-func (AcaciaStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_standing_sign", 0
-}
-
-type PrismarineDoubleSlab struct{}
-
-func (PrismarineDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:prismarine_double_slab", 0
-}
-
-type FishingRod struct{}
-
-func (FishingRod) EncodeItem() (name string, meta int16) {
-	return "minecraft:fishing_rod", 0
-}
-
-type HardBlackStainedGlass struct{}
-
-func (HardBlackStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_black_stained_glass", 0
-}
-
-type Element110 struct{}
-
-func (Element110) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_110", 0
-}
-
-type JungleDoubleSlab struct{}
-
-func (JungleDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_double_slab", 0
-}
-
-type SpruceWallSign struct{}
-
-func (SpruceWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_wall_sign", 0
-}
-
-type CreeperSpawnEgg struct{}
-
-func (CreeperSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:creeper_spawn_egg", 0
-}
-
-type BoggedSpawnEgg struct{}
-
-func (BoggedSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:bogged_spawn_egg", 0
-}
-
-type MangroveWallSign struct{}
-
-func (MangroveWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_wall_sign", 0
-}
-
-type Bundle struct{}
-
-func (Bundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:bundle", 0
-}
-
-type WhiteBundle struct{}
-
-func (WhiteBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:white_bundle", 0
-}
-
-type LodestoneCompass struct{}
-
-func (LodestoneCompass) EncodeItem() (name string, meta int16) {
-	return "minecraft:lodestone_compass", 0
-}
-
-type SmoothQuartzDoubleSlab struct{}
-
-func (SmoothQuartzDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:smooth_quartz_double_slab", 0
-}
-
-type Element50 struct{}
-
-func (Element50) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_50", 0
-}
-
-type SpiderSpawnEgg struct{}
-
-func (SpiderSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:spider_spawn_egg", 0
-}
-
-type Element62 struct{}
-
-func (Element62) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_62", 0
-}
-
-type StructureBlock struct{}
-
-func (StructureBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:structure_block", 0
-}
-
-type Element88 struct{}
-
-func (Element88) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_88", 0
-}
-
-type BlackCandleCake struct{}
-
-func (BlackCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:black_candle_cake", 0
-}
-
-type Element92 struct{}
-
-func (Element92) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_92", 0
-}
-
-type StrippedBambooBlock struct{}
-
-func (StrippedBambooBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:stripped_bamboo_block", 0
-}
-
-type Carrots struct{}
-
-func (Carrots) EncodeItem() (name string, meta int16) {
-	return "minecraft:carrots", 0
-}
-
-type CherryStandingSign struct{}
-
-func (CherryStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_standing_sign", 0
-}
-
-type Element96 struct{}
-
-func (Element96) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_96", 0
-}
-
-type HardLimeStainedGlass struct{}
-
-func (HardLimeStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_lime_stained_glass", 0
-}
-
-type MagentaHarness struct{}
-
-func (MagentaHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:magenta_harness", 0
-}
-
-type ItemCake struct{}
-
-func (ItemCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.cake", 0
-}
-
-type Element80 struct{}
-
-func (Element80) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_80", 0
-}
-
-type DrownedSpawnEgg struct{}
-
-func (DrownedSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:drowned_spawn_egg", 0
-}
-
-type Element1 struct{}
-
-func (Element1) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_1", 0
-}
-
-type PurpleShulkerBox struct{}
-
-func (PurpleShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:purple_shulker_box", 0
-}
-
-type FireflyBush struct{}
-
-func (FireflyBush) EncodeItem() (name string, meta int16) {
-	return "minecraft:firefly_bush", 0
-}
-
-type GreenBundle struct{}
-
-func (GreenBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:green_bundle", 0
-}
-
-type HappyGhastSpawnEgg struct{}
-
-func (HappyGhastSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:happy_ghast_spawn_egg", 0
-}
-
-type ItemAcaciaDoor struct{}
-
-func (ItemAcaciaDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.acacia_door", 0
-}
-
-type Board struct{}
-
-func (Board) EncodeItem() (name string, meta int16) {
-	return "minecraft:board", 0
-}
-
-type CyanShulkerBox struct{}
-
-func (CyanShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:cyan_shulker_box", 0
-}
-
-type Element84 struct{}
-
-func (Element84) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_84", 0
-}
-
-type BlackCandle struct{}
-
-func (BlackCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:black_candle", 0
-}
-
-type StainedGlass struct{}
-
-func (StainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:stained_glass", 0
-}
-
-type HardMagentaStainedGlass struct{}
-
-func (HardMagentaStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_magenta_stained_glass", 0
-}
-
-type Boat struct{}
-
-func (Boat) EncodeItem() (name string, meta int16) {
-	return "minecraft:boat", 0
-}
-
-type Lava struct{}
-
-func (Lava) EncodeItem() (name string, meta int16) {
-	return "minecraft:lava", 0
-}
-
-type CactusFlower struct{}
-
-func (CactusFlower) EncodeItem() (name string, meta int16) {
-	return "minecraft:cactus_flower", 0
-}
-
-type UndyedShulkerBox struct{}
-
-func (UndyedShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:undyed_shulker_box", 0
-}
-
-type Bleach struct{}
-
-func (Bleach) EncodeItem() (name string, meta int16) {
-	return "minecraft:bleach", 0
-}
-
-type CherryChestBoat struct{}
-
-func (CherryChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_chest_boat", 0
-}
-
-type GhastSpawnEgg struct{}
-
-func (GhastSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:ghast_spawn_egg", 0
-}
-
-type UnderwaterTnt struct{}
-
-func (UnderwaterTnt) EncodeItem() (name string, meta int16) {
-	return "minecraft:underwater_tnt", 0
-}
-
-type Element73 struct{}
-
-func (Element73) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_73", 0
-}
-
-type CherryButton struct{}
-
-func (CherryButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_button", 0
-}
-
-type YellowBundle struct{}
-
-func (YellowBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:yellow_bundle", 0
-}
-
-type LightGrayShulkerBox struct{}
-
-func (LightGrayShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_gray_shulker_box", 0
-}
-
-type StoneBlockSlab2 struct{}
-
-func (StoneBlockSlab2) EncodeItem() (name string, meta int16) {
-	return "minecraft:stone_block_slab2", 0
-}
-
-type GreenCandleCake struct{}
-
-func (GreenCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:green_candle_cake", 0
-}
-
-type SweetBerryBush struct{}
-
-func (SweetBerryBush) EncodeItem() (name string, meta int16) {
-	return "minecraft:sweet_berry_bush", 0
-}
-
-type Seagrass struct{}
-
-func (Seagrass) EncodeItem() (name string, meta int16) {
-	return "minecraft:seagrass", 0
-}
-
-type SculkShrieker struct{}
-
-func (SculkShrieker) EncodeItem() (name string, meta int16) {
-	return "minecraft:sculk_shrieker", 0
-}
-
-type RedstoneTorch struct{}
-
-func (RedstoneTorch) EncodeItem() (name string, meta int16) {
-	return "minecraft:redstone_torch", 0
-}
-
-type NameTag struct{}
-
-func (NameTag) EncodeItem() (name string, meta int16) {
-	return "minecraft:name_tag", 0
-}
-
-type MooshroomSpawnEgg struct{}
-
-func (MooshroomSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:mooshroom_spawn_egg", 0
-}
-
-type HardLightBlueStainedGlassPane struct{}
-
-func (HardLightBlueStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_light_blue_stained_glass_pane", 0
-}
-
-type MangroveDoubleSlab struct{}
-
-func (MangroveDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_double_slab", 0
-}
-
-type BrownHarness struct{}
-
-func (BrownHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:brown_harness", 0
-}
-
-type DeepslateTileDoubleSlab struct{}
-
-func (DeepslateTileDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:deepslate_tile_double_slab", 0
-}
-
-type Element34 struct{}
-
-func (Element34) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_34", 0
-}
-
-type LimeShulkerBox struct{}
-
-func (LimeShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:lime_shulker_box", 0
-}
-
-type LabTable struct{}
-
-func (LabTable) EncodeItem() (name string, meta int16) {
-	return "minecraft:lab_table", 0
-}
-
-type Element30 struct{}
-
-func (Element30) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_30", 0
-}
-
-type Element103 struct{}
-
-func (Element103) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_103", 0
-}
-
-type NetherBrickDoubleSlab struct{}
-
-func (NetherBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:nether_brick_double_slab", 0
-}
-
-type BrownMushroomBlock struct{}
-
-func (BrownMushroomBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:brown_mushroom_block", 0
-}
-
-type PurpurDoubleSlab struct{}
-
-func (PurpurDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:purpur_double_slab", 0
-}
-
-type Element116 struct{}
-
-func (Element116) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_116", 0
-}
-
-type ResinBrickDoubleSlab struct{}
-
-func (ResinBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:resin_brick_double_slab", 0
-}
-
-type RedHarness struct{}
-
-func (RedHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_harness", 0
-}
-
-type Element94 struct{}
-
-func (Element94) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_94", 0
-}
-
-type ZoglinSpawnEgg struct{}
-
-func (ZoglinSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:zoglin_spawn_egg", 0
-}
-
-type ChemicalHeat struct{}
-
-func (ChemicalHeat) EncodeItem() (name string, meta int16) {
-	return "minecraft:chemical_heat", 0
-}
-
-type CommandBlockMinecart struct{}
-
-func (CommandBlockMinecart) EncodeItem() (name string, meta int16) {
-	return "minecraft:command_block_minecart", 0
-}
-
-type PolarBearSpawnEgg struct{}
-
-func (PolarBearSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:polar_bear_spawn_egg", 0
-}
-
-type PaleOakWallSign struct{}
-
-func (PaleOakWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_wall_sign", 0
-}
-
-type ChorusFruit struct{}
-
-func (ChorusFruit) EncodeItem() (name string, meta int16) {
-	return "minecraft:chorus_fruit", 0
-}
-
-type PinkHarness struct{}
-
-func (PinkHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:pink_harness", 0
-}
-
-type WaxedDoubleCutCopperSlab struct{}
-
-func (WaxedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:waxed_double_cut_copper_slab", 0
-}
-
-type WallBanner struct{}
-
-func (WallBanner) EncodeItem() (name string, meta int16) {
-	return "minecraft:wall_banner", 0
-}
-
-type Observer struct{}
-
-func (Observer) EncodeItem() (name string, meta int16) {
-	return "minecraft:observer", 0
-}
-
-type ChorusPlant struct{}
-
-func (ChorusPlant) EncodeItem() (name string, meta int16) {
-	return "minecraft:chorus_plant", 0
-}
-
-type HornCoralWallFan struct{}
-
-func (HornCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:horn_coral_wall_fan", 0
-}
-
-type CatSpawnEgg struct{}
-
-func (CatSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:cat_spawn_egg", 0
-}
-
-type CreakingHeart struct{}
-
-func (CreakingHeart) EncodeItem() (name string, meta int16) {
-	return "minecraft:creaking_heart", 0
-}
-
-type CoralFanDead struct{}
-
-func (CoralFanDead) EncodeItem() (name string, meta int16) {
-	return "minecraft:coral_fan_dead", 0
-}
-
-type BeeSpawnEgg struct{}
-
-func (BeeSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:bee_spawn_egg", 0
-}
-
-type CaveVinesHeadWithBerries struct{}
-
-func (CaveVinesHeadWithBerries) EncodeItem() (name string, meta int16) {
-	return "minecraft:cave_vines_head_with_berries", 0
-}
-
-type StoneBlockSlab4 struct{}
-
-func (StoneBlockSlab4) EncodeItem() (name string, meta int16) {
-	return "minecraft:stone_block_slab4", 0
-}
-
-type Element76 struct{}
-
-func (Element76) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_76", 0
-}
-
-type BlazeSpawnEgg struct{}
-
-func (BlazeSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:blaze_spawn_egg", 0
-}
-
-type Element46 struct{}
-
-func (Element46) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_46", 0
-}
-
-type IceBomb struct{}
-
-func (IceBomb) EncodeItem() (name string, meta int16) {
-	return "minecraft:ice_bomb", 0
-}
-
-type SpruceChestBoat struct{}
-
-func (SpruceChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_chest_boat", 0
-}
-
-type Element18 struct{}
-
-func (Element18) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_18", 0
-}
-
-type StriderSpawnEgg struct{}
-
-func (StriderSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:strider_spawn_egg", 0
-}
-
-type DeprecatedAnvil struct{}
-
-func (DeprecatedAnvil) EncodeItem() (name string, meta int16) {
-	return "minecraft:deprecated_anvil", 0
-}
-
-type WarpedDoubleSlab struct{}
-
-func (WarpedDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:warped_double_slab", 0
-}
-
-type AcaciaButton struct{}
-
-func (AcaciaButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_button", 0
-}
-
-type SmoothRedSandstoneDoubleSlab struct{}
-
-func (SmoothRedSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:smooth_red_sandstone_double_slab", 0
-}
-
-type Element40 struct{}
-
-func (Element40) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_40", 0
-}
-
-type SandstoneDoubleSlab struct{}
-
-func (SandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:sandstone_double_slab", 0
-}
-
-type Lodestone struct{}
-
-func (Lodestone) EncodeItem() (name string, meta int16) {
-	return "minecraft:lodestone", 0
-}
-
-type OxidizedDoubleCutCopperSlab struct{}
-
-func (OxidizedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:oxidized_double_cut_copper_slab", 0
-}
-
-type TropicalFishSpawnEgg struct{}
-
-func (TropicalFishSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:tropical_fish_spawn_egg", 0
-}
-
-type LightBlueBundle struct{}
-
-func (LightBlueBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_blue_bundle", 0
-}
-
-type TropicalFishBucket struct{}
-
-func (TropicalFishBucket) EncodeItem() (name string, meta int16) {
-	return "minecraft:tropical_fish_bucket", 0
-}
-
-type Element16 struct{}
-
-func (Element16) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_16", 0
-}
-
-type LimeHarness struct{}
-
-func (LimeHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:lime_harness", 0
-}
-
-type Element5 struct{}
-
-func (Element5) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_5", 0
-}
-
-type BirchSapling struct{}
-
-func (BirchSapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_sapling", 0
-}
-
-type BambooStandingSign struct{}
-
-func (BambooStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_standing_sign", 0
-}
-
-type Bamboo struct{}
-
-func (Bamboo) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo", 0
-}
-
-type JungleStandingSign struct{}
-
-func (JungleStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_standing_sign", 0
-}
-
-type Element111 struct{}
-
-func (Element111) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_111", 0
-}
-
-type BambooFenceGate struct{}
-
-func (BambooFenceGate) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_fence_gate", 0
-}
-
-type Element101 struct{}
-
-func (Element101) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_101", 0
-}
-
-type Wood struct{}
-
-func (Wood) EncodeItem() (name string, meta int16) {
-	return "minecraft:wood", 0
-}
-
-type PufferfishBucket struct{}
-
-func (PufferfishBucket) EncodeItem() (name string, meta int16) {
-	return "minecraft:pufferfish_bucket", 0
-}
-
-type BambooSign struct{}
-
-func (BambooSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_sign", 0
-}
-
-type GuardianSpawnEgg struct{}
-
-func (GuardianSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:guardian_spawn_egg", 0
-}
-
-type Element2 struct{}
-
-func (Element2) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_2", 0
-}
-
-type PistonArmCollision struct{}
-
-func (PistonArmCollision) EncodeItem() (name string, meta int16) {
-	return "minecraft:piston_arm_collision", 0
-}
-
-type Element3 struct{}
-
-func (Element3) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_3", 0
-}
-
-type PaleMossCarpet struct{}
-
-func (PaleMossCarpet) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_moss_carpet", 0
-}
-
-type Deny struct{}
-
-func (Deny) EncodeItem() (name string, meta int16) {
-	return "minecraft:deny", 0
-}
-
-type GlowBerries struct{}
-
-func (GlowBerries) EncodeItem() (name string, meta int16) {
-	return "minecraft:glow_berries", 0
-}
-
-type HardGreenStainedGlass struct{}
-
-func (HardGreenStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_green_stained_glass", 0
-}
-
-type Element12 struct{}
-
-func (Element12) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_12", 0
-}
-
-type Element66 struct{}
-
-func (Element66) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_66", 0
-}
-
-type BrownBundle struct{}
-
-func (BrownBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:brown_bundle", 0
-}
-
-type BirchPressurePlate struct{}
-
-func (BirchPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_pressure_plate", 0
-}
-
-type BrownCandle struct{}
-
-func (BrownCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:brown_candle", 0
-}
-
-type Element78 struct{}
-
-func (Element78) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_78", 0
-}
-
-type InfestedCrackedStoneBricks struct{}
-
-func (InfestedCrackedStoneBricks) EncodeItem() (name string, meta int16) {
-	return "minecraft:infested_cracked_stone_bricks", 0
-}
-
-type GlowStick struct{}
-
-func (GlowStick) EncodeItem() (name string, meta int16) {
-	return "minecraft:glow_stick", 0
-}
-
-type WeatheredDoubleCutCopperSlab struct{}
-
-func (WeatheredDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:weathered_double_cut_copper_slab", 0
-}
-
-type ItemFlowerPot struct{}
-
-func (ItemFlowerPot) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.flower_pot", 0
-}
-
-type FoxSpawnEgg struct{}
-
-func (FoxSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:fox_spawn_egg", 0
-}
-
-type PaleOakPressurePlate struct{}
-
-func (PaleOakPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_pressure_plate", 0
-}
-
-type StructureVoid struct{}
-
-func (StructureVoid) EncodeItem() (name string, meta int16) {
-	return "minecraft:structure_void", 0
-}
-
-type SpruceStandingSign struct{}
-
-func (SpruceStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_standing_sign", 0
-}
-
-type LitRedstoneOre struct{}
-
-func (LitRedstoneOre) EncodeItem() (name string, meta int16) {
-	return "minecraft:lit_redstone_ore", 0
-}
-
-type Element0 struct{}
-
-func (Element0) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_0", 0
-}
-
-type SoulFire struct{}
-
-func (SoulFire) EncodeItem() (name string, meta int16) {
-	return "minecraft:soul_fire", 0
-}
-
-type VexSpawnEgg struct{}
-
-func (VexSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:vex_spawn_egg", 0
-}
-
-type CrimsonRoots struct{}
-
-func (CrimsonRoots) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_roots", 0
-}
-
-type TorchflowerCrop struct{}
-
-func (TorchflowerCrop) EncodeItem() (name string, meta int16) {
-	return "minecraft:torchflower_crop", 0
-}
-
-type CyanBundle struct{}
-
-func (CyanBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:cyan_bundle", 0
+func (SnowLayer) EncodeItem() (name string, meta int16) {
+	return "minecraft:snow_layer", 0
 }
 
 type HardCyanStainedGlassPane struct{}
@@ -4227,178 +930,16 @@ func (HardCyanStainedGlassPane) EncodeItem() (name string, meta int16) {
 	return "minecraft:hard_cyan_stained_glass_pane", 0
 }
 
-type Beehive struct{}
+type WhiteBundle struct{}
 
-func (Beehive) EncodeItem() (name string, meta int16) {
-	return "minecraft:beehive", 0
+func (WhiteBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:white_bundle", 0
 }
 
-type AxolotlSpawnEgg struct{}
+type FrogSpawnEgg struct{}
 
-func (AxolotlSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:axolotl_spawn_egg", 0
-}
-
-type Element41 struct{}
-
-func (Element41) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_41", 0
-}
-
-type CopperBulb struct{}
-
-func (CopperBulb) EncodeItem() (name string, meta int16) {
-	return "minecraft:copper_bulb", 0
-}
-
-type WanderingTraderSpawnEgg struct{}
-
-func (WanderingTraderSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:wandering_trader_spawn_egg", 0
-}
-
-type LightningRod struct{}
-
-func (LightningRod) EncodeItem() (name string, meta int16) {
-	return "minecraft:lightning_rod", 0
-}
-
-type Element99 struct{}
-
-func (Element99) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_99", 0
-}
-
-type TrappedChest struct{}
-
-func (TrappedChest) EncodeItem() (name string, meta int16) {
-	return "minecraft:trapped_chest", 0
-}
-
-type CowSpawnEgg struct{}
-
-func (CowSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:cow_spawn_egg", 0
-}
-
-type Element23 struct{}
-
-func (Element23) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_23", 0
-}
-
-type ColoredTorchPurple struct{}
-
-func (ColoredTorchPurple) EncodeItem() (name string, meta int16) {
-	return "minecraft:colored_torch_purple", 0
-}
-
-type PolishedBlackstonePressurePlate struct{}
-
-func (PolishedBlackstonePressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_blackstone_pressure_plate", 0
-}
-
-type ChiseledBookshelf struct{}
-
-func (ChiseledBookshelf) EncodeItem() (name string, meta int16) {
-	return "minecraft:chiseled_bookshelf", 0
-}
-
-type ItemChain struct{}
-
-func (ItemChain) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.chain", 0
-}
-
-type Coral struct{}
-
-func (Coral) EncodeItem() (name string, meta int16) {
-	return "minecraft:coral", 0
-}
-
-type MagentaShulkerBox struct{}
-
-func (MagentaShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:magenta_shulker_box", 0
-}
-
-type HardLimeStainedGlassPane struct{}
-
-func (HardLimeStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_lime_stained_glass_pane", 0
-}
-
-type Potatoes struct{}
-
-func (Potatoes) EncodeItem() (name string, meta int16) {
-	return "minecraft:potatoes", 0
-}
-
-type GrayHarness struct{}
-
-func (GrayHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:gray_harness", 0
-}
-
-type MossyStoneBrickDoubleSlab struct{}
-
-func (MossyStoneBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:mossy_stone_brick_double_slab", 0
-}
-
-type Magma struct{}
-
-func (Magma) EncodeItem() (name string, meta int16) {
-	return "minecraft:magma", 0
-}
-
-type MangroveBoat struct{}
-
-func (MangroveBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_boat", 0
-}
-
-type Lever struct{}
-
-func (Lever) EncodeItem() (name string, meta int16) {
-	return "minecraft:lever", 0
-}
-
-type GlowLichen struct{}
-
-func (GlowLichen) EncodeItem() (name string, meta int16) {
-	return "minecraft:glow_lichen", 0
-}
-
-type Element77 struct{}
-
-func (Element77) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_77", 0
-}
-
-type DarkOakHangingSign struct{}
-
-func (DarkOakHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:dark_oak_hanging_sign", 0
-}
-
-type MaterialReducer struct{}
-
-func (MaterialReducer) EncodeItem() (name string, meta int16) {
-	return "minecraft:material_reducer", 0
-}
-
-type GreenShulkerBox struct{}
-
-func (GreenShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:green_shulker_box", 0
-}
-
-type YellowHarness struct{}
-
-func (YellowHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:yellow_harness", 0
+func (FrogSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:frog_spawn_egg", 0
 }
 
 type BreezeSpawnEgg struct{}
@@ -4407,268 +948,58 @@ func (BreezeSpawnEgg) EncodeItem() (name string, meta int16) {
 	return "minecraft:breeze_spawn_egg", 0
 }
 
-type GoldenHorseArmor struct{}
+type CrimsonRoots struct{}
 
-func (GoldenHorseArmor) EncodeItem() (name string, meta int16) {
-	return "minecraft:golden_horse_armor", 0
+func (CrimsonRoots) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_roots", 0
 }
 
-type Element107 struct{}
+type BubbleCoralWallFan struct{}
 
-func (Element107) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_107", 0
+func (BubbleCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:bubble_coral_wall_fan", 0
 }
 
-type SnifferEgg struct{}
+type Fire struct{}
 
-func (SnifferEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:sniffer_egg", 0
+func (Fire) EncodeItem() (name string, meta int16) {
+	return "minecraft:fire", 0
 }
 
-type WoodenButton struct{}
+type SpruceHangingSign struct{}
 
-func (WoodenButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:wooden_button", 0
+func (SpruceHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_hanging_sign", 0
 }
 
-type Brush struct{}
+type FireCoralWallFan struct{}
 
-func (Brush) EncodeItem() (name string, meta int16) {
-	return "minecraft:brush", 0
+func (FireCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:fire_coral_wall_fan", 0
 }
 
-type MovingBlock struct{}
+type StoneBlockSlab4 struct{}
 
-func (MovingBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:moving_block", 0
+func (StoneBlockSlab4) EncodeItem() (name string, meta int16) {
+	return "minecraft:stone_block_slab4", 0
 }
 
-type EndGateway struct{}
+type ParchedSpawnEgg struct{}
 
-func (EndGateway) EncodeItem() (name string, meta int16) {
-	return "minecraft:end_gateway", 0
+func (ParchedSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:parched_spawn_egg", 0
 }
 
-type PoweredComparator struct{}
+type BlueBundle struct{}
 
-func (PoweredComparator) EncodeItem() (name string, meta int16) {
-	return "minecraft:powered_comparator", 0
+func (BlueBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:blue_bundle", 0
 }
 
-type Azalea struct{}
+type TadpoleBucket struct{}
 
-func (Azalea) EncodeItem() (name string, meta int16) {
-	return "minecraft:azalea", 0
-}
-
-type WitherSpawnEgg struct{}
-
-func (WitherSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:wither_spawn_egg", 0
-}
-
-type LightGrayBundle struct{}
-
-func (LightGrayBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_gray_bundle", 0
-}
-
-type Reserved6 struct{}
-
-func (Reserved6) EncodeItem() (name string, meta int16) {
-	return "minecraft:reserved6", 0
-}
-
-type MangroveHangingSign struct{}
-
-func (MangroveHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:mangrove_hanging_sign", 0
-}
-
-type Element8 struct{}
-
-func (Element8) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_8", 0
-}
-
-type FrogSpawn struct{}
-
-func (FrogSpawn) EncodeItem() (name string, meta int16) {
-	return "minecraft:frog_spawn", 0
-}
-
-type ItemBeetroot struct{}
-
-func (ItemBeetroot) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.beetroot", 0
-}
-
-type DarkOakButton struct{}
-
-func (DarkOakButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:dark_oak_button", 0
-}
-
-type HardGrayStainedGlassPane struct{}
-
-func (HardGrayStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_gray_stained_glass_pane", 0
-}
-
-type WitherSkeletonSpawnEgg struct{}
-
-func (WitherSkeletonSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:wither_skeleton_spawn_egg", 0
-}
-
-type ShortDryGrass struct{}
-
-func (ShortDryGrass) EncodeItem() (name string, meta int16) {
-	return "minecraft:short_dry_grass", 0
-}
-
-type RedBundle struct{}
-
-func (RedBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_bundle", 0
-}
-
-type Slime struct{}
-
-func (Slime) EncodeItem() (name string, meta int16) {
-	return "minecraft:slime", 0
-}
-
-type IronGolemSpawnEgg struct{}
-
-func (IronGolemSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:iron_golem_spawn_egg", 0
-}
-
-type GrayShulkerBox struct{}
-
-func (GrayShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:gray_shulker_box", 0
-}
-
-type DarkOakChestBoat struct{}
-
-func (DarkOakChestBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:dark_oak_chest_boat", 0
-}
-
-type Element113 struct{}
-
-func (Element113) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_113", 0
-}
-
-type RavagerSpawnEgg struct{}
-
-func (RavagerSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:ravager_spawn_egg", 0
-}
-
-type EndStoneBrickDoubleSlab struct{}
-
-func (EndStoneBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:end_stone_brick_double_slab", 0
-}
-
-type PitcherPod struct{}
-
-func (PitcherPod) EncodeItem() (name string, meta int16) {
-	return "minecraft:pitcher_pod", 0
-}
-
-type Element55 struct{}
-
-func (Element55) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_55", 0
-}
-
-type BlackHarness struct{}
-
-func (BlackHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:black_harness", 0
-}
-
-type PolishedTuffDoubleSlab struct{}
-
-func (PolishedTuffDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_tuff_double_slab", 0
-}
-
-type Element68 struct{}
-
-func (Element68) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_68", 0
-}
-
-type BambooBlock struct{}
-
-func (BambooBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_block", 0
-}
-
-type PillagerSpawnEgg struct{}
-
-func (PillagerSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:pillager_spawn_egg", 0
-}
-
-type StandingSign struct{}
-
-func (StandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:standing_sign", 0
-}
-
-type BrainCoralWallFan struct{}
-
-func (BrainCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:brain_coral_wall_fan", 0
-}
-
-type DarkPrismarineDoubleSlab struct{}
-
-func (DarkPrismarineDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:dark_prismarine_double_slab", 0
-}
-
-type RapidFertilizer struct{}
-
-func (RapidFertilizer) EncodeItem() (name string, meta int16) {
-	return "minecraft:rapid_fertilizer", 0
-}
-
-type SmoothBasalt struct{}
-
-func (SmoothBasalt) EncodeItem() (name string, meta int16) {
-	return "minecraft:smooth_basalt", 0
-}
-
-type PaleOakHangingSign struct{}
-
-func (PaleOakHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_hanging_sign", 0
-}
-
-type MushroomStem struct{}
-
-func (MushroomStem) EncodeItem() (name string, meta int16) {
-	return "minecraft:mushroom_stem", 0
-}
-
-type ItemWheat struct{}
-
-func (ItemWheat) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.wheat", 0
-}
-
-type HardRedStainedGlass struct{}
-
-func (HardRedStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_red_stained_glass", 0
+func (TadpoleBucket) EncodeItem() (name string, meta int16) {
+	return "minecraft:tadpole_bucket", 0
 }
 
 type InfestedStone struct{}
@@ -4677,28 +1008,646 @@ func (InfestedStone) EncodeItem() (name string, meta int16) {
 	return "minecraft:infested_stone", 0
 }
 
-type ElderGuardianSpawnEgg struct{}
+type CopperGolemSpawnEgg struct{}
 
-func (ElderGuardianSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:elder_guardian_spawn_egg", 0
+func (CopperGolemSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:copper_golem_spawn_egg", 0
 }
 
-type FlowerPot struct{}
+type Ice struct{}
 
-func (FlowerPot) EncodeItem() (name string, meta int16) {
-	return "minecraft:flower_pot", 0
+func (Ice) EncodeItem() (name string, meta int16) {
+	return "minecraft:ice", 0
 }
 
-type SnowGolemSpawnEgg struct{}
+type PowderSnowBucket struct{}
 
-func (SnowGolemSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:snow_golem_spawn_egg", 0
+func (PowderSnowBucket) EncodeItem() (name string, meta int16) {
+	return "minecraft:powder_snow_bucket", 0
 }
 
-type HardGlassPane struct{}
+type BambooSign struct{}
 
-func (HardGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_glass_pane", 0
+func (BambooSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_sign", 0
+}
+
+type CrimsonDoubleSlab struct{}
+
+func (CrimsonDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_double_slab", 0
+}
+
+type LitDeepslateRedstoneOre struct{}
+
+func (LitDeepslateRedstoneOre) EncodeItem() (name string, meta int16) {
+	return "minecraft:lit_deepslate_redstone_ore", 0
+}
+
+type CowSpawnEgg struct{}
+
+func (CowSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:cow_spawn_egg", 0
+}
+
+type PetrifiedOakDoubleSlab struct{}
+
+func (PetrifiedOakDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:petrified_oak_double_slab", 0
+}
+
+type WhiteShulkerBox struct{}
+
+func (WhiteShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:white_shulker_box", 0
+}
+
+type LightBlueBundle struct{}
+
+func (LightBlueBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_blue_bundle", 0
+}
+
+type Element108 struct{}
+
+func (Element108) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_108", 0
+}
+
+type IronDoor struct{}
+
+func (IronDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:iron_door", 0
+}
+
+type PurpurDoubleSlab struct{}
+
+func (PurpurDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:purpur_double_slab", 0
+}
+
+type Coral struct{}
+
+func (Coral) EncodeItem() (name string, meta int16) {
+	return "minecraft:coral", 0
+}
+
+type BambooSlab struct{}
+
+func (BambooSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_slab", 0
+}
+
+type OcelotSpawnEgg struct{}
+
+func (OcelotSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:ocelot_spawn_egg", 0
+}
+
+type PoweredRepeater struct{}
+
+func (PoweredRepeater) EncodeItem() (name string, meta int16) {
+	return "minecraft:powered_repeater", 0
+}
+
+type AndesiteDoubleSlab struct{}
+
+func (AndesiteDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:andesite_double_slab", 0
+}
+
+type StriderSpawnEgg struct{}
+
+func (StriderSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:strider_spawn_egg", 0
+}
+
+type BambooBlock struct{}
+
+func (BambooBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_block", 0
+}
+
+type ArmadilloSpawnEgg struct{}
+
+func (ArmadilloSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:armadillo_spawn_egg", 0
+}
+
+type WolfSpawnEgg struct{}
+
+func (WolfSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:wolf_spawn_egg", 0
+}
+
+type WoodenSpear struct{}
+
+func (WoodenSpear) EncodeItem() (name string, meta int16) {
+	return "minecraft:wooden_spear", 0
+}
+
+type GrayHarness struct{}
+
+func (GrayHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:gray_harness", 0
+}
+
+type RedstoneLamp struct{}
+
+func (RedstoneLamp) EncodeItem() (name string, meta int16) {
+	return "minecraft:redstone_lamp", 0
+}
+
+type BeeNest struct{}
+
+func (BeeNest) EncodeItem() (name string, meta int16) {
+	return "minecraft:bee_nest", 0
+}
+
+type PurpleBundle struct{}
+
+func (PurpleBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:purple_bundle", 0
+}
+
+type EndPortalFrame struct{}
+
+func (EndPortalFrame) EncodeItem() (name string, meta int16) {
+	return "minecraft:end_portal_frame", 0
+}
+
+type Element54 struct{}
+
+func (Element54) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_54", 0
+}
+
+type ChestMinecart struct{}
+
+func (ChestMinecart) EncodeItem() (name string, meta int16) {
+	return "minecraft:chest_minecart", 0
+}
+
+type SweetBerries struct{}
+
+func (SweetBerries) EncodeItem() (name string, meta int16) {
+	return "minecraft:sweet_berries", 0
+}
+
+type ItemWoodenDoor struct{}
+
+func (ItemWoodenDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.wooden_door", 0
+}
+
+type TubeCoralWallFan struct{}
+
+func (TubeCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:tube_coral_wall_fan", 0
+}
+
+type Element18 struct{}
+
+func (Element18) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_18", 0
+}
+
+type ChainCommandBlock struct{}
+
+func (ChainCommandBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:chain_command_block", 0
+}
+
+type ItemCauldron struct{}
+
+func (ItemCauldron) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.cauldron", 0
+}
+
+type MangrovePressurePlate struct{}
+
+func (MangrovePressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_pressure_plate", 0
+}
+
+type SkeletonHorseSpawnEgg struct{}
+
+func (SkeletonHorseSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:skeleton_horse_spawn_egg", 0
+}
+
+type WaxedExposedCopperBulb struct{}
+
+func (WaxedExposedCopperBulb) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_exposed_copper_bulb", 0
+}
+
+type Element100 struct{}
+
+func (Element100) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_100", 0
+}
+
+type Concrete struct{}
+
+func (Concrete) EncodeItem() (name string, meta int16) {
+	return "minecraft:concrete", 0
+}
+
+type UnderwaterTnt struct{}
+
+func (UnderwaterTnt) EncodeItem() (name string, meta int16) {
+	return "minecraft:underwater_tnt", 0
+}
+
+type AxolotlBucket struct{}
+
+func (AxolotlBucket) EncodeItem() (name string, meta int16) {
+	return "minecraft:axolotl_bucket", 0
+}
+
+type HoneyBottle struct{}
+
+func (HoneyBottle) EncodeItem() (name string, meta int16) {
+	return "minecraft:honey_bottle", 0
+}
+
+type Candle struct{}
+
+func (Candle) EncodeItem() (name string, meta int16) {
+	return "minecraft:candle", 0
+}
+
+type SmallAmethystBud struct{}
+
+func (SmallAmethystBud) EncodeItem() (name string, meta int16) {
+	return "minecraft:small_amethyst_bud", 0
+}
+
+type DeadHornCoralWallFan struct{}
+
+func (DeadHornCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_horn_coral_wall_fan", 0
+}
+
+type InfestedCrackedStoneBricks struct{}
+
+func (InfestedCrackedStoneBricks) EncodeItem() (name string, meta int16) {
+	return "minecraft:infested_cracked_stone_bricks", 0
+}
+
+type UndyedShulkerBox struct{}
+
+func (UndyedShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:undyed_shulker_box", 0
+}
+
+type PointedDripstone struct{}
+
+func (PointedDripstone) EncodeItem() (name string, meta int16) {
+	return "minecraft:pointed_dripstone", 0
+}
+
+type BambooHangingSign struct{}
+
+func (BambooHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_hanging_sign", 0
+}
+
+type SpiderSpawnEgg struct{}
+
+func (SpiderSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:spider_spawn_egg", 0
+}
+
+type Medicine struct{}
+
+func (Medicine) EncodeItem() (name string, meta int16) {
+	return "minecraft:medicine", 0
+}
+
+type WoodenSlab struct{}
+
+func (WoodenSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:wooden_slab", 0
+}
+
+type IronTrapdoor struct{}
+
+func (IronTrapdoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:iron_trapdoor", 0
+}
+
+type OakSapling struct{}
+
+func (OakSapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:oak_sapling", 0
+}
+
+type Element43 struct{}
+
+func (Element43) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_43", 0
+}
+
+type Boat struct{}
+
+func (Boat) EncodeItem() (name string, meta int16) {
+	return "minecraft:boat", 0
+}
+
+type NpcSpawnEgg struct{}
+
+func (NpcSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:npc_spawn_egg", 0
+}
+
+type MangroveButton struct{}
+
+func (MangroveButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_button", 0
+}
+
+type Chalkboard struct{}
+
+func (Chalkboard) EncodeItem() (name string, meta int16) {
+	return "minecraft:chalkboard", 0
+}
+
+type BambooMosaic struct{}
+
+func (BambooMosaic) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_mosaic", 0
+}
+
+type OxidizedCopperBulb struct{}
+
+func (OxidizedCopperBulb) EncodeItem() (name string, meta int16) {
+	return "minecraft:oxidized_copper_bulb", 0
+}
+
+type AcaciaPressurePlate struct{}
+
+func (AcaciaPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_pressure_plate", 0
+}
+
+type HuskSpawnEgg struct{}
+
+func (HuskSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:husk_spawn_egg", 0
+}
+
+type PaleOakSapling struct{}
+
+func (PaleOakSapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_sapling", 0
+}
+
+type HoneyBlock struct{}
+
+func (HoneyBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:honey_block", 0
+}
+
+type Element65 struct{}
+
+func (Element65) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_65", 0
+}
+
+type StoneBlockSlab2 struct{}
+
+func (StoneBlockSlab2) EncodeItem() (name string, meta int16) {
+	return "minecraft:stone_block_slab2", 0
+}
+
+type Lava struct{}
+
+func (Lava) EncodeItem() (name string, meta int16) {
+	return "minecraft:lava", 0
+}
+
+type Element112 struct{}
+
+func (Element112) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_112", 0
+}
+
+type MagentaBundle struct{}
+
+func (MagentaBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:magenta_bundle", 0
+}
+
+type TraderLlamaSpawnEgg struct{}
+
+func (TraderLlamaSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:trader_llama_spawn_egg", 0
+}
+
+type DioriteDoubleSlab struct{}
+
+func (DioriteDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:diorite_double_slab", 0
+}
+
+type IronNautilusArmor struct{}
+
+func (IronNautilusArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:iron_nautilus_armor", 0
+}
+
+type MuleSpawnEgg struct{}
+
+func (MuleSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:mule_spawn_egg", 0
+}
+
+type BambooStairs struct{}
+
+func (BambooStairs) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_stairs", 0
+}
+
+type CalibratedSculkSensor struct{}
+
+func (CalibratedSculkSensor) EncodeItem() (name string, meta int16) {
+	return "minecraft:calibrated_sculk_sensor", 0
+}
+
+type PolishedBlackstoneButton struct{}
+
+func (PolishedBlackstoneButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_blackstone_button", 0
+}
+
+type DoublePlant struct{}
+
+func (DoublePlant) EncodeItem() (name string, meta int16) {
+	return "minecraft:double_plant", 0
+}
+
+type JungleShelf struct{}
+
+func (JungleShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_shelf", 0
+}
+
+type ColoredTorchPurple struct{}
+
+func (ColoredTorchPurple) EncodeItem() (name string, meta int16) {
+	return "minecraft:colored_torch_purple", 0
+}
+
+type WaxedWeatheredCopperBulb struct{}
+
+func (WaxedWeatheredCopperBulb) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_weathered_copper_bulb", 0
+}
+
+type Log struct{}
+
+func (Log) EncodeItem() (name string, meta int16) {
+	return "minecraft:log", 0
+}
+
+type IronGolemSpawnEgg struct{}
+
+func (IronGolemSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:iron_golem_spawn_egg", 0
+}
+
+type BambooStandingSign struct{}
+
+func (BambooStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_standing_sign", 0
+}
+
+type GhastSpawnEgg struct{}
+
+func (GhastSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:ghast_spawn_egg", 0
+}
+
+type CaveVines struct{}
+
+func (CaveVines) EncodeItem() (name string, meta int16) {
+	return "minecraft:cave_vines", 0
+}
+
+type SculkShrieker struct{}
+
+func (SculkShrieker) EncodeItem() (name string, meta int16) {
+	return "minecraft:sculk_shrieker", 0
+}
+
+type CobblestoneDoubleSlab struct{}
+
+func (CobblestoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:cobblestone_double_slab", 0
+}
+
+type BlackHarness struct{}
+
+func (BlackHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:black_harness", 0
+}
+
+type CandleCake struct{}
+
+func (CandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:candle_cake", 0
+}
+
+type Element32 struct{}
+
+func (Element32) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_32", 0
+}
+
+type CherryBoat struct{}
+
+func (CherryBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_boat", 0
+}
+
+type BirchDoubleSlab struct{}
+
+func (BirchDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_double_slab", 0
+}
+
+type PolishedTuffDoubleSlab struct{}
+
+func (PolishedTuffDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_tuff_double_slab", 0
+}
+
+type WaxedOxidizedDoubleCutCopperSlab struct{}
+
+func (WaxedOxidizedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_oxidized_double_cut_copper_slab", 0
+}
+
+type Trident struct{}
+
+func (Trident) EncodeItem() (name string, meta int16) {
+	return "minecraft:trident", 0
+}
+
+type Carpet struct{}
+
+func (Carpet) EncodeItem() (name string, meta int16) {
+	return "minecraft:carpet", 0
+}
+
+type DarkOakDoubleSlab struct{}
+
+func (DarkOakDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_oak_double_slab", 0
+}
+
+type PolishedGraniteDoubleSlab struct{}
+
+func (PolishedGraniteDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_granite_double_slab", 0
+}
+
+type CaveSpiderSpawnEgg struct{}
+
+func (CaveSpiderSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:cave_spider_spawn_egg", 0
+}
+
+type FrostedIce struct{}
+
+func (FrostedIce) EncodeItem() (name string, meta int16) {
+	return "minecraft:frosted_ice", 0
+}
+
+type MobSpawner struct{}
+
+func (MobSpawner) EncodeItem() (name string, meta int16) {
+	return "minecraft:mob_spawner", 0
+}
+
+type StructureVoid struct{}
+
+func (StructureVoid) EncodeItem() (name string, meta int16) {
+	return "minecraft:structure_void", 0
+}
+
+type Element28 struct{}
+
+func (Element28) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_28", 0
+}
+
+type MagentaHarness struct{}
+
+func (MagentaHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:magenta_harness", 0
 }
 
 type WindCharge struct{}
@@ -4707,34 +1656,1372 @@ func (WindCharge) EncodeItem() (name string, meta int16) {
 	return "minecraft:wind_charge", 0
 }
 
-type DeadHornCoralFan struct{}
+type StrippedBambooBlock struct{}
 
-func (DeadHornCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_horn_coral_fan", 0
+func (StrippedBambooBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:stripped_bamboo_block", 0
 }
 
-type TripWire struct{}
+type OxidizedCopperChest struct{}
 
-func (TripWire) EncodeItem() (name string, meta int16) {
-	return "minecraft:trip_wire", 0
+func (OxidizedCopperChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:oxidized_copper_chest", 0
 }
 
-type Water struct{}
+type AcaciaStandingSign struct{}
 
-func (Water) EncodeItem() (name string, meta int16) {
-	return "minecraft:water", 0
+func (AcaciaStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_standing_sign", 0
 }
 
-type VindicatorSpawnEgg struct{}
+type WaxedCopperBulb struct{}
 
-func (VindicatorSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:vindicator_spawn_egg", 0
+func (WaxedCopperBulb) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_copper_bulb", 0
 }
 
-type FilledMap struct{}
+type Repeater struct{}
 
-func (FilledMap) EncodeItem() (name string, meta int16) {
-	return "minecraft:filled_map", 0
+func (Repeater) EncodeItem() (name string, meta int16) {
+	return "minecraft:repeater", 0
+}
+
+type BlackShulkerBox struct{}
+
+func (BlackShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:black_shulker_box", 0
+}
+
+type DaylightDetectorInverted struct{}
+
+func (DaylightDetectorInverted) EncodeItem() (name string, meta int16) {
+	return "minecraft:daylight_detector_inverted", 0
+}
+
+type HardLightGrayStainedGlassPane struct{}
+
+func (HardLightGrayStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_light_gray_stained_glass_pane", 0
+}
+
+type Element63 struct{}
+
+func (Element63) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_63", 0
+}
+
+type Element39 struct{}
+
+func (Element39) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_39", 0
+}
+
+type DarkOakHangingSign struct{}
+
+func (DarkOakHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_oak_hanging_sign", 0
+}
+
+type ResinBrickDoubleSlab struct{}
+
+func (ResinBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:resin_brick_double_slab", 0
+}
+
+type Element23 struct{}
+
+func (Element23) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_23", 0
+}
+
+type Element94 struct{}
+
+func (Element94) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_94", 0
+}
+
+type WaxedExposedLightningRod struct{}
+
+func (WaxedExposedLightningRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_exposed_lightning_rod", 0
+}
+
+type BambooDoor struct{}
+
+func (BambooDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_door", 0
+}
+
+type HardWhiteStainedGlassPane struct{}
+
+func (HardWhiteStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_white_stained_glass_pane", 0
+}
+
+type PigSpawnEgg struct{}
+
+func (PigSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:pig_spawn_egg", 0
+}
+
+type LitRedstoneLamp struct{}
+
+func (LitRedstoneLamp) EncodeItem() (name string, meta int16) {
+	return "minecraft:lit_redstone_lamp", 0
+}
+
+type HardYellowStainedGlassPane struct{}
+
+func (HardYellowStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_yellow_stained_glass_pane", 0
+}
+
+type StoneBlockSlab struct{}
+
+func (StoneBlockSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:stone_block_slab", 0
+}
+
+type SpruceShelf struct{}
+
+func (SpruceShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_shelf", 0
+}
+
+type HardRedStainedGlass struct{}
+
+func (HardRedStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_red_stained_glass", 0
+}
+
+type GoatSpawnEgg struct{}
+
+func (GoatSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:goat_spawn_egg", 0
+}
+
+type LimeHarness struct{}
+
+func (LimeHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:lime_harness", 0
+}
+
+type Element35 struct{}
+
+func (Element35) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_35", 0
+}
+
+type TuffBrickDoubleSlab struct{}
+
+func (TuffBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:tuff_brick_double_slab", 0
+}
+
+type OakShelf struct{}
+
+func (OakShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:oak_shelf", 0
+}
+
+type Mycelium struct{}
+
+func (Mycelium) EncodeItem() (name string, meta int16) {
+	return "minecraft:mycelium", 0
+}
+
+type Stonebrick struct{}
+
+func (Stonebrick) EncodeItem() (name string, meta int16) {
+	return "minecraft:stonebrick", 0
+}
+
+type GreenBundle struct{}
+
+func (GreenBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:green_bundle", 0
+}
+
+type TallDryGrass struct{}
+
+func (TallDryGrass) EncodeItem() (name string, meta int16) {
+	return "minecraft:tall_dry_grass", 0
+}
+
+type FlowingLava struct{}
+
+func (FlowingLava) EncodeItem() (name string, meta int16) {
+	return "minecraft:flowing_lava", 0
+}
+
+type BirchShelf struct{}
+
+func (BirchShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_shelf", 0
+}
+
+type BlackCandle struct{}
+
+func (BlackCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:black_candle", 0
+}
+
+type AcaciaButton struct{}
+
+func (AcaciaButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_button", 0
+}
+
+type BirchChestBoat struct{}
+
+func (BirchChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_chest_boat", 0
+}
+
+type WaxedOxidizedCopperBulb struct{}
+
+func (WaxedOxidizedCopperBulb) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_oxidized_copper_bulb", 0
+}
+
+type HornCoralFan struct{}
+
+func (HornCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:horn_coral_fan", 0
+}
+
+type Element60 struct{}
+
+func (Element60) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_60", 0
+}
+
+type HopperMinecart struct{}
+
+func (HopperMinecart) EncodeItem() (name string, meta int16) {
+	return "minecraft:hopper_minecart", 0
+}
+
+type Element110 struct{}
+
+func (Element110) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_110", 0
+}
+
+type ItemCrimsonDoor struct{}
+
+func (ItemCrimsonDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.crimson_door", 0
+}
+
+type SculkSensor struct{}
+
+func (SculkSensor) EncodeItem() (name string, meta int16) {
+	return "minecraft:sculk_sensor", 0
+}
+
+type StoneBlockSlab3 struct{}
+
+func (StoneBlockSlab3) EncodeItem() (name string, meta int16) {
+	return "minecraft:stone_block_slab3", 0
+}
+
+type BubbleColumn struct{}
+
+func (BubbleColumn) EncodeItem() (name string, meta int16) {
+	return "minecraft:bubble_column", 0
+}
+
+type Element73 struct{}
+
+func (Element73) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_73", 0
+}
+
+type HappyGhastSpawnEgg struct{}
+
+func (HappyGhastSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:happy_ghast_spawn_egg", 0
+}
+
+type Element66 struct{}
+
+func (Element66) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_66", 0
+}
+
+type RapidFertilizer struct{}
+
+func (RapidFertilizer) EncodeItem() (name string, meta int16) {
+	return "minecraft:rapid_fertilizer", 0
+}
+
+type BreezeRod struct{}
+
+func (BreezeRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:breeze_rod", 0
+}
+
+type Element2 struct{}
+
+func (Element2) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_2", 0
+}
+
+type Element4 struct{}
+
+func (Element4) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_4", 0
+}
+
+type StainedHardenedClay struct{}
+
+func (StainedHardenedClay) EncodeItem() (name string, meta int16) {
+	return "minecraft:stained_hardened_clay", 0
+}
+
+type ChorusFruit struct{}
+
+func (ChorusFruit) EncodeItem() (name string, meta int16) {
+	return "minecraft:chorus_fruit", 0
+}
+
+type Element96 struct{}
+
+func (Element96) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_96", 0
+}
+
+type GlowBerries struct{}
+
+func (GlowBerries) EncodeItem() (name string, meta int16) {
+	return "minecraft:glow_berries", 0
+}
+
+type Element117 struct{}
+
+func (Element117) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_117", 0
+}
+
+type PolishedDioriteDoubleSlab struct{}
+
+func (PolishedDioriteDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_diorite_double_slab", 0
+}
+
+type CodSpawnEgg struct{}
+
+func (CodSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:cod_spawn_egg", 0
+}
+
+type CommandBlockMinecart struct{}
+
+func (CommandBlockMinecart) EncodeItem() (name string, meta int16) {
+	return "minecraft:command_block_minecart", 0
+}
+
+type BeeSpawnEgg struct{}
+
+func (BeeSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:bee_spawn_egg", 0
+}
+
+type Element88 struct{}
+
+func (Element88) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_88", 0
+}
+
+type Element15 struct{}
+
+func (Element15) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_15", 0
+}
+
+type BrainCoralWallFan struct{}
+
+func (BrainCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:brain_coral_wall_fan", 0
+}
+
+type TuffDoubleSlab struct{}
+
+func (TuffDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:tuff_double_slab", 0
+}
+
+type PurpleShulkerBox struct{}
+
+func (PurpleShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:purple_shulker_box", 0
+}
+
+type ChestBoat struct{}
+
+func (ChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:chest_boat", 0
+}
+
+type WitherSpawnEgg struct{}
+
+func (WitherSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:wither_spawn_egg", 0
+}
+
+type Element1 struct{}
+
+func (Element1) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_1", 0
+}
+
+type LightBlueHarness struct{}
+
+func (LightBlueHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_blue_harness", 0
+}
+
+type PolarBearSpawnEgg struct{}
+
+func (PolarBearSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:polar_bear_spawn_egg", 0
+}
+
+type Element42 struct{}
+
+func (Element42) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_42", 0
+}
+
+type LabTable struct{}
+
+func (LabTable) EncodeItem() (name string, meta int16) {
+	return "minecraft:lab_table", 0
+}
+
+type Dropper struct{}
+
+func (Dropper) EncodeItem() (name string, meta int16) {
+	return "minecraft:dropper", 0
+}
+
+type CoralBlock struct{}
+
+func (CoralBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:coral_block", 0
+}
+
+type HardWhiteStainedGlass struct{}
+
+func (HardWhiteStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_white_stained_glass", 0
+}
+
+type Leaves struct{}
+
+func (Leaves) EncodeItem() (name string, meta int16) {
+	return "minecraft:leaves", 0
+}
+
+type Sparkler struct{}
+
+func (Sparkler) EncodeItem() (name string, meta int16) {
+	return "minecraft:sparkler", 0
+}
+
+type PiglinBruteSpawnEgg struct{}
+
+func (PiglinBruteSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:piglin_brute_spawn_egg", 0
+}
+
+type TadpoleSpawnEgg struct{}
+
+func (TadpoleSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:tadpole_spawn_egg", 0
+}
+
+type BigDripleaf struct{}
+
+func (BigDripleaf) EncodeItem() (name string, meta int16) {
+	return "minecraft:big_dripleaf", 0
+}
+
+type CodBucket struct{}
+
+func (CodBucket) EncodeItem() (name string, meta int16) {
+	return "minecraft:cod_bucket", 0
+}
+
+type RespawnAnchor struct{}
+
+func (RespawnAnchor) EncodeItem() (name string, meta int16) {
+	return "minecraft:respawn_anchor", 0
+}
+
+type DarkoakWallSign struct{}
+
+func (DarkoakWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:darkoak_wall_sign", 0
+}
+
+type CyanBundle struct{}
+
+func (CyanBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:cyan_bundle", 0
+}
+
+type DoubleStoneBlockSlab2 struct{}
+
+func (DoubleStoneBlockSlab2) EncodeItem() (name string, meta int16) {
+	return "minecraft:double_stone_block_slab2", 0
+}
+
+type SnowGolemSpawnEgg struct{}
+
+func (SnowGolemSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:snow_golem_spawn_egg", 0
+}
+
+type ColoredTorchRed struct{}
+
+func (ColoredTorchRed) EncodeItem() (name string, meta int16) {
+	return "minecraft:colored_torch_red", 0
+}
+
+type BambooMosaicDoubleSlab struct{}
+
+func (BambooMosaicDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_mosaic_double_slab", 0
+}
+
+type GoldenDandelion struct{}
+
+func (GoldenDandelion) EncodeItem() (name string, meta int16) {
+	return "minecraft:golden_dandelion", 0
+}
+
+type PaleHangingMoss struct{}
+
+func (PaleHangingMoss) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_hanging_moss", 0
+}
+
+type PaleOakShelf struct{}
+
+func (PaleOakShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_shelf", 0
+}
+
+type ZoglinSpawnEgg struct{}
+
+func (ZoglinSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:zoglin_spawn_egg", 0
+}
+
+type RedBundle struct{}
+
+func (RedBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_bundle", 0
+}
+
+type PolishedBlackstoneBrickDoubleSlab struct{}
+
+func (PolishedBlackstoneBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_blackstone_brick_double_slab", 0
+}
+
+type ChorusFlower struct{}
+
+func (ChorusFlower) EncodeItem() (name string, meta int16) {
+	return "minecraft:chorus_flower", 0
+}
+
+type Seagrass struct{}
+
+func (Seagrass) EncodeItem() (name string, meta int16) {
+	return "minecraft:seagrass", 0
+}
+
+type Planks struct{}
+
+func (Planks) EncodeItem() (name string, meta int16) {
+	return "minecraft:planks", 0
+}
+
+type LimeBundle struct{}
+
+func (LimeBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:lime_bundle", 0
+}
+
+type BrickDoubleSlab struct{}
+
+func (BrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:brick_double_slab", 0
+}
+
+type TintedGlass struct{}
+
+func (TintedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:tinted_glass", 0
+}
+
+type OrangeCandleCake struct{}
+
+func (OrangeCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:orange_candle_cake", 0
+}
+
+type Bleach struct{}
+
+func (Bleach) EncodeItem() (name string, meta int16) {
+	return "minecraft:bleach", 0
+}
+
+type FireflyBush struct{}
+
+func (FireflyBush) EncodeItem() (name string, meta int16) {
+	return "minecraft:firefly_bush", 0
+}
+
+type HardGlassPane struct{}
+
+func (HardGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_glass_pane", 0
+}
+
+type TubeCoralFan struct{}
+
+func (TubeCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:tube_coral_fan", 0
+}
+
+type Leaves2 struct{}
+
+func (Leaves2) EncodeItem() (name string, meta int16) {
+	return "minecraft:leaves2", 0
+}
+
+type ShulkerBox struct{}
+
+func (ShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:shulker_box", 0
+}
+
+type Element11 struct{}
+
+func (Element11) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_11", 0
+}
+
+type Allow struct{}
+
+func (Allow) EncodeItem() (name string, meta int16) {
+	return "minecraft:allow", 0
+}
+
+type WaxedOxidizedCopperChest struct{}
+
+func (WaxedOxidizedCopperChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_oxidized_copper_chest", 0
+}
+
+type HorseSpawnEgg struct{}
+
+func (HorseSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:horse_spawn_egg", 0
+}
+
+type LightGrayShulkerBox struct{}
+
+func (LightGrayShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_gray_shulker_box", 0
+}
+
+type HardOrangeStainedGlassPane struct{}
+
+func (HardOrangeStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_orange_stained_glass_pane", 0
+}
+
+type FloweringAzalea struct{}
+
+func (FloweringAzalea) EncodeItem() (name string, meta int16) {
+	return "minecraft:flowering_azalea", 0
+}
+
+type Unknown struct{}
+
+func (Unknown) EncodeItem() (name string, meta int16) {
+	return "minecraft:unknown", 0
+}
+
+type MelonStem struct{}
+
+func (MelonStem) EncodeItem() (name string, meta int16) {
+	return "minecraft:melon_stem", 0
+}
+
+type WardenSpawnEgg struct{}
+
+func (WardenSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:warden_spawn_egg", 0
+}
+
+type OminousTrialKey struct{}
+
+func (OminousTrialKey) EncodeItem() (name string, meta int16) {
+	return "minecraft:ominous_trial_key", 0
+}
+
+type BrownCandleCake struct{}
+
+func (BrownCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:brown_candle_cake", 0
+}
+
+type Element37 struct{}
+
+func (Element37) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_37", 0
+}
+
+type BlueCandleCake struct{}
+
+func (BlueCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:blue_candle_cake", 0
+}
+
+type ItemGlowFrame struct{}
+
+func (ItemGlowFrame) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.glow_frame", 0
+}
+
+type BrownBundle struct{}
+
+func (BrownBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:brown_bundle", 0
+}
+
+type WeatheredCopperBulb struct{}
+
+func (WeatheredCopperBulb) EncodeItem() (name string, meta int16) {
+	return "minecraft:weathered_copper_bulb", 0
+}
+
+type FlowerPot struct{}
+
+func (FlowerPot) EncodeItem() (name string, meta int16) {
+	return "minecraft:flower_pot", 0
+}
+
+type CherryChestBoat struct{}
+
+func (CherryChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_chest_boat", 0
+}
+
+type PaleMossBlock struct{}
+
+func (PaleMossBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_moss_block", 0
+}
+
+type Lodestone struct{}
+
+func (Lodestone) EncodeItem() (name string, meta int16) {
+	return "minecraft:lodestone", 0
+}
+
+type Cocoa struct{}
+
+func (Cocoa) EncodeItem() (name string, meta int16) {
+	return "minecraft:cocoa", 0
+}
+
+type ExposedCopperChest struct{}
+
+func (ExposedCopperChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:exposed_copper_chest", 0
+}
+
+type WoodenButton struct{}
+
+func (WoodenButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:wooden_button", 0
+}
+
+type LightBlueShulkerBox struct{}
+
+func (LightBlueShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_blue_shulker_box", 0
+}
+
+type Element26 struct{}
+
+func (Element26) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_26", 0
+}
+
+type Element81 struct{}
+
+func (Element81) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_81", 0
+}
+
+type DeprecatedPurpurBlock2 struct{}
+
+func (DeprecatedPurpurBlock2) EncodeItem() (name string, meta int16) {
+	return "minecraft:deprecated_purpur_block_2", 0
+}
+
+type AcaciaChestBoat struct{}
+
+func (AcaciaChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_chest_boat", 0
+}
+
+type SnifferEgg struct{}
+
+func (SnifferEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:sniffer_egg", 0
+}
+
+type MagentaShulkerBox struct{}
+
+func (MagentaShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:magenta_shulker_box", 0
+}
+
+type Cauldron struct{}
+
+func (Cauldron) EncodeItem() (name string, meta int16) {
+	return "minecraft:cauldron", 0
+}
+
+type LeafLitter struct{}
+
+func (LeafLitter) EncodeItem() (name string, meta int16) {
+	return "minecraft:leaf_litter", 0
+}
+
+type CatSpawnEgg struct{}
+
+func (CatSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:cat_spawn_egg", 0
+}
+
+type WarpedFungus struct{}
+
+func (WarpedFungus) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_fungus", 0
+}
+
+type Element13 struct{}
+
+func (Element13) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_13", 0
+}
+
+type PinkShulkerBox struct{}
+
+func (PinkShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:pink_shulker_box", 0
+}
+
+type JungleSapling struct{}
+
+func (JungleSapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_sapling", 0
+}
+
+type VexSpawnEgg struct{}
+
+func (VexSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:vex_spawn_egg", 0
+}
+
+type LightWeightedPressurePlate struct{}
+
+func (LightWeightedPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_weighted_pressure_plate", 0
+}
+
+type BubbleCoralFan struct{}
+
+func (BubbleCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:bubble_coral_fan", 0
+}
+
+type SweetBerryBush struct{}
+
+func (SweetBerryBush) EncodeItem() (name string, meta int16) {
+	return "minecraft:sweet_berry_bush", 0
+}
+
+type MooshroomSpawnEgg struct{}
+
+func (MooshroomSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:mooshroom_spawn_egg", 0
+}
+
+type Element5 struct{}
+
+func (Element5) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_5", 0
+}
+
+type Element9 struct{}
+
+func (Element9) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_9", 0
+}
+
+type FireCoralFan struct{}
+
+func (FireCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:fire_coral_fan", 0
+}
+
+type Element41 struct{}
+
+func (Element41) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_41", 0
+}
+
+type Element0 struct{}
+
+func (Element0) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_0", 0
+}
+
+type CoralFanDead struct{}
+
+func (CoralFanDead) EncodeItem() (name string, meta int16) {
+	return "minecraft:coral_fan_dead", 0
+}
+
+type Element3 struct{}
+
+func (Element3) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_3", 0
+}
+
+type AmethystCluster struct{}
+
+func (AmethystCluster) EncodeItem() (name string, meta int16) {
+	return "minecraft:amethyst_cluster", 0
+}
+
+type BuddingAmethyst struct{}
+
+func (BuddingAmethyst) EncodeItem() (name string, meta int16) {
+	return "minecraft:budding_amethyst", 0
+}
+
+type Element93 struct{}
+
+func (Element93) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_93", 0
+}
+
+type DolphinSpawnEgg struct{}
+
+func (DolphinSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:dolphin_spawn_egg", 0
+}
+
+type FlowingWater struct{}
+
+func (FlowingWater) EncodeItem() (name string, meta int16) {
+	return "minecraft:flowing_water", 0
+}
+
+type CyanShulkerBox struct{}
+
+func (CyanShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:cyan_shulker_box", 0
+}
+
+type Element104 struct{}
+
+func (Element104) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_104", 0
+}
+
+type HoglinSpawnEgg struct{}
+
+func (HoglinSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:hoglin_spawn_egg", 0
+}
+
+type ItemSpruceDoor struct{}
+
+func (ItemSpruceDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.spruce_door", 0
+}
+
+type HardBlackStainedGlass struct{}
+
+func (HardBlackStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_black_stained_glass", 0
+}
+
+type GrayBundle struct{}
+
+func (GrayBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:gray_bundle", 0
+}
+
+type Tallgrass struct{}
+
+func (Tallgrass) EncodeItem() (name string, meta int16) {
+	return "minecraft:tallgrass", 0
+}
+
+type BlackBundle struct{}
+
+func (BlackBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:black_bundle", 0
+}
+
+type SpruceDoubleSlab struct{}
+
+func (SpruceDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_double_slab", 0
+}
+
+type ZombieVillagerSpawnEgg struct{}
+
+func (ZombieVillagerSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:zombie_villager_spawn_egg", 0
+}
+
+type Element8 struct{}
+
+func (Element8) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_8", 0
+}
+
+type DeadTubeCoralFan struct{}
+
+func (DeadTubeCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_tube_coral_fan", 0
+}
+
+type HardRedStainedGlassPane struct{}
+
+func (HardRedStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_red_stained_glass_pane", 0
+}
+
+type CaveVinesHeadWithBerries struct{}
+
+func (CaveVinesHeadWithBerries) EncodeItem() (name string, meta int16) {
+	return "minecraft:cave_vines_head_with_berries", 0
+}
+
+type HardYellowStainedGlass struct{}
+
+func (HardYellowStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_yellow_stained_glass", 0
+}
+
+type TurtleEgg struct{}
+
+func (TurtleEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:turtle_egg", 0
+}
+
+type ItemBirchDoor struct{}
+
+func (ItemBirchDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.birch_door", 0
+}
+
+type GraniteDoubleSlab struct{}
+
+func (GraniteDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:granite_double_slab", 0
+}
+
+type BambooTrapdoor struct{}
+
+func (BambooTrapdoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_trapdoor", 0
+}
+
+type PolishedBlackstoneDoubleSlab struct{}
+
+func (PolishedBlackstoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_blackstone_double_slab", 0
+}
+
+type PaleMossCarpet struct{}
+
+func (PaleMossCarpet) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_moss_carpet", 0
+}
+
+type Element70 struct{}
+
+func (Element70) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_70", 0
+}
+
+type Brush struct{}
+
+func (Brush) EncodeItem() (name string, meta int16) {
+	return "minecraft:brush", 0
+}
+
+type HardPinkStainedGlassPane struct{}
+
+func (HardPinkStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_pink_stained_glass_pane", 0
+}
+
+type Element59 struct{}
+
+func (Element59) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_59", 0
+}
+
+type EnderDragonSpawnEgg struct{}
+
+func (EnderDragonSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:ender_dragon_spawn_egg", 0
+}
+
+type OakChestBoat struct{}
+
+func (OakChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:oak_chest_boat", 0
+}
+
+type ColoredTorchGreen struct{}
+
+func (ColoredTorchGreen) EncodeItem() (name string, meta int16) {
+	return "minecraft:colored_torch_green", 0
+}
+
+type Element33 struct{}
+
+func (Element33) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_33", 0
+}
+
+type Element12 struct{}
+
+func (Element12) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_12", 0
+}
+
+type ExposedLightningRod struct{}
+
+func (ExposedLightningRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:exposed_lightning_rod", 0
+}
+
+type CyanHarness struct{}
+
+func (CyanHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:cyan_harness", 0
+}
+
+type EndermiteSpawnEgg struct{}
+
+func (EndermiteSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:endermite_spawn_egg", 0
+}
+
+type Netherreactor struct{}
+
+func (Netherreactor) EncodeItem() (name string, meta int16) {
+	return "minecraft:netherreactor", 0
+}
+
+type ShulkerSpawnEgg struct{}
+
+func (ShulkerSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:shulker_spawn_egg", 0
+}
+
+type HardCyanStainedGlass struct{}
+
+func (HardCyanStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_cyan_stained_glass", 0
+}
+
+type Element25 struct{}
+
+func (Element25) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_25", 0
+}
+
+type InfestedMossyStoneBricks struct{}
+
+func (InfestedMossyStoneBricks) EncodeItem() (name string, meta int16) {
+	return "minecraft:infested_mossy_stone_bricks", 0
+}
+
+type DeprecatedPurpurBlock1 struct{}
+
+func (DeprecatedPurpurBlock1) EncodeItem() (name string, meta int16) {
+	return "minecraft:deprecated_purpur_block_1", 0
+}
+
+type DetectorRail struct{}
+
+func (DetectorRail) EncodeItem() (name string, meta int16) {
+	return "minecraft:detector_rail", 0
+}
+
+type CobbledDeepslateDoubleSlab struct{}
+
+func (CobbledDeepslateDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:cobbled_deepslate_double_slab", 0
+}
+
+type BlueCandle struct{}
+
+func (BlueCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:blue_candle", 0
+}
+
+type ArmorStand struct{}
+
+func (ArmorStand) EncodeItem() (name string, meta int16) {
+	return "minecraft:armor_stand", 0
+}
+
+type LimeCandleCake struct{}
+
+func (LimeCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:lime_candle_cake", 0
+}
+
+type AcaciaBoat struct{}
+
+func (AcaciaBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_boat", 0
+}
+
+type PaleOakButton struct{}
+
+func (PaleOakButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_button", 0
+}
+
+type TrappedChest struct{}
+
+func (TrappedChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:trapped_chest", 0
+}
+
+type WaxedLightningRod struct{}
+
+func (WaxedLightningRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_lightning_rod", 0
+}
+
+type DiamondNautilusArmor struct{}
+
+func (DiamondNautilusArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:diamond_nautilus_armor", 0
+}
+
+type InfestedCobblestone struct{}
+
+func (InfestedCobblestone) EncodeItem() (name string, meta int16) {
+	return "minecraft:infested_cobblestone", 0
+}
+
+type Element111 struct{}
+
+func (Element111) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_111", 0
+}
+
+type NetherBrickDoubleSlab struct{}
+
+func (NetherBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:nether_brick_double_slab", 0
+}
+
+type PinkCandle struct{}
+
+func (PinkCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:pink_candle", 0
+}
+
+type Element45 struct{}
+
+func (Element45) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_45", 0
+}
+
+type PinkBundle struct{}
+
+func (PinkBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:pink_bundle", 0
+}
+
+type Log2 struct{}
+
+func (Log2) EncodeItem() (name string, meta int16) {
+	return "minecraft:log2", 0
+}
+
+type Web struct{}
+
+func (Web) EncodeItem() (name string, meta int16) {
+	return "minecraft:web", 0
+}
+
+type Element102 struct{}
+
+func (Element102) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_102", 0
+}
+
+type NameTag struct{}
+
+func (NameTag) EncodeItem() (name string, meta int16) {
+	return "minecraft:name_tag", 0
+}
+
+type WarpedShelf struct{}
+
+func (WarpedShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_shelf", 0
+}
+
+type HardPinkStainedGlass struct{}
+
+func (HardPinkStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_pink_stained_glass", 0
+}
+
+type MagmaCubeSpawnEgg struct{}
+
+func (MagmaCubeSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:magma_cube_spawn_egg", 0
+}
+
+type Element83 struct{}
+
+func (Element83) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_83", 0
+}
+
+type BrownShulkerBox struct{}
+
+func (BrownShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:brown_shulker_box", 0
 }
 
 type PowderSnow struct{}
@@ -4743,10 +3030,178 @@ func (PowderSnow) EncodeItem() (name string, meta int16) {
 	return "minecraft:powder_snow", 0
 }
 
-type ParrotSpawnEgg struct{}
+type TrialSpawner struct{}
 
-func (ParrotSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:parrot_spawn_egg", 0
+func (TrialSpawner) EncodeItem() (name string, meta int16) {
+	return "minecraft:trial_spawner", 0
+}
+
+type Element50 struct{}
+
+func (Element50) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_50", 0
+}
+
+type NetheriteNautilusArmor struct{}
+
+func (NetheriteNautilusArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:netherite_nautilus_armor", 0
+}
+
+type DeadBubbleCoralFan struct{}
+
+func (DeadBubbleCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_bubble_coral_fan", 0
+}
+
+type StoneButton struct{}
+
+func (StoneButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:stone_button", 0
+}
+
+type Element109 struct{}
+
+func (Element109) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_109", 0
+}
+
+type Element89 struct{}
+
+func (Element89) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_89", 0
+}
+
+type StoneBrickDoubleSlab struct{}
+
+func (StoneBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:stone_brick_double_slab", 0
+}
+
+type PandaSpawnEgg struct{}
+
+func (PandaSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:panda_spawn_egg", 0
+}
+
+type Portal struct{}
+
+func (Portal) EncodeItem() (name string, meta int16) {
+	return "minecraft:portal", 0
+}
+
+type LitRedstoneOre struct{}
+
+func (LitRedstoneOre) EncodeItem() (name string, meta int16) {
+	return "minecraft:lit_redstone_ore", 0
+}
+
+type RedCandleCake struct{}
+
+func (RedCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_candle_cake", 0
+}
+
+type MangroveShelf struct{}
+
+func (MangroveShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_shelf", 0
+}
+
+type WeatheredLightningRod struct{}
+
+func (WeatheredLightningRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:weathered_lightning_rod", 0
+}
+
+type Element116 struct{}
+
+func (Element116) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_116", 0
+}
+
+type WeepingVines struct{}
+
+func (WeepingVines) EncodeItem() (name string, meta int16) {
+	return "minecraft:weeping_vines", 0
+}
+
+type EmptyMap struct{}
+
+func (EmptyMap) EncodeItem() (name string, meta int16) {
+	return "minecraft:empty_map", 0
+}
+
+type Element97 struct{}
+
+func (Element97) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_97", 0
+}
+
+type Element19 struct{}
+
+func (Element19) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_19", 0
+}
+
+type BambooPressurePlate struct{}
+
+func (BambooPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_pressure_plate", 0
+}
+
+type Element95 struct{}
+
+func (Element95) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_95", 0
+}
+
+type Element106 struct{}
+
+func (Element106) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_106", 0
+}
+
+type PistonArmCollision struct{}
+
+func (PistonArmCollision) EncodeItem() (name string, meta int16) {
+	return "minecraft:piston_arm_collision", 0
+}
+
+type Compound struct{}
+
+func (Compound) EncodeItem() (name string, meta int16) {
+	return "minecraft:compound", 0
+}
+
+type Element57 struct{}
+
+func (Element57) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_57", 0
+}
+
+type RedstoneTorch struct{}
+
+func (RedstoneTorch) EncodeItem() (name string, meta int16) {
+	return "minecraft:redstone_torch", 0
+}
+
+type Deny struct{}
+
+func (Deny) EncodeItem() (name string, meta int16) {
+	return "minecraft:deny", 0
+}
+
+type PiglinSpawnEgg struct{}
+
+func (PiglinSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:piglin_spawn_egg", 0
+}
+
+type MangroveHangingSign struct{}
+
+func (MangroveHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_hanging_sign", 0
 }
 
 type Element14 struct{}
@@ -4761,1114 +3216,10 @@ func (DeadBrainCoralWallFan) EncodeItem() (name string, meta int16) {
 	return "minecraft:dead_brain_coral_wall_fan", 0
 }
 
-type ItemBed struct{}
-
-func (ItemBed) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.bed", 0
-}
-
-type TurtleEgg struct{}
-
-func (TurtleEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:turtle_egg", 0
-}
-
-type DeepslateBrickDoubleSlab struct{}
-
-func (DeepslateBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:deepslate_brick_double_slab", 0
-}
-
-type Conduit struct{}
-
-func (Conduit) EncodeItem() (name string, meta int16) {
-	return "minecraft:conduit", 0
-}
-
-type WarpedRoots struct{}
-
-func (WarpedRoots) EncodeItem() (name string, meta int16) {
-	return "minecraft:warped_roots", 0
-}
-
-type RedstoneBlock struct{}
-
-func (RedstoneBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:redstone_block", 0
-}
-
-type SculkVein struct{}
-
-func (SculkVein) EncodeItem() (name string, meta int16) {
-	return "minecraft:sculk_vein", 0
-}
-
-type Element57 struct{}
-
-func (Element57) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_57", 0
-}
-
-type CobbledDeepslateDoubleSlab struct{}
-
-func (CobbledDeepslateDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:cobbled_deepslate_double_slab", 0
-}
-
-type BirchDoubleSlab struct{}
-
-func (BirchDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_double_slab", 0
-}
-
-type Element51 struct{}
-
-func (Element51) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_51", 0
-}
-
-type BlueBundle struct{}
-
-func (BlueBundle) EncodeItem() (name string, meta int16) {
-	return "minecraft:blue_bundle", 0
-}
-
-type RedstoneLamp struct{}
-
-func (RedstoneLamp) EncodeItem() (name string, meta int16) {
-	return "minecraft:redstone_lamp", 0
-}
-
-type Element4 struct{}
-
-func (Element4) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_4", 0
-}
-
-type BirchButton struct{}
-
-func (BirchButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_button", 0
-}
-
-type Element115 struct{}
-
-func (Element115) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_115", 0
-}
-
-type ChestMinecart struct{}
-
-func (ChestMinecart) EncodeItem() (name string, meta int16) {
-	return "minecraft:chest_minecart", 0
-}
-
-type SpawnEgg struct{}
-
-func (SpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:spawn_egg", 0
-}
-
-type LightBlueHarness struct{}
-
-func (LightBlueHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:light_blue_harness", 0
-}
-
-type Element27 struct{}
-
-func (Element27) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_27", 0
-}
-
-type HardGrayStainedGlass struct{}
-
-func (HardGrayStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_gray_stained_glass", 0
-}
-
-type InfestedStoneBricks struct{}
-
-func (InfestedStoneBricks) EncodeItem() (name string, meta int16) {
-	return "minecraft:infested_stone_bricks", 0
-}
-
-type StoneBlockSlab struct{}
-
-func (StoneBlockSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:stone_block_slab", 0
-}
-
-type RedSandstoneDoubleSlab struct{}
-
-func (RedSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_sandstone_double_slab", 0
-}
-
-type BorderBlock struct{}
-
-func (BorderBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:border_block", 0
-}
-
-type SmallDripleafBlock struct{}
-
-func (SmallDripleafBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:small_dripleaf_block", 0
-}
-
-type ItemSoulCampfire struct{}
-
-func (ItemSoulCampfire) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.soul_campfire", 0
-}
-
-type BubbleCoralWallFan struct{}
-
-func (BubbleCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:bubble_coral_wall_fan", 0
-}
-
-type CrimsonButton struct{}
-
-func (CrimsonButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_button", 0
-}
-
-type MuleSpawnEgg struct{}
-
-func (MuleSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:mule_spawn_egg", 0
-}
-
-type Element24 struct{}
-
-func (Element24) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_24", 0
-}
-
-type BambooWallSign struct{}
-
-func (BambooWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_wall_sign", 0
-}
-
-type CyanCandle struct{}
-
-func (CyanCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:cyan_candle", 0
-}
-
-type CherryPressurePlate struct{}
-
-func (CherryPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:cherry_pressure_plate", 0
-}
-
-type RedstoneWire struct{}
-
-func (RedstoneWire) EncodeItem() (name string, meta int16) {
-	return "minecraft:redstone_wire", 0
-}
-
-type BambooSlab struct{}
-
-func (BambooSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_slab", 0
-}
-
-type AgentSpawnEgg struct{}
-
-func (AgentSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:agent_spawn_egg", 0
-}
-
-type Crafter struct{}
-
-func (Crafter) EncodeItem() (name string, meta int16) {
-	return "minecraft:crafter", 0
-}
-
-type TuffDoubleSlab struct{}
-
-func (TuffDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:tuff_double_slab", 0
-}
-
-type Element42 struct{}
-
-func (Element42) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_42", 0
-}
-
-type AcaciaHangingSign struct{}
-
-func (AcaciaHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_hanging_sign", 0
-}
-
-type DoubleStoneBlockSlab3 struct{}
-
-func (DoubleStoneBlockSlab3) EncodeItem() (name string, meta int16) {
-	return "minecraft:double_stone_block_slab3", 0
-}
-
-type LitDeepslateRedstoneOre struct{}
-
-func (LitDeepslateRedstoneOre) EncodeItem() (name string, meta int16) {
-	return "minecraft:lit_deepslate_redstone_ore", 0
-}
-
-type ItemIronDoor struct{}
-
-func (ItemIronDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.iron_door", 0
-}
-
-type CrimsonDoubleSlab struct{}
-
-func (CrimsonDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_double_slab", 0
-}
-
-type DeprecatedPurpurBlock1 struct{}
-
-func (DeprecatedPurpurBlock1) EncodeItem() (name string, meta int16) {
-	return "minecraft:deprecated_purpur_block_1", 0
-}
-
-type BambooSapling struct{}
-
-func (BambooSapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_sapling", 0
-}
-
-type BirchWallSign struct{}
-
-func (BirchWallSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_wall_sign", 0
-}
-
-type FireCoralFan struct{}
-
-func (FireCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:fire_coral_fan", 0
-}
-
-type HardBlackStainedGlassPane struct{}
-
-func (HardBlackStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_black_stained_glass_pane", 0
-}
-
-type SculkSensor struct{}
-
-func (SculkSensor) EncodeItem() (name string, meta int16) {
-	return "minecraft:sculk_sensor", 0
-}
-
-type WaxedWeatheredDoubleCutCopperSlab struct{}
-
-func (WaxedWeatheredDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:waxed_weathered_double_cut_copper_slab", 0
-}
-
-type DarkOakSapling struct{}
-
-func (DarkOakSapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:dark_oak_sapling", 0
-}
-
-type Dispenser struct{}
-
-func (Dispenser) EncodeItem() (name string, meta int16) {
-	return "minecraft:dispenser", 0
-}
-
-type EndCrystal struct{}
-
-func (EndCrystal) EncodeItem() (name string, meta int16) {
-	return "minecraft:end_crystal", 0
-}
-
-type SprucePressurePlate struct{}
-
-func (SprucePressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_pressure_plate", 0
-}
-
-type SpruceButton struct{}
-
-func (SpruceButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_button", 0
-}
-
-type SquidSpawnEgg struct{}
-
-func (SquidSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:squid_spawn_egg", 0
-}
-
-type DeadFireCoralWallFan struct{}
-
-func (DeadFireCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_fire_coral_wall_fan", 0
-}
-
-type DeadFireCoralFan struct{}
-
-func (DeadFireCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_fire_coral_fan", 0
-}
-
-type Element98 struct{}
-
-func (Element98) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_98", 0
-}
-
-type Element86 struct{}
-
-func (Element86) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_86", 0
-}
-
-type LargeAmethystBud struct{}
-
-func (LargeAmethystBud) EncodeItem() (name string, meta int16) {
-	return "minecraft:large_amethyst_bud", 0
-}
-
-type SuspiciousSand struct{}
-
-func (SuspiciousSand) EncodeItem() (name string, meta int16) {
-	return "minecraft:suspicious_sand", 0
-}
-
-type HoneyBlock struct{}
-
-func (HoneyBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:honey_block", 0
-}
-
-type Cocoa struct{}
-
-func (Cocoa) EncodeItem() (name string, meta int16) {
-	return "minecraft:cocoa", 0
-}
-
-type PhantomSpawnEgg struct{}
-
-func (PhantomSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:phantom_spawn_egg", 0
-}
-
-type EndPortalFrame struct{}
-
-func (EndPortalFrame) EncodeItem() (name string, meta int16) {
-	return "minecraft:end_portal_frame", 0
-}
-
-type Element13 struct{}
-
-func (Element13) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_13", 0
-}
-
-type CandleCake struct{}
-
-func (CandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:candle_cake", 0
-}
-
-type Element33 struct{}
-
-func (Element33) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_33", 0
-}
-
-type QuartzDoubleSlab struct{}
-
-func (QuartzDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:quartz_double_slab", 0
-}
-
-type SuspiciousGravel struct{}
-
-func (SuspiciousGravel) EncodeItem() (name string, meta int16) {
-	return "minecraft:suspicious_gravel", 0
-}
-
-type CyanCandleCake struct{}
-
-func (CyanCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:cyan_candle_cake", 0
-}
-
-type Element58 struct{}
-
-func (Element58) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_58", 0
-}
-
-type Element9 struct{}
-
-func (Element9) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_9", 0
-}
-
-type Bed struct{}
-
-func (Bed) EncodeItem() (name string, meta int16) {
-	return "minecraft:bed", 0
-}
-
-type TuffBrickDoubleSlab struct{}
-
-func (TuffBrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:tuff_brick_double_slab", 0
-}
-
-type ResinClump struct{}
-
-func (ResinClump) EncodeItem() (name string, meta int16) {
-	return "minecraft:resin_clump", 0
-}
-
-type GreenHarness struct{}
-
-func (GreenHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:green_harness", 0
-}
-
-type Element43 struct{}
-
-func (Element43) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_43", 0
-}
-
-type CobblestoneDoubleSlab struct{}
-
-func (CobblestoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:cobblestone_double_slab", 0
-}
-
-type YellowCandle struct{}
-
-func (YellowCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:yellow_candle", 0
-}
-
-type WaxedExposedDoubleCutCopperSlab struct{}
-
-func (WaxedExposedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:waxed_exposed_double_cut_copper_slab", 0
-}
-
-type Element60 struct{}
-
-func (Element60) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_60", 0
-}
-
-type OakHangingSign struct{}
-
-func (OakHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:oak_hanging_sign", 0
-}
-
-type Element118 struct{}
-
-func (Element118) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_118", 0
-}
-
-type Medicine struct{}
-
-func (Medicine) EncodeItem() (name string, meta int16) {
-	return "minecraft:medicine", 0
-}
-
-type Sculk struct{}
-
-func (Sculk) EncodeItem() (name string, meta int16) {
-	return "minecraft:sculk", 0
-}
-
-type WoodenSlab struct{}
-
-func (WoodenSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:wooden_slab", 0
-}
-
-type Lead struct{}
-
-func (Lead) EncodeItem() (name string, meta int16) {
-	return "minecraft:lead", 0
-}
-
-type InfestedChiseledStoneBricks struct{}
-
-func (InfestedChiseledStoneBricks) EncodeItem() (name string, meta int16) {
-	return "minecraft:infested_chiseled_stone_bricks", 0
-}
-
-type MossyCobblestoneDoubleSlab struct{}
-
-func (MossyCobblestoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:mossy_cobblestone_double_slab", 0
-}
-
-type BannerPattern struct{}
-
-func (BannerPattern) EncodeItem() (name string, meta int16) {
-	return "minecraft:banner_pattern", 0
-}
-
-type PaleMossBlock struct{}
-
-func (PaleMossBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_moss_block", 0
-}
-
-type SkeletonSpawnEgg struct{}
-
-func (SkeletonSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:skeleton_spawn_egg", 0
-}
-
-type DarkoakStandingSign struct{}
-
-func (DarkoakStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:darkoak_standing_sign", 0
-}
-
-type GraniteDoubleSlab struct{}
-
-func (GraniteDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:granite_double_slab", 0
-}
-
-type PolishedBlackstoneDoubleSlab struct{}
-
-func (PolishedBlackstoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_blackstone_double_slab", 0
-}
-
-type StickyPistonArmCollision struct{}
-
-func (StickyPistonArmCollision) EncodeItem() (name string, meta int16) {
-	return "minecraft:sticky_piston_arm_collision", 0
-}
-
-type SmallAmethystBud struct{}
-
-func (SmallAmethystBud) EncodeItem() (name string, meta int16) {
-	return "minecraft:small_amethyst_bud", 0
-}
-
-type PolishedAndesiteDoubleSlab struct{}
-
-func (PolishedAndesiteDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:polished_andesite_double_slab", 0
-}
-
-type ItemBirchDoor struct{}
-
-func (ItemBirchDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.birch_door", 0
-}
-
-type PoweredRepeater struct{}
-
-func (PoweredRepeater) EncodeItem() (name string, meta int16) {
-	return "minecraft:powered_repeater", 0
-}
-
 type HardMagentaStainedGlassPane struct{}
 
 func (HardMagentaStainedGlassPane) EncodeItem() (name string, meta int16) {
 	return "minecraft:hard_magenta_stained_glass_pane", 0
-}
-
-type Element69 struct{}
-
-func (Element69) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_69", 0
-}
-
-type ArmadilloSpawnEgg struct{}
-
-func (ArmadilloSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:armadillo_spawn_egg", 0
-}
-
-type SnowLayer struct{}
-
-func (SnowLayer) EncodeItem() (name string, meta int16) {
-	return "minecraft:snow_layer", 0
-}
-
-type BubbleColumn struct{}
-
-func (BubbleColumn) EncodeItem() (name string, meta int16) {
-	return "minecraft:bubble_column", 0
-}
-
-type Element56 struct{}
-
-func (Element56) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_56", 0
-}
-
-type NormalStoneDoubleSlab struct{}
-
-func (NormalStoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:normal_stone_double_slab", 0
-}
-
-type OminousTrialKey struct{}
-
-func (OminousTrialKey) EncodeItem() (name string, meta int16) {
-	return "minecraft:ominous_trial_key", 0
-}
-
-type ClosedEyeblossom struct{}
-
-func (ClosedEyeblossom) EncodeItem() (name string, meta int16) {
-	return "minecraft:closed_eyeblossom", 0
-}
-
-type CompoundCreator struct{}
-
-func (CompoundCreator) EncodeItem() (name string, meta int16) {
-	return "minecraft:compound_creator", 0
-}
-
-type StickyPiston struct{}
-
-func (StickyPiston) EncodeItem() (name string, meta int16) {
-	return "minecraft:sticky_piston", 0
-}
-
-type BubbleCoralFan struct{}
-
-func (BubbleCoralFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:bubble_coral_fan", 0
-}
-
-type JunglePressurePlate struct{}
-
-func (JunglePressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:jungle_pressure_plate", 0
-}
-
-type Wildflowers struct{}
-
-func (Wildflowers) EncodeItem() (name string, meta int16) {
-	return "minecraft:wildflowers", 0
-}
-
-type BlueEgg struct{}
-
-func (BlueEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:blue_egg", 0
-}
-
-type YellowCandleCake struct{}
-
-func (YellowCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:yellow_candle_cake", 0
-}
-
-type BrickDoubleSlab struct{}
-
-func (BrickDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:brick_double_slab", 0
-}
-
-type Element21 struct{}
-
-func (Element21) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_21", 0
-}
-
-type SmoothStoneDoubleSlab struct{}
-
-func (SmoothStoneDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:smooth_stone_double_slab", 0
-}
-
-type Element74 struct{}
-
-func (Element74) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_74", 0
-}
-
-type ItemWarpedDoor struct{}
-
-func (ItemWarpedDoor) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.warped_door", 0
-}
-
-type Fire struct{}
-
-func (Fire) EncodeItem() (name string, meta int16) {
-	return "minecraft:fire", 0
-}
-
-type Cauldron struct{}
-
-func (Cauldron) EncodeItem() (name string, meta int16) {
-	return "minecraft:cauldron", 0
-}
-
-type AcaciaPressurePlate struct{}
-
-func (AcaciaPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_pressure_plate", 0
-}
-
-type Element90 struct{}
-
-func (Element90) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_90", 0
-}
-
-type PandaSpawnEgg struct{}
-
-func (PandaSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:panda_spawn_egg", 0
-}
-
-type HeavyWeightedPressurePlate struct{}
-
-func (HeavyWeightedPressurePlate) EncodeItem() (name string, meta int16) {
-	return "minecraft:heavy_weighted_pressure_plate", 0
-}
-
-type DoubleStoneBlockSlab struct{}
-
-func (DoubleStoneBlockSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:double_stone_block_slab", 0
-}
-
-type Sapling struct{}
-
-func (Sapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:sapling", 0
-}
-
-type BlueCandleCake struct{}
-
-func (BlueCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:blue_candle_cake", 0
-}
-
-type Element82 struct{}
-
-func (Element82) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_82", 0
-}
-
-type Scaffolding struct{}
-
-func (Scaffolding) EncodeItem() (name string, meta int16) {
-	return "minecraft:scaffolding", 0
-}
-
-type TrialSpawner struct{}
-
-func (TrialSpawner) EncodeItem() (name string, meta int16) {
-	return "minecraft:trial_spawner", 0
-}
-
-type OrangeShulkerBox struct{}
-
-func (OrangeShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:orange_shulker_box", 0
-}
-
-type Element29 struct{}
-
-func (Element29) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_29", 0
-}
-
-type Element38 struct{}
-
-func (Element38) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_38", 0
-}
-
-type SlimeSpawnEgg struct{}
-
-func (SlimeSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:slime_spawn_egg", 0
-}
-
-type TurtleSpawnEgg struct{}
-
-func (TurtleSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:turtle_spawn_egg", 0
-}
-
-type DoubleStoneBlockSlab4 struct{}
-
-func (DoubleStoneBlockSlab4) EncodeItem() (name string, meta int16) {
-	return "minecraft:double_stone_block_slab4", 0
-}
-
-type Element28 struct{}
-
-func (Element28) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_28", 0
-}
-
-type ZombieSpawnEgg struct{}
-
-func (ZombieSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:zombie_spawn_egg", 0
-}
-
-type BuddingAmethyst struct{}
-
-func (BuddingAmethyst) EncodeItem() (name string, meta int16) {
-	return "minecraft:budding_amethyst", 0
-}
-
-type Minecart struct{}
-
-func (Minecart) EncodeItem() (name string, meta int16) {
-	return "minecraft:minecart", 0
-}
-
-type SpruceBoat struct{}
-
-func (SpruceBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_boat", 0
-}
-
-type ArmadilloScute struct{}
-
-func (ArmadilloScute) EncodeItem() (name string, meta int16) {
-	return "minecraft:armadillo_scute", 0
-}
-
-type OrangeHarness struct{}
-
-func (OrangeHarness) EncodeItem() (name string, meta int16) {
-	return "minecraft:orange_harness", 0
-}
-
-type ChorusFlower struct{}
-
-func (ChorusFlower) EncodeItem() (name string, meta int16) {
-	return "minecraft:chorus_flower", 0
-}
-
-type BambooDoubleSlab struct{}
-
-func (BambooDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_double_slab", 0
-}
-
-type SpruceHangingSign struct{}
-
-func (SpruceHangingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_hanging_sign", 0
-}
-
-type HorseSpawnEgg struct{}
-
-func (HorseSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:horse_spawn_egg", 0
-}
-
-type HardLightGrayStainedGlassPane struct{}
-
-func (HardLightGrayStainedGlassPane) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_light_gray_stained_glass_pane", 0
-}
-
-type Element15 struct{}
-
-func (Element15) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_15", 0
-}
-
-type AcaciaDoubleSlab struct{}
-
-func (AcaciaDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_double_slab", 0
-}
-
-type MagentaCandleCake struct{}
-
-func (MagentaCandleCake) EncodeItem() (name string, meta int16) {
-	return "minecraft:magenta_candle_cake", 0
-}
-
-type Element102 struct{}
-
-func (Element102) EncodeItem() (name string, meta int16) {
-	return "minecraft:element_102", 0
-}
-
-type HardYellowStainedGlass struct{}
-
-func (HardYellowStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_yellow_stained_glass", 0
-}
-
-type SpruceSapling struct{}
-
-func (SpruceSapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:spruce_sapling", 0
-}
-
-type UnlitRedstoneTorch struct{}
-
-func (UnlitRedstoneTorch) EncodeItem() (name string, meta int16) {
-	return "minecraft:unlit_redstone_torch", 0
-}
-
-type DoubleCutCopperSlab struct{}
-
-func (DoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:double_cut_copper_slab", 0
-}
-
-type ItemHopper struct{}
-
-func (ItemHopper) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.hopper", 0
-}
-
-type PaleOakDoubleSlab struct{}
-
-func (PaleOakDoubleSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_double_slab", 0
-}
-
-type DriedGhast struct{}
-
-func (DriedGhast) EncodeItem() (name string, meta int16) {
-	return "minecraft:dried_ghast", 0
-}
-
-type PaleOakSapling struct{}
-
-func (PaleOakSapling) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_sapling", 0
-}
-
-type HardLightGrayStainedGlass struct{}
-
-func (HardLightGrayStainedGlass) EncodeItem() (name string, meta int16) {
-	return "minecraft:hard_light_gray_stained_glass", 0
-}
-
-type PaleOakButton struct{}
-
-func (PaleOakButton) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_oak_button", 0
-}
-
-type Leaves2 struct{}
-
-func (Leaves2) EncodeItem() (name string, meta int16) {
-	return "minecraft:leaves2", 0
-}
-
-type RedFlower struct{}
-
-func (RedFlower) EncodeItem() (name string, meta int16) {
-	return "minecraft:red_flower", 0
-}
-
-type MossBlock struct{}
-
-func (MossBlock) EncodeItem() (name string, meta int16) {
-	return "minecraft:moss_block", 0
-}
-
-type BirchBoat struct{}
-
-func (BirchBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:birch_boat", 0
-}
-
-type PaleHangingMoss struct{}
-
-func (PaleHangingMoss) EncodeItem() (name string, meta int16) {
-	return "minecraft:pale_hanging_moss", 0
-}
-
-type MagentaCandle struct{}
-
-func (MagentaCandle) EncodeItem() (name string, meta int16) {
-	return "minecraft:magenta_candle", 0
-}
-
-type ShulkerBox struct{}
-
-func (ShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:shulker_box", 0
-}
-
-type ColoredTorchRed struct{}
-
-func (ColoredTorchRed) EncodeItem() (name string, meta int16) {
-	return "minecraft:colored_torch_red", 0
-}
-
-type AcaciaBoat struct{}
-
-func (AcaciaBoat) EncodeItem() (name string, meta int16) {
-	return "minecraft:acacia_boat", 0
-}
-
-type Comparator struct{}
-
-func (Comparator) EncodeItem() (name string, meta int16) {
-	return "minecraft:comparator", 0
-}
-
-type DeepslateRedstoneOre struct{}
-
-func (DeepslateRedstoneOre) EncodeItem() (name string, meta int16) {
-	return "minecraft:deepslate_redstone_ore", 0
-}
-
-type BatSpawnEgg struct{}
-
-func (BatSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:bat_spawn_egg", 0
-}
-
-type GoatSpawnEgg struct{}
-
-func (GoatSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:goat_spawn_egg", 0
-}
-
-type SnifferSpawnEgg struct{}
-
-func (SnifferSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:sniffer_spawn_egg", 0
-}
-
-type FrogSpawnEgg struct{}
-
-func (FrogSpawnEgg) EncodeItem() (name string, meta int16) {
-	return "minecraft:frog_spawn_egg", 0
-}
-
-type BambooMosaicSlab struct{}
-
-func (BambooMosaicSlab) EncodeItem() (name string, meta int16) {
-	return "minecraft:bamboo_mosaic_slab", 0
 }
 
 type ClientRequestPlaceholderBlock struct{}
@@ -5877,34 +3228,178 @@ func (ClientRequestPlaceholderBlock) EncodeItem() (name string, meta int16) {
 	return "minecraft:client_request_placeholder_block", 0
 }
 
-type ItemKelp struct{}
+type WarpedNylium struct{}
 
-func (ItemKelp) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.kelp", 0
+func (WarpedNylium) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_nylium", 0
 }
 
-type CrimsonNylium struct{}
+type PoweredComparator struct{}
 
-func (CrimsonNylium) EncodeItem() (name string, meta int16) {
-	return "minecraft:crimson_nylium", 0
+func (PoweredComparator) EncodeItem() (name string, meta int16) {
+	return "minecraft:powered_comparator", 0
 }
 
-type BlackShulkerBox struct{}
+type PolishedBlackstonePressurePlate struct{}
 
-func (BlackShulkerBox) EncodeItem() (name string, meta int16) {
-	return "minecraft:black_shulker_box", 0
+func (PolishedBlackstonePressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_blackstone_pressure_plate", 0
 }
 
-type DeadHornCoralWallFan struct{}
+type Rail struct{}
 
-func (DeadHornCoralWallFan) EncodeItem() (name string, meta int16) {
-	return "minecraft:dead_horn_coral_wall_fan", 0
+func (Rail) EncodeItem() (name string, meta int16) {
+	return "minecraft:rail", 0
 }
 
-type ItemNetherWart struct{}
+type Wood struct{}
 
-func (ItemNetherWart) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.nether_wart", 0
+func (Wood) EncodeItem() (name string, meta int16) {
+	return "minecraft:wood", 0
+}
+
+type Element67 struct{}
+
+func (Element67) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_67", 0
+}
+
+type WanderingTraderSpawnEgg struct{}
+
+func (WanderingTraderSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:wandering_trader_spawn_egg", 0
+}
+
+type DonkeySpawnEgg struct{}
+
+func (DonkeySpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:donkey_spawn_egg", 0
+}
+
+type CreeperSpawnEgg struct{}
+
+func (CreeperSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:creeper_spawn_egg", 0
+}
+
+type SmallDripleafBlock struct{}
+
+func (SmallDripleafBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:small_dripleaf_block", 0
+}
+
+type BlueEgg struct{}
+
+func (BlueEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:blue_egg", 0
+}
+
+type GreenCandleCake struct{}
+
+func (GreenCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:green_candle_cake", 0
+}
+
+type Conduit struct{}
+
+func (Conduit) EncodeItem() (name string, meta int16) {
+	return "minecraft:conduit", 0
+}
+
+type BrownHarness struct{}
+
+func (BrownHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:brown_harness", 0
+}
+
+type GoldenHorseArmor struct{}
+
+func (GoldenHorseArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:golden_horse_armor", 0
+}
+
+type PufferfishBucket struct{}
+
+func (PufferfishBucket) EncodeItem() (name string, meta int16) {
+	return "minecraft:pufferfish_bucket", 0
+}
+
+type Vault struct{}
+
+func (Vault) EncodeItem() (name string, meta int16) {
+	return "minecraft:vault", 0
+}
+
+type CrimsonWallSign struct{}
+
+func (CrimsonWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_wall_sign", 0
+}
+
+type Element80 struct{}
+
+func (Element80) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_80", 0
+}
+
+type Stonecutter struct{}
+
+func (Stonecutter) EncodeItem() (name string, meta int16) {
+	return "minecraft:stonecutter", 0
+}
+
+type BirchStandingSign struct{}
+
+func (BirchStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_standing_sign", 0
+}
+
+type WarpedDoubleSlab struct{}
+
+func (WarpedDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_double_slab", 0
+}
+
+type WoodenPressurePlate struct{}
+
+func (WoodenPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:wooden_pressure_plate", 0
+}
+
+type MangroveBoat struct{}
+
+func (MangroveBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_boat", 0
+}
+
+type WaxedExposedCopperChest struct{}
+
+func (WaxedExposedCopperChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_exposed_copper_chest", 0
+}
+
+type BambooChestRaft struct{}
+
+func (BambooChestRaft) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_chest_raft", 0
+}
+
+type Element72 struct{}
+
+func (Element72) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_72", 0
+}
+
+type ItemBeetroot struct{}
+
+func (ItemBeetroot) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.beetroot", 0
+}
+
+type PaleOakBoat struct{}
+
+func (PaleOakBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_boat", 0
 }
 
 type HardPurpleStainedGlass struct{}
@@ -5919,16 +3414,1174 @@ func (HardBrownStainedGlassPane) EncodeItem() (name string, meta int16) {
 	return "minecraft:hard_brown_stained_glass_pane", 0
 }
 
+type BambooShelf struct{}
+
+func (BambooShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_shelf", 0
+}
+
+type UnlitRedstoneTorch struct{}
+
+func (UnlitRedstoneTorch) EncodeItem() (name string, meta int16) {
+	return "minecraft:unlit_redstone_torch", 0
+}
+
+type Observer struct{}
+
+func (Observer) EncodeItem() (name string, meta int16) {
+	return "minecraft:observer", 0
+}
+
+type ExposedCopperBulb struct{}
+
+func (ExposedCopperBulb) EncodeItem() (name string, meta int16) {
+	return "minecraft:exposed_copper_bulb", 0
+}
+
+type Element17 struct{}
+
+func (Element17) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_17", 0
+}
+
+type SpruceButton struct{}
+
+func (SpruceButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_button", 0
+}
+
+type ItemBrewingStand struct{}
+
+func (ItemBrewingStand) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.brewing_stand", 0
+}
+
+type ChemistryTable struct{}
+
+func (ChemistryTable) EncodeItem() (name string, meta int16) {
+	return "minecraft:chemistry_table", 0
+}
+
+type RabbitSpawnEgg struct{}
+
+func (RabbitSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:rabbit_spawn_egg", 0
+}
+
+type RedShulkerBox struct{}
+
+func (RedShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_shulker_box", 0
+}
+
+type BlueShulkerBox struct{}
+
+func (BlueShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:blue_shulker_box", 0
+}
+
+type TropicalFishBucket struct{}
+
+func (TropicalFishBucket) EncodeItem() (name string, meta int16) {
+	return "minecraft:tropical_fish_bucket", 0
+}
+
+type DoubleCutCopperSlab struct{}
+
+func (DoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:double_cut_copper_slab", 0
+}
+
+type Element103 struct{}
+
+func (Element103) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_103", 0
+}
+
+type PurpleCandleCake struct{}
+
+func (PurpleCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:purple_candle_cake", 0
+}
+
+type Element75 struct{}
+
+func (Element75) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_75", 0
+}
+
+type Element92 struct{}
+
+func (Element92) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_92", 0
+}
+
+type Element118 struct{}
+
+func (Element118) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_118", 0
+}
+
+type PaleOakPressurePlate struct{}
+
+func (PaleOakPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_pressure_plate", 0
+}
+
+type CutSandstoneDoubleSlab struct{}
+
+func (CutSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:cut_sandstone_double_slab", 0
+}
+
+type CreakingSpawnEgg struct{}
+
+func (CreakingSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:creaking_spawn_egg", 0
+}
+
+type WarpedWallSign struct{}
+
+func (WarpedWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_wall_sign", 0
+}
+
+type SandstoneDoubleSlab struct{}
+
+func (SandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:sandstone_double_slab", 0
+}
+
+type ExposedDoubleCutCopperSlab struct{}
+
+func (ExposedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:exposed_double_cut_copper_slab", 0
+}
+
+type TrialKey struct{}
+
+func (TrialKey) EncodeItem() (name string, meta int16) {
+	return "minecraft:trial_key", 0
+}
+
+type CrimsonPressurePlate struct{}
+
+func (CrimsonPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_pressure_plate", 0
+}
+
+type WarpedButton struct{}
+
+func (WarpedButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_button", 0
+}
+
+type BambooMosaicSlab struct{}
+
+func (BambooMosaicSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_mosaic_slab", 0
+}
+
+type ItemNetherSprouts struct{}
+
+func (ItemNetherSprouts) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.nether_sprouts", 0
+}
+
+type DeadBubbleCoralWallFan struct{}
+
+func (DeadBubbleCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_bubble_coral_wall_fan", 0
+}
+
+type SmoothStoneDoubleSlab struct{}
+
+func (SmoothStoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:smooth_stone_double_slab", 0
+}
+
+type Element7 struct{}
+
+func (Element7) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_7", 0
+}
+
+type MossBlock struct{}
+
+func (MossBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:moss_block", 0
+}
+
+type ChickenSpawnEgg struct{}
+
+func (ChickenSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:chicken_spawn_egg", 0
+}
+
+type Jigsaw struct{}
+
+func (Jigsaw) EncodeItem() (name string, meta int16) {
+	return "minecraft:jigsaw", 0
+}
+
+type PaleOakHangingSign struct{}
+
+func (PaleOakHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_hanging_sign", 0
+}
+
+type HardStainedGlass struct{}
+
+func (HardStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_stained_glass", 0
+}
+
+type Torchflower struct{}
+
+func (Torchflower) EncodeItem() (name string, meta int16) {
+	return "minecraft:torchflower", 0
+}
+
+type WhiteCandleCake struct{}
+
+func (WhiteCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:white_candle_cake", 0
+}
+
+type CherryHangingSign struct{}
+
+func (CherryHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_hanging_sign", 0
+}
+
+type WaxedDoubleCutCopperSlab struct{}
+
+func (WaxedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_double_cut_copper_slab", 0
+}
+
+type OakDoubleSlab struct{}
+
+func (OakDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:oak_double_slab", 0
+}
+
+type DarkOakPressurePlate struct{}
+
+func (DarkOakPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_oak_pressure_plate", 0
+}
+
+type NormalStoneDoubleSlab struct{}
+
+func (NormalStoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:normal_stone_double_slab", 0
+}
+
+type AcaciaShelf struct{}
+
+func (AcaciaShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_shelf", 0
+}
+
+type HardLightGrayStainedGlass struct{}
+
+func (HardLightGrayStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_light_gray_stained_glass", 0
+}
+
+type LeatherHorseArmor struct{}
+
+func (LeatherHorseArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:leather_horse_armor", 0
+}
+
+type StainedGlassPane struct{}
+
+func (StainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:stained_glass_pane", 0
+}
+
+type JunglePressurePlate struct{}
+
+func (JunglePressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_pressure_plate", 0
+}
+
+type BambooFence struct{}
+
+func (BambooFence) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_fence", 0
+}
+
+type CherryButton struct{}
+
+func (CherryButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_button", 0
+}
+
+type HardBlackStainedGlassPane struct{}
+
+func (HardBlackStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_black_stained_glass_pane", 0
+}
+
+type PinkCandleCake struct{}
+
+func (PinkCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:pink_candle_cake", 0
+}
+
+type ItemCampfire struct{}
+
+func (ItemCampfire) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.campfire", 0
+}
+
+type AxolotlSpawnEgg struct{}
+
+func (AxolotlSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:axolotl_spawn_egg", 0
+}
+
+type NautilusSpawnEgg struct{}
+
+func (NautilusSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:nautilus_spawn_egg", 0
+}
+
+type CreakingHeart struct{}
+
+func (CreakingHeart) EncodeItem() (name string, meta int16) {
+	return "minecraft:creaking_heart", 0
+}
+
+type WaxedCopperChest struct{}
+
+func (WaxedCopperChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_copper_chest", 0
+}
+
+type DaylightDetector struct{}
+
+func (DaylightDetector) EncodeItem() (name string, meta int16) {
+	return "minecraft:daylight_detector", 0
+}
+
+type RedSandstoneDoubleSlab struct{}
+
+func (RedSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_sandstone_double_slab", 0
+}
+
+type Element113 struct{}
+
+func (Element113) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_113", 0
+}
+
+type PitcherPlant struct{}
+
+func (PitcherPlant) EncodeItem() (name string, meta int16) {
+	return "minecraft:pitcher_plant", 0
+}
+
+type TripwireHook struct{}
+
+func (TripwireHook) EncodeItem() (name string, meta int16) {
+	return "minecraft:tripwire_hook", 0
+}
+
+type MushroomStem struct{}
+
+func (MushroomStem) EncodeItem() (name string, meta int16) {
+	return "minecraft:mushroom_stem", 0
+}
+
+type GoldenRail struct{}
+
+func (GoldenRail) EncodeItem() (name string, meta int16) {
+	return "minecraft:golden_rail", 0
+}
+
+type HardLightBlueStainedGlass struct{}
+
+func (HardLightBlueStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_light_blue_stained_glass", 0
+}
+
+type DiamondSpear struct{}
+
+func (DiamondSpear) EncodeItem() (name string, meta int16) {
+	return "minecraft:diamond_spear", 0
+}
+
+type Bundle struct{}
+
+func (Bundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:bundle", 0
+}
+
+type SalmonSpawnEgg struct{}
+
+func (SalmonSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:salmon_spawn_egg", 0
+}
+
+type Carrots struct{}
+
+func (Carrots) EncodeItem() (name string, meta int16) {
+	return "minecraft:carrots", 0
+}
+
+type DeprecatedAnvil struct{}
+
+func (DeprecatedAnvil) EncodeItem() (name string, meta int16) {
+	return "minecraft:deprecated_anvil", 0
+}
+
+type IronSpear struct{}
+
+func (IronSpear) EncodeItem() (name string, meta int16) {
+	return "minecraft:iron_spear", 0
+}
+
+type CyanCandle struct{}
+
+func (CyanCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:cyan_candle", 0
+}
+
+type Element49 struct{}
+
+func (Element49) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_49", 0
+}
+
+type WarpedStandingSign struct{}
+
+func (WarpedStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_standing_sign", 0
+}
+
+type HardBlueStainedGlassPane struct{}
+
+func (HardBlueStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_blue_stained_glass_pane", 0
+}
+
+type CopperBulb struct{}
+
+func (CopperBulb) EncodeItem() (name string, meta int16) {
+	return "minecraft:copper_bulb", 0
+}
+
+type LitSmoker struct{}
+
+func (LitSmoker) EncodeItem() (name string, meta int16) {
+	return "minecraft:lit_smoker", 0
+}
+
+type Element51 struct{}
+
+func (Element51) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_51", 0
+}
+
+type BannerPattern struct{}
+
+func (BannerPattern) EncodeItem() (name string, meta int16) {
+	return "minecraft:banner_pattern", 0
+}
+
+type LimeCandle struct{}
+
+func (LimeCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:lime_candle", 0
+}
+
+type BambooRaft struct{}
+
+func (BambooRaft) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_raft", 0
+}
+
+type QuartzDoubleSlab struct{}
+
+func (QuartzDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:quartz_double_slab", 0
+}
+
+type BambooPlanks struct{}
+
+func (BambooPlanks) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_planks", 0
+}
+
+type GrayCandleCake struct{}
+
+func (GrayCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:gray_candle_cake", 0
+}
+
+type MangroveDoubleSlab struct{}
+
+func (MangroveDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_double_slab", 0
+}
+
+type LightBlock struct{}
+
+func (LightBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_block", 0
+}
+
+type WarpedPressurePlate struct{}
+
+func (WarpedPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_pressure_plate", 0
+}
+
+type VindicatorSpawnEgg struct{}
+
+func (VindicatorSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:vindicator_spawn_egg", 0
+}
+
+type OakHangingSign struct{}
+
+func (OakHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:oak_hanging_sign", 0
+}
+
+type UnderwaterTorch struct{}
+
+func (UnderwaterTorch) EncodeItem() (name string, meta int16) {
+	return "minecraft:underwater_torch", 0
+}
+
+type DoubleStoneBlockSlab3 struct{}
+
+func (DoubleStoneBlockSlab3) EncodeItem() (name string, meta int16) {
+	return "minecraft:double_stone_block_slab3", 0
+}
+
+type FoxSpawnEgg struct{}
+
+func (FoxSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:fox_spawn_egg", 0
+}
+
+type MangroveStandingSign struct{}
+
+func (MangroveStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_standing_sign", 0
+}
+
+type PaleOakStandingSign struct{}
+
+func (PaleOakStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_standing_sign", 0
+}
+
+type DeadBrainCoralFan struct{}
+
+func (DeadBrainCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_brain_coral_fan", 0
+}
+
+type Beehive struct{}
+
+func (Beehive) EncodeItem() (name string, meta int16) {
+	return "minecraft:beehive", 0
+}
+
+type ItemIronDoor struct{}
+
+func (ItemIronDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.iron_door", 0
+}
+
+type LightGrayCandle struct{}
+
+func (LightGrayCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_gray_candle", 0
+}
+
+type Balloon struct{}
+
+func (Balloon) EncodeItem() (name string, meta int16) {
+	return "minecraft:balloon", 0
+}
+
+type JungleButton struct{}
+
+func (JungleButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_button", 0
+}
+
+type AcaciaDoubleSlab struct{}
+
+func (AcaciaDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_double_slab", 0
+}
+
+type NetheriteHorseArmor struct{}
+
+func (NetheriteHorseArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:netherite_horse_armor", 0
+}
+
+type Comparator struct{}
+
+func (Comparator) EncodeItem() (name string, meta int16) {
+	return "minecraft:comparator", 0
+}
+
+type SprucePressurePlate struct{}
+
+func (SprucePressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_pressure_plate", 0
+}
+
+type GlowSquidSpawnEgg struct{}
+
+func (GlowSquidSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:glow_squid_spawn_egg", 0
+}
+
+type Element55 struct{}
+
+func (Element55) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_55", 0
+}
+
+type Wildflowers struct{}
+
+func (Wildflowers) EncodeItem() (name string, meta int16) {
+	return "minecraft:wildflowers", 0
+}
+
+type ZombieNautilusSpawnEgg struct{}
+
+func (ZombieNautilusSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:zombie_nautilus_spawn_egg", 0
+}
+
+type TorchflowerSeeds struct{}
+
+func (TorchflowerSeeds) EncodeItem() (name string, meta int16) {
+	return "minecraft:torchflower_seeds", 0
+}
+
+type CherryDoubleSlab struct{}
+
+func (CherryDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_double_slab", 0
+}
+
+type Element69 struct{}
+
+func (Element69) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_69", 0
+}
+
+type Wool struct{}
+
+func (Wool) EncodeItem() (name string, meta int16) {
+	return "minecraft:wool", 0
+}
+
+type GoldenSpear struct{}
+
+func (GoldenSpear) EncodeItem() (name string, meta int16) {
+	return "minecraft:golden_spear", 0
+}
+
+type MagentaCandleCake struct{}
+
+func (MagentaCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:magenta_candle_cake", 0
+}
+
+type IronHorseArmor struct{}
+
+func (IronHorseArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:iron_horse_armor", 0
+}
+
+type Element115 struct{}
+
+func (Element115) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_115", 0
+}
+
+type Element77 struct{}
+
+func (Element77) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_77", 0
+}
+
+type JungleWallSign struct{}
+
+func (JungleWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_wall_sign", 0
+}
+
+type JungleBoat struct{}
+
+func (JungleBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_boat", 0
+}
+
+type HardMagentaStainedGlass struct{}
+
+func (HardMagentaStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_magenta_stained_glass", 0
+}
+
+type Piston struct{}
+
+func (Piston) EncodeItem() (name string, meta int16) {
+	return "minecraft:piston", 0
+}
+
+type EndGateway struct{}
+
+func (EndGateway) EncodeItem() (name string, meta int16) {
+	return "minecraft:end_gateway", 0
+}
+
+type PrismarineDoubleSlab struct{}
+
+func (PrismarineDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:prismarine_double_slab", 0
+}
+
+type GlowStick struct{}
+
+func (GlowStick) EncodeItem() (name string, meta int16) {
+	return "minecraft:glow_stick", 0
+}
+
+type IceBomb struct{}
+
+func (IceBomb) EncodeItem() (name string, meta int16) {
+	return "minecraft:ice_bomb", 0
+}
+
+type Element16 struct{}
+
+func (Element16) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_16", 0
+}
+
+type CompoundCreator struct{}
+
+func (CompoundCreator) EncodeItem() (name string, meta int16) {
+	return "minecraft:compound_creator", 0
+}
+
+type SpruceChestBoat struct{}
+
+func (SpruceChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_chest_boat", 0
+}
+
+type Element48 struct{}
+
+func (Element48) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_48", 0
+}
+
+type Element44 struct{}
+
+func (Element44) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_44", 0
+}
+
+type CactusFlower struct{}
+
+func (CactusFlower) EncodeItem() (name string, meta int16) {
+	return "minecraft:cactus_flower", 0
+}
+
+type BambooFenceGate struct{}
+
+func (BambooFenceGate) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_fence_gate", 0
+}
+
+type Element30 struct{}
+
+func (Element30) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_30", 0
+}
+
+type CopperHorseArmor struct{}
+
+func (CopperHorseArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:copper_horse_armor", 0
+}
+
+type ElderGuardianSpawnEgg struct{}
+
+func (ElderGuardianSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:elder_guardian_spawn_egg", 0
+}
+
+type ClosedEyeblossom struct{}
+
+func (ClosedEyeblossom) EncodeItem() (name string, meta int16) {
+	return "minecraft:closed_eyeblossom", 0
+}
+
+type Element31 struct{}
+
+func (Element31) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_31", 0
+}
+
+type LlamaSpawnEgg struct{}
+
+func (LlamaSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:llama_spawn_egg", 0
+}
+
+type HardGreenStainedGlass struct{}
+
+func (HardGreenStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_green_stained_glass", 0
+}
+
+type ItemSoulCampfire struct{}
+
+func (ItemSoulCampfire) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.soul_campfire", 0
+}
+
+type WeatheredCopperChest struct{}
+
+func (WeatheredCopperChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:weathered_copper_chest", 0
+}
+
+type SnifferSpawnEgg struct{}
+
+func (SnifferSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:sniffer_spawn_egg", 0
+}
+
+type GuardianSpawnEgg struct{}
+
+func (GuardianSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:guardian_spawn_egg", 0
+}
+
+type String struct{}
+
+func (String) EncodeItem() (name string, meta int16) {
+	return "minecraft:string", 0
+}
+
+type CrimsonShelf struct{}
+
+func (CrimsonShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_shelf", 0
+}
+
 type Element87 struct{}
 
 func (Element87) EncodeItem() (name string, meta int16) {
 	return "minecraft:element_87", 0
 }
 
-type ItemGlowFrame struct{}
+type DirtWithRoots struct{}
 
-func (ItemGlowFrame) EncodeItem() (name string, meta int16) {
-	return "minecraft:item.glow_frame", 0
+func (DirtWithRoots) EncodeItem() (name string, meta int16) {
+	return "minecraft:dirt_with_roots", 0
+}
+
+type CherrySapling struct{}
+
+func (CherrySapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_sapling", 0
+}
+
+type YellowBundle struct{}
+
+func (YellowBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:yellow_bundle", 0
+}
+
+type BlazeSpawnEgg struct{}
+
+func (BlazeSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:blaze_spawn_egg", 0
+}
+
+type WolfArmor struct{}
+
+func (WolfArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:wolf_armor", 0
+}
+
+type Target struct{}
+
+func (Target) EncodeItem() (name string, meta int16) {
+	return "minecraft:target", 0
+}
+
+type DeadFireCoralFan struct{}
+
+func (DeadFireCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_fire_coral_fan", 0
+}
+
+type HangingRoots struct{}
+
+func (HangingRoots) EncodeItem() (name string, meta int16) {
+	return "minecraft:hanging_roots", 0
+}
+
+type BrownMushroom struct{}
+
+func (BrownMushroom) EncodeItem() (name string, meta int16) {
+	return "minecraft:brown_mushroom", 0
+}
+
+type CherryPressurePlate struct{}
+
+func (CherryPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_pressure_plate", 0
+}
+
+type HardBlueStainedGlass struct{}
+
+func (HardBlueStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_blue_stained_glass", 0
+}
+
+type SpruceBoat struct{}
+
+func (SpruceBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_boat", 0
+}
+
+type StraySpawnEgg struct{}
+
+func (StraySpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:stray_spawn_egg", 0
+}
+
+type BambooWallSign struct{}
+
+func (BambooWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_wall_sign", 0
+}
+
+type JungleHangingSign struct{}
+
+func (JungleHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_hanging_sign", 0
+}
+
+type RedstoneOre struct{}
+
+func (RedstoneOre) EncodeItem() (name string, meta int16) {
+	return "minecraft:redstone_ore", 0
+}
+
+type TurtleSpawnEgg struct{}
+
+func (TurtleSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:turtle_spawn_egg", 0
+}
+
+type ItemHopper struct{}
+
+func (ItemHopper) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.hopper", 0
+}
+
+type SmoothSandstoneDoubleSlab struct{}
+
+func (SmoothSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:smooth_sandstone_double_slab", 0
+}
+
+type YellowHarness struct{}
+
+func (YellowHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:yellow_harness", 0
+}
+
+type OrangeCandle struct{}
+
+func (OrangeCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:orange_candle", 0
+}
+
+type Element29 struct{}
+
+func (Element29) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_29", 0
+}
+
+type HardLimeStainedGlassPane struct{}
+
+func (HardLimeStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_lime_stained_glass_pane", 0
+}
+
+type HeavyWeightedPressurePlate struct{}
+
+func (HeavyWeightedPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:heavy_weighted_pressure_plate", 0
+}
+
+type Magma struct{}
+
+func (Magma) EncodeItem() (name string, meta int16) {
+	return "minecraft:magma", 0
+}
+
+type ItemCamera struct{}
+
+func (ItemCamera) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.camera", 0
+}
+
+type Element62 struct{}
+
+func (Element62) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_62", 0
+}
+
+type SlimeSpawnEgg struct{}
+
+func (SlimeSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:slime_spawn_egg", 0
+}
+
+type BirchPressurePlate struct{}
+
+func (BirchPressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_pressure_plate", 0
+}
+
+type WhiteHarness struct{}
+
+func (WhiteHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:white_harness", 0
+}
+
+type PolishedDeepslateDoubleSlab struct{}
+
+func (PolishedDeepslateDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_deepslate_double_slab", 0
+}
+
+type ItemFrame struct{}
+
+func (ItemFrame) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.frame", 0
+}
+
+type InfestedDeepslate struct{}
+
+func (InfestedDeepslate) EncodeItem() (name string, meta int16) {
+	return "minecraft:infested_deepslate", 0
+}
+
+type MangrovePropagule struct{}
+
+func (MangrovePropagule) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_propagule", 0
+}
+
+type DoubleStoneBlockSlab struct{}
+
+func (DoubleStoneBlockSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:double_stone_block_slab", 0
+}
+
+type PurpleHarness struct{}
+
+func (PurpleHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:purple_harness", 0
+}
+
+type Element91 struct{}
+
+func (Element91) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_91", 0
+}
+
+type DeepslateTileDoubleSlab struct{}
+
+func (DeepslateTileDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:deepslate_tile_double_slab", 0
+}
+
+type HardLightBlueStainedGlassPane struct{}
+
+func (HardLightBlueStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_light_blue_stained_glass_pane", 0
+}
+
+type DeadTubeCoralWallFan struct{}
+
+func (DeadTubeCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_tube_coral_wall_fan", 0
+}
+
+type ZombieHorseSpawnEgg struct{}
+
+func (ZombieHorseSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:zombie_horse_spawn_egg", 0
+}
+
+type DoubleStoneBlockSlab4 struct{}
+
+func (DoubleStoneBlockSlab4) EncodeItem() (name string, meta int16) {
+	return "minecraft:double_stone_block_slab4", 0
+}
+
+type Element64 struct{}
+
+func (Element64) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_64", 0
+}
+
+type Element68 struct{}
+
+func (Element68) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_68", 0
+}
+
+type WallSign struct{}
+
+func (WallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:wall_sign", 0
+}
+
+type Element46 struct{}
+
+func (Element46) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_46", 0
+}
+
+type DeadFireCoralWallFan struct{}
+
+func (DeadFireCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_fire_coral_wall_fan", 0
+}
+
+type Minecart struct{}
+
+func (Minecart) EncodeItem() (name string, meta int16) {
+	return "minecraft:minecart", 0
 }
 
 type ConcretePowder struct{}
@@ -5937,14 +4590,1634 @@ func (ConcretePowder) EncodeItem() (name string, meta int16) {
 	return "minecraft:concrete_powder", 0
 }
 
-type HoneyBottle struct{}
+type CrimsonHangingSign struct{}
 
-func (HoneyBottle) EncodeItem() (name string, meta int16) {
-	return "minecraft:honey_bottle", 0
+func (CrimsonHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_hanging_sign", 0
 }
 
-type WarpedStandingSign struct{}
+type ItemMangroveDoor struct{}
 
-func (WarpedStandingSign) EncodeItem() (name string, meta int16) {
-	return "minecraft:warped_standing_sign", 0
+func (ItemMangroveDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.mangrove_door", 0
+}
+
+type GreenCandle struct{}
+
+func (GreenCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:green_candle", 0
+}
+
+type CopperNautilusArmor struct{}
+
+func (CopperNautilusArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:copper_nautilus_armor", 0
+}
+
+type MediumAmethystBud struct{}
+
+func (MediumAmethystBud) EncodeItem() (name string, meta int16) {
+	return "minecraft:medium_amethyst_bud", 0
+}
+
+type DarkOakSapling struct{}
+
+func (DarkOakSapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_oak_sapling", 0
+}
+
+type CrimsonFungus struct{}
+
+func (CrimsonFungus) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_fungus", 0
+}
+
+type DarkOakChestBoat struct{}
+
+func (DarkOakChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_oak_chest_boat", 0
+}
+
+type BlackstoneDoubleSlab struct{}
+
+func (BlackstoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:blackstone_double_slab", 0
+}
+
+type LightGrayBundle struct{}
+
+func (LightGrayBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_gray_bundle", 0
+}
+
+type Element27 struct{}
+
+func (Element27) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_27", 0
+}
+
+type Bamboo struct{}
+
+func (Bamboo) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo", 0
+}
+
+type Element38 struct{}
+
+func (Element38) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_38", 0
+}
+
+type PetrifiedOakSlab struct{}
+
+func (PetrifiedOakSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:petrified_oak_slab", 0
+}
+
+type FilledMap struct{}
+
+func (FilledMap) EncodeItem() (name string, meta int16) {
+	return "minecraft:filled_map", 0
+}
+
+type PitcherPod struct{}
+
+func (PitcherPod) EncodeItem() (name string, meta int16) {
+	return "minecraft:pitcher_pod", 0
+}
+
+type ItemKelp struct{}
+
+func (ItemKelp) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.kelp", 0
+}
+
+type TwistingVines struct{}
+
+func (TwistingVines) EncodeItem() (name string, meta int16) {
+	return "minecraft:twisting_vines", 0
+}
+
+type Water struct{}
+
+func (Water) EncodeItem() (name string, meta int16) {
+	return "minecraft:water", 0
+}
+
+type DeepslateRedstoneOre struct{}
+
+func (DeepslateRedstoneOre) EncodeItem() (name string, meta int16) {
+	return "minecraft:deepslate_redstone_ore", 0
+}
+
+type BirchBoat struct{}
+
+func (BirchBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_boat", 0
+}
+
+type HardGreenStainedGlassPane struct{}
+
+func (HardGreenStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_green_stained_glass_pane", 0
+}
+
+type OminousBottle struct{}
+
+func (OminousBottle) EncodeItem() (name string, meta int16) {
+	return "minecraft:ominous_bottle", 0
+}
+
+type MangroveChestBoat struct{}
+
+func (MangroveChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_chest_boat", 0
+}
+
+type CopperSpear struct{}
+
+func (CopperSpear) EncodeItem() (name string, meta int16) {
+	return "minecraft:copper_spear", 0
+}
+
+type PaleOakDoubleSlab struct{}
+
+func (PaleOakDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_double_slab", 0
+}
+
+type LargeAmethystBud struct{}
+
+func (LargeAmethystBud) EncodeItem() (name string, meta int16) {
+	return "minecraft:large_amethyst_bud", 0
+}
+
+type Element107 struct{}
+
+func (Element107) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_107", 0
+}
+
+type YellowCandleCake struct{}
+
+func (YellowCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:yellow_candle_cake", 0
+}
+
+type JungleStandingSign struct{}
+
+func (JungleStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_standing_sign", 0
+}
+
+type Element74 struct{}
+
+func (Element74) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_74", 0
+}
+
+type TntMinecart struct{}
+
+func (TntMinecart) EncodeItem() (name string, meta int16) {
+	return "minecraft:tnt_minecart", 0
+}
+
+type SoulFire struct{}
+
+func (SoulFire) EncodeItem() (name string, meta int16) {
+	return "minecraft:soul_fire", 0
+}
+
+type ArmadilloScute struct{}
+
+func (ArmadilloScute) EncodeItem() (name string, meta int16) {
+	return "minecraft:armadillo_scute", 0
+}
+
+type Element34 struct{}
+
+func (Element34) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_34", 0
+}
+
+type HeavyCore struct{}
+
+func (HeavyCore) EncodeItem() (name string, meta int16) {
+	return "minecraft:heavy_core", 0
+}
+
+type TropicalFishSpawnEgg struct{}
+
+func (TropicalFishSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:tropical_fish_spawn_egg", 0
+}
+
+type RedNetherBrickDoubleSlab struct{}
+
+func (RedNetherBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_nether_brick_double_slab", 0
+}
+
+type ZombiePigmanSpawnEgg struct{}
+
+func (ZombiePigmanSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:zombie_pigman_spawn_egg", 0
+}
+
+type Fence struct{}
+
+func (Fence) EncodeItem() (name string, meta int16) {
+	return "minecraft:fence", 0
+}
+
+type ChorusPlant struct{}
+
+func (ChorusPlant) EncodeItem() (name string, meta int16) {
+	return "minecraft:chorus_plant", 0
+}
+
+type RepeatingCommandBlock struct{}
+
+func (RepeatingCommandBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:repeating_command_block", 0
+}
+
+type ItemJungleDoor struct{}
+
+func (ItemJungleDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.jungle_door", 0
+}
+
+type ItemBed struct{}
+
+func (ItemBed) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.bed", 0
+}
+
+type ColoredTorchBlue struct{}
+
+func (ColoredTorchBlue) EncodeItem() (name string, meta int16) {
+	return "minecraft:colored_torch_blue", 0
+}
+
+type CutRedSandstoneDoubleSlab struct{}
+
+func (CutRedSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:cut_red_sandstone_double_slab", 0
+}
+
+type BirchButton struct{}
+
+func (BirchButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_button", 0
+}
+
+type Element105 struct{}
+
+func (Element105) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_105", 0
+}
+
+type CrimsonNylium struct{}
+
+func (CrimsonNylium) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_nylium", 0
+}
+
+type CaveVinesBodyWithBerries struct{}
+
+func (CaveVinesBodyWithBerries) EncodeItem() (name string, meta int16) {
+	return "minecraft:cave_vines_body_with_berries", 0
+}
+
+type SuspiciousGravel struct{}
+
+func (SuspiciousGravel) EncodeItem() (name string, meta int16) {
+	return "minecraft:suspicious_gravel", 0
+}
+
+type ColoredTorchRg struct{}
+
+func (ColoredTorchRg) EncodeItem() (name string, meta int16) {
+	return "minecraft:colored_torch_rg", 0
+}
+
+type DarkOakBoat struct{}
+
+func (DarkOakBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_oak_boat", 0
+}
+
+type BrownCandle struct{}
+
+func (BrownCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:brown_candle", 0
+}
+
+type Sculk struct{}
+
+func (Sculk) EncodeItem() (name string, meta int16) {
+	return "minecraft:sculk", 0
+}
+
+type WallBanner struct{}
+
+func (WallBanner) EncodeItem() (name string, meta int16) {
+	return "minecraft:wall_banner", 0
+}
+
+type Element90 struct{}
+
+func (Element90) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_90", 0
+}
+
+type DriedGhast struct{}
+
+func (DriedGhast) EncodeItem() (name string, meta int16) {
+	return "minecraft:dried_ghast", 0
+}
+
+type Azalea struct{}
+
+func (Azalea) EncodeItem() (name string, meta int16) {
+	return "minecraft:azalea", 0
+}
+
+type Element114 struct{}
+
+func (Element114) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_114", 0
+}
+
+type DeadHornCoralFan struct{}
+
+func (DeadHornCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:dead_horn_coral_fan", 0
+}
+
+type EnderEye struct{}
+
+func (EnderEye) EncodeItem() (name string, meta int16) {
+	return "minecraft:ender_eye", 0
+}
+
+type CartographyTable struct{}
+
+func (CartographyTable) EncodeItem() (name string, meta int16) {
+	return "minecraft:cartography_table", 0
+}
+
+type StickyPiston struct{}
+
+func (StickyPiston) EncodeItem() (name string, meta int16) {
+	return "minecraft:sticky_piston", 0
+}
+
+type FishingRod struct{}
+
+func (FishingRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:fishing_rod", 0
+}
+
+type ResinClump struct{}
+
+func (ResinClump) EncodeItem() (name string, meta int16) {
+	return "minecraft:resin_clump", 0
+}
+
+type ShortDryGrass struct{}
+
+func (ShortDryGrass) EncodeItem() (name string, meta int16) {
+	return "minecraft:short_dry_grass", 0
+}
+
+type TorchflowerCrop struct{}
+
+func (TorchflowerCrop) EncodeItem() (name string, meta int16) {
+	return "minecraft:torchflower_crop", 0
+}
+
+type OxidizedDoubleCutCopperSlab struct{}
+
+func (OxidizedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:oxidized_double_cut_copper_slab", 0
+}
+
+type AcaciaSapling struct{}
+
+func (AcaciaSapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_sapling", 0
+}
+
+type HardGlass struct{}
+
+func (HardGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_glass", 0
+}
+
+type ParrotSpawnEgg struct{}
+
+func (ParrotSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:parrot_spawn_egg", 0
+}
+
+type Element86 struct{}
+
+func (Element86) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_86", 0
+}
+
+type Element6 struct{}
+
+func (Element6) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_6", 0
+}
+
+type ItemFlowerPot struct{}
+
+func (ItemFlowerPot) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.flower_pot", 0
+}
+
+type ZombieSpawnEgg struct{}
+
+func (ZombieSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:zombie_spawn_egg", 0
+}
+
+type PinkHarness struct{}
+
+func (PinkHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:pink_harness", 0
+}
+
+type CherryStandingSign struct{}
+
+func (CherryStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_standing_sign", 0
+}
+
+type RedFlower struct{}
+
+func (RedFlower) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_flower", 0
+}
+
+type BambooSapling struct{}
+
+func (BambooSapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_sapling", 0
+}
+
+type MonsterEgg struct{}
+
+func (MonsterEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:monster_egg", 0
+}
+
+type EndPortal struct{}
+
+func (EndPortal) EncodeItem() (name string, meta int16) {
+	return "minecraft:end_portal", 0
+}
+
+type CoralFan struct{}
+
+func (CoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:coral_fan", 0
+}
+
+type ItemNetherWart struct{}
+
+func (ItemNetherWart) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.nether_wart", 0
+}
+
+type GreenHarness struct{}
+
+func (GreenHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:green_harness", 0
+}
+
+type EvokerSpawnEgg struct{}
+
+func (EvokerSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:evoker_spawn_egg", 0
+}
+
+type SuspiciousSand struct{}
+
+func (SuspiciousSand) EncodeItem() (name string, meta int16) {
+	return "minecraft:suspicious_sand", 0
+}
+
+type ChemicalHeat struct{}
+
+func (ChemicalHeat) EncodeItem() (name string, meta int16) {
+	return "minecraft:chemical_heat", 0
+}
+
+type InfoUpdate2 struct{}
+
+func (InfoUpdate2) EncodeItem() (name string, meta int16) {
+	return "minecraft:info_update2", 0
+}
+
+type Element21 struct{}
+
+func (Element21) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_21", 0
+}
+
+type LitFurnace struct{}
+
+func (LitFurnace) EncodeItem() (name string, meta int16) {
+	return "minecraft:lit_furnace", 0
+}
+
+type EndStoneBrickDoubleSlab struct{}
+
+func (EndStoneBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:end_stone_brick_double_slab", 0
+}
+
+type Element40 struct{}
+
+func (Element40) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_40", 0
+}
+
+type Lever struct{}
+
+func (Lever) EncodeItem() (name string, meta int16) {
+	return "minecraft:lever", 0
+}
+
+type BlueHarness struct{}
+
+func (BlueHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:blue_harness", 0
+}
+
+type BambooButton struct{}
+
+func (BambooButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_button", 0
+}
+
+type LightningRod struct{}
+
+func (LightningRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:lightning_rod", 0
+}
+
+type Crafter struct{}
+
+func (Crafter) EncodeItem() (name string, meta int16) {
+	return "minecraft:crafter", 0
+}
+
+type WeatheredDoubleCutCopperSlab struct{}
+
+func (WeatheredDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:weathered_double_cut_copper_slab", 0
+}
+
+type ItemCake struct{}
+
+func (ItemCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.cake", 0
+}
+
+type MossyStoneBrickDoubleSlab struct{}
+
+func (MossyStoneBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:mossy_stone_brick_double_slab", 0
+}
+
+type GoldenNautilusArmor struct{}
+
+func (GoldenNautilusArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:golden_nautilus_armor", 0
+}
+
+type VillagerSpawnEgg struct{}
+
+func (VillagerSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:villager_spawn_egg", 0
+}
+
+type HardGrayStainedGlassPane struct{}
+
+func (HardGrayStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_gray_stained_glass_pane", 0
+}
+
+type AcaciaHangingSign struct{}
+
+func (AcaciaHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_hanging_sign", 0
+}
+
+type MagentaCandle struct{}
+
+func (MagentaCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:magenta_candle", 0
+}
+
+type DarkoakStandingSign struct{}
+
+func (DarkoakStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:darkoak_standing_sign", 0
+}
+
+type FrogSpawn struct{}
+
+func (FrogSpawn) EncodeItem() (name string, meta int16) {
+	return "minecraft:frog_spawn", 0
+}
+
+type Element99 struct{}
+
+func (Element99) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_99", 0
+}
+
+type BlackCandleCake struct{}
+
+func (BlackCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:black_candle_cake", 0
+}
+
+type BambooMosaicStairs struct{}
+
+func (BambooMosaicStairs) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_mosaic_stairs", 0
+}
+
+type WaxedWeatheredCopperChest struct{}
+
+func (WaxedWeatheredCopperChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_weathered_copper_chest", 0
+}
+
+type Element36 struct{}
+
+func (Element36) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_36", 0
+}
+
+type ItemWheat struct{}
+
+func (ItemWheat) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.wheat", 0
+}
+
+type ChiseledBookshelf struct{}
+
+func (ChiseledBookshelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:chiseled_bookshelf", 0
+}
+
+type CherryShelf struct{}
+
+func (CherryShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_shelf", 0
+}
+
+type WaxedExposedDoubleCutCopperSlab struct{}
+
+func (WaxedExposedDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_exposed_double_cut_copper_slab", 0
+}
+
+type Shield struct{}
+
+func (Shield) EncodeItem() (name string, meta int16) {
+	return "minecraft:shield", 0
+}
+
+type MaterialReducer struct{}
+
+func (MaterialReducer) EncodeItem() (name string, meta int16) {
+	return "minecraft:material_reducer", 0
+}
+
+type RedMushroom struct{}
+
+func (RedMushroom) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_mushroom", 0
+}
+
+type LightGrayHarness struct{}
+
+func (LightGrayHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_gray_harness", 0
+}
+
+type SculkVein struct{}
+
+func (SculkVein) EncodeItem() (name string, meta int16) {
+	return "minecraft:sculk_vein", 0
+}
+
+type ActivatorRail struct{}
+
+func (ActivatorRail) EncodeItem() (name string, meta int16) {
+	return "minecraft:activator_rail", 0
+}
+
+type CommandBlock struct{}
+
+func (CommandBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:command_block", 0
+}
+
+type RedMushroomBlock struct{}
+
+func (RedMushroomBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_mushroom_block", 0
+}
+
+type WaxedOxidizedLightningRod struct{}
+
+func (WaxedOxidizedLightningRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_oxidized_lightning_rod", 0
+}
+
+type PurpleCandle struct{}
+
+func (PurpleCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:purple_candle", 0
+}
+
+type Scaffolding struct{}
+
+func (Scaffolding) EncodeItem() (name string, meta int16) {
+	return "minecraft:scaffolding", 0
+}
+
+type Dye struct{}
+
+func (Dye) EncodeItem() (name string, meta int16) {
+	return "minecraft:dye", 0
+}
+
+type Element71 struct{}
+
+func (Element71) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_71", 0
+}
+
+type OrangeHarness struct{}
+
+func (OrangeHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:orange_harness", 0
+}
+
+type OakBoat struct{}
+
+func (OakBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:oak_boat", 0
+}
+
+type BrownEgg struct{}
+
+func (BrownEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:brown_egg", 0
+}
+
+type PhantomSpawnEgg struct{}
+
+func (PhantomSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:phantom_spawn_egg", 0
+}
+
+type OxidizedLightningRod struct{}
+
+func (OxidizedLightningRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:oxidized_lightning_rod", 0
+}
+
+type Element101 struct{}
+
+func (Element101) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_101", 0
+}
+
+type SculkCatalyst struct{}
+
+func (SculkCatalyst) EncodeItem() (name string, meta int16) {
+	return "minecraft:sculk_catalyst", 0
+}
+
+type ColoredTorchBp struct{}
+
+func (ColoredTorchBp) EncodeItem() (name string, meta int16) {
+	return "minecraft:colored_torch_bp", 0
+}
+
+type Element24 struct{}
+
+func (Element24) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_24", 0
+}
+
+type Redstone struct{}
+
+func (Redstone) EncodeItem() (name string, meta int16) {
+	return "minecraft:redstone", 0
+}
+
+type GlowLichen struct{}
+
+func (GlowLichen) EncodeItem() (name string, meta int16) {
+	return "minecraft:glow_lichen", 0
+}
+
+type RedstoneBlock struct{}
+
+func (RedstoneBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:redstone_block", 0
+}
+
+type SmoothQuartzDoubleSlab struct{}
+
+func (SmoothQuartzDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:smooth_quartz_double_slab", 0
+}
+
+type SquidSpawnEgg struct{}
+
+func (SquidSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:squid_spawn_egg", 0
+}
+
+type WitherSkeletonSpawnEgg struct{}
+
+func (WitherSkeletonSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:wither_skeleton_spawn_egg", 0
+}
+
+type Element85 struct{}
+
+func (Element85) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_85", 0
+}
+
+type PolishedAndesiteDoubleSlab struct{}
+
+func (PolishedAndesiteDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:polished_andesite_double_slab", 0
+}
+
+type JungleDoubleSlab struct{}
+
+func (JungleDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_double_slab", 0
+}
+
+type DrownedSpawnEgg struct{}
+
+func (DrownedSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:drowned_spawn_egg", 0
+}
+
+type YellowCandle struct{}
+
+func (YellowCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:yellow_candle", 0
+}
+
+type PufferfishSpawnEgg struct{}
+
+func (PufferfishSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:pufferfish_spawn_egg", 0
+}
+
+type Lead struct{}
+
+func (Lead) EncodeItem() (name string, meta int16) {
+	return "minecraft:lead", 0
+}
+
+type ItemReeds struct{}
+
+func (ItemReeds) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.reeds", 0
+}
+
+type Painting struct{}
+
+func (Painting) EncodeItem() (name string, meta int16) {
+	return "minecraft:painting", 0
+}
+
+type Element56 struct{}
+
+func (Element56) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_56", 0
+}
+
+type DeepslateBrickDoubleSlab struct{}
+
+func (DeepslateBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:deepslate_brick_double_slab", 0
+}
+
+type WaxedWeatheredLightningRod struct{}
+
+func (WaxedWeatheredLightningRod) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_weathered_lightning_rod", 0
+}
+
+type Element53 struct{}
+
+func (Element53) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_53", 0
+}
+
+type DarkOakShelf struct{}
+
+func (DarkOakShelf) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_oak_shelf", 0
+}
+
+type OrangeShulkerBox struct{}
+
+func (OrangeShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:orange_shulker_box", 0
+}
+
+type BatSpawnEgg struct{}
+
+func (BatSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:bat_spawn_egg", 0
+}
+
+type InfestedChiseledStoneBricks struct{}
+
+func (InfestedChiseledStoneBricks) EncodeItem() (name string, meta int16) {
+	return "minecraft:infested_chiseled_stone_bricks", 0
+}
+
+type BrainCoralFan struct{}
+
+func (BrainCoralFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:brain_coral_fan", 0
+}
+
+type CyanCandleCake struct{}
+
+func (CyanCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:cyan_candle_cake", 0
+}
+
+type Element84 struct{}
+
+func (Element84) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_84", 0
+}
+
+type InfestedStoneBricks struct{}
+
+func (InfestedStoneBricks) EncodeItem() (name string, meta int16) {
+	return "minecraft:infested_stone_bricks", 0
+}
+
+type ElementConstructor struct{}
+
+func (ElementConstructor) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_constructor", 0
+}
+
+type AgentSpawnEgg struct{}
+
+func (AgentSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:agent_spawn_egg", 0
+}
+
+type Skull struct{}
+
+func (Skull) EncodeItem() (name string, meta int16) {
+	return "minecraft:skull", 0
+}
+
+type Element20 struct{}
+
+func (Element20) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_20", 0
+}
+
+type LightBlueCandle struct{}
+
+func (LightBlueCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_blue_candle", 0
+}
+
+type AcaciaWallSign struct{}
+
+func (AcaciaWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:acacia_wall_sign", 0
+}
+
+type RedCandle struct{}
+
+func (RedCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_candle", 0
+}
+
+type BoggedSpawnEgg struct{}
+
+func (BoggedSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:bogged_spawn_egg", 0
+}
+
+type SheepSpawnEgg struct{}
+
+func (SheepSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:sheep_spawn_egg", 0
+}
+
+type WhiteCandle struct{}
+
+func (WhiteCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:white_candle", 0
+}
+
+type WarpedRoots struct{}
+
+func (WarpedRoots) EncodeItem() (name string, meta int16) {
+	return "minecraft:warped_roots", 0
+}
+
+type CamelHuskSpawnEgg struct{}
+
+func (CamelHuskSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:camel_husk_spawn_egg", 0
+}
+
+type SpruceWallSign struct{}
+
+func (SpruceWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_wall_sign", 0
+}
+
+type LimeShulkerBox struct{}
+
+func (LimeShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:lime_shulker_box", 0
+}
+
+type PrismarineBrickDoubleSlab struct{}
+
+func (PrismarineBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:prismarine_brick_double_slab", 0
+}
+
+type BirchSapling struct{}
+
+func (BirchSapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_sapling", 0
+}
+
+type SpruceStandingSign struct{}
+
+func (SpruceStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_standing_sign", 0
+}
+
+type SkeletonSpawnEgg struct{}
+
+func (SkeletonSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:skeleton_spawn_egg", 0
+}
+
+type DarkPrismarineDoubleSlab struct{}
+
+func (DarkPrismarineDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_prismarine_double_slab", 0
+}
+
+type Glowingobsidian struct{}
+
+func (Glowingobsidian) EncodeItem() (name string, meta int16) {
+	return "minecraft:glowingobsidian", 0
+}
+
+type UnpoweredComparator struct{}
+
+func (UnpoweredComparator) EncodeItem() (name string, meta int16) {
+	return "minecraft:unpowered_comparator", 0
+}
+
+type GreenShulkerBox struct{}
+
+func (GreenShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:green_shulker_box", 0
+}
+
+type EndCrystal struct{}
+
+func (EndCrystal) EncodeItem() (name string, meta int16) {
+	return "minecraft:end_crystal", 0
+}
+
+type BambooDoubleSlab struct{}
+
+func (BambooDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:bamboo_double_slab", 0
+}
+
+type Element76 struct{}
+
+func (Element76) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_76", 0
+}
+
+type Sapling struct{}
+
+func (Sapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:sapling", 0
+}
+
+type EndermanSpawnEgg struct{}
+
+func (EndermanSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:enderman_spawn_egg", 0
+}
+
+type PaleOakWallSign struct{}
+
+func (PaleOakWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_wall_sign", 0
+}
+
+type PumpkinStem struct{}
+
+func (PumpkinStem) EncodeItem() (name string, meta int16) {
+	return "minecraft:pumpkin_stem", 0
+}
+
+type OpenEyeblossom struct{}
+
+func (OpenEyeblossom) EncodeItem() (name string, meta int16) {
+	return "minecraft:open_eyeblossom", 0
+}
+
+type HornCoralWallFan struct{}
+
+func (HornCoralWallFan) EncodeItem() (name string, meta int16) {
+	return "minecraft:horn_coral_wall_fan", 0
+}
+
+type NetheriteSpear struct{}
+
+func (NetheriteSpear) EncodeItem() (name string, meta int16) {
+	return "minecraft:netherite_spear", 0
+}
+
+type BirchWallSign struct{}
+
+func (BirchWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_wall_sign", 0
+}
+
+type CherryWallSign struct{}
+
+func (CherryWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:cherry_wall_sign", 0
+}
+
+type AllaySpawnEgg struct{}
+
+func (AllaySpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:allay_spawn_egg", 0
+}
+
+type Element47 struct{}
+
+func (Element47) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_47", 0
+}
+
+type Saddle struct{}
+
+func (Saddle) EncodeItem() (name string, meta int16) {
+	return "minecraft:saddle", 0
+}
+
+type StonePressurePlate struct{}
+
+func (StonePressurePlate) EncodeItem() (name string, meta int16) {
+	return "minecraft:stone_pressure_plate", 0
+}
+
+type SpruceSapling struct{}
+
+func (SpruceSapling) EncodeItem() (name string, meta int16) {
+	return "minecraft:spruce_sapling", 0
+}
+
+type HardStainedGlassPane struct{}
+
+func (HardStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_stained_glass_pane", 0
+}
+
+type ItemDarkOakDoor struct{}
+
+func (ItemDarkOakDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.dark_oak_door", 0
+}
+
+type Mace struct{}
+
+func (Mace) EncodeItem() (name string, meta int16) {
+	return "minecraft:mace", 0
+}
+
+type PitcherCrop struct{}
+
+func (PitcherCrop) EncodeItem() (name string, meta int16) {
+	return "minecraft:pitcher_crop", 0
+}
+
+type PillagerSpawnEgg struct{}
+
+func (PillagerSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:pillager_spawn_egg", 0
+}
+
+type CamelSpawnEgg struct{}
+
+func (CamelSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:camel_spawn_egg", 0
+}
+
+type LodestoneCompass struct{}
+
+func (LodestoneCompass) EncodeItem() (name string, meta int16) {
+	return "minecraft:lodestone_compass", 0
+}
+
+type LightGrayCandleCake struct{}
+
+func (LightGrayCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_gray_candle_cake", 0
+}
+
+type StickyPistonArmCollision struct{}
+
+func (StickyPistonArmCollision) EncodeItem() (name string, meta int16) {
+	return "minecraft:sticky_piston_arm_collision", 0
+}
+
+type Bell struct{}
+
+func (Bell) EncodeItem() (name string, meta int16) {
+	return "minecraft:bell", 0
+}
+
+type HardPurpleStainedGlassPane struct{}
+
+func (HardPurpleStainedGlassPane) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_purple_stained_glass_pane", 0
+}
+
+type LitBlastFurnace struct{}
+
+func (LitBlastFurnace) EncodeItem() (name string, meta int16) {
+	return "minecraft:lit_blast_furnace", 0
+}
+
+type HardLimeStainedGlass struct{}
+
+func (HardLimeStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_lime_stained_glass", 0
+}
+
+type Bush struct{}
+
+func (Bush) EncodeItem() (name string, meta int16) {
+	return "minecraft:bush", 0
+}
+
+type HardOrangeStainedGlass struct{}
+
+func (HardOrangeStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_orange_stained_glass", 0
+}
+
+type LightBlueCandleCake struct{}
+
+func (LightBlueCandleCake) EncodeItem() (name string, meta int16) {
+	return "minecraft:light_blue_candle_cake", 0
+}
+
+type WitchSpawnEgg struct{}
+
+func (WitchSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:witch_spawn_egg", 0
+}
+
+type Reserved6 struct{}
+
+func (Reserved6) EncodeItem() (name string, meta int16) {
+	return "minecraft:reserved6", 0
+}
+
+type JungleChestBoat struct{}
+
+func (JungleChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:jungle_chest_boat", 0
+}
+
+type CrimsonStandingSign struct{}
+
+func (CrimsonStandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_standing_sign", 0
+}
+
+type HardBrownStainedGlass struct{}
+
+func (HardBrownStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_brown_stained_glass", 0
+}
+
+type WaxedWeatheredDoubleCutCopperSlab struct{}
+
+func (WaxedWeatheredDoubleCutCopperSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:waxed_weathered_double_cut_copper_slab", 0
+}
+
+type HardGrayStainedGlass struct{}
+
+func (HardGrayStainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:hard_gray_stained_glass", 0
+}
+
+type MudBrickDoubleSlab struct{}
+
+func (MudBrickDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:mud_brick_double_slab", 0
+}
+
+type Element82 struct{}
+
+func (Element82) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_82", 0
+}
+
+type RavagerSpawnEgg struct{}
+
+func (RavagerSpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:ravager_spawn_egg", 0
+}
+
+type Element78 struct{}
+
+func (Element78) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_78", 0
+}
+
+type TripWire struct{}
+
+func (TripWire) EncodeItem() (name string, meta int16) {
+	return "minecraft:trip_wire", 0
+}
+
+type MossyCobblestoneDoubleSlab struct{}
+
+func (MossyCobblestoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:mossy_cobblestone_double_slab", 0
+}
+
+type StoneSpear struct{}
+
+func (StoneSpear) EncodeItem() (name string, meta int16) {
+	return "minecraft:stone_spear", 0
+}
+
+type RedHarness struct{}
+
+func (RedHarness) EncodeItem() (name string, meta int16) {
+	return "minecraft:red_harness", 0
+}
+
+type PaleOakChestBoat struct{}
+
+func (PaleOakChestBoat) EncodeItem() (name string, meta int16) {
+	return "minecraft:pale_oak_chest_boat", 0
+}
+
+type StainedGlass struct{}
+
+func (StainedGlass) EncodeItem() (name string, meta int16) {
+	return "minecraft:stained_glass", 0
+}
+
+type CopperChest struct{}
+
+func (CopperChest) EncodeItem() (name string, meta int16) {
+	return "minecraft:copper_chest", 0
+}
+
+type BirchHangingSign struct{}
+
+func (BirchHangingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:birch_hanging_sign", 0
+}
+
+type StructureBlock struct{}
+
+func (StructureBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:structure_block", 0
+}
+
+type Element10 struct{}
+
+func (Element10) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_10", 0
+}
+
+type MangroveRoots struct{}
+
+func (MangroveRoots) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_roots", 0
+}
+
+type GrayShulkerBox struct{}
+
+func (GrayShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:gray_shulker_box", 0
+}
+
+type ItemWarpedDoor struct{}
+
+func (ItemWarpedDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.warped_door", 0
+}
+
+type Potatoes struct{}
+
+func (Potatoes) EncodeItem() (name string, meta int16) {
+	return "minecraft:potatoes", 0
+}
+
+type BrownMushroomBlock struct{}
+
+func (BrownMushroomBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:brown_mushroom_block", 0
+}
+
+type YellowShulkerBox struct{}
+
+func (YellowShulkerBox) EncodeItem() (name string, meta int16) {
+	return "minecraft:yellow_shulker_box", 0
+}
+
+type RedstoneWire struct{}
+
+func (RedstoneWire) EncodeItem() (name string, meta int16) {
+	return "minecraft:redstone_wire", 0
+}
+
+type OrangeBundle struct{}
+
+func (OrangeBundle) EncodeItem() (name string, meta int16) {
+	return "minecraft:orange_bundle", 0
+}
+
+type StandingBanner struct{}
+
+func (StandingBanner) EncodeItem() (name string, meta int16) {
+	return "minecraft:standing_banner", 0
+}
+
+type Dispenser struct{}
+
+func (Dispenser) EncodeItem() (name string, meta int16) {
+	return "minecraft:dispenser", 0
+}
+
+type StandingSign struct{}
+
+func (StandingSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:standing_sign", 0
+}
+
+type SalmonBucket struct{}
+
+func (SalmonBucket) EncodeItem() (name string, meta int16) {
+	return "minecraft:salmon_bucket", 0
+}
+
+type CrimsonButton struct{}
+
+func (CrimsonButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:crimson_button", 0
+}
+
+type Element22 struct{}
+
+func (Element22) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_22", 0
+}
+
+type SpawnEgg struct{}
+
+func (SpawnEgg) EncodeItem() (name string, meta int16) {
+	return "minecraft:spawn_egg", 0
+}
+
+type MovingBlock struct{}
+
+func (MovingBlock) EncodeItem() (name string, meta int16) {
+	return "minecraft:moving_block", 0
+}
+
+type Camera struct{}
+
+func (Camera) EncodeItem() (name string, meta int16) {
+	return "minecraft:camera", 0
+}
+
+type InfoUpdate struct{}
+
+func (InfoUpdate) EncodeItem() (name string, meta int16) {
+	return "minecraft:info_update", 0
+}
+
+type DarkOakButton struct{}
+
+func (DarkOakButton) EncodeItem() (name string, meta int16) {
+	return "minecraft:dark_oak_button", 0
+}
+
+type Element52 struct{}
+
+func (Element52) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_52", 0
+}
+
+type DiamondHorseArmor struct{}
+
+func (DiamondHorseArmor) EncodeItem() (name string, meta int16) {
+	return "minecraft:diamond_horse_armor", 0
+}
+
+type Element79 struct{}
+
+func (Element79) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_79", 0
+}
+
+type SmoothRedSandstoneDoubleSlab struct{}
+
+func (SmoothRedSandstoneDoubleSlab) EncodeItem() (name string, meta int16) {
+	return "minecraft:smooth_red_sandstone_double_slab", 0
+}
+
+type ItemAcaciaDoor struct{}
+
+func (ItemAcaciaDoor) EncodeItem() (name string, meta int16) {
+	return "minecraft:item.acacia_door", 0
+}
+
+type UnpoweredRepeater struct{}
+
+func (UnpoweredRepeater) EncodeItem() (name string, meta int16) {
+	return "minecraft:unpowered_repeater", 0
+}
+
+type MangroveWallSign struct{}
+
+func (MangroveWallSign) EncodeItem() (name string, meta int16) {
+	return "minecraft:mangrove_wall_sign", 0
+}
+
+type Board struct{}
+
+func (Board) EncodeItem() (name string, meta int16) {
+	return "minecraft:board", 0
+}
+
+type GrayCandle struct{}
+
+func (GrayCandle) EncodeItem() (name string, meta int16) {
+	return "minecraft:gray_candle", 0
+}
+
+type Element98 struct{}
+
+func (Element98) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_98", 0
+}
+
+type Element61 struct{}
+
+func (Element61) EncodeItem() (name string, meta int16) {
+	return "minecraft:element_61", 0
 }
