@@ -1,4 +1,4 @@
-module git.patyhank.net/falloutBot/bedrocklib
+module github.com/patyhank/bedrock-library
 
 go 1.24.0
 
